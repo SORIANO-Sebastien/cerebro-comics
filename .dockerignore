@@ -1,0 +1,8 @@
+.git
+.github
+*.bat
+scratch
+*.log
+data/users.json
+data/sessions.json
+data/user_collections/*

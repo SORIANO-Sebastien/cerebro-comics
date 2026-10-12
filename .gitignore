@@ -1,0 +1,20 @@
+# Environment & Secrets
+.env
+*.log
+
+# Personal / Runtime User Data
+data/users.json
+data/sessions.json
+data/user_collections/*
+!data/user_collections/.gitkeep
+
+# Backups & Scratch
+*.backup.json
+*.ORIGINAL.html
+scratch/
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,26 @@
+================================================================================
+           ⚡ COMICS & BD MANAGER PRO - GUIDE RAPIDE DE DÉMARRAGE ⚡
+================================================================================
+
+Cette archive contient l'application complète de gestion de collection de BD & Comics.
+
+📂 CONTENU DU DOSSIER :
+1. AppliBD.html (ou index.html) : L'application web complète autonome.
+2. lancer_appli.bat             : Lanceur 1-clic pour ouvrir l'appli sur votre PC.
+3. lancer_serveur_pwa.bat       : Lanceur pour installer la PWA sur smartphone en Wi-Fi.
+4. README.md                    : Documentation complète & guide d'utilisation (Markdown).
+5. GUIDE_UTILISATION_COMPLET.txt: Documentation exhaustive de toutes les fonctionnalités.
+6. manifest.json & sw.js        : Fichiers de configuration PWA et mode hors-ligne.
+
+--------------------------------------------------------------------------------
+🚀 DÉMARRAGE EN 1 CLIC SUR PC :
+Double-cliquez sur "lancer_appli.bat" (ou "AppliBD.html").
+
+📱 INSTALLATION SUR SMARTPHONE (ANDROID & IPHONE) :
+1. Double-cliquez sur "lancer_serveur_pwa.bat".
+2. Ouvrez l'adresse indiquée (ex: http://192.168.1.XX:8080) dans Chrome ou Safari.
+3. Appuyez sur "Ajouter à l'écran d'accueil" ou "Installer l'application".
+
+📖 POUR TOUTES LES EXPLICATIONS DÉTAILLÉES :
+Consultez le fichier "README.md" (ou "GUIDE_UTILISATION_COMPLET.txt") !
+================================================================================

@@ -1,0 +1,48 @@
+version: '3.8'
+
+# ==============================================================================
+# Comics & BD Manager Pro - Docker Compose pour Serveur OVH (avec Traefik & Authentik)
+# ==============================================================================
+
+services:
+  comics-manager:
+    # Option 1 : Utiliser l'image construite automatiquement par GitHub Actions (Recommandé)
+    image: ghcr.io/${GHCR_IMAGE:-soriano-sebastien/cerebro-comics}:latest
+    
+    # Option 2 : Construction locale sur le serveur OVH si vous copiez les sources directement
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: comics-manager
+    restart: unless-stopped
+    
+    environment:
+      - PORT=8080
+      - HOST=0.0.0.0
+      - NODE_ENV=production
+
+    volumes:
+      # Persistance des comptes utilisateurs, sessions, clés API et collections
+      - ./data:/app/data
+      # Fichier de personnalisation des collections de scraping
+      - ./collections_config.json:/app/collections_config.json
+
+    networks:
+      # Réseau partagé avec votre Traefik sur OVH
+      - traefik-net
+
+    labels:
+      # Configuration du routage Traefik
+      - "traefik.enable=true"
+      # Remplacez comics.votredomaine.fr par votre sous-domaine réel :
+      - "traefik.http.routers.comics.rule=Host(`${COMICS_DOMAIN:-comics.votredomaine.fr}`)"
+      - "traefik.http.routers.comics.entrypoints=websecure"
+      - "traefik.http.routers.comics.tls=true"
+      # Nom de votre résolveur Let's Encrypt dans traefik.yml (ex: letsencrypt, le, ovh...) :
+      - "traefik.http.routers.comics.tls.certresolver=${TRAEFIK_CERTRESOLVER:-letsencrypt}"
+      - "traefik.http.services.comics.loadbalancer.server.port=8080"
+
+networks:
+  traefik-net:
+    external: true

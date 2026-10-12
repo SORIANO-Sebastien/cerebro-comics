@@ -1,0 +1,1091 @@
+{
+  "excaliburCategories": [
+    {
+      "name": "Marvel Must-Have",
+      "slug": "1038-marvel-must-have-panini-comics-vf",
+      "universe": "MARVEL",
+      "format": "Marvel Must-Have",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Anthologie (Je suis...)",
+      "slug": "518-marvel-anthologie",
+      "universe": "MARVEL",
+      "format": "Marvel Anthologie",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Omnibus",
+      "slug": "528-marvel-omnibus-vf",
+      "universe": "MARVEL",
+      "format": "Marvel Omnibus",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Omnibus Panini",
+      "slug": "1178-omnibus-panini",
+      "universe": "MARVEL",
+      "format": "Marvel Omnibus",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Deluxe",
+      "slug": "520-marvel-deluxe",
+      "universe": "MARVEL",
+      "format": "Marvel Deluxe",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "100% Marvel",
+      "slug": "501-100-marvel",
+      "universe": "MARVEL",
+      "format": "100% Marvel",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Mighty Marvel",
+      "slug": "1127-mighty-marvel",
+      "universe": "MARVEL",
+      "format": "Mighty Marvel",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Les Trésors de Marvel",
+      "slug": "1126-les-tresors-de-marvel",
+      "universe": "MARVEL",
+      "format": "Les Trésors de Marvel",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Les Légendes Marvel",
+      "slug": "1162-collection-les-legendes-marvel",
+      "universe": "MARVEL",
+      "format": "Les Légendes Marvel",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Les Icônes Marvel",
+      "slug": "1131-les-icones-marvel",
+      "universe": "MARVEL",
+      "format": "Les Icônes Marvel",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "DC Deluxe",
+      "slug": "511-dc-deluxe",
+      "universe": "DC",
+      "format": "DC Deluxe",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "DC Anthologie",
+      "slug": "508-dc-anthologie",
+      "universe": "DC",
+      "format": "DC Anthologie",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "DC Chronicles",
+      "slug": "1088-dc-chronicles",
+      "universe": "DC",
+      "format": "DC Chronicles",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "DC Black Label",
+      "slug": "974-dc-black-label",
+      "universe": "DC",
+      "format": "DC Black Label",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "DC Nomades",
+      "slug": "1339-dc-paperback",
+      "universe": "DC",
+      "format": "DC Nomades",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "DC Infinite",
+      "slug": "1087-dc-infinite",
+      "universe": "DC",
+      "format": "DC Infinite",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "DC Rebirth",
+      "slug": "959-dc-rebirth",
+      "universe": "DC",
+      "format": "DC Rebirth",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "DC Essentiels",
+      "slug": "512-dc-essentiels",
+      "universe": "DC",
+      "format": "DC Essentiels",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "DC Renaissance",
+      "slug": "515-dc-renaissance",
+      "universe": "DC",
+      "format": "DC Renaissance",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "DC Classiques",
+      "slug": "510-dc-classiques",
+      "universe": "DC",
+      "format": "DC Classiques",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Dawn of DC",
+      "slug": "1166-dawn-of-dc",
+      "universe": "DC",
+      "format": "Dawn of DC",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "DC Absolute",
+      "slug": "1333-comics-dc-absolute",
+      "universe": "DC",
+      "format": "DC Absolute",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Star Wars Omnibus",
+      "slug": "1169-star-wars-omnibus",
+      "universe": "STAR_WARS",
+      "format": "Star Wars Omnibus",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Star Wars Deluxe",
+      "slug": "1018-star-wars-deluxe",
+      "universe": "STAR_WARS",
+      "format": "Star Wars Deluxe",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Cosmique Marvel",
+      "slug": "1363-cosmique-marvel",
+      "universe": "MARVEL",
+      "format": "Cosmique Marvel",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Comics Softcover",
+      "slug": "1083-marvel-comics-softcover",
+      "universe": "MARVEL",
+      "format": "Marvel Comics Softcover",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel World",
+      "slug": "1353-marvel-world",
+      "universe": "MARVEL",
+      "format": "Marvel World",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Ultimate Universe",
+      "slug": "1318-marvel-ultimate-universe",
+      "universe": "MARVEL",
+      "format": "Ultimate Universe",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Blood Hunt",
+      "slug": "1326-comics-blood-hunt-marvel",
+      "universe": "MARVEL",
+      "format": "Blood Hunt",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Spider-Man & Venom : Death Spiral",
+      "slug": "1377-spider-man-venom-death-spiral",
+      "universe": "MARVEL",
+      "format": "Spider-Man & Venom : Death Spiral",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Venom War",
+      "slug": "1336-comics-venom-war",
+      "universe": "MARVEL",
+      "format": "Venom War",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "X-Men",
+      "slug": "436-mensuel-x-men",
+      "universe": "MARVEL",
+      "format": "X-Men",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "X-Men 2025",
+      "slug": "1345-x-men-2025",
+      "universe": "MARVEL",
+      "format": "X-Men 2025",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "X-Men : Age of Revelation",
+      "slug": "1371-x-men-age-of-revelation",
+      "universe": "MARVEL",
+      "format": "X-Men : Age of Revelation",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "X-Men : Période Krakoa",
+      "slug": "1045-x-men-periode-krakoa",
+      "universe": "MARVEL",
+      "format": "X-Men : Période Krakoa",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "X-Men : Shadows of Tomorrow",
+      "slug": "1372-x-men-shadows-of-tomorrow",
+      "universe": "MARVEL",
+      "format": "X-Men : Shadows of Tomorrow",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Les Vilains de Marvel",
+      "slug": "1159-les-vilains-de-marvel",
+      "universe": "MARVEL",
+      "format": "Les Vilains de Marvel",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Heroes",
+      "slug": "1327-magazine-marvel-heroes",
+      "universe": "MARVEL",
+      "format": "Marvel Heroes",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "DC Originals",
+      "slug": "1066-dc-originals",
+      "universe": "DC",
+      "format": "DC Originals",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Star Wars Magazine",
+      "slug": "428-star-wars-magazine",
+      "universe": "STAR_WARS",
+      "format": "Star Wars Magazine",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Star Wars : War of the Bounty Hunters",
+      "slug": "1077-star-wars-war-of-the-bounty-hunters",
+      "universe": "STAR_WARS",
+      "format": "Star Wars : War of the Bounty Hunters",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Star Wars : Crimson Reign",
+      "slug": "1118-star-wars-crimson-reign",
+      "universe": "STAR_WARS",
+      "format": "Star Wars : Crimson Reign",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Star Wars : Hidden Empire",
+      "slug": "1130-star-wars-hidden-empire",
+      "universe": "STAR_WARS",
+      "format": "Star Wars : Hidden Empire",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Star Wars : Dark Droids",
+      "slug": "1163-star-wars-dark-droids",
+      "universe": "STAR_WARS",
+      "format": "Star Wars : Dark Droids",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Star Wars: Bounty Hunters & Inquisitors",
+      "slug": "1323-star-wars-bounty-hunters-inquisitors",
+      "universe": "STAR_WARS",
+      "format": "Star Wars: Bounty Hunters & Inquisitors",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Artist Edition",
+      "slug": "1373-artist-edition-panini-comics",
+      "universe": "MARVEL",
+      "format": "Artist Edition",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Mangas Marvel",
+      "slug": "1366-mangas-marvel",
+      "universe": "MARVEL",
+      "format": "Mangas Marvel",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Absolute",
+      "slug": "926-marvel-absolute-collection",
+      "universe": "MARVEL",
+      "format": "Marvel Absolute",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Epic Collection",
+      "slug": "1110-marvel-epic-collection-panini-comics",
+      "universe": "MARVEL",
+      "format": "Marvel Epic Collection",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Events",
+      "slug": "929-marvel-events-panini-comics",
+      "universe": "MARVEL",
+      "format": "Marvel Events",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Graphic Novel",
+      "slug": "522-marvel-graphic-novel",
+      "universe": "MARVEL",
+      "format": "Marvel Graphic Novel",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Hors Collection",
+      "slug": "523-marvel-hors-collection",
+      "universe": "MARVEL",
+      "format": "Marvel Hors Collection",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Icons",
+      "slug": "524-marvel-icons",
+      "universe": "MARVEL",
+      "format": "Marvel Icons",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Intégrales",
+      "slug": "517-marvel-integrales",
+      "universe": "MARVEL",
+      "format": "Marvel Intégrales",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Kids",
+      "slug": "989-marvel-kids",
+      "universe": "MARVEL",
+      "format": "Marvel Kids",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Legacy",
+      "slug": "1009-marvel-legacy",
+      "universe": "MARVEL",
+      "format": "Marvel Legacy",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Next Gen",
+      "slug": "1053-marvel-next-gen",
+      "universe": "MARVEL",
+      "format": "Marvel Next Gen",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Now",
+      "slug": "527-marvel-now",
+      "universe": "MARVEL",
+      "format": "Marvel Now",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Prestige",
+      "slug": "1120-marvel-prestige",
+      "universe": "MARVEL",
+      "format": "Marvel Prestige",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Visionaries",
+      "slug": "1124-marvel-visionaries",
+      "universe": "MARVEL",
+      "format": "Marvel Visionaries",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Avengers Anniversaire",
+      "slug": "1152-avengers-anniversaire",
+      "universe": "MARVEL",
+      "format": "Avengers Anniversaire",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Comics Marvel à petit prix",
+      "slug": "1144-comics-marvel-a-petit-prix",
+      "universe": "MARVEL",
+      "format": "Comics Marvel à petit prix",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Multiverse",
+      "slug": "1151-marvel-multiverse",
+      "universe": "MARVEL",
+      "format": "Marvel Multiverse",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Poche",
+      "slug": "1175-marvel-poche",
+      "universe": "MARVEL",
+      "format": "Marvel Poche",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel Verse",
+      "slug": "1037-marvel-verse",
+      "universe": "MARVEL",
+      "format": "Marvel Verse",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Spider-Man : Web of Heroes Collection",
+      "slug": "1099-spider-man-web-of-heroes-collection",
+      "universe": "MARVEL",
+      "format": "Spider-Man : Web of Heroes Collection",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "DC Elseworlds",
+      "slug": "1337-dc-elseworlds",
+      "universe": "DC",
+      "format": "DC Elseworlds",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "DC Prime",
+      "slug": "1338-dc-prime",
+      "universe": "DC",
+      "format": "DC Prime",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "DC Signatures",
+      "slug": "516-dc-signatures",
+      "universe": "DC",
+      "format": "DC Signatures",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "DC Treasury Books",
+      "slug": "1356-dc-treasury-books",
+      "universe": "DC",
+      "format": "DC Treasury Books",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Mangas DC",
+      "slug": "1367-mangas-dc",
+      "universe": "DC",
+      "format": "Mangas DC",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "100 % Star Wars",
+      "slug": "925-100-star-wars-panini-comics-france-marvel",
+      "universe": "STAR_WARS",
+      "format": "100 % Star Wars",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Star Wars Absolute",
+      "slug": "1048-star-wars-absolute",
+      "universe": "STAR_WARS",
+      "format": "Star Wars Absolute",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Star Wars Hors Collection",
+      "slug": "1177-star-wars-hors-collection",
+      "universe": "STAR_WARS",
+      "format": "Star Wars Hors Collection",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Star Wars Epic Collection",
+      "slug": "1072-star-wars-epic-collection",
+      "universe": "STAR_WARS",
+      "format": "Star Wars Epic Collection",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Mangas Star Wars",
+      "slug": "1365-mangas-star-wars-vf",
+      "universe": "STAR_WARS",
+      "format": "Mangas Star Wars",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Star Wars : Collection Carrefour",
+      "slug": "1051-star-wars-collection-carrefour",
+      "universe": "STAR_WARS",
+      "format": "Star Wars : Collection Carrefour",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Star Wars Poche",
+      "slug": "1360-star-wars-poche",
+      "universe": "STAR_WARS",
+      "format": "Star Wars Poche",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Grand format Urban",
+      "slug": "1314-collection-grand-format-urban",
+      "universe": "DC",
+      "format": "Grand format Urban",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Urban Blast",
+      "slug": "1164-urban-blast",
+      "universe": "DC",
+      "format": "Urban Blast",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Urban Books",
+      "slug": "532-urban-books",
+      "universe": "DC",
+      "format": "Urban Books",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Urban Cult",
+      "slug": "1007-urban-cult",
+      "universe": "DC",
+      "format": "Urban Cult",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Urban Games",
+      "slug": "533-urban-games",
+      "universe": "DC",
+      "format": "Urban Games",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Urban Graphic",
+      "slug": "1015-urban-graphic",
+      "universe": "DC",
+      "format": "Urban Graphic",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Urban Indies & Astrolabe",
+      "slug": "534-urban-indies-astrolabe",
+      "universe": "DC",
+      "format": "Urban Indies & Astrolabe",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Urban Limited",
+      "slug": "1050-urban-limited",
+      "universe": "DC",
+      "format": "Urban Limited",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Urban Nomad",
+      "slug": "1113-urban-nomad",
+      "universe": "DC",
+      "format": "Urban Nomad",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Urban Paperback",
+      "slug": "1361-urban-paperback",
+      "universe": "DC",
+      "format": "Urban Paperback",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Disney",
+      "slug": "1376-disney-comics-panini",
+      "universe": "MARVEL",
+      "format": "Disney",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Panini Graphic Novel",
+      "slug": "1143-panini-graphic-novel",
+      "universe": "MARVEL",
+      "format": "Panini Graphic Novel",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Panini Poche",
+      "slug": "1176-panini-poche",
+      "universe": "MARVEL",
+      "format": "Panini Poche",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Select Fusion",
+      "slug": "924-select-fusion-panini-comics",
+      "universe": "MARVEL",
+      "format": "Select Fusion",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Panini Comics France",
+      "slug": "715-panini-comics-france",
+      "universe": "MARVEL",
+      "format": "Panini Comics France",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Urban Comics",
+      "slug": "716-urban-comics",
+      "universe": "DC",
+      "format": "Urban Comics",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Avengers",
+      "slug": "803-avengers",
+      "universe": "MARVEL",
+      "format": "Avengers",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Captain Marvel",
+      "slug": "987-captain-marvel",
+      "universe": "MARVEL",
+      "format": "Captain Marvel",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Miss Marvel",
+      "slug": "1069-miss-marvel",
+      "universe": "MARVEL",
+      "format": "Miss Marvel",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Spider-Man",
+      "slug": "826-spider-man",
+      "universe": "MARVEL",
+      "format": "Spider-Man",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Venom",
+      "slug": "970-venom",
+      "universe": "MARVEL",
+      "format": "Venom",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "X-Men",
+      "slug": "834-x-men",
+      "universe": "MARVEL",
+      "format": "X-Men",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Supergirl",
+      "slug": "1374-supergirl-comics-vf-urban",
+      "universe": "DC",
+      "format": "Supergirl",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Superman",
+      "slug": "828-superman",
+      "universe": "DC",
+      "format": "Superman",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Batman",
+      "slug": "804-batman",
+      "universe": "DC",
+      "format": "Batman",
+      "publisher": "Urban Comics"
+    }
+  ],
+  "bnfQueries": [
+    {
+      "name": "Panini Must-Have",
+      "query": "bib.publisher all \"Panini comics\" and bib.title all \"Must-Have\"",
+      "universe": "MARVEL",
+      "format": "Marvel Must-Have",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Panini Je suis",
+      "query": "bib.publisher all \"Panini comics\" and bib.title all \"Je suis\"",
+      "universe": "MARVEL",
+      "format": "Marvel Anthologie",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Panini Omnibus",
+      "query": "bib.publisher all \"Panini comics\" and bib.title all \"Omnibus\"",
+      "universe": "MARVEL",
+      "format": "Marvel Omnibus",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Urban Deluxe",
+      "query": "bib.publisher all \"Urban comics\" and bib.title all \"Deluxe\"",
+      "universe": "DC",
+      "format": "DC Deluxe",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Urban Chronicles",
+      "query": "bib.publisher all \"Urban comics\" and bib.title all \"Chronicles\"",
+      "universe": "DC",
+      "format": "DC Chronicles",
+      "publisher": "Urban Comics"
+    },
+    {
+      "name": "Urban Anthologie",
+      "query": "bib.publisher all \"Urban comics\" and bib.title all \"Anthologie\"",
+      "universe": "DC",
+      "format": "DC Anthologie",
+      "publisher": "Urban Comics"
+    }
+  ],
+  "customCollections": [
+    {
+      "collectionName": "Marvel : Le Côté Obscur",
+      "format": "Marvel Carrefour",
+      "universe": "MARVEL",
+      "publisher": "Panini Comics",
+      "books": [
+        {
+          "isbn": "9782809497694",
+          "title": "Black Widow : Ce qu'ils disent d'elle",
+          "series": "Black Widow",
+          "tome": "Tome 1",
+          "year": 2021,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809497700",
+          "title": "Daredevil : L'Homme sans peur",
+          "series": "Daredevil",
+          "tome": "Tome 2",
+          "year": 2021,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809497717",
+          "title": "Deadpool : Il faut soigner le soldat Wilson",
+          "series": "Deadpool",
+          "tome": "Tome 3",
+          "year": 2021,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809497724",
+          "title": "Doctor Strange : Au cœur des ténèbres",
+          "series": "Doctor Strange",
+          "tome": "Tome 4",
+          "year": 2021,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809497731",
+          "title": "Ghost Rider : La route de la vengeance",
+          "series": "Ghost Rider",
+          "tome": "Tome 5",
+          "year": 2021,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809497748",
+          "title": "Jessica Jones : Angle mort",
+          "series": "Jessica Jones",
+          "tome": "Tome 6",
+          "year": 2021,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809497755",
+          "title": "Punisher : Cercle de sang",
+          "series": "Punisher",
+          "tome": "Tome 7",
+          "year": 2021,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809497762",
+          "title": "Thanos : Révélation",
+          "series": "Thanos",
+          "tome": "Tome 8",
+          "year": 2021,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809497779",
+          "title": "Venom : Métamorphose",
+          "series": "Venom",
+          "tome": "Tome 9",
+          "year": 2021,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809497786",
+          "title": "Wolverine : L'Arme X",
+          "series": "Wolverine",
+          "tome": "Tome 10",
+          "year": 2021,
+          "price": 2.99
+        }
+      ]
+    },
+    {
+      "collectionName": "Marvel : Les Grandes Alliances",
+      "format": "Marvel Carrefour",
+      "universe": "MARVEL",
+      "publisher": "Panini Comics",
+      "books": [
+        {
+          "isbn": "9791039106405",
+          "title": "Spider-Man & Fantastic Four",
+          "series": "Spider-Man & Fantastic Four",
+          "tome": "Tome 1",
+          "year": 2022,
+          "price": 2.99
+        },
+        {
+          "isbn": "9791039106412",
+          "title": "Avengers & X-Men",
+          "series": "Avengers & X-Men",
+          "tome": "Tome 2",
+          "year": 2022,
+          "price": 2.99
+        },
+        {
+          "isbn": "9791039106429",
+          "title": "Deadpool & Cable",
+          "series": "Deadpool & Cable",
+          "tome": "Tome 3",
+          "year": 2022,
+          "price": 2.99
+        },
+        {
+          "isbn": "9791039106436",
+          "title": "Daredevil & Elektra",
+          "series": "Daredevil & Elektra",
+          "tome": "Tome 4",
+          "year": 2022,
+          "price": 2.99
+        },
+        {
+          "isbn": "9791039106443",
+          "title": "Doctor Strange & Spider-Man",
+          "series": "Doctor Strange & Spider-Man",
+          "tome": "Tome 5",
+          "year": 2022,
+          "price": 2.99
+        },
+        {
+          "isbn": "9791039106450",
+          "title": "Thor & Iron Man",
+          "series": "Thor & Iron Man",
+          "tome": "Tome 6",
+          "year": 2022,
+          "price": 2.99
+        },
+        {
+          "isbn": "9791039106467",
+          "title": "Iron Man & Captain America",
+          "series": "Iron Man & Captain America",
+          "tome": "Tome 7",
+          "year": 2022,
+          "price": 2.99
+        },
+        {
+          "isbn": "9791039106474",
+          "title": "Wanda & La Vision",
+          "series": "Wanda & La Vision",
+          "tome": "Tome 8",
+          "year": 2022,
+          "price": 2.99
+        },
+        {
+          "isbn": "9791039106481",
+          "title": "Wolverine & Spider-Man",
+          "series": "Wolverine & Spider-Man",
+          "tome": "Tome 9",
+          "year": 2022,
+          "price": 2.99
+        },
+        {
+          "isbn": "9791039106498",
+          "title": "Falcon & Winter Soldier",
+          "series": "Falcon & Winter Soldier",
+          "tome": "Tome 10",
+          "year": 2022,
+          "price": 2.99
+        }
+      ]
+    },
+    {
+      "collectionName": "Marvel : Les Grandes Batailles",
+      "format": "Marvel Carrefour",
+      "universe": "MARVEL",
+      "publisher": "Panini Comics",
+      "books": [
+        {
+          "isbn": "9782809489033",
+          "title": "Avengers vs Ultron",
+          "series": "Avengers",
+          "tome": "Tome 1",
+          "year": 2020,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809489040",
+          "title": "Les Gardiens de la Galaxie vs Thanos",
+          "series": "Gardiens de la Galaxie",
+          "tome": "Tome 2",
+          "year": 2020,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809489057",
+          "title": "Deadpool vs Deadpool",
+          "series": "Deadpool",
+          "tome": "Tome 3",
+          "year": 2020,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809489064",
+          "title": "X-Men vs Magneto",
+          "series": "X-Men",
+          "tome": "Tome 4",
+          "year": 2020,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809489071",
+          "title": "Spider-Man vs Mysterio",
+          "series": "Spider-Man",
+          "tome": "Tome 5",
+          "year": 2020,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809489088",
+          "title": "Wolverine vs Dents de sabre",
+          "series": "Wolverine",
+          "tome": "Tome 6",
+          "year": 2020,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809489095",
+          "title": "Venom vs Spider-Man",
+          "series": "Venom",
+          "tome": "Tome 7",
+          "year": 2020,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809489101",
+          "title": "Thor vs Loki",
+          "series": "Thor",
+          "tome": "Tome 8",
+          "year": 2020,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809489118",
+          "title": "Captain America vs Crâne rouge",
+          "series": "Captain America",
+          "tome": "Tome 9",
+          "year": 2020,
+          "price": 2.99
+        },
+        {
+          "isbn": "9782809489125",
+          "title": "Iron Man vs Whiplash",
+          "series": "Iron Man",
+          "tome": "Tome 10",
+          "year": 2020,
+          "price": 2.99
+        }
+      ]
+    },
+    {
+      "collectionName": "Spider-Man vs Les Sinister Six",
+      "format": "Marvel Carrefour",
+      "universe": "MARVEL",
+      "publisher": "Panini Comics",
+      "books": [
+        {
+          "isbn": "9791039104326",
+          "title": "Spider-Man vs Docteur Octopus",
+          "series": "Spider-Man",
+          "tome": "Tome 1",
+          "year": 2024,
+          "price": 3
+        },
+        {
+          "isbn": "9791039104333",
+          "title": "Spider-Man vs Le Vautour",
+          "series": "Spider-Man",
+          "tome": "Tome 2",
+          "year": 2024,
+          "price": 3
+        },
+        {
+          "isbn": "9791039104340",
+          "title": "Spider-Man vs Kraven",
+          "series": "Spider-Man",
+          "tome": "Tome 3",
+          "year": 2024,
+          "price": 3
+        },
+        {
+          "isbn": "9791039104357",
+          "title": "Spider-Man vs Mystério",
+          "series": "Spider-Man",
+          "tome": "Tome 4",
+          "year": 2024,
+          "price": 3
+        },
+        {
+          "isbn": "9791039104364",
+          "title": "Spider-Man vs L'Homme-Sable",
+          "series": "Spider-Man",
+          "tome": "Tome 5",
+          "year": 2024,
+          "price": 3
+        },
+        {
+          "isbn": "9791039104371",
+          "title": "Spider-Man vs Electro",
+          "series": "Spider-Man",
+          "tome": "Tome 6",
+          "year": 2024,
+          "price": 3
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "cerebro-comics",
+  "version": "3.5.0",
+  "description": "Cerebro Comics - Gestionnaire ultime de collection BD, Marvel Panini Comics, DC Comics & Mangas avec PWA, Authentik OpenID, scan et mode brocante.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SORIANO-Sebastien/cerebro-comics.git"
+  },
+  "main": "serveur_reseau.js",
+  "scripts": {
+    "start": "node serveur_reseau.js",
+    "sync": "node sync_catalog.js"
+  },
+  "keywords": [
+    "comics",
+    "bd",
+    "marvel",
+    "dc",
+    "pwa",
+    "authentik",
+    "oidc"
+  ],
+  "author": "Antigravity",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

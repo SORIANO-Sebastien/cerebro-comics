@@ -1,0 +1,14 @@
+{
+  "geminiApiKey": "",
+  "appTitle": "Comics & BD Manager Pro",
+  "allowRegistration": true,
+  "oidc": {
+    "enabled": false,
+    "name": "Authentik",
+    "issuerUrl": "",
+    "clientId": "",
+    "clientSecret": "",
+    "redirectUri": ""
+  },
+  "autoSyncIntervalHours": 24
+}

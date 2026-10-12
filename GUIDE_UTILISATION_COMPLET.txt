@@ -1,0 +1,298 @@
+================================================================================
+           ⚡ COMICS & BD MANAGER PRO - GUIDE D'UTILISATION COMPLET ⚡
+         Gestionnaire Ultime de Collection BD, Marvel, DC Comics & Mangas
+================================================================================
+
+Bienvenue dans Comics & BD Manager Pro !
+Cette application a été conçue sur mesure pour gérer, classer, explorer, 
+estimer et suivre votre collection de bandes dessinées et comics sur PC et Mobile.
+
+--------------------------------------------------------------------------------
+SOMMAIRE :
+1. PRÉSENTATION DE L'APPLICATION
+2. DÉMARRAGE RAPIDE SUR PC (1 CLIC)
+3. INSTALLATION SUR SMARTPHONE (PWA ANDROID & IPHONE)
+4. TOUTES LES FONCTIONNALITÉS EN DÉTAIL
+   A. Ajout Direct par ISBN (sur le Dashboard)
+   B. Scanner Code-Barres & Mode « Scan en Rafale » (NOUVEAU)
+   C. Sélecteur « 🎲 Que lire ce soir ? » (NOUVEAU)
+   D. Infographies & Graphiques Interactifs (NOUVEAU)
+   E. Planches d'Étiquettes QR Codes à Imprimer (NOUVEAU)
+   F. Suivi des Variantes & Dédicaces Collector (NOUVEAU)
+   G. Catalogue Officiel Pré-rempli (207+ albums cultes avec Prix Neuf)
+   H. Ordres de Lecture & Frises Chronologiques Marvel / DC
+   I. Détecteur Automatique de Tomes Manquants
+   J. Suivi des Prêts d'Albums
+   K. Calculateur de Valeur Prix Neuf & Budget
+   L. Vue « Tranches de Bibliothèque 3D »
+   M. Assistant Comics IA (Recommandations & Résumés sans spoiler)
+   N. Wishlist (Liste d'achats pour brocantes/boutiques)
+   O. Fiches Albums Détaillées & Gestion des Notes ★★★★★
+   P. Système Anti-Doublon & Nettoyeur Automatique
+   Q. Mode « Brocante & Magasin d'Occasion » (Anti-doublon express) (NOUVEAU)
+   R. Planning des Sorties & Radar des Nouveautés Comics (NOUVEAU)
+   S. Emplacement Physique dans la Pièce (« Où est rangé ce livre ? ») (NOUVEAU)
+5. SYNCHRONISATION GOOGLE DRIVE (PC ↔ SMARTPHONE)
+6. SAUVEGARDES, EXPORTS ET IMPRESSION PDF
+7. RÉCUPÉRATION ET DÉTECTION 100% AUTOMATIQUE DES COLLECTIONS
+8. QUESTIONS FRÉQUENTES & DÉPANNAGE
+--------------------------------------------------------------------------------
+
+
+================================================================================
+1. PRÉSENTATION DE L'APPLICATION
+================================================================================
+• Fonctionne 100% hors-ligne et en ligne sans nécessiter d'installation complexe.
+• Compatible PC Windows, Mac, tablettes, smartphones Android et iPhone/iPad.
+• Adaptabilité automatique (Responsive Design) à toutes les tailles d'écran.
+• Base de données locale sécurisée + Sauvegarde Cloud Google Drive automatique.
+• Couvertures Haute Définition automatiques vérifiées pour tous les comics français.
+
+
+================================================================================
+2. DÉMARRAGE RAPIDE SUR PC
+================================================================================
+Sur votre ordinateur, vous n'avez besoin d'aucun logiciel particulier :
+
+• Option 1 (Le plus simple) :
+  Double-cliquez directement sur le fichier "lancer_appli.bat" (ou "AppliBD.html").
+  L'application s'ouvre immédiatement dans votre navigateur par défaut (Chrome, 
+  Edge, Firefox...).
+
+• Option 2 (Mode Application Fenêtrée PWA) :
+  Dans Google Chrome ou Microsoft Edge, cliquez sur le bouton "📲 Installer l'App"
+  en haut (ou sur la petite icône d'écran à droite dans la barre d'adresse).
+  L'application s'ouvrira désormais dans sa propre fenêtre indépendante comme 
+  un logiciel Windows natif !
+
+
+================================================================================
+3. INSTALLATION SUR SMARTPHONE (PWA ANDROID & IPHONE)
+================================================================================
+Pour installer l'application sur votre smartphone avec son icône sur votre écran
+d'accueil et l'accès plein écran :
+
+Étape A : Lancer le serveur Wi-Fi local sur votre PC
+1. Double-cliquez sur "lancer_serveur_pwa.bat".
+2. La console vous indique votre adresse réseau locale (ex : http://192.168.1.35:8080).
+
+Étape B : Ouvrir sur le téléphone
+1. Assurez-vous que votre téléphone est connecté au même réseau Wi-Fi.
+2. Ouvrez Google Chrome (sur Android) ou Safari (sur iPhone) et tapez l'adresse 
+   indiquée (ex: http://192.168.1.35:8080).
+
+Étape C : Installer sur l'écran d'accueil
+• Sur Android (Chrome / Brave / Edge) :
+  Appuyez sur le menu (les 3 points ⋮ en haut à droite) > "Installer l'application"
+  (ou "Ajouter à l'écran d'accueil").
+• Sur iPhone / iPad (Safari) :
+  Appuyez sur le bouton de partage en bas (carré avec flèche vers le haut 📤) > 
+  faites défiler vers le bas > appuyez sur "Sur l'écran d'accueil" (+).
+
+
+================================================================================
+4. TOUTES LES FONCTIONNALITÉS EN DÉTAIL
+================================================================================
+
+A. AJOUT DIRECT PAR ISBN (SUR LE DASHBOARD)
+--------------------------------------------
+Barre rouge tout en haut de l'écran d'accueil pour ajouter une BD en 2 secondes :
+1. Tapez ou collez le code ISBN à 10 ou 13 chiffres.
+2. Choisissez son statut : Lu (✅), En cours (📖), Non lu (⏳), Prêté (🤝) ou Wishlist (❤️).
+3. Appuyez sur Entrée ou cliquez sur "⚡ Ajouter à ma collection".
+
+
+B. SCANNER & MODE « SCAN EN RAFALE » (⚡ NOUVEAU)
+-------------------------------------------------
+Dans le scanner (📷) :
+• Mode 1 par 1 (Standard) : Ouvre le formulaire de validation à chaque scan.
+• Mode « Scan en Rafale » (Continu) :
+  - La caméra reste allumée en permanence.
+  - Vous passez vos BDs les unes après les autres devant l'objectif.
+  - À chaque détection, un bip sonore de validation retentit et l'album s'ajoute 
+    directement à la suite sans interrompre la caméra !
+  - Vous pouvez ainsi enregistrer 30 BDs en moins de 2 minutes !
+
+
+C. SÉLECTEUR ALÉATOIRE « 🎲 QUE LIRE CE SOIR ? » (NOUVEAU)
+-----------------------------------------------------------
+Cliquez sur le bouton "🎲 Que lire ce soir ?" en haut :
+• Choisissez un filtre : *Pile à lire (Non lus uniquement)*, *Marvel*, *DC* ou *Tous*.
+• Cliquez sur "🎲 Tirer au sort !" : une animation fait défiler les titres de votre 
+  collection et sélectionne un album au hasard avec un effet sonore.
+• Bouton "📖 Commencer la lecture" pour passer l'album immédiatement en statut *En cours* !
+
+
+D. INFOGRAPHIES & STATISTIQUES GRAPHIQUES (📊 NOUVEAU)
+-------------------------------------------------------
+Dans l'onglet "📊 Infographie & Stats" :
+• Graphiques interactifs et barres de progression :
+  - 🦸 Héros et Sagas les plus représentés (Spider-Man, Batman, Daredevil, X-Men, Tintin...)
+  - ✍️ Top Scénaristes & Auteurs (Millar, Bendis, Snyder, Johns, Miller, Hickman...)
+  - 📦 Répartition budgétaire et volumétrique par format (Omnibus, Deluxe, Must-Have, Franco-Belge...)
+
+
+E. PLANCHES D'ÉTIQUETTES QR CODES À IMPRIMER (🏷️ NOUVEAU)
+-----------------------------------------------------------
+Dans le menu "☁️ Google Drive" > "🏷️ Planche Étiquettes QR Codes" :
+• Génère une grille complète d'étiquettes prêtes à imprimer avec le titre, le tome et un QR Code 
+  individuel pour chaque album de votre collection.
+• Idéal pour coller au dos des pochettes de protection (sleeves) !
+
+
+F. SUIVI DES VARIANTES & DÉDICACES COLLECTOR (💎 NOUVEAU)
+----------------------------------------------------------
+Dans chaque fiche de BD :
+• Type d'Édition : *Standard, Couverture Variante (Variant Cover), Tirage Limité / Numéroté, 
+  Tirage de Tête / Grand Format, Édition Noir & Blanc*.
+• Case à cocher : *✍️ Album Dédicacé* + zone de texte pour noter la date et le festival.
+• Badge doré "✍️ Signé" sur la couverture et filtre dédié "💎 Collector & Dédicaces".
+
+
+G. CATALOGUE OFFICIEL AVEC PRIX NEUF PUBLIC
+--------------------------------------------
+• 207+ albums cultes Marvel, DC et Franco-Belge pré-enregistrés avec leur vrai Prix Neuf officiel.
+• Permet d'importer toute la collection d'un coup ou d'ajouter tome par tome en 1 clic.
+
+
+H. ORDRES DE LECTURE & FRISES CHRONOLOGIQUES (🗺️)
+--------------------------------------------------
+Dans l'onglet "🗺️ Chronologies & Événements" :
+• Frises chronologiques officielles des grands crossovers (Civil War, Hickman Secret Wars, Krakoa, 
+  Venom Cates, Batman Snyder New 52, Justice League Johns, White Knight...).
+• Coche verte (✓) automatique sur les tomes que vous possédez déjà.
+
+
+I. DÉTECTEUR DE TOMES MANQUANTS (📚)
+------------------------------------
+Dans la vue "📚 Séries & Manquants" :
+• Analyse automatique des numéros de tomes et alerte visuelle :
+  "⚠️ Tome(s) manquant(s) dans la série : Tome 3" + bouton "❤️ Ajouter en Wishlist".
+
+
+J. SUIVI DES PRÊTS D'ALBUMS (🤝)
+---------------------------------
+• Notez à qui vous avez prêté vos BDs avec rappel visuel et filtre rapide "🤝 Prêtés".
+
+
+K. CALCULATEUR DE VALEUR PRIX NEUF (💰)
+----------------------------------------
+• Somme en direct de la valeur neuve de votre collection (Omnibus 90€, Deluxe 35€, Must-Have 16€, 
+  Franco-Belge 14.50€, Nomades 6.90€...) ou selon votre prix d'achat personnalisé.
+
+
+L. VUE « TRANCHES DE BIBLIOTHÈQUE 3D » (🧱)
+-------------------------------------------
+• Mode étagères en bois réalistes reproduisant les tranches réelles de vos BDs.
+
+
+M. ASSISTANT COMICS IA (🤖)
+---------------------------
+• Recommandations d'expert, ordres de lecture et résumés sans spoiler.
+
+
+N. WISHLIST & LISTE D'ACHATS (❤️)
+---------------------------------
+• Marquez n'importe quel album en statut « Wishlist » depuis les fiches, le catalogue ou le radar.
+• Vue filtrable rapide pour retrouver tous les tomes que vous cherchez activement en magasin.
+
+
+O. FICHES ALBUMS DÉTAILLÉES & NOTES ★★★★★
+-----------------------------------------
+• Informations complètes (titre, série, tome, auteur, scénariste, dessinateur, éditeur, date, 
+  prix, variante, statut de lecture, emplacement physique).
+• Système de notation 1 à 5 étoiles ★★★★★ et avis personnel.
+
+
+P. SYSTÈME ANTI-DOUBLON & NETTOYEUR AUTOMATIQUE
+-----------------------------------------------
+• Détection intelligente des doublons lors des ajouts par ISBN ou titre.
+• Outil de nettoyage en un clic dans les paramètres pour fusionner ou supprimer les entrées dupliquées.
+
+
+Q. MODE « BROCANTE & MAGASIN D'OCCASION » (🏷️ NOUVEAU)
+-------------------------------------------------------
+Bouton « 🏷️ Brocante » en haut de l'écran, spécialement taillé pour le shopping mobile :
+• Recherche Instantanée Anti-Doublon :
+  - Tapez 2 lettres ou scannez un code-barres en brocante.
+  - Signalétique ultra-visuelle immédiate :
+    🟩 VERT : DÉJÀ POSSÉDÉ (Ne pas acheter ! Vous l'avez déjà dans votre collection).
+    🟧 ORANGE : DANS MA WISHLIST (À acheter en priorité ! Vous le cherchez).
+    🟦 BLEU : NON POSSÉDÉ (Pas dans votre collection. Affiche le prix neuf officiel avec 
+              bouton « + Ajouter en 1 clic » si vous décidez de l'acheter).
+• Onglet « ⚠️ Tomes Manquants par Série » :
+  - Liste série par série les tomes qui vous manquent (ex: Batman Snyder : tomes 4, 7).
+  - Plus besoin de chercher de tête ce que vous possédez devant le bac d'occasion !
+• Onglet « ❤️ Ma Wishlist » :
+  - Retrouvez instantanément tous vos albums désirés avec couverture et prix neuf indicatif.
+
+
+R. PLANNING DES SORTIES & RADAR DES NOUVEAUTÉS (📅 NOUVEAU)
+-----------------------------------------------------------
+Bouton « 📅 Sorties » en haut de l'écran :
+• Radar Personnalisé « 🎯 Mes Séries Suivies » :
+  - L'application analyse les séries et sagas que vous possédez déjà (ex: Spider-Man, Batman, 
+    X-Men, Daredevil, Star Wars...) et affiche automatiquement les tomes récents ou à paraître !
+  - Bouton « ❤️ Wishlist » pour programmer vos achats futurs en 1 clic.
+• Radar Global « 🌐 Toutes les Sorties Récentes & Futures » :
+  - Parcourez l'ensemble des nouveautés récentes et à venir chez Panini Comics et Urban Comics 
+    (2025/2026) avec dates, formats (Omnibus, Deluxe, Must-Have) et prix neuf officiel.
+
+
+S. EMPLACEMENT PHYSIQUE DANS LA PIÈCE (« OÙ EST RANGÉ CE LIVRE ? ») (📍 NOUVEAU)
+--------------------------------------------------------------------------------
+Ne cherchez plus jamais vos tomes dans vos bibliothèques :
+• Champ « Emplacement physique » dans chaque album (ex: "Étagère Kallax A2", "Bac Salon", "Chambre").
+• Suggestion automatique intelligente (Datalist) lors de la saisie basée sur vos emplacements existants.
+• Badge visuel violet « 📍 Étagère... » directement affiché sur les cartes des albums dans la grille.
+• Nouveau filtre déroulant « 📍 Tous les emplacements » dans la barre d'outils pour afficher 
+  instantanément tout ce qui se trouve sur une étagère précise.
+• Changement d'emplacement express en 1 clic depuis la fenêtre de détail de l'album !
+
+
+================================================================================
+5. SYNCHRONISATION GOOGLE DRIVE
+================================================================================
+1. Cliquez sur "☁️ Google Drive" > "🔑 Connecter mon compte Google".
+2. Votre collection est sauvegardée dans "appli_bd_collection.json" sur votre Drive 
+   et se met à jour en temps réel sur tous vos appareils (PC et smartphone).
+
+
+================================================================================
+6. SAUVEGARDES, EXPORTS ET IMPRESSION
+================================================================================
+• 📄 Imprimer Catalogue / PDF illustré
+• 🏷️ Planche Étiquettes QR Codes à imprimer
+• 📊 Export Excel (CSV)
+• ⬇️ Sauvegarde JSON / ⬆️ Restauration JSON
+
+
+================================================================================
+7. RÉCUPÉRATION ET DÉTECTION 100% AUTOMATIQUE DES COLLECTIONS
+================================================================================
+L'application intègre un moteur de détection autonome capable de surveiller 
+et d'importer toutes les collections de comics sans intervention :
+
+MÉTHODE 0 : DÉTECTION 100% AUTOMATIQUE (AUCUNE SAISIE REQUISE !)
+1. Cliquez sur "📚 Collections" > "⚡ Détecter Tout en Automatique".
+2. Le moteur parcourt automatiquement l'arborescence complète du web (Excalibur Comics, 
+   dépôt légal BnF) et détecte toutes les collections officielles existantes 
+   (plus de 103 collections Marvel, DC, Star Wars, Panini, Urban, Carrefour !).
+3. Dès qu'un éditeur ou Excalibur crée un nouveau rayon, le système l'ajoute automatiquement 
+   au catalogue avec tous ses albums et leurs couvertures HD !
+4. Tâche de fond automatique : Si vous laissez le serveur ouvert ("lancer_serveur_pwa.bat"),
+   il effectue une vérification automatique toutes les 24 heures pour ajouter les 
+   nouveautés en toute discrétion.
+
+MÉTHODE 1 : AJOUT PONCTUEL VIA L'APPLICATION
+1. Cliquez sur "📚 Collections" ou "➕ Ajouter une collection".
+2. Pour une opération spéciale (ex: promo Carrefour avec ISBNs ou URL spécifique).
+3. Cliquez sur "🚀 Enregistrer & Synchroniser".
+
+MÉTHODE 2 : VIA LE FICHIER "collections_config.json"
+1. Ouvrez "collections_config.json" dans le Bloc-notes.
+2. Modifiez ou ajoutez vos entrées personnalisées.
+3. Double-cliquez sur "synchroniser_catalogue.bat" ou cliquez sur "🔄 Synchroniser" !
+================================================================================
+
+
