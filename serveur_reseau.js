@@ -35,6 +35,12 @@ function getAuthUser(req) {
   return auth.getUserByToken(token);
 }
 
+function getCollectionsConfigPath() {
+  const dataPath = path.join(__dirname, 'data', 'collections_config.json');
+  if (fs.existsSync(dataPath)) return dataPath;
+  return path.join(__dirname, 'collections_config.json');
+}
+
 function parseJsonBody(req) {
   return new Promise((resolve, reject) => {
     let body = '';
@@ -397,7 +403,7 @@ const server = http.createServer(async (req, res) => {
         catalogCount = Array.isArray(cat) ? cat.length : 0;
       } catch (e) {}
     }
-    const confPath = path.join(__dirname, 'collections_config.json');
+    const confPath = getCollectionsConfigPath();
     let collectionsCount = 0;
     if (fs.existsSync(confPath)) {
       try {
@@ -438,7 +444,7 @@ const server = http.createServer(async (req, res) => {
 
   // API Route: Get collections config
   if (urlPath === '/api/collections' && req.method === 'GET') {
-    const configPath = path.join(__dirname, 'collections_config.json');
+    const configPath = getCollectionsConfigPath();
     if (fs.existsSync(configPath)) {
       res.writeHead(200, {
         'Content-Type': 'application/json; charset=utf-8',

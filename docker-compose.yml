@@ -23,10 +23,8 @@ services:
       - NODE_ENV=production
 
     volumes:
-      # Persistance des comptes utilisateurs, sessions, clés API et collections
+      # Persistance complète des données (comptes, sessions, collections utilisateurs & configs)
       - ./data:/app/data
-      # Fichier de personnalisation des collections de scraping
-      - ./collections_config.json:/app/collections_config.json
 
     networks:
       # Réseau partagé avec votre Traefik sur OVH

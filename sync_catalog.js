@@ -13,11 +13,18 @@ const CATALOG_FILE = path.join(__dirname, 'all_comics_catalog.json');
 const APPLIBD_HTML = path.join(__dirname, 'AppliBD.html');
 const INDEX_HTML = path.join(__dirname, 'index.html');
 const CONFIG_FILE = path.join(__dirname, 'collections_config.json');
+const CONFIG_DATA_FILE = path.join(__dirname, 'data', 'collections_config.json');
+
+function getConfigFile() {
+  if (fs.existsSync(CONFIG_DATA_FILE)) return CONFIG_DATA_FILE;
+  return CONFIG_FILE;
+}
 
 function loadCollectionsConfig() {
-  if (fs.existsSync(CONFIG_FILE)) {
+  const target = getConfigFile();
+  if (fs.existsSync(target)) {
     try {
-      return JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8'));
+      return JSON.parse(fs.readFileSync(target, 'utf8'));
     } catch (e) {
       console.warn('⚠️ Erreur lecture collections_config.json :', e.message);
     }
@@ -27,7 +34,13 @@ function loadCollectionsConfig() {
 
 function saveCollectionsConfig(cfg) {
   try {
-    fs.writeFileSync(CONFIG_FILE, JSON.stringify(cfg, null, 2), 'utf8');
+    const dataDir = path.join(__dirname, 'data');
+    if (fs.existsSync(dataDir)) {
+      fs.writeFileSync(CONFIG_DATA_FILE, JSON.stringify(cfg, null, 2), 'utf8');
+    }
+    try {
+      fs.writeFileSync(CONFIG_FILE, JSON.stringify(cfg, null, 2), 'utf8');
+    } catch (err) {}
     return true;
   } catch (e) {
     console.error('⚠️ Erreur sauvegarde collections_config.json :', e.message);
