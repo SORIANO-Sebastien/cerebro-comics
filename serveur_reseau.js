@@ -81,6 +81,10 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  if (urlPath.startsWith('/api/')) {
+    console.log(`[API ${req.method}] ${urlPath}`);
+  }
+
   // =========================================================================
   // AUTHENTICATION & PUBLIC SETTINGS ROUTES
   // =========================================================================
@@ -164,7 +168,7 @@ const server = http.createServer(async (req, res) => {
           <div style="background:#1e293b; padding:24px; border-radius:12px; border:1px solid #ef4444; max-width:500px; text-align:center;">
             <h2 style="color:#ef4444; margin-top:0;">⚠️ Erreur de Connexion Authentik</h2>
             <p>${err.message}</p>
-            <p style="font-size:0.85rem; color:#94a3b8;">Vérifiez les paramètres OpenID dans le Panneau d'Administration de Comics & BD Manager Pro.</p>
+            <p style="font-size:0.85rem; color:#94a3b8;">Vérifiez les paramètres OpenID dans le Panneau d'Administration de Cerebro Comics.</p>
             <a href="/" style="display:inline-block; margin-top:12px; background:#0284c7; color:#fff; padding:10px 18px; border-radius:8px; text-decoration:none;">Retourner à l'accueil</a>
           </div>
         </body>

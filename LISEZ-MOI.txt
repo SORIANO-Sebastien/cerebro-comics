@@ -1,5 +1,5 @@
 ================================================================================
-           ⚡ COMICS & BD MANAGER PRO - GUIDE RAPIDE DE DÉMARRAGE ⚡
+           🧠 CEREBRO COMICS - GUIDE RAPIDE DE DÉMARRAGE ⚡
 ================================================================================
 
 Cette archive contient l'application complète de gestion de collection de BD & Comics.

@@ -14,7 +14,7 @@ if ! command -v node >/dev/null 2>&1; then
 fi
 
 echo "==============================================================="
-echo "🚀 Démarrage de Comics & BD Manager Pro sur Linux..."
+echo "🚀 Démarrage de Cerebro Comics sur Linux..."
 echo "==============================================================="
 echo "Node version : $(node -v)"
 echo "Port d'écoute : ${PORT:-8080}"

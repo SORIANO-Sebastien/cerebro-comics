@@ -1,5 +1,5 @@
 [Unit]
-Description=Comics & BD Manager Pro Web Server
+Description=Cerebro Comics Web Server
 Documentation=https://github.com/votre-nom/comics-manager
 After=network.target
 

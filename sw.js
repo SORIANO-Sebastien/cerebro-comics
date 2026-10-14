@@ -1,4 +1,4 @@
-const CACHE_NAME = 'applibd-pwa-v1.0';
+const CACHE_NAME = 'applibd-pwa-v2.0';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -35,8 +35,15 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Let Google API / external live search requests pass through network first
   const url = event.request.url;
+
+  // 1. API routes: ALWAYS Network Only (never cache authentication or data queries)
+  if (url.includes('/api/')) {
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
+  // 2. External CDN & media services: Network first, cache fallback
   if (url.includes('excalibur-comics.fr') || url.includes('images-na.ssl-images-amazon.com') || url.includes('googleapis.com') || url.includes('openlibrary.org') || url.includes('bnf.fr') || url.includes('tcgdex') || url.includes('googleusercontent.com')) {
     event.respondWith(
       fetch(event.request).catch(() => caches.match(event.request))
@@ -44,7 +51,23 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Cache first for app shell, network fallback
+  // 3. Navigation & HTML: Network First, fallback to cache (ensures instant updates on deploy)
+  if (event.request.mode === 'navigate' || url.endsWith('.html') || url.endsWith('/')) {
+    event.respondWith(
+      fetch(event.request).then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200 && event.request.method === 'GET') {
+          const responseClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseClone);
+          });
+        }
+        return networkResponse;
+      }).catch(() => caches.match('./index.html'))
+    );
+    return;
+  }
+
+  // 4. Static assets (images, manifest): Cache first, network fallback
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
@@ -58,10 +81,6 @@ self.addEventListener('fetch', (event) => {
           });
         }
         return networkResponse;
-      }).catch(() => {
-        if (event.request.mode === 'navigate') {
-          return caches.match('./index.html');
-        }
       });
     })
   );

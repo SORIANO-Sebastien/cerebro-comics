@@ -1,11 +1,11 @@
 # ==============================================================================
-# Comics & BD Manager Pro - Production Dockerfile
+# Cerebro Comics - Production Dockerfile
 # Multi-architecture: linux/amd64 (OVH bare metal / Proxmox) & linux/arm64 (Raspberry Pi)
 # ==============================================================================
 FROM node:20-alpine
 
 # Métadonnées Open Containers Initiative (OCI) pour GitHub Container Registry
-LABEL org.opencontainers.image.title="Comics & BD Manager Pro" \
+LABEL org.opencontainers.image.title="Cerebro Comics" \
       org.opencontainers.image.description="Gestionnaire ultime de collection BD, Marvel & DC Comics avec PWA, Authentik OIDC et scan brocante" \
       org.opencontainers.image.source="https://github.com" \
       org.opencontainers.image.licenses="MIT"

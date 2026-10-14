@@ -1,6 +1,6 @@
 {
-  "name": "Comics & BD Manager Pro",
-  "short_name": "AppliBD",
+  "name": "Cerebro Comics",
+  "short_name": "Cerebro",
   "description": "Gestionnaire de Collection BD, Marvel Panini, DC Comics & Franco-Belge avec Scanner Code-barres, Reconnaissance Photo et Synchro Google Drive",
   "start_url": "./index.html",
   "display": "standalone",

@@ -17,7 +17,7 @@ let oidcConfigCache = { issuer: null, data: null, timestamp: 0 };
 
 const DEFAULT_SETTINGS = {
   geminiApiKey: '',
-  appTitle: 'Comics & BD Manager Pro',
+  appTitle: 'Cerebro Comics',
   allowRegistration: true,
   oidc: {
     enabled: false,

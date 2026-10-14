@@ -1,7 +1,7 @@
 version: '3.8'
 
 # ==============================================================================
-# Comics & BD Manager Pro - Docker Compose pour Serveur OVH (avec Traefik & Authentik)
+# Cerebro Comics - Docker Compose pour Serveur OVH (avec Traefik & Authentik)
 # ==============================================================================
 
 services:

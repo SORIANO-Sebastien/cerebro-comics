@@ -1,9 +1,9 @@
 ================================================================================
-           ⚡ COMICS & BD MANAGER PRO - GUIDE D'UTILISATION COMPLET ⚡
+           🧠 CEREBRO COMICS - GUIDE D'UTILISATION COMPLET ⚡
          Gestionnaire Ultime de Collection BD, Marvel, DC Comics & Mangas
 ================================================================================
 
-Bienvenue dans Comics & BD Manager Pro !
+Bienvenue dans Cerebro Comics !
 Cette application a été conçue sur mesure pour gérer, classer, explorer, 
 estimer et suivre votre collection de bandes dessinées et comics sur PC et Mobile.
 

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="referrer" content="no-referrer">
-  <title>⚡ Comics & BD Manager Pro - Marvel Panini, DC, Franco-Belge</title>
+  <title>🧠 Cerebro Comics - Marvel Panini, DC, Franco-Belge</title>
   <meta name="theme-color" content="#dc2626">
   <meta name="description" content="Gestionnaire Ultime de Collection BD, Marvel Panini Comics, DC Comics & Mangas avec Scan en Rafale, Ordres de lecture, Détecteur de tomes manquants, Infographies, Sélecteur Aléatoire et Synchro Google Drive.">
 
@@ -13,7 +13,8 @@
   <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23e11d48'/%3E%3Cstop offset='50%25' stop-color='%230284c7'/%3E%3Cstop offset='100%25' stop-color='%234f46e5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='512' height='512' rx='100' fill='url(%23grad)'/%3E%3Cpath d='M120 100 L240 130 L240 400 L120 370 Z' fill='%23ffffff' opacity='0.9'/%3E%3Cpath d='M392 100 L272 130 L272 400 L392 370 Z' fill='%23ffffff' opacity='0.95'/%3E%3Ccircle cx='390' cy='390' r='90' fill='%23f59e0b'/%3E%3Cpath d='M360 390 L380 410 L425 365' stroke='%23ffffff' stroke-width='16' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
 
   <!-- Google Identity Services -->
-  <script src="https://accounts.google.com/gsi/client" async defer>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
     // =========================================================================
     // AUTHENTICATION & MULTI-USER SYSTEM
     // =========================================================================
@@ -28,13 +29,30 @@
         if (resp.ok) {
           const data = await resp.json();
           currentAuthUser = data.user || null;
+
+          // Fresh start from scratch: if no accounts exist on server, wipe stale client-side cache and books!
+          if (data.isFirstSetup) {
+            localStorage.removeItem('applibd_token');
+            localStorage.removeItem('applibd_user');
+            localStorage.removeItem('applibd_collection_v3');
+            if (typeof appState !== 'undefined') {
+              appState.books = [];
+            }
+            if (typeof renderApp === 'function') {
+              renderApp();
+            }
+          } else if (!data.authenticated) {
+            localStorage.removeItem('applibd_token');
+            localStorage.removeItem('applibd_user');
+          }
+
           updateAuthUI(data);
 
           // If first setup, prompt user to create admin account
           if (data.isFirstSetup) {
             setTimeout(() => {
               openAuthModal('register');
-            }, 600);
+            }, 300);
           } else if (currentAuthUser) {
             // Load user collection from server
             loadUserCollectionFromServer();
@@ -106,6 +124,13 @@
         const oidcBox = document.getElementById('oidcAuthContainer');
         if (oidcBox) oidcBox.style.display = 'none';
       }
+
+      // Dynamic app title from server settings
+      if (authData && authData.publicSettings && authData.publicSettings.appTitle) {
+        const brand = document.getElementById('brandTitleText');
+        if (brand) brand.innerText = authData.publicSettings.appTitle;
+        document.title = '🧠 ' + authData.publicSettings.appTitle + ' - Marvel Panini, DC, Franco-Belge';
+      }
     }
 
     function toggleUserDropdown(event) {
@@ -122,16 +147,25 @@
     });
 
     let currentAuthTab = 'login';
-    function openAuthModal(defaultTab = 'login') {
+        function openAuthModal(defaultTab = null) {
       const modal = document.getElementById('authModal');
-      modal.classList.add('active');
-      document.getElementById('authErrorMsg').style.display = 'none';
-      switchAuthTab(defaultTab);
+      if (modal) modal.classList.add('active');
+      const errBox = document.getElementById('authErrorMsg');
+      if (errBox) errBox.style.display = 'none';
+
+      let targetTab = defaultTab;
+      if (!targetTab) {
+        const firstAlert = document.getElementById('firstSetupAlert');
+        targetTab = (firstAlert && firstAlert.style.display === 'block') ? 'register' : 'login';
+      }
+      switchAuthTab(targetTab);
     }
 
     function closeAuthModal() {
       const modal = document.getElementById('authModal');
-      modal.classList.remove('active');
+      if (modal) modal.classList.remove('active');
+      const errBox = document.getElementById('authErrorMsg');
+      if (errBox) errBox.style.display = 'none';
     }
 
     function switchAuthTab(tab) {
@@ -140,37 +174,80 @@
       const btnReg = document.getElementById('tabBtnRegister');
       const extraFields = document.getElementById('authRegisterExtraFields');
       const submitText = document.getElementById('btnAuthSubmitText');
+      const submitIcon = document.getElementById('btnAuthSubmitIcon');
       const titleText = document.getElementById('authModalTitleText');
+      const switchLink = document.getElementById('authSwitchPromptLink');
+      const errBox = document.getElementById('authErrorMsg');
+      if (errBox) errBox.style.display = 'none';
 
       if (tab === 'login') {
-        btnLogin.classList.add('active');
-        btnReg.classList.remove('active');
-        extraFields.style.display = 'none';
-        submitText.innerText = 'Se connecter';
-        titleText.innerText = 'Connexion à votre Compte';
+        if (btnLogin) btnLogin.classList.add('active');
+        if (btnReg) btnReg.classList.remove('active');
+        if (extraFields) extraFields.style.display = 'none';
+        if (submitText) submitText.innerText = 'Se connecter';
+        if (submitIcon) submitIcon.innerText = '🔑';
+        if (titleText) titleText.innerText = 'Connexion à votre Compte';
+        if (switchLink) switchLink.innerHTML = '✨ Pas encore de compte ? <strong>Créer un compte en 1 clic</strong>';
       } else {
-        btnReg.classList.add('active');
-        btnLogin.classList.remove('active');
-        extraFields.style.display = 'block';
-        submitText.innerText = 'Créer mon compte';
-        titleText.innerText = 'Créer un Compte';
+        if (btnReg) btnReg.classList.add('active');
+        if (btnLogin) btnLogin.classList.remove('active');
+        if (extraFields) extraFields.style.display = 'block';
+        if (submitText) submitText.innerText = 'Créer mon compte';
+        if (submitIcon) submitIcon.innerText = '✨';
+        if (titleText) titleText.innerText = 'Créer un Compte';
+        if (switchLink) switchLink.innerHTML = '🔑 Déjà un compte existant ? <strong>Se connecter</strong>';
       }
     }
 
     async function handleAuthSubmit(event) {
-      event.preventDefault();
-      const username = document.getElementById('authUsernameInput').value.trim();
-      const password = document.getElementById('authPasswordInput').value;
-      const displayName = document.getElementById('authDisplayNameInput').value.trim();
-      const email = document.getElementById('authEmailInput').value.trim();
+      if (event && event.preventDefault) event.preventDefault();
+      const username = (document.getElementById('authUsernameInput')?.value || '').trim();
+      const password = document.getElementById('authPasswordInput')?.value || '';
+      const displayName = (document.getElementById('authDisplayNameInput')?.value || '').trim();
+      const email = (document.getElementById('authEmailInput')?.value || '').trim();
       const errBox = document.getElementById('authErrorMsg');
+      const submitBtn = document.getElementById('btnAuthSubmit');
+      const submitText = document.getElementById('btnAuthSubmitText');
 
-      errBox.style.display = 'none';
+      if (errBox) errBox.style.display = 'none';
+
+      // Client validation
+      if (!username) {
+        if (errBox) {
+          errBox.innerHTML = '⚠️ Veuillez renseigner un nom d\'utilisateur.';
+          errBox.style.display = 'block';
+        }
+        return;
+      }
+      if (username.length < 3) {
+        if (errBox) {
+          errBox.innerHTML = '⚠️ Le nom d\'utilisateur doit comporter au moins 3 caractères.';
+          errBox.style.display = 'block';
+        }
+        return;
+      }
+      if (!password) {
+        if (errBox) {
+          errBox.innerHTML = '⚠️ Veuillez renseigner un mot de passe.';
+          errBox.style.display = 'block';
+        }
+        return;
+      }
+      if (currentAuthTab === 'register' && password.length < 6) {
+        if (errBox) {
+          errBox.innerHTML = '⚠️ Le mot de passe doit comporter au moins 6 caractères.';
+          errBox.style.display = 'block';
+        }
+        return;
+      }
 
       const endpoint = currentAuthTab === 'register' ? '/api/auth/register' : '/api/auth/login';
       const payload = currentAuthTab === 'register' 
         ? { username, password, displayName, email } 
         : { username, password };
+
+      if (submitBtn) submitBtn.disabled = true;
+      if (submitText) submitText.innerText = currentAuthTab === 'register' ? 'Création en cours...' : 'Connexion en cours...';
 
       try {
         const resp = await fetch(endpoint, {
@@ -180,24 +257,41 @@
         });
         const data = await resp.json();
         if (!resp.ok || !data.success) {
-          errBox.innerText = data.error || 'Erreur lors de la tentative de connexion.';
-          errBox.style.display = 'block';
+          let errMsg = data.error || 'Erreur lors de la requête.';
+          if (errMsg.includes('déjà utilisé')) {
+            errMsg += ' <button type="button" class="btn btn-sm btn-secondary" style="margin-top:6px; font-size:0.75rem;" onclick="switchAuthTab(\'login\'); document.getElementById(\'authUsernameInput\').value=\'' + username.replace(/'/g, "\\'") + '\';">🔑 Se connecter avec ce compte</button>';
+          }
+          if (errBox) {
+            errBox.innerHTML = '⚠️ ' + errMsg;
+            errBox.style.display = 'block';
+          }
           return;
         }
 
-        // Store token
+        // Store token & user
         localStorage.setItem('applibd_token', data.token);
         localStorage.setItem('applibd_user', JSON.stringify(data.user));
         currentAuthUser = data.user;
 
         closeAuthModal();
-        showToast(data.message || 'Connexion réussie !');
+        if (typeof showToast === 'function') {
+          showToast(data.message || (currentAuthTab === 'register' ? '🎉 Compte créé avec succès !' : 'Connexion réussie !'));
+        }
+
+        // Clear password
+        const passInput = document.getElementById('authPasswordInput');
+        if (passInput) passInput.value = '';
 
         // Re-check auth state
         initAuthSystem();
       } catch (err) {
-        errBox.innerText = 'Erreur réseau : ' + err.message;
-        errBox.style.display = 'block';
+        if (errBox) {
+          errBox.innerHTML = '⚠️ Erreur réseau : ' + err.message;
+          errBox.style.display = 'block';
+        }
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+        if (submitText) submitText.innerText = currentAuthTab === 'register' ? 'Créer mon compte' : 'Se connecter';
       }
     }
 
@@ -322,7 +416,7 @@
           const data = await resp.json();
           const s = data.settings || {};
           document.getElementById('adminGeminiApiKeyInput').value = s.geminiApiKey || '';
-          document.getElementById('adminAppTitleInput').value = s.appTitle || 'Comics & BD Manager Pro';
+          document.getElementById('adminAppTitleInput').value = s.appTitle || 'Cerebro Comics';
           document.getElementById('adminAllowRegistrationInput').checked = s.allowRegistration !== false;
           document.getElementById('adminAutoSyncHoursInput').value = s.autoSyncIntervalHours || 24;
 
@@ -614,7 +708,17 @@
       }
     }
 
-  </script>
+  
+    // Auto-trigger auth check on load
+    const initAuthSystemAutoTrigger = () => {
+      if (typeof initAuthSystem === 'function') initAuthSystem();
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAuthSystemAutoTrigger);
+    } else {
+      initAuthSystemAutoTrigger();
+    }
+</script>
   <!-- ZXing Barcode Decoder -->
   <script src="https://unpkg.com/@zxing/library@latest/umd/index.min.js"></script>
 
@@ -1475,7 +1579,7 @@
 <body>
 
   <div class="print-header">
-    <h1>📚 Catalogue de Collection - Comics & BD Manager Pro</h1>
+    <h1>📚 Catalogue de Collection - Cerebro Comics</h1>
     <div id="printDateStr"></div>
   </div>
 
@@ -1483,10 +1587,10 @@
   <header class="app-header">
     <div class="header-container">
       <div class="brand-logo" onclick="switchMainTab('COLLECTION'); switchUniverseFilter('ALL');">
-        <div class="brand-icon-box">💥</div>
+        <div class="brand-icon-box">🧠</div>
         <div>
           <div class="brand-title">
-            Comics & BD Manager
+            <span id="brandTitleText">Cerebro Comics</span>
             <span class="badge-pill">PRO</span>
           </div>
           <div class="brand-subtitle">Marvel Panini • DC Comics • Franco-Belge • Manga</div>
@@ -2369,7 +2473,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         <form id="authForm" onsubmit="handleAuthSubmit(event)">
           <div class="form-group">
             <label class="form-label">Nom d'utilisateur :</label>
-            <input type="text" id="authUsernameInput" class="form-input" placeholder="ex: titou, admin, batman" required autocomplete="username">
+            <input type="text" id="authUsernameInput" class="form-input" placeholder="ex: titou, admin, batman" required autocomplete="username" onkeydown="if(event.key==='Enter') handleAuthSubmit(event)">
           </div>
 
           <div id="authRegisterExtraFields" style="display:none;">
@@ -2385,16 +2489,21 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
 
           <div class="form-group">
             <label class="form-label">Mot de passe :</label>
-            <input type="password" id="authPasswordInput" class="form-input" placeholder="••••••••" required autocomplete="current-password">
+            <input type="password" id="authPasswordInput" class="form-input" placeholder="•••••••• (min. 6 car.)" required autocomplete="current-password" onkeydown="if(event.key==='Enter') handleAuthSubmit(event)">
           </div>
 
           <div id="authErrorMsg" style="display:none; background: rgba(239, 68, 68, 0.15); border: 1px solid #ef4444; color: #ef4444; padding: 10px; border-radius: var(--radius-md); font-size: 0.82rem; margin-top: 10px;">
           </div>
 
           <div style="margin-top: 20px;">
-            <button type="submit" id="btnAuthSubmit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px;">
-              <span>⚡</span> <span id="btnAuthSubmitText">Se connecter</span>
+            <button type="button" id="btnAuthSubmit" onclick="handleAuthSubmit(event)" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 12px; font-weight: 700;">
+              <span id="btnAuthSubmitIcon">🔑</span> <span id="btnAuthSubmitText">Se connecter</span>
             </button>
+          </div>
+          <div style="text-align: center; margin-top: 14px;">
+            <a href="javascript:void(0)" id="authSwitchPromptLink" onclick="switchAuthTab(currentAuthTab === 'login' ? 'register' : 'login')" style="color: var(--text-accent); font-size: 0.82rem; text-decoration: underline; cursor: pointer;">
+              ✨ Pas encore de compte ? <strong>Créer un compte en 1 clic</strong>
+            </a>
           </div>
         </form>
       </div>
@@ -2448,7 +2557,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
               <div style="font-weight:700; font-size:0.95rem; margin-bottom:10px;">🏷️ Paramètres Généraux</div>
               <div class="form-group">
                 <label class="form-label">Titre de l'application :</label>
-                <input type="text" id="adminAppTitleInput" class="form-input" placeholder="Comics & BD Manager Pro">
+                <input type="text" id="adminAppTitleInput" class="form-input" placeholder="Cerebro Comics">
               </div>
               <div class="form-group" style="display:flex; align-items:center; gap:10px;">
                 <input type="checkbox" id="adminAllowRegistrationInput" style="width:18px; height:18px; accent-color:#0284c7;">
@@ -5803,6 +5912,143 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           btn.disabled = false;
           btn.innerHTML = '<span>🔄 Mettre à jour le catalogue (Excalibur & BnF)</span>';
         }
+      }
+    }
+
+    
+    // =========================================================================
+    // FAMILY & SHARED COLLECTIONS SYSTEM
+    // =========================================================================
+    let myOwnSavedBooks = null;
+    let viewingOtherUser = null;
+
+    async function openFamilyLibraryModal() {
+      const modal = document.getElementById('familyLibraryModal');
+      if (modal) modal.classList.add('active');
+      const listContainer = document.getElementById('familyMembersList');
+      if (!listContainer) return;
+      listContainer.innerHTML = '<div style="text-align:center; padding:16px; color:var(--text-muted);">Chargement des membres...</div>';
+
+      try {
+        const resp = await fetch('/api/users/shared');
+        if (!resp.ok) throw new Error('Impossible de contacter le serveur.');
+        const data = await resp.json();
+        const users = data.users || [];
+
+        if (users.length === 0) {
+          listContainer.innerHTML = `
+            <div style="text-align:center; padding:20px; color:var(--text-muted);">
+              <p>Aucun autre membre n'est encore enregistré sur le serveur.</p>
+              <p style="font-size:0.8rem; margin-top:8px;">Créez un compte pour vos proches dans le Panneau d'Administration pour partager leurs collections !</p>
+            </div>
+          `;
+          return;
+        }
+
+        let html = '';
+        users.forEach(u => {
+          const initials = (u.displayName || u.username || 'U').substring(0, 2).toUpperCase();
+          const isViewing = viewingOtherUser && viewingOtherUser.id === u.id;
+          html += `
+            <div style="background: var(--bg-card); border: 1px solid ${isViewing ? '#f59e0b' : 'var(--border-color)'}; border-radius: var(--radius-md); padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div class="user-avatar" style="width: 38px; height: 38px; font-size: 0.95rem; background: linear-gradient(135deg, #0284c7, #3b82f6); color: white; display:flex; align-items:center; justify-content:center; border-radius:50%; font-weight:800;">${initials}</div>
+                <div>
+                  <div style="font-weight: 700; color: var(--text-main); font-size: 0.95rem;">
+                    ${u.displayName || u.username} <span style="font-size: 0.75rem; color: var(--text-muted);">(@${u.username})</span>
+                  </div>
+                  <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">
+                    📚 <strong>${u.booksCount}</strong> albums possédés
+                  </div>
+                </div>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <button class="btn btn-sm btn-primary" onclick="viewOtherUserMissingBooks('${u.id}')" title="Découvrir ses tomes manquants et sa wishlist en mode Brocante">
+                  <span>🎁 Ce qu'il lui manque</span>
+                </button>
+                <button class="btn btn-sm btn-secondary" onclick="viewOtherUserCollection('${u.id}')" title="Consulter l'ensemble de sa collection">
+                  <span>👀 Voir sa collection</span>
+                </button>
+              </div>
+            </div>
+          `;
+        });
+        listContainer.innerHTML = html;
+      } catch (err) {
+        listContainer.innerHTML = '<div style="color:#ef4444; text-align:center; padding:16px;">Erreur : ' + err.message + '</div>';
+      }
+    }
+
+    function closeFamilyLibraryModal() {
+      const modal = document.getElementById('familyLibraryModal');
+      if (modal) modal.classList.remove('active');
+    }
+
+    async function viewOtherUserCollection(userId) {
+      closeFamilyLibraryModal();
+      try {
+        const resp = await fetch('/api/user/collection?userId=' + encodeURIComponent(userId));
+        if (!resp.ok) throw new Error('Impossible de charger la collection.');
+        const data = await resp.json();
+
+        // Save current books if not already saved
+        if (!myOwnSavedBooks && typeof appState !== 'undefined' && appState.books) {
+          myOwnSavedBooks = [...appState.books];
+        }
+
+        viewingOtherUser = data.user;
+        if (typeof appState !== 'undefined') {
+          appState.books = data.books || [];
+        }
+
+        updateSharedCollectionBanner();
+        if (typeof renderApp === 'function') renderApp();
+        if (typeof showToast === 'function') showToast('Vous consultez la collection de ' + (viewingOtherUser.displayName || viewingOtherUser.username));
+      } catch (e) {
+        if (typeof showToast === 'function') showToast('Erreur : ' + e.message);
+      }
+    }
+
+    async function viewOtherUserMissingBooks(userId) {
+      await viewOtherUserCollection(userId);
+      openFleaMarketForOtherUser();
+    }
+
+    function openFleaMarketForOtherUser() {
+      if (typeof openFleaMarketModal === 'function') {
+        openFleaMarketModal('missing');
+      }
+    }
+
+    function switchBackToMyCollection() {
+      if (myOwnSavedBooks && typeof appState !== 'undefined') {
+        appState.books = myOwnSavedBooks;
+        myOwnSavedBooks = null;
+      } else if (typeof loadInitialState === 'function') {
+        loadInitialState();
+      }
+      viewingOtherUser = null;
+      updateSharedCollectionBanner();
+      if (typeof renderApp === 'function') renderApp();
+      if (typeof showToast === 'function') showToast('De retour sur votre propre collection.');
+    }
+
+    function updateSharedCollectionBanner() {
+      const banner = document.getElementById('viewingOtherUserBanner');
+      if (!banner) return;
+      if (viewingOtherUser && typeof appState !== 'undefined' && appState.books) {
+        banner.style.display = 'block';
+        const titleEl = document.getElementById('otherUserNameTitle');
+        if (titleEl) titleEl.innerText = viewingOtherUser.displayName || viewingOtherUser.username;
+        const countEl = document.getElementById('otherUserBookCount');
+        if (countEl) countEl.innerText = appState.books.length;
+        const wishEl = document.getElementById('otherUserWishCount');
+        if (wishEl) {
+          const wishCount = appState.books.filter(b => (b.status || '').toLowerCase() === 'wishlist').length;
+          wishEl.innerText = wishCount;
+        }
+      } else {
+        banner.style.display = 'none';
       }
     }
 

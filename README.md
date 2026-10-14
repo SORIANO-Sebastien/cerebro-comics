@@ -1,4 +1,4 @@
-# ⚡ Comics & BD Manager Pro
+# 🧠 Cerebro Comics
 
 > **Le gestionnaire ultime de collection BD, Marvel Panini Comics, DC Comics & Mangas**  
 > *100% Hors-ligne & PWA Mobile • Scan Caméra & Rafale • Radar de Sorties • Anti-Doublon Brocante • Détection Automatique des Collections • Synchro Cloud Google Drive*
@@ -32,7 +32,7 @@
 
 ## 🌟 Présentation
 
-**Comics & BD Manager Pro** est une application web moderne, autonome et responsive, conçue spécialement pour les passionnés et collectionneurs de bandes dessinées et de comics en France.
+**Cerebro Comics** est une application web moderne, autonome et responsive, conçue spécialement pour les passionnés et collectionneurs de bandes dessinées et de comics en France.
 
 * **Aucune installation lourde requise** : fonctionne directement dans n'importe quel navigateur web moderne (Chrome, Edge, Firefox, Safari).
 * **Multi-supports instantané** : utilisable sur PC, Mac, tablettes et smartphones avec une interface adaptée à toutes les résolutions.
@@ -336,11 +336,11 @@ Un workflow GitHub Actions complet est fourni dans **[`.github/workflows/docker-
 
 1. Dans votre interface **Authentik** :
    * Allez dans **Applications** ➔ **Providers** ➔ **Créer un Provider OAuth2/OpenID**.
-   * Nom : `Comics Manager`
+   * Nom : `Cerebro Comics`
    * Type : `Confidentiel`
    * Redirect URI : `https://comics.votredomaine.fr/api/auth/oidc/callback`
    * Créez une **Application** liée à ce Provider.
-2. Dans **Comics & BD Manager Pro** :
+2. Dans **Cerebro Comics** :
    * Connectez-vous avec votre premier compte (Super Admin).
    * Ouvrez le bouton doré **`👑 Admin`** ➔ Onglet **`🛡️ Authentik / OpenID`**.
    * Cochez *Activer la connexion Authentik*, collez l'**Issuer URL**, le **Client ID** et le **Client Secret**, puis enregistrez !

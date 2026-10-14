@@ -1,5 +1,5 @@
 /**
- * ⚡ SYNC CATALOG - Comics & BD Manager Pro
+ * ⚡ SYNC CATALOG - Cerebro Comics
  * Synchronise l'intégralité du catalogue Comics (Panini, Urban, Carrefour, Star Wars)
  * avec Excalibur Comics, la BnF, Amazon CDN, BDFugue et Cultura.
  */
