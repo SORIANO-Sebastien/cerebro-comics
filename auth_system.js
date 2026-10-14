@@ -435,7 +435,10 @@ function getSettings(isAdmin = false) {
 // OpenID Connect (Authentik) Engine
 // -------------------------------------------------------------
 async function fetchOidcDiscovery(issuerUrl) {
-  const cleanUrl = issuerUrl.replace(/\/+$/, '');
+  let cleanUrl = (issuerUrl || '').trim().replace(/\/+$/, '');
+  if (cleanUrl.endsWith('/.well-known/openid-configuration')) {
+    cleanUrl = cleanUrl.replace(/\/\.well-known\/openid-configuration$/, '');
+  }
   const now = Date.now();
   if (oidcConfigCache.issuer === cleanUrl && (now - oidcConfigCache.timestamp < 300000)) {
     return oidcConfigCache.data;

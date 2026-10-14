@@ -63,11 +63,35 @@
       }
     }
 
+    let cachedPublicSettings = null;
+
     function updateAuthUI(authData) {
       const btnLogin = document.getElementById('btnUserLogin');
       const pill = document.getElementById('userProfilePill');
       const btnAdminQuick = document.getElementById('btnAdminQuick');
       const firstAlert = document.getElementById('firstSetupAlert');
+
+      if (authData && authData.publicSettings) {
+        cachedPublicSettings = authData.publicSettings;
+      }
+
+      // Check OIDC public config (always execute)
+      const oidcEnabled = !!(cachedPublicSettings && cachedPublicSettings.oidc && cachedPublicSettings.oidc.enabled);
+      const oidcBox = document.getElementById('oidcAuthContainer');
+      if (oidcBox) {
+        oidcBox.style.display = oidcEnabled ? 'block' : 'none';
+      }
+      const oidcLabel = document.getElementById('oidcButtonText');
+      if (oidcLabel && cachedPublicSettings && cachedPublicSettings.oidc) {
+        oidcLabel.innerText = 'Se connecter avec ' + (cachedPublicSettings.oidc.name || 'Authentik');
+      }
+
+      // Dynamic app title from server settings
+      if (cachedPublicSettings && cachedPublicSettings.appTitle) {
+        const brand = document.getElementById('brandTitleText');
+        if (brand) brand.innerText = cachedPublicSettings.appTitle;
+        document.title = '🧠 ' + cachedPublicSettings.appTitle + ' - Marvel Panini, DC, Franco-Belge';
+      }
 
       if (authData && authData.isFirstSetup) {
         if (btnLogin) {
@@ -113,24 +137,6 @@
         if (pill) pill.style.display = 'none';
         if (btnAdminQuick) btnAdminQuick.style.display = 'none';
       }
-
-      // Check OIDC public config
-      if (authData && authData.publicSettings && authData.publicSettings.oidc && authData.publicSettings.oidc.enabled) {
-        const oidcBox = document.getElementById('oidcAuthContainer');
-        if (oidcBox) oidcBox.style.display = 'block';
-        const oidcLabel = document.getElementById('oidcButtonText');
-        if (oidcLabel) oidcLabel.innerText = 'Se connecter avec ' + (authData.publicSettings.oidc.name || 'Authentik');
-      } else {
-        const oidcBox = document.getElementById('oidcAuthContainer');
-        if (oidcBox) oidcBox.style.display = 'none';
-      }
-
-      // Dynamic app title from server settings
-      if (authData && authData.publicSettings && authData.publicSettings.appTitle) {
-        const brand = document.getElementById('brandTitleText');
-        if (brand) brand.innerText = authData.publicSettings.appTitle;
-        document.title = '🧠 ' + authData.publicSettings.appTitle + ' - Marvel Panini, DC, Franco-Belge';
-      }
     }
 
     function toggleUserDropdown(event) {
@@ -146,12 +152,28 @@
       if (menu) menu.style.display = 'none';
     });
 
-    let currentAuthTab = 'login';
-        function openAuthModal(defaultTab = null) {
+    async function openAuthModal(defaultTab = null) {
       const modal = document.getElementById('authModal');
       if (modal) modal.classList.add('active');
       const errBox = document.getElementById('authErrorMsg');
       if (errBox) errBox.style.display = 'none';
+
+      // Ensure fresh OIDC settings are fetched if opening modal
+      try {
+        const resp = await fetch('/api/settings/public');
+        if (resp.ok) {
+          const pub = await resp.json();
+          cachedPublicSettings = pub;
+          const oidcBox = document.getElementById('oidcAuthContainer');
+          if (oidcBox) {
+            oidcBox.style.display = (pub && pub.oidc && pub.oidc.enabled) ? 'block' : 'none';
+          }
+          const oidcLabel = document.getElementById('oidcButtonText');
+          if (oidcLabel && pub && pub.oidc) {
+            oidcLabel.innerText = 'Se connecter avec ' + (pub.oidc.name || 'Authentik');
+          }
+        }
+      } catch (e) {}
 
       let targetTab = defaultTab;
       if (!targetTab) {
@@ -308,7 +330,7 @@
       localStorage.removeItem('applibd_token');
       localStorage.removeItem('applibd_user');
       currentAuthUser = null;
-      updateAuthUI({ hasUsers: true, isFirstSetup: false });
+      await initAuthSystem();
       showToast('Déconnexion effectuée.');
     }
 
@@ -504,6 +526,7 @@
         });
         if (resp.ok) {
           showToast('Configuration Authentik / OpenID enregistrée !');
+          await initAuthSystem();
         }
       } catch (err) {
         showToast('Erreur : ' + err.message);
