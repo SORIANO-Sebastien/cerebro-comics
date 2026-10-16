@@ -2,7 +2,44 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const DATA_DIR = path.join(__dirname, 'data');
+function isMountPoint(targetPath) {
+  try {
+    if (fs.existsSync('/proc/mounts')) {
+      const mounts = fs.readFileSync('/proc/mounts', 'utf8');
+      const lines = mounts.split('\n');
+      return lines.some(line => {
+        const parts = line.trim().split(/\s+/);
+        return parts.length >= 2 && path.resolve(parts[1]) === path.resolve(targetPath);
+      });
+    }
+  } catch (e) {}
+  return false;
+}
+
+function resolveDataDir() {
+  if (process.env.DATA_DIR && process.env.DATA_DIR.trim() !== '') {
+    return path.resolve(process.env.DATA_DIR.trim());
+  }
+  // Check active Docker/Linux mountpoints first
+  if (isMountPoint('/data')) {
+    return '/data';
+  }
+  if (isMountPoint('/app/data')) {
+    return '/app/data';
+  }
+  // Auto-detect if /data volume is mounted in Linux/Docker (as in docker -v /host/path:/data)
+  if (process.platform !== 'win32' && fs.existsSync('/data')) {
+    try {
+      const stat = fs.statSync('/data');
+      if (stat.isDirectory()) {
+        return '/data';
+      }
+    } catch (e) {}
+  }
+  return path.join(__dirname, 'data');
+}
+
+const DATA_DIR = resolveDataDir();
 const USERS_FILE = path.join(DATA_DIR, 'users.json');
 const SETTINGS_FILE = path.join(DATA_DIR, 'settings.json');
 const SESSIONS_FILE = path.join(DATA_DIR, 'sessions.json');
@@ -39,6 +76,19 @@ function ensureDir(dir) {
 function init() {
   ensureDir(DATA_DIR);
   ensureDir(COLLECTIONS_DIR);
+
+  // If using external DATA_DIR (e.g. /data), initialize default files if missing
+  if (DATA_DIR !== path.join(__dirname, 'data')) {
+    const bundledSettings = path.join(__dirname, 'data', 'settings.json');
+    if (!fs.existsSync(SETTINGS_FILE) && fs.existsSync(bundledSettings)) {
+      try { fs.copyFileSync(bundledSettings, SETTINGS_FILE); } catch (e) {}
+    }
+    const bundledConfig = path.join(__dirname, 'data', 'collections_config.json');
+    const destConfig = path.join(DATA_DIR, 'collections_config.json');
+    if (!fs.existsSync(destConfig) && fs.existsSync(bundledConfig)) {
+      try { fs.copyFileSync(bundledConfig, destConfig); } catch (e) {}
+    }
+  }
 
   // Load or create settings
   if (fs.existsSync(SETTINGS_FILE)) {
@@ -632,5 +682,6 @@ module.exports = {
   getSettings,
   saveSettings,
   startOidcFlow,
-  handleOidcCallback
+  handleOidcCallback,
+  DATA_DIR
 };

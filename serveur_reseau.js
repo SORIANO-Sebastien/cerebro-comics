@@ -35,9 +35,30 @@ function getAuthUser(req) {
   return auth.getUserByToken(token);
 }
 
+function getRequestProto(req) {
+  const forwardedProto = req.headers['x-forwarded-proto'];
+  if (forwardedProto) {
+    return forwardedProto.split(',')[0].trim();
+  }
+  return req.socket && req.socket.encrypted ? 'https' : 'http';
+}
+
+function getRequestHost(req) {
+  return req.headers['x-forwarded-host'] || req.headers.host || 'localhost:8080';
+}
+
 function getCollectionsConfigPath() {
-  const dataPath = path.join(__dirname, 'data', 'collections_config.json');
+  const dataPath = path.join(auth.DATA_DIR, 'collections_config.json');
   if (fs.existsSync(dataPath)) return dataPath;
+  const localData = path.join(__dirname, 'data', 'collections_config.json');
+  if (fs.existsSync(localData)) {
+    try {
+      fs.copyFileSync(localData, dataPath);
+      return dataPath;
+    } catch (e) {
+      return localData;
+    }
+  }
   return path.join(__dirname, 'collections_config.json');
 }
 
@@ -154,7 +175,9 @@ const server = http.createServer(async (req, res) => {
   // Start OpenID Connect / Authentik flow
   if (urlPath === '/api/auth/oidc/login' && req.method === 'GET') {
     try {
-      const authUrl = await auth.startOidcFlow(req.headers.host, 'http');
+      const proto = getRequestProto(req);
+      const host = getRequestHost(req);
+      const authUrl = await auth.startOidcFlow(host, proto);
       res.writeHead(302, { 'Location': authUrl });
       res.end();
       return;
@@ -184,7 +207,9 @@ const server = http.createServer(async (req, res) => {
     const state = urlObj.searchParams.get('state');
     try {
       if (!code) throw new Error('Code d\'autorisation manquant.');
-      const result = await auth.handleOidcCallback(code, state, req.headers.host, 'http');
+      const proto = getRequestProto(req);
+      const host = getRequestHost(req);
+      const result = await auth.handleOidcCallback(code, state, host, proto);
       
       // Send response that stores session token in localStorage and redirects home
       res.writeHead(200, { 

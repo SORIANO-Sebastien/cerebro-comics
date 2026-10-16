@@ -27,8 +27,8 @@ RUN mkdir -p /app/data/user_collections
 # Exposition du port HTTP
 EXPOSE 8080
 
-# Volume de persistance des données utilisateur et paramètres
-VOLUME ["/app/data"]
+# Volume de persistance des données utilisateur et paramètres (/data ou /app/data)
+VOLUME ["/data", "/app/data"]
 
 # Healthcheck de surveillance
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \

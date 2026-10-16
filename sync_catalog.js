@@ -8,12 +8,13 @@ const https = require('https');
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const auth = require('./auth_system.js');
 
 const CATALOG_FILE = path.join(__dirname, 'all_comics_catalog.json');
 const APPLIBD_HTML = path.join(__dirname, 'AppliBD.html');
 const INDEX_HTML = path.join(__dirname, 'index.html');
 const CONFIG_FILE = path.join(__dirname, 'collections_config.json');
-const CONFIG_DATA_FILE = path.join(__dirname, 'data', 'collections_config.json');
+const CONFIG_DATA_FILE = path.join(auth.DATA_DIR, 'collections_config.json');
 
 function getConfigFile() {
   if (fs.existsSync(CONFIG_DATA_FILE)) return CONFIG_DATA_FILE;
@@ -34,8 +35,7 @@ function loadCollectionsConfig() {
 
 function saveCollectionsConfig(cfg) {
   try {
-    const dataDir = path.join(__dirname, 'data');
-    if (fs.existsSync(dataDir)) {
+    if (fs.existsSync(auth.DATA_DIR)) {
       fs.writeFileSync(CONFIG_DATA_FILE, JSON.stringify(cfg, null, 2), 'utf8');
     }
     try {
