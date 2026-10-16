@@ -22,6 +22,16 @@
     let authSyncTimeout = null;
 
     async function initAuthSystem() {
+      // Check for incoming token from OIDC redirect (e.g. /?token=...)
+      try {
+        const urlParams = new URLSearchParams(window.location.search);
+        const incomingToken = urlParams.get('token');
+        if (incomingToken) {
+          localStorage.setItem('applibd_token', incomingToken);
+          window.history.replaceState({}, document.title, window.location.pathname);
+        }
+      } catch (e) {}
+
       const token = localStorage.getItem('applibd_token');
       try {
         const headers = token ? { 'Authorization': 'Bearer ' + token } : {};
@@ -54,8 +64,14 @@
               openAuthModal('register');
             }, 300);
           } else if (currentAuthUser) {
-            // Load user collection from server
-            loadUserCollectionFromServer();
+            // Instant load: If collection was already bundled in /api/auth/me, apply it immediately!
+            if (data.hasCollection && Array.isArray(data.books)) {
+              appState.books = data.books;
+              saveStateToStorage(false);
+              renderApp();
+            } else {
+              loadUserCollectionFromServer();
+            }
           }
         }
       } catch (err) {
@@ -85,6 +101,7 @@
       if (oidcLabel && cachedPublicSettings && cachedPublicSettings.oidc) {
         oidcLabel.innerText = 'Se connecter avec ' + (cachedPublicSettings.oidc.name || 'Authentik');
       }
+
 
       // Dynamic app title from server settings
       if (cachedPublicSettings && cachedPublicSettings.appTitle) {
@@ -158,7 +175,19 @@
       const errBox = document.getElementById('authErrorMsg');
       if (errBox) errBox.style.display = 'none';
 
-      // Ensure fresh OIDC settings are fetched if opening modal
+      // Apply cached OIDC state immediately without waiting for network
+      if (cachedPublicSettings && cachedPublicSettings.oidc) {
+        const oidcBox = document.getElementById('oidcAuthContainer');
+        if (oidcBox) {
+          oidcBox.style.display = cachedPublicSettings.oidc.enabled ? 'block' : 'none';
+        }
+        const oidcLabel = document.getElementById('oidcButtonText');
+        if (oidcLabel) {
+          oidcLabel.innerText = 'Se connecter avec ' + (cachedPublicSettings.oidc.name || 'Authentik');
+        }
+      }
+
+      // Ensure fresh OIDC settings are fetched in background if opening modal
       try {
         const resp = await fetch('/api/settings/public');
         if (resp.ok) {
@@ -304,8 +333,20 @@
         const passInput = document.getElementById('authPasswordInput');
         if (passInput) passInput.value = '';
 
-        // Re-check auth state
-        initAuthSystem();
+        // Instant UI update & collection application without blocking roundtrips!
+        if (data.hasCollection && Array.isArray(data.books)) {
+          appState.books = data.books;
+          saveStateToStorage(false);
+          renderApp();
+        } else if (appState.books.length > 0) {
+          syncUserCollectionWithServer();
+        }
+        updateAuthUI({
+          authenticated: true,
+          user: data.user,
+          isFirstSetup: false,
+          publicSettings: cachedPublicSettings
+        });
       } catch (err) {
         if (errBox) {
           errBox.innerHTML = '⚠️ Erreur réseau : ' + err.message;
@@ -319,19 +360,30 @@
 
     async function logoutCurrentUser() {
       const token = localStorage.getItem('applibd_token');
-      if (token) {
-        try {
-          await fetch('/api/auth/logout', {
-            method: 'POST',
-            headers: { 'Authorization': 'Bearer ' + token }
-          });
-        } catch (e) {}
-      }
+
+      // 1. Clear local state and cookie immediately
       localStorage.removeItem('applibd_token');
       localStorage.removeItem('applibd_user');
+      document.cookie = 'applibd_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; SameSite=Lax';
       currentAuthUser = null;
-      await initAuthSystem();
-      showToast('Déconnexion effectuée.');
+
+      // 2. Update UI to visitor state immediately
+      updateAuthUI({
+        authenticated: false,
+        user: null,
+        isFirstSetup: false,
+        publicSettings: cachedPublicSettings
+      });
+      showToast('🚪 Déconnexion effectuée.');
+
+      // 3. Notify server to invalidate session and clear cookie
+      try {
+        const headers = token ? { 'Authorization': 'Bearer ' + token } : {};
+        await fetch('/api/auth/logout', {
+          method: 'POST',
+          headers: headers
+        });
+      } catch (e) {}
     }
 
     // =========================================================================
@@ -510,8 +562,7 @@
           name: document.getElementById('adminOidcNameInput').value.trim() || 'Authentik',
           issuerUrl: document.getElementById('adminOidcIssuerInput').value.trim(),
           clientId: document.getElementById('adminOidcClientIdInput').value.trim(),
-          clientSecret: document.getElementById('adminOidcClientSecretInput').value.trim(),
-          redirectUri: document.getElementById('adminOidcRedirectUriInput').value.trim()
+          clientSecret: document.getElementById('adminOidcClientSecretInput').value.trim()
         }
       };
 
@@ -524,12 +575,15 @@
           },
           body: JSON.stringify(payload)
         });
-        if (resp.ok) {
-          showToast('Configuration Authentik / OpenID enregistrée !');
+        const resJson = await resp.json().catch(() => ({}));
+        if (resp.ok && resJson.success !== false) {
+          showToast('✅ Configuration Authentik / OpenID enregistrée !');
           await initAuthSystem();
+        } else {
+          showToast('⚠️ Erreur : ' + (resJson.error || 'Échec de l\'enregistrement.'));
         }
       } catch (err) {
-        showToast('Erreur : ' + err.message);
+        showToast('⚠️ Erreur réseau : ' + err.message);
       }
     }
 

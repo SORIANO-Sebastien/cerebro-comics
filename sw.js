@@ -1,4 +1,4 @@
-const CACHE_NAME = 'applibd-pwa-v2.0';
+const CACHE_NAME = 'cerebro-pwa-v2.2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

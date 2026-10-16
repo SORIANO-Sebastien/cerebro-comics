@@ -104,6 +104,31 @@ function init() {
     saveSettings(settings);
   }
 
+  // Merge environment variables (Docker compose / .env)
+  if (process.env.OIDC_ENABLED !== undefined) {
+    settings.oidc.enabled = process.env.OIDC_ENABLED === 'true' || process.env.OIDC_ENABLED === '1';
+  } else if (process.env.OIDC_ISSUER_URL || process.env.AUTHENTIK_ISSUER_URL) {
+    settings.oidc.enabled = true;
+  }
+  if (process.env.OIDC_ISSUER_URL || process.env.AUTHENTIK_ISSUER_URL) {
+    settings.oidc.issuerUrl = (process.env.OIDC_ISSUER_URL || process.env.AUTHENTIK_ISSUER_URL).trim();
+  }
+  if (process.env.OIDC_CLIENT_ID || process.env.AUTHENTIK_CLIENT_ID) {
+    settings.oidc.clientId = (process.env.OIDC_CLIENT_ID || process.env.AUTHENTIK_CLIENT_ID).trim();
+  }
+  if (process.env.OIDC_CLIENT_SECRET || process.env.AUTHENTIK_CLIENT_SECRET) {
+    settings.oidc.clientSecret = (process.env.OIDC_CLIENT_SECRET || process.env.AUTHENTIK_CLIENT_SECRET).trim();
+  }
+  if (process.env.OIDC_NAME || process.env.AUTHENTIK_NAME) {
+    settings.oidc.name = (process.env.OIDC_NAME || process.env.AUTHENTIK_NAME).trim();
+  }
+  if (process.env.APP_TITLE) {
+    settings.appTitle = process.env.APP_TITLE.trim();
+  }
+  if (process.env.GEMINI_API_KEY) {
+    settings.geminiApiKey = process.env.GEMINI_API_KEY.trim();
+  }
+
   // Load or create users
   if (fs.existsSync(USERS_FILE)) {
     try {
@@ -552,12 +577,19 @@ async function startOidcFlow(hostHeader, protocol = 'http') {
 }
 
 async function handleOidcCallback(code, state, hostHeader, protocol = 'http') {
-  if (!state || !pendingOidcStates.has(state)) {
-    throw new Error('Paramètre state OIDC invalide ou expiré. Veuillez rééssayer.');
+  if (!code) {
+    throw new Error('Code d\'autorisation manquant dans la redirection Authentik.');
   }
 
-  const stateData = pendingOidcStates.get(state);
-  pendingOidcStates.delete(state);
+  // Determine redirect URI: use stored stateData if present, or dynamically compute
+  let redirectUri = `${protocol}://${hostHeader}/api/auth/oidc/callback`;
+  if (state && pendingOidcStates.has(state)) {
+    const stateData = pendingOidcStates.get(state);
+    if (stateData && stateData.redirectUri) {
+      redirectUri = stateData.redirectUri;
+    }
+    pendingOidcStates.delete(state);
+  }
 
   const { issuerUrl, clientId, clientSecret } = settings.oidc;
   const oidcData = await fetchOidcDiscovery(issuerUrl);
@@ -567,21 +599,50 @@ async function handleOidcCallback(code, state, hostHeader, protocol = 'http') {
   if (!tokenEndpoint) throw new Error("Point d'accès aux tokens introuvable.");
 
   // Exchange code for token
+  const cleanClientId = (clientId || '').trim();
+  const cleanClientSecret = (clientSecret || '').trim();
+
   const tokenParams = new URLSearchParams();
   tokenParams.append('grant_type', 'authorization_code');
   tokenParams.append('code', code);
-  tokenParams.append('redirect_uri', stateData.redirectUri);
-  tokenParams.append('client_id', clientId);
-  if (clientSecret) tokenParams.append('client_secret', clientSecret);
+  tokenParams.append('redirect_uri', redirectUri);
 
-  const tokenRes = await fetch(tokenEndpoint, {
+  // Authentik and RFC 6749 Confidential Clients require HTTP Basic Auth header
+  const tokenHeaders = {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Accept': 'application/json'
+  };
+
+  if (cleanClientSecret) {
+    const basicAuth = Buffer.from(`${cleanClientId}:${cleanClientSecret}`).toString('base64');
+    tokenHeaders['Authorization'] = `Basic ${basicAuth}`;
+  } else {
+    tokenParams.append('client_id', cleanClientId);
+  }
+
+  let tokenRes = await fetch(tokenEndpoint, {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Accept': 'application/json'
-    },
+    headers: tokenHeaders,
     body: tokenParams.toString()
   });
+
+  // Fallback: If Basic Auth is rejected with 400/401, retry with client credentials in POST body
+  if (!tokenRes.ok && cleanClientSecret) {
+    const fallbackParams = new URLSearchParams(tokenParams);
+    fallbackParams.append('client_id', cleanClientId);
+    fallbackParams.append('client_secret', cleanClientSecret);
+    const retryRes = await fetch(tokenEndpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Accept': 'application/json'
+      },
+      body: fallbackParams.toString()
+    });
+    if (retryRes.ok) {
+      tokenRes = retryRes;
+    }
+  }
 
   if (!tokenRes.ok) {
     const errText = await tokenRes.text();
@@ -620,15 +681,20 @@ async function handleOidcCallback(code, state, hostHeader, protocol = 'http') {
   const email = userInfo.email || '';
   const displayName = userInfo.name || userInfo.preferred_username || preferredUsername;
 
-  // Find or create user
+  // Find or link user (match by OIDC sub, email, or username)
   let user = users.find(u => u.oidcSub === oidcSub);
   if (!user && email) {
     user = users.find(u => u.email && u.email.toLowerCase() === email.toLowerCase());
+  }
+  if (!user && preferredUsername) {
+    user = users.find(u => u.username && u.username.toLowerCase() === preferredUsername.toLowerCase());
   }
 
   if (user) {
     user.oidcSub = oidcSub;
     user.lastLogin = new Date().toISOString();
+    if (email && !user.email) user.email = email;
+    if (displayName && !user.displayName) user.displayName = displayName;
     if (user.provider === 'local') {
       user.provider = 'hybrid'; // Linked with both!
     }
@@ -636,9 +702,15 @@ async function handleOidcCallback(code, state, hostHeader, protocol = 'http') {
   } else {
     // FIRST USER IS ADMIN!
     const isFirst = (users.length === 0);
+    let finalUsername = preferredUsername || `user_${Date.now()}`;
+    let counter = 1;
+    while (users.some(u => u.username.toLowerCase() === finalUsername.toLowerCase())) {
+      finalUsername = `${preferredUsername}_${counter++}`;
+    }
+
     user = {
       id: 'usr_' + Date.now() + '_' + crypto.randomBytes(4).toString('hex'),
-      username: preferredUsername || `user_${Date.now()}`,
+      username: finalUsername,
       displayName: displayName,
       email: email,
       passwordHash: null,

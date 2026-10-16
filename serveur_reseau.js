@@ -120,13 +120,27 @@ const server = http.createServer(async (req, res) => {
     const user = getAuthUser(req);
     const hasUsers = auth.hasUsers();
     const publicSettings = auth.getSettings(false);
-    return sendJson(res, 200, {
+    let collection = null;
+    if (user) {
+      collection = auth.getUserCollection(user.id);
+    }
+    const headers = {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Access-Control-Allow-Origin': '*'
+    };
+    if (!user && req.headers['cookie'] && req.headers['cookie'].includes('applibd_token=')) {
+      headers['Set-Cookie'] = 'applibd_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; SameSite=Lax';
+    }
+    res.writeHead(200, headers);
+    return res.end(JSON.stringify({
       authenticated: !!user,
       user: user || null,
       hasUsers: hasUsers,
       isFirstSetup: !hasUsers,
-      publicSettings: publicSettings
-    });
+      publicSettings: publicSettings,
+      hasCollection: collection !== null,
+      books: collection || []
+    }));
   }
 
   // Register new account (First account is automatically ADMIN!)
@@ -140,7 +154,9 @@ const server = http.createServer(async (req, res) => {
           ? 'Compte Administrateur initial créé avec succès !' 
           : 'Compte créé avec succès !',
         user: result.user,
-        token: result.token
+        token: result.token,
+        hasCollection: false,
+        books: []
       });
     } catch (err) {
       return sendJson(res, 400, { success: false, error: err.message });
@@ -152,11 +168,14 @@ const server = http.createServer(async (req, res) => {
     try {
       const payload = await parseJsonBody(req);
       const result = auth.loginUser(payload);
+      const collection = auth.getUserCollection(result.user.id);
       return sendJson(res, 200, {
         success: true,
         message: 'Connexion réussie !',
         user: result.user,
-        token: result.token
+        token: result.token,
+        hasCollection: collection !== null,
+        books: collection || []
       });
     } catch (err) {
       return sendJson(res, 401, { success: false, error: err.message });
@@ -167,9 +186,21 @@ const server = http.createServer(async (req, res) => {
   if (urlPath === '/api/auth/logout' && req.method === 'POST') {
     let token = null;
     const authHeader = req.headers['authorization'];
-    if (authHeader && authHeader.startsWith('Bearer ')) token = authHeader.substring(7).trim();
-    if (token) auth.logout(token);
-    return sendJson(res, 200, { success: true, message: 'Déconnexion effectuée.' });
+    if (authHeader && authHeader.startsWith('Bearer ')) {
+      token = authHeader.substring(7).trim();
+    } else if (req.headers['cookie']) {
+      const match = req.headers['cookie'].match(/applibd_token=([^;]+)/);
+      if (match) token = match[1];
+    }
+    if (token) {
+      auth.logout(token);
+    }
+    res.writeHead(200, {
+      'Content-Type': 'application/json; charset=utf-8',
+      'Set-Cookie': 'applibd_token=; Path=/; Expires=Thu, 01 Jan 1970 00:00:00 GMT; Max-Age=0; SameSite=Lax',
+      'Access-Control-Allow-Origin': '*'
+    });
+    return res.end(JSON.stringify({ success: true, message: 'Déconnexion effectuée.' }));
   }
 
   // Start OpenID Connect / Authentik flow
@@ -211,36 +242,17 @@ const server = http.createServer(async (req, res) => {
       const host = getRequestHost(req);
       const result = await auth.handleOidcCallback(code, state, host, proto);
       
-      // Send response that stores session token in localStorage and redirects home
-      res.writeHead(200, { 
-        'Content-Type': 'text/html; charset=utf-8',
-        'Set-Cookie': `applibd_token=${result.token}; Path=/; HttpOnly; SameSite=Lax`
+      console.log(`✅ [OIDC Login Success] Utilisateur: ${result.user.username} (${result.user.displayName || result.user.username})`);
+
+      // Instant redirect to home with token in query and cookie
+      res.writeHead(302, { 
+        'Location': `/?token=${result.token}`,
+        'Set-Cookie': `applibd_token=${result.token}; Path=/; SameSite=Lax`
       });
-      res.end(`
-        <!DOCTYPE html>
-        <html>
-        <head>
-          <meta charset="utf-8">
-          <title>Connexion réussie</title>
-        </head>
-        <body style="font-family:sans-serif; background:#0f172a; color:#fff; display:flex; align-items:center; justify-content:center; height:100vh; margin:0;">
-          <div style="background:#1e293b; padding:24px; border-radius:12px; border:1px solid #10b981; max-width:400px; text-align:center;">
-            <h2 style="color:#10b981; margin-top:0;">✅ Connexion Authentik réussie !</h2>
-            <p>Bonjour <strong>${result.user.displayName || result.user.username}</strong>.</p>
-            <p style="font-size:0.85rem; color:#94a3b8;">Redirection vers votre collection...</p>
-          </div>
-          <script>
-            try {
-              localStorage.setItem('applibd_token', '${result.token}');
-              localStorage.setItem('applibd_user', JSON.stringify(${JSON.stringify(result.user)}));
-            } catch(e) {}
-            setTimeout(function() { window.location.href = '/'; }, 600);
-          </script>
-        </body>
-        </html>
-      `);
+      res.end();
       return;
     } catch (err) {
+      console.error('❌ [OIDC Callback Error]:', err.message);
       res.writeHead(400, { 'Content-Type': 'text/html; charset=utf-8' });
       res.end(`
         <!DOCTYPE html>
@@ -687,9 +699,14 @@ const server = http.createServer(async (req, res) => {
   }
 
   // Static File Serving
-  let filePath = path.join(__dirname, req.url === '/' ? 'index.html' : urlPath);
+  let relativePath = (urlPath === '/' || urlPath === '') ? 'index.html' : urlPath.replace(/^\/+/, '');
+  let filePath = path.join(__dirname, relativePath);
   
-  if (!fs.existsSync(filePath)) {
+  try {
+    if (!fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
+      filePath = path.join(__dirname, 'index.html');
+    }
+  } catch (e) {
     filePath = path.join(__dirname, 'index.html');
   }
 
@@ -698,6 +715,7 @@ const server = http.createServer(async (req, res) => {
 
   fs.readFile(filePath, (err, content) => {
     if (err) {
+      console.error('❌ Erreur lecture fichier:', filePath, err);
       res.writeHead(500);
       res.end('Erreur serveur');
     } else {
