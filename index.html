@@ -2679,13 +2679,13 @@
             <div class="scanner-placeholder-spinner" id="scannerPlaceholderSpinner">📷</div>
             <div id="scannerPlaceholderText" style="font-size:0.85rem; color:#cbd5e1; font-weight:600; text-align:center; padding:0 14px;">Activation du scanner...</div>
             <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:6px; margin-top:6px;">
-              <label id="scannerPlaceholderBtn" class="btn btn-sm btn-primary" style="cursor:pointer; display:inline-flex; align-items:center; gap:6px;">
+              <button id="scannerRetryBtn" class="btn btn-sm btn-primary" style="display:none; align-items:center; gap:4px;" onclick="requestDirectCamera()">
+                <span>📷 Activer la caméra directe</span>
+              </button>
+              <label id="scannerPlaceholderBtn" class="btn btn-sm btn-secondary" style="cursor:pointer; display:inline-flex; align-items:center; gap:6px;">
                 <span>📸 Prendre une photo</span>
                 <input type="file" accept="image/*" capture="environment" style="display:none;" onchange="onCoverPhotoSelected(event)">
               </label>
-              <button id="scannerRetryBtn" class="btn btn-sm btn-secondary" style="display:none; align-items:center; gap:4px;" onclick="startCamera()">
-                <span>🔄 Réessayer</span>
-              </button>
             </div>
           </div>
           <div class="scanner-laser" id="scannerLaser"></div>
@@ -5276,6 +5276,12 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       }
     }
 
+    async function requestDirectCamera() {
+      const txt = document.getElementById('scannerPlaceholderText');
+      if (txt) txt.innerHTML = '⏳ <em>Demande d\'accès caméra en cours...</em>';
+      await startCamera();
+    }
+
     async function startCamera() {
       const video = document.getElementById('scannerVideo');
       if (!video) return;
@@ -5305,10 +5311,10 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           throw new Error('Connexion non sécurisée (HTTP) ou caméra bloquée.');
         }
 
-        // Progressive constraints: test from flexible environment to general video
+        // Progressive constraints: start with simplest facingMode constraint for guaranteed Android compatibility
         const constraintAttempts = [
-          { video: { facingMode: { ideal: currentFacingMode }, width: { ideal: 1280 } }, audio: false },
           { video: { facingMode: { ideal: currentFacingMode } }, audio: false },
+          { video: { facingMode: currentFacingMode }, audio: false },
           { video: true, audio: false }
         ];
 
@@ -5405,7 +5411,10 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           const isInsecure = (typeof window !== 'undefined' && !window.isSecureContext && location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1');
 
           if (txt) {
-            txt.innerHTML = '📷 <strong>Caméra directe indisponible</strong><br><span style="font-size:0.75rem; color:#94a3b8;">' + escapeHtml(e.message || 'Autorisation requise') + '</span>';
+            const isSecure = (typeof window !== 'undefined' && window.isSecureContext);
+            const protoInfo = location.protocol.toUpperCase().replace(':', '');
+            const diag = `${protoInfo} // ${location.host} (${isSecure ? 'Sécurisé' : 'Non sécurisé'})`;
+            txt.innerHTML = '📷 <strong>Caméra directe indisponible</strong><br><span style="font-size:0.75rem; color:#94a3b8;">' + escapeHtml(e.message || 'Autorisation requise') + '</span><div style="font-size:0.68rem; color:#64748b; margin-top:3px;">Origine : ' + escapeHtml(diag) + '</div>';
           }
           const btn = document.getElementById('scannerPlaceholderBtn');
           if (btn) btn.style.display = 'inline-flex';
