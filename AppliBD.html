@@ -5307,10 +5307,9 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
 
         // Progressive constraints: test from flexible environment to general video
         const constraintAttempts = [
-          { video: { facingMode: { ideal: currentFacingMode }, width: { ideal: 1280 } } },
-          { video: { facingMode: { ideal: currentFacingMode } } },
-          { video: { facingMode: currentFacingMode } },
-          { video: true }
+          { video: { facingMode: { ideal: currentFacingMode }, width: { ideal: 1280 } }, audio: false },
+          { video: { facingMode: { ideal: currentFacingMode } }, audio: false },
+          { video: true, audio: false }
         ];
 
         let stream = null;
@@ -5322,6 +5321,9 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
             if (stream) break;
           } catch (err) {
             lastError = err;
+            if (err.name === 'NotAllowedError' || err.name === 'SecurityError') {
+              break;
+            }
           }
         }
 
