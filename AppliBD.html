@@ -1413,12 +1413,105 @@
     }
     .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; }
 
-    .detail-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-    @media (min-width: 600px) { .detail-grid { grid-template-columns: 220px 1fr; } }
-    .detail-cover { width: 100%; border-radius: var(--radius-md); box-shadow: var(--shadow-comic); object-fit: cover; background: #111; }
+    /* COMIC DETAIL MODAL LAYOUT */
+    .detail-layout {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      grid-template-rows: auto auto auto auto;
+      gap: 16px 20px;
+      align-items: start;
+    }
+    .detail-hero-section {
+      grid-column: 1 / 3;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .detail-cover-box {
+      width: 220px;
+    }
+    .detail-cover {
+      width: 100%;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-comic);
+      object-fit: cover;
+      background: #111;
+    }
+    .detail-primary-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .detail-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0;
+    }
+    .detail-badges-wrap {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 0.75rem;
+    }
+    .detail-badges-wrap .badge {
+      background: var(--bg-card-hover);
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    .detail-stars {
+      color: var(--accent-gold);
+    }
+    .detail-quick-status-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      max-width: 260px;
+    }
+    .detail-ai-btn {
+      grid-column: 1 / 2;
+      width: 100%;
+      margin-top: -6px;
+    }
+    .detail-meta-box {
+      grid-column: 2 / 3;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background: var(--bg-card);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      font-size: 0.85rem;
+    }
+    .detail-meta-item {
+      color: var(--text-muted);
+    }
+    .detail-meta-item span {
+      color: var(--text-main);
+    }
+    .detail-signature-note {
+      grid-column: 2 / 3;
+      color: #fbbf24;
+      font-size: 0.85rem;
+    }
+    .detail-synopsis-section {
+      grid-column: 2 / 3;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
     .detail-synopsis {
-      font-size: 0.85rem; line-height: 1.5; color: var(--text-muted); background: var(--bg-card);
-      padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border-color); max-height: 160px; overflow-y: auto;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: var(--text-muted);
+      background: var(--bg-card);
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-color);
+      max-height: 160px;
+      overflow-y: auto;
     }
 
     /* PRINT STYLES */
@@ -1793,81 +1886,282 @@
       .tab-text-desktop { display: none !important; }
       .tab-text-mobile { display: inline !important; }
 
-      /* Direct ISBN quick add bar compact */
+      /* Direct ISBN bar & Stats bar: Hide on mobile to prioritize comics display */
       .direct-isbn-bar {
-        padding: 8px 10px !important;
-        gap: 6px !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
+        display: none !important;
       }
-      .direct-isbn-bar input {
-        min-width: 0 !important;
-        width: 100% !important;
+      .stats-bar {
+        display: none !important;
+      }
+      /* FAB button: Hidden on mobile because dedicated camera button is always in the sticky mobile header */
+      .fab-btn {
+        display: none !important;
       }
 
-      /* Filters section compact */
+      /* Compact single-row search bar with ➕ icon button */
       .filter-section {
-        padding: 8px 10px !important;
+        padding: 6px 8px !important;
       }
       .filter-container {
         gap: 6px !important;
       }
+      .search-row {
+        display: flex !important;
+        gap: 6px !important;
+        align-items: center !important;
+      }
+      .search-box {
+        flex: 1 !important;
+        min-width: 0 !important;
+      }
       .search-box input {
-        padding: 7px 10px 7px 32px !important;
-        font-size: 0.85rem !important;
+        padding: 7px 10px 7px 30px !important;
+        font-size: 16px !important; /* Prevents iOS Safari auto-zoom */
+        height: 38px !important;
+      }
+      .mobile-add-btn {
+        flex-shrink: 0 !important;
+        width: 38px !important;
+        height: 38px !important;
+        min-width: 38px !important;
+        padding: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.15rem !important;
+        border-radius: var(--radius-sm) !important;
+      }
+      .btn-text-desktop {
+        display: none !important;
       }
 
-      /* Stats bar horizontal swipeable carousel */
-      .stats-bar {
+      /* Universe pills: clean touch-friendly horizontal swipe */
+      .universe-pills {
+        gap: 6px !important;
+        padding-bottom: 2px !important;
+      }
+      .pill {
+        padding: 4px 10px !important;
+        font-size: 0.75rem !important;
+      }
+
+      /* Secondary filters: clean 2x2 grid */
+      .filter-options-row {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 6px !important;
+      }
+      .filter-group {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 6px !important;
+        width: 100% !important;
+      }
+      .filter-select {
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 6px 8px !important;
+        font-size: 0.78rem !important;
+        text-overflow: ellipsis !important;
+        overflow: hidden !important;
+        white-space: nowrap !important;
+      }
+      .view-toggle-group {
         display: flex !important;
-        overflow-x: auto !important;
-        flex-wrap: nowrap !important;
-        gap: 8px !important;
-        padding: 8px 10px 4px 10px !important;
-        scrollbar-width: none !important;
+        width: 100% !important;
+      }
+      .view-toggle-btn {
+        flex: 1 !important;
+        justify-content: center !important;
+        padding: 6px 4px !important;
+        font-size: 0.75rem !important;
+        gap: 3px !important;
+      }
+
+      /* Universal mobile modal styling */
+      .modal-overlay {
+        padding: 6px !important;
+      }
+      .modal-card {
+        max-height: 94vh !important;
+        max-height: 94dvh !important;
+        border-radius: var(--radius-md) !important;
+      }
+      .modal-header {
+        padding: 10px 12px !important;
+      }
+      .modal-title {
+        font-size: 0.95rem !important;
+      }
+      .modal-body {
+        padding: 10px 12px !important;
+        gap: 10px !important;
         -webkit-overflow-scrolling: touch !important;
       }
-      .stats-bar::-webkit-scrollbar { display: none; }
-      .stat-card {
-        min-width: 130px !important;
-        flex-shrink: 0 !important;
-        padding: 8px 10px !important;
+      .modal-footer {
+        padding: 8px 12px !important;
+        gap: 6px !important;
       }
-      .stat-val { font-size: 1.1rem !important; }
-      .stat-sub { font-size: 0.65rem !important; }
+      .modal-footer .btn {
+        flex: 1 !important;
+        padding: 7px 8px !important;
+        font-size: 0.82rem !important;
+        justify-content: center !important;
+      }
 
-      /* Comic grid: sleek 2-columns on all mobile phones */
+      /* Mobile input sizing to prevent iOS Safari auto-zoom */
+      .form-input, .form-select, .form-textarea {
+        font-size: 16px !important;
+      }
+
+      /* Comic Detail Modal - Mobile Optimization */
+      #comicDetailModal .modal-body {
+        padding: 10px 12px !important;
+      }
+      .detail-layout {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+      }
+      .detail-hero-section {
+        display: flex !important;
+        gap: 10px !important;
+        align-items: flex-start !important;
+      }
+      .detail-cover-box {
+        width: 105px !important;
+        min-width: 105px !important;
+        flex-shrink: 0 !important;
+      }
+      .detail-cover {
+        width: 100% !important;
+        aspect-ratio: 2/3 !important;
+        object-fit: cover !important;
+        border-radius: var(--radius-sm) !important;
+        box-shadow: var(--shadow-comic) !important;
+        background: #111 !important;
+      }
+      .detail-primary-info {
+        flex: 1 !important;
+        min-width: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 4px !important;
+      }
+      .detail-title {
+        font-size: 1rem !important;
+        font-weight: 800 !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
+        word-break: break-word !important;
+      }
+      .detail-badges-wrap {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 3px !important;
+      }
+      .detail-badges-wrap .badge {
+        padding: 2px 6px !important;
+        font-size: 0.68rem !important;
+        border-radius: 4px !important;
+        background: var(--bg-card-hover) !important;
+      }
+      .detail-stars {
+        font-size: 0.9rem !important;
+        color: var(--accent-gold) !important;
+      }
+      .detail-quick-status-row {
+        margin-top: 2px !important;
+      }
+      .detail-quick-status-row select {
+        padding: 5px 6px !important;
+        font-size: 0.8rem !important;
+        width: 100% !important;
+      }
+      .detail-ai-btn {
+        width: 100% !important;
+        padding: 7px 10px !important;
+        font-size: 0.82rem !important;
+      }
+      .detail-meta-box {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 4px 8px !important;
+        background: var(--bg-card) !important;
+        padding: 8px 10px !important;
+        border-radius: var(--radius-sm) !important;
+        border: 1px solid var(--border-color) !important;
+        font-size: 0.78rem !important;
+      }
+      .detail-meta-item {
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+      }
+      .detail-signature-note {
+        color: #fbbf24 !important;
+        font-size: 0.78rem !important;
+        background: rgba(251, 191, 36, 0.1) !important;
+        padding: 6px 8px !important;
+        border-radius: var(--radius-sm) !important;
+      }
+      .detail-synopsis-section {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 3px !important;
+      }
+      .detail-synopsis {
+        max-height: 90px !important;
+        font-size: 0.8rem !important;
+        padding: 6px 8px !important;
+        line-height: 1.4 !important;
+      }
+
+      /* Catalog action bar on mobile */
+      .catalog-action-bar {
+        margin-bottom: 10px !important;
+      }
+      .catalog-action-bar-inner {
+        padding: 10px 12px !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+      }
+      .catalog-action-bar-subtitle {
+        display: none !important;
+      }
+      .catalog-action-bar-btns {
+        display: flex !important;
+        gap: 6px !important;
+        width: 100% !important;
+      }
+      .catalog-action-bar-btns .btn {
+        flex: 1 !important;
+        padding: 6px 8px !important;
+        font-size: 0.75rem !important;
+        justify-content: center !important;
+      }
+
+      /* Infographics & Reading orders on mobile */
+      .infographic-container {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+      .event-steps-grid {
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+      }
+
+      /* Main grid */
       .main-content {
-        padding: 8px !important;
+        padding: 6px !important;
       }
       .comic-grid {
         grid-template-columns: repeat(2, 1fr) !important;
-        gap: 10px !important;
+        gap: 8px !important;
       }
       .comic-card {
         border-radius: var(--radius-sm) !important;
-      }
-      .scanner-modal-card {
-        max-height: 94vh !important;
-        margin: 6px !important;
-      }
-      .scanner-modal-body {
-        padding: 10px 12px !important;
-        gap: 8px !important;
-      }
-      .scanner-viewfinder {
-        height: 190px !important;
-        max-height: 28vh !important;
-      }
-      .scanner-mode-bar {
-        display: flex;
-        gap: 6px;
-        margin-bottom: 6px;
-      }
-      .scanner-mode-btn {
-        flex: 1;
-        padding: 6px 8px !important;
-        font-size: 0.78rem !important;
       }
       .comic-info {
         padding: 6px 8px !important;
@@ -1892,12 +2186,29 @@
       .cover-format-badge {
         font-size: 0.58rem !important;
       }
-      .fab-btn {
-        bottom: 16px !important;
-        right: 16px !important;
-        width: 48px !important;
-        height: 48px !important;
-        font-size: 22px !important;
+
+      /* Scanner modal */
+      .scanner-modal-card {
+        max-height: 94vh !important;
+        margin: 4px !important;
+      }
+      .scanner-modal-body {
+        padding: 8px 10px !important;
+        gap: 6px !important;
+      }
+      .scanner-viewfinder {
+        height: 180px !important;
+        max-height: 26vh !important;
+      }
+      .scanner-mode-bar {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 4px;
+      }
+      .scanner-mode-btn {
+        flex: 1;
+        padding: 6px 8px !important;
+        font-size: 0.78rem !important;
       }
     }
 
@@ -2143,9 +2454,9 @@
           <span class="clear-icon" id="clearSearchBtn" onclick="clearSearch()">✕</span>
         </div>
 
-        <button class="btn btn-secondary" onclick="openAddModal()">
+        <button class="btn btn-secondary mobile-add-btn" onclick="openAddModal()" title="Ajouter un album (Formulaire détaillé)">
           <span>➕</span>
-          <span>Formulaire Personnalisé</span>
+          <span class="btn-text-desktop">Formulaire Personnalisé</span>
         </button>
       </div>
 
@@ -2707,51 +3018,58 @@
       <div class="modal-header">
         <div class="modal-title">
           <span id="detailUniverseBadge" class="cover-ribbon" style="position:static;">MARVEL</span>
-          <span id="detailSeriesAndTome">Série - Tome 1</span>
+          <span id="detailSeriesAndTome" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:240px;">Série - Tome 1</span>
         </div>
         <button class="modal-close" onclick="closeComicDetailModal()">✕</button>
       </div>
       <div class="modal-body">
-        <div class="detail-grid">
-          <div>
-            <img id="detailCoverImg" class="detail-cover" src="" alt="Couverture">
-            <div style="margin-top:12px; display:flex; flex-direction:column; gap:8px;">
-              <div class="form-group">
-                <label class="form-label" style="font-size:0.75rem; color:var(--text-muted);">État / Statut :</label>
+        <div class="detail-layout">
+          <!-- Top section: cover + primary details -->
+          <div class="detail-hero-section">
+            <div class="detail-cover-box">
+              <img id="detailCoverImg" class="detail-cover" src="" alt="Couverture">
+            </div>
+            <div class="detail-primary-info">
+              <h2 id="detailTitle" class="detail-title">Titre</h2>
+              <div class="detail-badges-wrap">
+                <span id="detailFormatBadge" class="badge">Format</span>
+                <span id="detailPublisherBadge" class="badge">Éditeur</span>
+                <span id="detailLocationBadge" class="badge detail-location-clickable" onclick="promptQuickLocationChange()" title="Cliquez pour changer rapidement l'emplacement de rangement">📍 Rangement</span>
+                <span id="detailSignedBadge" class="badge" style="display:none; background:#fbbf24; color:black; font-weight:800;">✍️ Dédicacé</span>
+                <span id="detailLoanBadge" class="badge" style="display:none; background:#8b5cf6; color:white;">🤝 Prêté</span>
+              </div>
+              <div id="detailRatingStars" class="detail-stars">★★★★★</div>
+              <div class="detail-quick-status-row">
+                <label class="form-label" style="font-size:0.75rem; color:var(--text-muted); margin-bottom:2px;">Statut :</label>
                 <select id="detailQuickStatusSelect" class="form-select" style="font-weight:700;" onchange="changeCurrentBookStatus(this.value)">
                   <option value="READ">✅ Lu</option>
-                  <option value="READING">📖 En cours de lecture</option>
+                  <option value="READING">📖 En cours</option>
                   <option value="UNREAD">⏳ Non lu (Pile à lire)</option>
                   <option value="LOANED">🤝 Prêté à un proche</option>
                   <option value="WISHLIST">❤️ Wishlist (À acheter)</option>
                 </select>
               </div>
-              <button id="btnDetailAiAsk" class="btn btn-accent" style="width:100%;" onclick="askAiAboutCurrentBook()">
-                <span>🤖 Conseils & Résumé IA</span>
-              </button>
             </div>
           </div>
-          <div style="display:flex; flex-direction:column; gap:10px;">
-            <h2 id="detailTitle" style="font-size:1.3rem; font-weight:800; line-height:1.2;">Titre</h2>
-            <div style="display:flex; gap:8px; flex-wrap:wrap; font-size:0.75rem;">
-              <span id="detailFormatBadge" class="badge" style="background:var(--bg-card-hover); padding:4px 8px; border-radius:4px;">Format</span>
-              <span id="detailPublisherBadge" class="badge" style="background:var(--bg-card-hover); padding:4px 8px; border-radius:4px;">Éditeur</span>
-              <span id="detailLocationBadge" class="badge detail-location-clickable" style="background:var(--bg-card-hover); padding:4px 8px; border-radius:4px;" onclick="promptQuickLocationChange()" title="Cliquez pour changer rapidement l'emplacement de rangement">📍 Rangement</span>
-              <span id="detailSignedBadge" class="badge" style="display:none; background:#fbbf24; color:black; font-weight:800; padding:4px 8px; border-radius:4px;">✍️ Dédicacé</span>
-              <span id="detailLoanBadge" class="badge" style="display:none; background:#8b5cf6; color:white; padding:4px 8px; border-radius:4px;">🤝 Prêté</span>
-            </div>
-            <div id="detailRatingStars" style="color:var(--accent-gold);">★★★★★</div>
-            <div style="font-size:0.85rem; color:var(--text-muted);">
-              <div><strong>Scénario :</strong> <span id="detailWriter" style="color:var(--text-main);">-</span></div>
-              <div><strong>Dessin :</strong> <span id="detailArtist" style="color:var(--text-main);">-</span></div>
-              <div id="detailPriceRow" style="margin-top:4px;"><strong>Valeur / Prix Neuf :</strong> <span id="detailPrice" style="color:var(--text-main);">-</span></div>
-              <div style="margin-top:4px;"><strong>ISBN :</strong> <span id="detailIsbn" style="color:var(--text-main);">-</span></div>
-              <div id="detailSignatureNoteRow" style="display:none; margin-top:6px; color:#fbbf24;"><strong>Dédicace :</strong> <span id="detailSignatureNote"></span></div>
-            </div>
-            <div class="form-group" style="margin-top:6px;">
-              <label class="form-label">Synopsis</label>
-              <div id="detailSynopsis" class="detail-synopsis"></div>
-            </div>
+
+          <!-- AI Assistant button -->
+          <button id="btnDetailAiAsk" class="btn btn-accent detail-ai-btn" onclick="askAiAboutCurrentBook()">
+            <span>🤖 Conseils & Résumé IA</span>
+          </button>
+
+          <!-- Metadata box -->
+          <div class="detail-meta-box">
+            <div class="detail-meta-item"><strong>Scénario :</strong> <span id="detailWriter">-</span></div>
+            <div class="detail-meta-item"><strong>Dessin :</strong> <span id="detailArtist">-</span></div>
+            <div class="detail-meta-item" id="detailPriceRow"><strong>Prix Neuf :</strong> <span id="detailPrice">-</span></div>
+            <div class="detail-meta-item"><strong>ISBN :</strong> <span id="detailIsbn">-</span></div>
+          </div>
+          <div id="detailSignatureNoteRow" style="display:none;" class="detail-signature-note"><strong>Dédicace :</strong> <span id="detailSignatureNote"></span></div>
+
+          <!-- Synopsis section -->
+          <div class="detail-synopsis-section">
+            <label class="form-label">Synopsis</label>
+            <div id="detailSynopsis" class="detail-synopsis"></div>
           </div>
         </div>
       </div>
@@ -3921,23 +4239,23 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         const bar = document.createElement('div');
         bar.className = 'catalog-action-bar';
         bar.innerHTML = `
-          <div style="display:flex; justify-content:space-between; align-items:center; background:var(--bg-card); padding:12px 18px; border-radius:var(--radius-md); border:1px solid var(--border-color); margin-bottom:16px; flex-wrap:wrap; gap:10px;">
+          <div class="catalog-action-bar-inner" style="display:flex; justify-content:space-between; align-items:center; background:var(--bg-card); padding:12px 18px; border-radius:var(--radius-md); border:1px solid var(--border-color); margin-bottom:16px; flex-wrap:wrap; gap:10px;">
             <div>
               <div style="font-weight:800; font-size:1.05rem;">🌐 Catalogue Officiel Comics (${items.length} tomes affichés)</div>
-              <div style="font-size:0.8rem; color:var(--text-muted);">Panini Comics • Urban Comics • Carrefour • Star Wars • Couvertures HD & Cotes Neuf</div>
+              <div class="catalog-action-bar-subtitle" style="font-size:0.8rem; color:var(--text-muted);">Panini Comics • Urban Comics • Carrefour • Star Wars • Couvertures HD & Cotes Neuf</div>
             </div>
-            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <div class="catalog-action-bar-btns" style="display:flex; gap:8px; flex-wrap:wrap;">
               <button class="btn btn-sm btn-accent" onclick="openCollectionsModal('ADD')">
                 <span>➕</span>
-                <span>Ajouter une collection</span>
+                <span>Ajouter</span>
               </button>
               <button class="btn btn-sm btn-secondary" onclick="openCollectionsModal('LIST')">
                 <span>📋</span>
-                <span>Gérer les collections</span>
+                <span>Gérer</span>
               </button>
               <button class="btn btn-sm btn-secondary" id="btnSyncCatalogHeader" onclick="triggerCatalogSync()">
                 <span>🔄</span>
-                <span>Synchroniser</span>
+                <span>Sync</span>
               </button>
             </div>
           </div>
