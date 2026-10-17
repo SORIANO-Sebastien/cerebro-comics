@@ -858,17 +858,17 @@
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
     html {
-      height: 100%;
+      min-height: 100%;
+      overflow-x: hidden;
     }
 
     body {
       font-family: var(--font-stack);
       background-color: var(--bg-main);
       color: var(--text-main);
-      min-height: 100%;
-      overflow-x: hidden;
-      -webkit-overflow-scrolling: touch;
-      transition: background-color 0.2s, color 0.2s;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
     }
 
     /* HEADER */
@@ -878,7 +878,6 @@
       position: sticky;
       top: 0;
       z-index: 40;
-      backdrop-filter: blur(10px);
     }
     .header-container {
       max-width: 1440px;
@@ -1172,10 +1171,10 @@
     }
     .comic-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); border-color: rgba(225, 29, 72, 0.5); }
 
-    .comic-cover-wrap { position: relative; width: 100%; padding-top: 145%; background: #090d16; overflow: hidden; }
+    .comic-cover-wrap { position: relative; width: 100%; padding-top: 145%; background: var(--bg-card); overflow: hidden; }
     .comic-cover-img {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      object-fit: cover; transition: transform 0.3s ease; background: #111;
+      object-fit: cover; transition: transform 0.3s ease; background: transparent;
     }
     .comic-card:hover .comic-cover-img { transform: scale(1.03); }
 
@@ -1189,16 +1188,16 @@
     .ribbon-bd { background: #10b981; }
 
     .cover-format-badge {
-      position: absolute; bottom: 8px; left: 8px; background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(4px); color: #f8fafc; font-size: 0.65rem; font-weight: 700;
+      position: absolute; bottom: 8px; left: 8px; background: rgba(15, 23, 42, 0.92);
+      color: #f8fafc; font-size: 0.65rem; font-weight: 700;
       padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.15); z-index: 2;
     }
 
     .cover-status-badge {
       position: absolute; top: 8px; right: 8px; width: 26px; height: 26px;
       border-radius: var(--radius-full); display: flex; align-items: center;
-      justify-content: center; font-size: 12px; background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.2);
+      justify-content: center; font-size: 12px; background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(255,255,255,0.2);
       color: white; z-index: 2; box-shadow: 0 2px 6px rgba(0,0,0,0.4);
     }
     .status-read { background: #10b981 !important; color: white !important; }
@@ -1368,13 +1367,14 @@
 
     /* SCANNER */
     .scanner-viewfinder {
-      position: relative; width: 100%; height: 260px; background: #000;
+      position: relative; width: 100%; height: 260px; background: #131b2e;
+      border: 1px solid var(--border-color);
       border-radius: var(--radius-md); overflow: hidden; display: flex; align-items: center; justify-content: center;
     }
     .scanner-video { width: 100%; height: 100%; object-fit: cover; }
     .scanner-placeholder {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-      background: #090d16; display: flex; flex-direction: column;
+      background: #131b2e; display: flex; flex-direction: column;
       align-items: center; justify-content: center; z-index: 5;
       padding: 16px; text-align: center; gap: 8px;
     }
@@ -1436,7 +1436,7 @@
       border-radius: var(--radius-md);
       box-shadow: var(--shadow-comic);
       object-fit: cover;
-      background: #111;
+      background: var(--bg-card-hover);
     }
     .detail-primary-info {
       display: flex;
@@ -2039,7 +2039,7 @@
         object-fit: cover !important;
         border-radius: var(--radius-sm) !important;
         box-shadow: var(--shadow-comic) !important;
-        background: #111 !important;
+        background: var(--bg-card-hover) !important;
       }
       .detail-primary-info {
         flex: 1 !important;
@@ -2162,6 +2162,24 @@
       }
       .comic-card {
         border-radius: var(--radius-sm) !important;
+        transition: none !important;
+      }
+      .comic-card:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        border-color: var(--border-color) !important;
+      }
+      .comic-card:hover .comic-cover-img {
+        transform: none !important;
+      }
+      .cover-format-badge, .cover-status-badge {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+      }
+      .modal-overlay {
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: rgba(0, 0, 0, 0.85) !important;
       }
       .comic-info {
         padding: 6px 8px !important;
@@ -2197,8 +2215,12 @@
         gap: 6px !important;
       }
       .scanner-viewfinder {
-        height: 180px !important;
-        max-height: 26vh !important;
+        height: 155px !important;
+        max-height: 24vh !important;
+        background: #131b2e !important;
+      }
+      .scanner-placeholder {
+        background: #131b2e !important;
       }
       .scanner-mode-bar {
         display: flex;
@@ -2654,10 +2676,10 @@
         <div class="scanner-viewfinder" id="scannerViewfinder">
           <video id="scannerVideo" class="scanner-video" autoplay playsinline webkit-playsinline muted></video>
           <div id="scannerPlaceholder" class="scanner-placeholder">
-            <div class="scanner-placeholder-spinner">⏳</div>
-            <div id="scannerPlaceholderText" style="font-size:0.85rem; color:#cbd5e1; font-weight:600; text-align:center; padding:0 14px;">Activation de la caméra...</div>
-            <label id="scannerPlaceholderBtn" class="btn btn-sm btn-primary" style="display:none; margin-top:8px; cursor:pointer;">
-              <span>📸 Prendre une photo</span>
+            <div class="scanner-placeholder-spinner" id="scannerPlaceholderSpinner">📷</div>
+            <div id="scannerPlaceholderText" style="font-size:0.85rem; color:#cbd5e1; font-weight:600; text-align:center; padding:0 14px;">Activation du scanner...</div>
+            <label id="scannerPlaceholderBtn" class="btn btn-sm btn-primary" style="margin-top:6px; cursor:pointer; display:inline-flex; align-items:center; gap:6px;">
+              <span>📸 Prendre une photo instantanée</span>
               <input type="file" accept="image/*" capture="environment" style="display:none;" onchange="onCoverPhotoSelected(event)">
             </label>
           </div>
@@ -2687,7 +2709,7 @@
         </div>
 
         <div style="display:flex; gap:6px; margin-top:2px;">
-          <input type="text" id="manualIsbnInput" class="form-input" placeholder="Ou tapez directement l'ISBN (ex: 9782809490127)..." style="flex:1; font-size:0.82rem; padding:6px 10px;">
+          <input type="text" id="manualIsbnInput" class="form-input" placeholder="Ou tapez directement l'ISBN (ex: 9782809490127)..." style="flex:1; font-size:16px; padding:6px 10px; min-height:38px;">
           <button class="btn btn-sm btn-primary" onclick="lookupManualIsbn()">Rechercher</button>
         </div>
 
@@ -2832,7 +2854,7 @@
         </div>
 
         <div id="pickerResultBox" style="display:flex; flex-direction:column; align-items:center; gap:10px; background:var(--bg-card); border:1px solid var(--border-color); padding:16px; border-radius:var(--radius-md); width:100%;">
-          <img id="pickerResultCover" src="" style="width:110px; height:160px; object-fit:cover; border-radius:6px; box-shadow:var(--shadow-card); background:#111;">
+          <img id="pickerResultCover" src="" style="width:110px; height:160px; object-fit:cover; border-radius:6px; box-shadow:var(--shadow-card); background:var(--bg-card-hover);">
           <div>
             <div id="pickerResultSeries" style="font-size:0.75rem; font-weight:700; color:var(--text-accent); text-transform:uppercase;"></div>
             <div id="pickerResultTitle" style="font-size:1.1rem; font-weight:800;">Cliquez sur Lancer pour piocher</div>
@@ -3127,7 +3149,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         </p>
 
         <div style="display: flex; gap: 14px; background: var(--bg-card); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color); align-items: center;">
-          <img id="dupCoverImg" src="" style="width: 80px; height: 120px; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-card); background: #111;">
+          <img id="dupCoverImg" src="" style="width: 80px; height: 120px; object-fit: cover; border-radius: 4px; box-shadow: var(--shadow-card); background: var(--bg-card-hover);">
           <div style="display: flex; flex-direction: column; gap: 4px; flex: 1;">
             <div id="dupSeries" style="font-size: 0.75rem; font-weight: 700; color: var(--text-accent); text-transform: uppercase;"></div>
             <div id="dupTitle" style="font-size: 1rem; font-weight: 800; line-height: 1.2;"></div>
@@ -4024,7 +4046,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       if (isbn10) {
         return 'https://images-na.ssl-images-amazon.com/images/P/' + isbn10 + '.01._SCLZZZZZZZ_.jpg';
       }
-      return 'https://covers.openlibrary.org/b/isbn/' + (isbn13 || '') + '-L.jpg';
+      return 'https://covers.openlibrary.org/b/isbn/' + (isbn13 || '') + '-L.jpg?default=false';
     }
 
     // Web Audio API Synthesizer for instant scan beep
@@ -4061,16 +4083,19 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
     };
 
     function handleCoverError(img, isbn, title, universe) {
+      if (!img) return;
       const step = parseInt(img.dataset.errorStep || '0', 10);
       const cleanIsbn = (isbn || '').replace(/[^0-9X]/gi, '');
 
       if (step === 0 && cleanIsbn) {
         img.dataset.errorStep = '1';
-        img.src = 'https://covers.openlibrary.org/b/isbn/' + cleanIsbn + '-L.jpg';
+        img.src = 'https://covers.openlibrary.org/b/isbn/' + cleanIsbn + '-L.jpg?default=false';
         return;
       }
 
       img.dataset.errorStep = '2';
+      img.onerror = null;
+      img.onload = null;
       const bgGrad1 = universe === 'MARVEL' ? '#e23636' : universe === 'DC' ? '#0284c7' : '#10b981';
       const bgGrad2 = universe === 'MARVEL' ? '#7f1d1d' : universe === 'DC' ? '#0c4a6e' : '#064e3b';
       const safeTitle = (title || 'COMIC').replace(/"/g, "'").substring(0, 35);
@@ -4334,6 +4359,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
                  src="${escapeHtml(coverSrc)}" 
                  alt="${escapeHtml(book.title)}" 
                  loading="lazy"
+                 onload="if(this.naturalWidth<=1||this.naturalHeight<=1)handleCoverError(this, '${book.isbn||''}', '${escapeHtml(book.title)}', '${book.universe}')"
                  onerror="handleCoverError(this, '${book.isbn||''}', '${escapeHtml(book.title)}', '${book.universe}')">
             <div class="cover-ribbon ${universeClass}">${book.universe}</div>
             ${book.format ? `<div class="cover-format-badge">${escapeHtml(book.format)}</div>` : ''}
@@ -4488,6 +4514,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
                      src="${escapeHtml(coverSrc)}" 
                      alt="${escapeHtml(book.title)}" 
                      loading="lazy"
+                     onload="if(this.naturalWidth<=1||this.naturalHeight<=1)handleCoverError(this, '${book.isbn||''}', '${escapeHtml(book.title)}', '${book.universe}')"
                      onerror="handleCoverError(this, '${book.isbn||''}', '${escapeHtml(book.title)}', '${book.universe}')">
                 ${book.format ? `<div class="cover-format-badge">${escapeHtml(book.format)}</div>` : ''}
               </div>
@@ -5152,7 +5179,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         const txt = document.getElementById('scannerPlaceholderText');
         if (txt) txt.innerText = 'Activation de la caméra...';
         const btn = document.getElementById('scannerPlaceholderBtn');
-        if (btn) btn.style.display = 'none';
+        if (btn) btn.style.display = 'inline-flex';
       }
 
       startCamera();
@@ -6683,7 +6710,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
 
           html += `
             <div class="flea-banner ${bannerClass}">
-              <img src="${escapeHtml(book.cover || getReliableCoverUrl(book.isbn))}" style="width:70px; height:105px; object-fit:cover; border-radius:4px; box-shadow:0 4px 10px rgba(0,0,0,0.3); background:#111;">
+              <img src="${escapeHtml(book.cover || getReliableCoverUrl(book.isbn))}" style="width:70px; height:105px; object-fit:cover; border-radius:4px; box-shadow:0 4px 10px rgba(0,0,0,0.3); background:var(--bg-card-hover);">
               <div style="flex:1;">
                 <div style="font-weight:900; font-size:1.1rem; display:flex; align-items:center; gap:6px;">
                   <span>${icon}</span>
@@ -6714,7 +6741,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           const price = catBook.price ? catBook.price + ' €' : 'Cote neuf';
           html += `
             <div class="flea-banner flea-banner-notowned" style="padding:10px 14px; margin-bottom:8px;">
-              <img src="${escapeHtml(catBook.cover || getReliableCoverUrl(catBook.isbn))}" style="width:55px; height:80px; object-fit:cover; border-radius:4px; background:#111;">
+              <img src="${escapeHtml(catBook.cover || getReliableCoverUrl(catBook.isbn))}" style="width:55px; height:80px; object-fit:cover; border-radius:4px; background:var(--bg-card-hover);">
               <div style="flex:1;">
                 <div style="font-weight:800; font-size:0.95rem; color:var(--text-main);">${escapeHtml(catBook.series)} - ${escapeHtml(catBook.tome || '')} : ${escapeHtml(catBook.title)}</div>
                 <div style="font-size:0.78rem; color:var(--text-muted); margin-top:2px;">${escapeHtml(catBook.format)} • Prix Neuf Officiel : ${price}</div>
@@ -6860,7 +6887,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         html += `
           <div style="display:flex; justify-content:space-between; align-items:center; background:var(--bg-card); padding:10px 14px; border-radius:var(--radius-sm); border:1px solid var(--border-color);">
             <div style="display:flex; align-items:center; gap:10px;">
-              <img src="${escapeHtml(b.cover || getReliableCoverUrl(b.isbn))}" style="width:40px; height:58px; object-fit:cover; border-radius:3px; background:#111;">
+              <img src="${escapeHtml(b.cover || getReliableCoverUrl(b.isbn))}" style="width:40px; height:58px; object-fit:cover; border-radius:3px; background:var(--bg-card-hover);" onload="if(this.naturalWidth<=1||this.naturalHeight<=1)handleCoverError(this, '${b.isbn||''}', '${escapeHtml(b.title)}', '${b.universe}')" onerror="handleCoverError(this, '${b.isbn||''}', '${escapeHtml(b.title)}', '${b.universe}')">
               <div>
                 <strong style="font-size:0.88rem;">${escapeHtml(b.series)} - ${escapeHtml(b.tome || '')} : ${escapeHtml(b.title)}</strong>
                 <div style="font-size:0.75rem; color:var(--text-muted);">${escapeHtml(b.format || 'Album')} • Prix estimé : ${b.price || 0} €</div>
@@ -6936,7 +6963,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       for (const item of trackedMatches) {
         html += `
           <div class="upcoming-card">
-            <img src="${escapeHtml(item.cover || getReliableCoverUrl(item.isbn))}" style="width:65px; height:95px; object-fit:cover; border-radius:4px; background:#111; box-shadow:0 4px 8px rgba(0,0,0,0.3);">
+            <img src="${escapeHtml(item.cover || getReliableCoverUrl(item.isbn))}" style="width:65px; height:95px; object-fit:cover; border-radius:4px; background:var(--bg-card-hover); box-shadow:0 4px 8px rgba(0,0,0,0.3);" onload="if(this.naturalWidth<=1||this.naturalHeight<=1)handleCoverError(this, '${item.isbn||''}', '${escapeHtml(item.title)}', '${item.universe}')" onerror="handleCoverError(this, '${item.isbn||''}', '${escapeHtml(item.title)}', '${item.universe}')">
             <div style="flex:1; min-width:0;">
               <span class="badge" style="background:var(--bg-card-hover); font-size:0.68rem; margin-bottom:2px;">${escapeHtml(item.universe)} • ${escapeHtml(item.format)}</span>
               <strong style="display:block; font-size:0.88rem; color:var(--text-main); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(item.title)}</strong>
@@ -6975,7 +7002,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         const owned = ownedIsbns.has(item.isbn);
         html += `
           <div class="upcoming-card" style="${owned ? 'opacity:0.75;' : ''}">
-            <img src="${escapeHtml(item.cover || getReliableCoverUrl(item.isbn))}" style="width:65px; height:95px; object-fit:cover; border-radius:4px; background:#111; box-shadow:0 4px 8px rgba(0,0,0,0.3);">
+            <img src="${escapeHtml(item.cover || getReliableCoverUrl(item.isbn))}" style="width:65px; height:95px; object-fit:cover; border-radius:4px; background:var(--bg-card-hover); box-shadow:0 4px 8px rgba(0,0,0,0.3);" onload="if(this.naturalWidth<=1||this.naturalHeight<=1)handleCoverError(this, '${item.isbn||''}', '${escapeHtml(item.title)}', '${item.universe}')" onerror="handleCoverError(this, '${item.isbn||''}', '${escapeHtml(item.title)}', '${item.universe}')">
             <div style="flex:1; min-width:0;">
               <span class="badge" style="background:var(--bg-card-hover); font-size:0.68rem; margin-bottom:2px;">${escapeHtml(item.universe)} • ${escapeHtml(item.format)}</span>
               <strong style="display:block; font-size:0.88rem; color:var(--text-main); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(item.title)}</strong>
