@@ -5416,11 +5416,40 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           const retryBtn = document.getElementById('scannerRetryBtn');
           if (retryBtn) retryBtn.style.display = 'inline-flex';
         }
-        document.getElementById('scanStatusMsg').innerHTML = `
-          <div style="background:rgba(225,29,72,0.12); border:1px solid rgba(225,29,72,0.3); border-radius:8px; padding:8px; font-size:0.8rem; line-height:1.4;">
-            💡 <strong>Alternative :</strong> Le bouton <strong>« 📸 Prendre une photo »</strong> fonctionne toujours directement sans restriction !
-          </div>
-        `;
+
+        if (navigator.permissions && navigator.permissions.query) {
+          try {
+            navigator.permissions.query({ name: 'camera' }).then(perm => {
+              perm.onchange = () => {
+                if (perm.state === 'granted') {
+                  const modal = document.getElementById('scannerModal');
+                  if (modal && modal.classList.contains('active')) {
+                    startCamera();
+                  }
+                }
+              };
+            }).catch(() => {});
+          } catch(e) {}
+        }
+
+        const isDenied = (e.name === 'NotAllowedError' || (e.message && /denied|permission/i.test(e.message)));
+        if (isDenied) {
+          document.getElementById('scanStatusMsg').innerHTML = `
+            <div style="background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.3); border-radius:8px; padding:10px; font-size:0.78rem; text-align:left; line-height:1.45;">
+              <strong style="color:#f87171;">🔓 Comment débloquer la caméra sur Android Chrome :</strong>
+              <div style="margin-top:6px; color:#cbd5e1;">
+                <strong>Méthode 1 (la plus rapide) :</strong> Sur l'écran d'accueil du téléphone, restez appuyé 2 secondes sur l'icône de <strong>Chrome</strong> &gt; appuyez sur le <strong>ℹ️</strong> &gt; <em>Autorisations</em> &gt; <em>Appareil photo</em> &gt; cochez <strong>« Autoriser »</strong>.<br>
+                <strong>Méthode 2 :</strong> Dans Chrome, appuyez sur l'icône 🎛️ (ou 🔒) tout à gauche de l'adresse web tout en haut &gt; <em>Autorisations</em> &gt; activez <strong>Appareil photo</strong>.
+              </div>
+            </div>
+          `;
+        } else {
+          document.getElementById('scanStatusMsg').innerHTML = `
+            <div style="background:rgba(225,29,72,0.12); border:1px solid rgba(225,29,72,0.3); border-radius:8px; padding:8px; font-size:0.8rem; line-height:1.4;">
+              💡 <strong>Alternative :</strong> Le bouton <strong>« 📸 Prendre une photo »</strong> ci-dessous fonctionne toujours sans aucune restriction !
+            </div>
+          `;
+        }
         document.getElementById('photoUploadSection').style.display = 'block';
       }
     }
