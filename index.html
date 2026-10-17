@@ -124,12 +124,19 @@
 
       if (firstAlert) firstAlert.style.display = 'none';
 
+      const mobLogin = document.getElementById('btnMobileLogin');
+      const mobPill = document.getElementById('mobileUserProfilePill');
+      const mobAvatar = document.getElementById('mobileUserAvatarText');
+
       if (currentAuthUser) {
         if (btnLogin) btnLogin.style.display = 'none';
+        if (mobLogin) mobLogin.style.display = 'none';
         if (pill) {
           pill.style.display = 'inline-flex';
           const initials = (currentAuthUser.displayName || currentAuthUser.username || 'U').substring(0, 2).toUpperCase();
           document.getElementById('userAvatarText').innerText = initials;
+          if (mobAvatar) mobAvatar.innerText = initials;
+          if (mobPill) mobPill.style.display = 'inline-flex';
           document.getElementById('userDisplayName').innerText = currentAuthUser.displayName || currentAuthUser.username;
           
           const roleBadge = document.getElementById('userRoleBadge');
@@ -146,6 +153,8 @@
           }
         }
       } else {
+        if (mobLogin) mobLogin.style.display = 'inline-flex';
+        if (mobPill) mobPill.style.display = 'none';
         if (btnLogin) {
           btnLogin.style.display = 'inline-flex';
           document.getElementById('loginBtnIcon').innerText = '🔑';
@@ -853,9 +862,11 @@
       background-color: var(--bg-main);
       color: var(--text-main);
       min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       flex-direction: column;
-      overflow-x: hidden;
+      overflow-x: clip;
+      -webkit-overflow-scrolling: touch;
       transition: background-color 0.2s, color 0.2s;
     }
 
@@ -1651,6 +1662,274 @@
       background: rgba(255, 255, 255, 0.02);
     }
 
+
+    /* ========================================================================= */
+    /* RESPONSIVE MOBILE & COMPACT HEADER ENHANCEMENTS                           */
+    /* ========================================================================= */
+    .tab-text-mobile { display: none; }
+    .mobile-header-actions { display: none; }
+    .desktop-header-actions { display: flex; }
+    .header-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .app-header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        background: var(--bg-panel) !important;
+        border-bottom: 1px solid var(--border-color);
+        transform: translateZ(0);
+        will-change: transform;
+      }
+      .header-container {
+        padding: 8px 10px 6px 10px !important;
+        gap: 6px !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+      }
+      .header-top-row {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+        gap: 6px !important;
+        flex-wrap: nowrap !important;
+      }
+      .brand-logo {
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        flex: 0 0 auto !important;
+        width: auto !important;
+      }
+      .brand-icon-box {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 17px !important;
+        flex-shrink: 0 !important;
+      }
+      .brand-title {
+        font-size: 0.92rem !important;
+        white-space: nowrap !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        overflow: hidden !important;
+      }
+      #brandTitleText {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .brand-subtitle {
+        display: none !important;
+      }
+      .desktop-header-actions {
+        display: none !important;
+      }
+      .mobile-header-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 5px !important;
+        flex-shrink: 0 !important;
+      }
+      .mobile-scanner-btn, .mobile-login-btn, .mobile-menu-btn {
+        width: 36px !important;
+        height: 36px !important;
+        padding: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-size: 1.05rem !important;
+        border-radius: var(--radius-md) !important;
+        flex-shrink: 0 !important;
+        min-width: 36px !important;
+      }
+      #mobileUserProfilePill {
+        height: 36px !important;
+        padding: 2px 4px !important;
+        flex-shrink: 0 !important;
+      }
+
+      /* Compact swipeable horizontal tab bar */
+      .nav-tabs-bar {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        gap: 4px !important;
+        padding: 3px !important;
+        margin: 0 !important;
+        background: var(--bg-card) !important;
+        border-radius: var(--radius-sm) !important;
+      }
+      .nav-tabs-bar::-webkit-scrollbar { display: none; }
+      .tab-btn {
+        flex-shrink: 0 !important;
+        padding: 5px 10px !important;
+        font-size: 0.78rem !important;
+        gap: 4px !important;
+        white-space: nowrap !important;
+      }
+      .tab-text-desktop { display: none !important; }
+      .tab-text-mobile { display: inline !important; }
+
+      /* Direct ISBN quick add bar compact */
+      .direct-isbn-bar {
+        padding: 8px 10px !important;
+        gap: 6px !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+      }
+      .direct-isbn-bar input {
+        min-width: 0 !important;
+        width: 100% !important;
+      }
+
+      /* Filters section compact */
+      .filter-section {
+        padding: 8px 10px !important;
+      }
+      .filter-container {
+        gap: 6px !important;
+      }
+      .search-box input {
+        padding: 7px 10px 7px 32px !important;
+        font-size: 0.85rem !important;
+      }
+
+      /* Stats bar horizontal swipeable carousel */
+      .stats-bar {
+        display: flex !important;
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        gap: 8px !important;
+        padding: 8px 10px 4px 10px !important;
+        scrollbar-width: none !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
+      .stats-bar::-webkit-scrollbar { display: none; }
+      .stat-card {
+        min-width: 130px !important;
+        flex-shrink: 0 !important;
+        padding: 8px 10px !important;
+      }
+      .stat-val { font-size: 1.1rem !important; }
+      .stat-sub { font-size: 0.65rem !important; }
+
+      /* Comic grid: sleek 2-columns on all mobile phones */
+      .main-content {
+        padding: 8px !important;
+      }
+      .comic-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+      }
+      .comic-card {
+        contain: content;
+        border-radius: var(--radius-sm) !important;
+      }
+      .comic-info {
+        padding: 6px 8px !important;
+      }
+      .comic-title {
+        font-size: 0.78rem !important;
+        line-height: 1.25 !important;
+        max-height: 2.5em;
+        overflow: hidden;
+      }
+      .comic-series {
+        font-size: 0.7rem !important;
+      }
+      .comic-tome-badge {
+        font-size: 0.68rem !important;
+        padding: 1px 5px !important;
+      }
+      .cover-ribbon {
+        font-size: 0.58rem !important;
+        padding: 2px 6px !important;
+      }
+      .cover-format-badge {
+        font-size: 0.58rem !important;
+      }
+      .fab-btn {
+        bottom: 16px !important;
+        right: 16px !important;
+        width: 48px !important;
+        height: 48px !important;
+        font-size: 22px !important;
+      }
+    }
+
+    /* Mobile Menu Modal Styling */
+    .mobile-menu-card {
+      max-width: 480px !important;
+      max-height: 85vh;
+      max-height: 85dvh;
+    }
+    .mobile-menu-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .mobile-menu-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      color: var(--text-main);
+      text-align: left;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .mobile-menu-item:hover, .mobile-menu-item:active {
+      background: var(--bg-card-hover);
+      border-color: var(--border-focus);
+    }
+    .mobile-menu-icon {
+      font-size: 1.3rem;
+      width: 28px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .mobile-menu-text {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .mobile-menu-title {
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+    .mobile-menu-desc {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .mobile-menu-auth {
+      border-color: rgba(2, 132, 199, 0.4);
+      background: rgba(2, 132, 199, 0.08);
+    }
+    .mobile-menu-danger {
+      border-color: rgba(225, 29, 72, 0.4);
+      background: rgba(225, 29, 72, 0.08);
+    }
+
   </style>
 </head>
 <body>
@@ -1661,16 +1940,121 @@
   </div>
 
   <!-- HEADER -->
-  <header class="app-header">
+    <header class="app-header">
     <div class="header-container">
-      <div class="brand-logo" onclick="switchMainTab('COLLECTION'); switchUniverseFilter('ALL');">
-        <div class="brand-icon-box">🧠</div>
-        <div>
-          <div class="brand-title">
-            <span id="brandTitleText">Cerebro Comics</span>
-            <span class="badge-pill">PRO</span>
+      <div class="header-top-row">
+        <div class="brand-logo" onclick="switchMainTab('COLLECTION'); switchUniverseFilter('ALL');">
+          <div class="brand-icon-box">🧠</div>
+          <div>
+            <div class="brand-title">
+              <span id="brandTitleText">Cerebro Comics</span>
+              <span class="badge-pill">PRO</span>
+            </div>
+            <div class="brand-subtitle">Marvel Panini • DC Comics • Franco-Belge • Manga</div>
           </div>
-          <div class="brand-subtitle">Marvel Panini • DC Comics • Franco-Belge • Manga</div>
+        </div>
+
+        <!-- MOBILE COMPACT HEADER ACTIONS (<= 768px) -->
+        <div class="mobile-header-actions">
+          <button class="btn btn-sm btn-primary mobile-scanner-btn" onclick="openScannerModal()" title="Scanner un code-barres">
+            <span>📷</span>
+          </button>
+          <button id="btnMobileLogin" class="btn btn-sm btn-secondary mobile-login-btn" onclick="openAuthModal()" title="Connexion">
+            <span>🔑</span>
+          </button>
+          <div id="mobileUserProfilePill" class="user-profile-pill" style="display:none;" onclick="openMobileMenuModal()">
+            <div class="user-avatar" id="mobileUserAvatarText">AD</div>
+          </div>
+          <button class="btn btn-sm btn-secondary mobile-menu-btn" onclick="openMobileMenuModal()" title="Menu">
+            <span style="font-size:1.15rem; line-height:1;">☰</span>
+          </button>
+        </div>
+
+        <!-- DESKTOP HEADER ACTIONS (Hidden on mobile) -->
+        <div class="header-actions desktop-header-actions">
+          <button id="btnRandomPicker" class="btn btn-sm btn-accent" onclick="openRandomPickerModal()" title="Tirer au sort un album dans ma pile à lire">
+            <span>🎲</span>
+            <span>Que lire ce soir ?</span>
+          </button>
+
+          <button id="btnInstallPwa" class="btn btn-sm btn-secondary" style="display:none;" onclick="installPwaApp()" title="Installer l'application sur cet appareil">
+            <span>📲</span>
+            <span>Installer l'App</span>
+          </button>
+
+          <button id="btnAiAssistant" class="btn btn-sm btn-secondary" onclick="openAiAssistantModal()" title="Assistant Comics IA">
+            <span>🤖</span>
+            <span>Assistant IA</span>
+          </button>
+
+          <button id="btnGoogleDrive" class="btn btn-sm btn-gdrive" onclick="openDriveSyncModal()" title="Synchronisation Google Drive PC & Mobile">
+            <span>☁️</span>
+            <span id="gdriveStatusText">Google Drive</span>
+          </button>
+
+          <button class="btn btn-sm btn-accent" onclick="openFleaMarketModal()" title="Mode Brocante & Magasin d'Occasion (Anti-Doublon & Tomes Manquants)">
+            <span>🏷️</span>
+            <span>Brocante</span>
+          </button>
+
+          <button class="btn btn-sm btn-secondary" onclick="openUpcomingReleasesModal()" title="Planning des Sorties & Nouveautés Comics">
+            <span>📅</span>
+            <span>Sorties</span>
+          </button>
+
+          <button class="btn btn-sm btn-secondary" onclick="openCollectionsModal('ADD')" title="Gérer & Ajouter des collections comics au catalogue">
+            <span>📚</span>
+            <span>Collections</span>
+          </button>
+
+          <button id="btnFamilyLibrary" class="btn btn-sm btn-secondary" onclick="openFamilyLibraryModal()" title="Bibliothèques Familiales & Collections Partagées">
+            <span>👥</span>
+            <span>Famille & Amis</span>
+          </button>
+
+          <button id="btnAdminQuick" class="btn btn-sm" style="display:none; background: linear-gradient(135deg, #f59e0b, #d97706); color:#000; font-weight:800;" onclick="openAdminPanelModal()" title="Panneau d'Administration">
+            <span>👑</span>
+            <span>Admin</span>
+          </button>
+
+          <button id="btnUserLogin" class="btn btn-sm btn-primary" onclick="openAuthModal()" title="Connexion & Comptes">
+            <span id="loginBtnIcon">🔑</span>
+            <span id="loginBtnText">Connexion</span>
+          </button>
+
+          <div id="userProfilePill" class="user-profile-pill" style="display:none;" onclick="toggleUserDropdown(event)">
+            <div class="user-avatar" id="userAvatarText">AD</div>
+            <div class="user-info-text">
+              <span id="userDisplayName" class="user-name">Admin</span>
+              <span id="userRoleBadge" class="badge-role badge-admin">ADMIN</span>
+            </div>
+            <span style="font-size:0.65rem; opacity:0.7;">▼</span>
+            <div id="userDropdownMenu" class="user-dropdown-menu" style="display:none;">
+              <div class="dropdown-item" id="adminPanelMenuOption" onclick="openAdminPanelModal()">
+                <span style="color:#f59e0b;">👑 Panneau d'Administration</span>
+              </div>
+              <div class="dropdown-item" onclick="syncUserCollectionWithServer()">
+                <span>🔄 Synchro Collection Compte</span>
+              </div>
+              <div class="dropdown-divider"></div>
+              <div class="dropdown-item dropdown-danger" onclick="logoutCurrentUser()">
+                <span>🚪 Déconnexion</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-sm btn-primary" onclick="openScannerModal()">
+            <span>📷</span>
+            <span>Scanner</span>
+          </button>
+
+          <button class="btn-icon" onclick="toggleTheme()" title="Thème">
+            <span id="themeIcon">☀️</span>
+          </button>
+
+          <button class="btn-icon" onclick="openSettingsModal()" title="Paramètres">
+            <span>⚙️</span>
+          </button>
         </div>
       </div>
 
@@ -1678,107 +2062,23 @@
       <div class="nav-tabs-bar">
         <button class="tab-btn active" id="tabMyCollection" onclick="switchMainTab('COLLECTION')">
           <span>📚</span>
-          <span>Ma Collection (<span id="tabCountCollection">0</span>)</span>
+          <span class="tab-text-desktop">Ma Collection (<span id="tabCountCollection">0</span>)</span>
+          <span class="tab-text-mobile">Collection (<span id="tabCountCollectionMobile">0</span>)</span>
         </button>
         <button class="tab-btn" id="tabCatalog" onclick="switchMainTab('CATALOG')">
           <span>🌐</span>
-          <span>Catalogue Officiel (<span id="tabCountCatalog">1704</span>)</span>
+          <span class="tab-text-desktop">Catalogue Officiel (<span id="tabCountCatalog">1704</span>)</span>
+          <span class="tab-text-mobile">Catalogue (<span id="tabCountCatalogMobile">1704</span>)</span>
         </button>
         <button class="tab-btn" id="tabReadingOrder" onclick="switchMainTab('CHRONO')">
           <span>🗺️</span>
-          <span>Chronologies & Événements</span>
+          <span class="tab-text-desktop">Chronologies & Événements</span>
+          <span class="tab-text-mobile">Chrono</span>
         </button>
         <button class="tab-btn" id="tabInfographic" onclick="switchMainTab('STATS')">
           <span>📊</span>
-          <span>Infographie & Stats</span>
-        </button>
-      </div>
-
-      <div class="header-actions">
-        <button id="btnRandomPicker" class="btn btn-sm btn-accent" onclick="openRandomPickerModal()" title="Tirer au sort un album dans ma pile à lire">
-          <span>🎲</span>
-          <span>Que lire ce soir ?</span>
-        </button>
-
-        <button id="btnInstallPwa" class="btn btn-sm btn-secondary" style="display:none;" onclick="installPwaApp()" title="Installer l'application sur cet appareil">
-          <span>📲</span>
-          <span>Installer l'App</span>
-        </button>
-
-        <button id="btnAiAssistant" class="btn btn-sm btn-secondary" onclick="openAiAssistantModal()" title="Assistant Comics IA">
-          <span>🤖</span>
-          <span>Assistant IA</span>
-        </button>
-
-        <button id="btnGoogleDrive" class="btn btn-sm btn-gdrive" onclick="openDriveSyncModal()" title="Synchronisation Google Drive PC & Mobile">
-          <span>☁️</span>
-          <span id="gdriveStatusText">Google Drive</span>
-        </button>
-
-        <button class="btn btn-sm btn-accent" onclick="openFleaMarketModal()" title="Mode Brocante & Magasin d'Occasion (Anti-Doublon & Tomes Manquants)">
-          <span>🏷️</span>
-          <span>Brocante</span>
-        </button>
-
-        <button class="btn btn-sm btn-secondary" onclick="openUpcomingReleasesModal()" title="Planning des Sorties & Nouveautés Comics">
-          <span>📅</span>
-          <span>Sorties</span>
-        </button>
-
-        <button class="btn btn-sm btn-secondary" onclick="openCollectionsModal('ADD')" title="Gérer & Ajouter des collections comics au catalogue">
-          <span>📚</span>
-          <span>Collections</span>
-        </button>
-
-        
-        
-        <button id="btnFamilyLibrary" class="btn btn-sm btn-secondary" onclick="openFamilyLibraryModal()" title="Bibliothèques Familiales & Collections Partagées">
-          <span>👥</span>
-          <span>Famille & Amis</span>
-        </button>
-
-        <button id="btnAdminQuick" class="btn btn-sm" style="display:none; background: linear-gradient(135deg, #f59e0b, #d97706); color:#000; font-weight:800;" onclick="openAdminPanelModal()" title="Panneau d'Administration">
-          <span>👑</span>
-          <span>Admin</span>
-        </button>
-
-        <button id="btnUserLogin" class="btn btn-sm btn-primary" onclick="openAuthModal()" title="Connexion & Comptes">
-          <span id="loginBtnIcon">🔑</span>
-          <span id="loginBtnText">Connexion</span>
-        </button>
-
-        <div id="userProfilePill" class="user-profile-pill" style="display:none;" onclick="toggleUserDropdown(event)">
-          <div class="user-avatar" id="userAvatarText">AD</div>
-          <div class="user-info-text">
-            <span id="userDisplayName" class="user-name">Admin</span>
-            <span id="userRoleBadge" class="badge-role badge-admin">ADMIN</span>
-          </div>
-          <span style="font-size:0.65rem; opacity:0.7;">▼</span>
-          <div id="userDropdownMenu" class="user-dropdown-menu" style="display:none;">
-            <div class="dropdown-item" id="adminPanelMenuOption" onclick="openAdminPanelModal()">
-              <span style="color:#f59e0b;">👑 Panneau d'Administration</span>
-            </div>
-            <div class="dropdown-item" onclick="syncUserCollectionWithServer()">
-              <span>🔄 Synchro Collection Compte</span>
-            </div>
-            <div class="dropdown-divider"></div>
-            <div class="dropdown-item dropdown-danger" onclick="logoutCurrentUser()">
-              <span>🚪 Déconnexion</span>
-            </div>
-          </div>
-        </div>
-
-        <button class="btn btn-sm btn-primary" onclick="openScannerModal()">
-          <span>📷</span>
-          <span>Scanner</span>
-        </button>
-
-        <button class="btn-icon" onclick="toggleTheme()" title="Thème">
-          <span id="themeIcon">☀️</span>
-        </button>
-
-        <button class="btn-icon" onclick="openSettingsModal()" title="Paramètres">
-          <span>⚙️</span>
+          <span class="tab-text-desktop">Infographie & Stats</span>
+          <span class="tab-text-mobile">Stats</span>
         </button>
       </div>
     </div>
@@ -2012,14 +2312,26 @@
         </div>
 
         <div class="scanner-viewfinder" id="scannerViewfinder">
-          <video id="scannerVideo" class="scanner-video" playsinline></video>
+          <video id="scannerVideo" class="scanner-video" autoplay playsinline webkit-playsinline muted></video>
           <div class="scanner-laser" id="scannerLaser"></div>
           <div class="scanner-overlay-box"></div>
+          <button id="btnSwitchCamera" class="btn btn-sm" style="position:absolute; top:8px; right:8px; z-index:10; background:rgba(0,0,0,0.65); color:white; border:1px solid rgba(255,255,255,0.25); border-radius:var(--radius-sm); padding:4px 8px;" onclick="switchCameraDevice()" title="Changer de caméra (avant/arrière)">
+            🔄 Changer
+          </button>
+          <button id="btnToggleTorch" class="btn btn-sm" style="position:absolute; top:8px; left:8px; z-index:10; background:rgba(0,0,0,0.65); color:white; border:1px solid rgba(255,255,255,0.25); border-radius:var(--radius-sm); padding:4px 8px; display:none;" onclick="toggleTorch()" title="Flash / Torche">
+            💡 Flash
+          </button>
         </div>
 
         <div id="scanStatusMsg" style="text-align:center; font-size:0.85rem; color:var(--text-muted); min-height:22px;">
           Pointez la caméra vers le code-barres ISBN au dos de votre BD / Comic...
         </div>
+
+        <!-- 1-TAP NATIVE CAMERA FALLBACK (Guaranteed to work on all phones) -->
+        <label class="btn btn-secondary" style="width:100%; cursor:pointer; margin-top:4px; display:flex; align-items:center; justify-content:center; gap:8px;">
+          <span>📸</span> <span>Prendre une photo avec l'appareil photo</span>
+          <input type="file" id="instantNativeCameraInput" accept="image/*" capture="environment" style="display:none;" onchange="onCoverPhotoSelected(event)">
+        </label>
 
         <div id="continuousScanSessionBox" style="display:none; background:var(--bg-card); padding:10px; border-radius:var(--radius-sm); border:1px solid var(--border-color); font-size:0.82rem;">
           <strong>⚡ Albums scannés dans cette session (<span id="continuousScanCount">0</span>) :</strong>
@@ -2033,13 +2345,121 @@
 
         <div id="photoUploadSection" style="display:none; margin-top:8px;">
           <label class="btn btn-secondary" style="width:100%; cursor:pointer;">
-            <span>📁 Importer ou prendre une photo de couverture</span>
-            <input type="file" id="coverPhotoFileInput" accept="image/*" capture="environment" style="display:none;" onchange="onCoverPhotoSelected(event)">
+            <span>📁 Importer une photo de couverture depuis vos fichiers</span>
+            <input type="file" id="coverPhotoFileInput" accept="image/*" style="display:none;" onchange="onCoverPhotoSelected(event)">
           </label>
         </div>
       </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" onclick="closeScannerModal()">Fermer</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: MENU MOBILE COMPLET -->
+  <div class="modal-overlay" id="mobileMenuModal" onclick="if(event.target===this) closeMobileMenuModal()">
+    <div class="modal-card mobile-menu-card">
+      <div class="modal-header">
+        <div class="modal-title"><span>☰</span><span>Menu & Outils Cerebro</span></div>
+        <button class="modal-close" onclick="closeMobileMenuModal()">✕</button>
+      </div>
+      <div class="modal-body" style="padding: 12px;">
+        <div class="mobile-menu-grid">
+          <button class="mobile-menu-item" onclick="closeMobileMenuModal(); openScannerModal();">
+            <span class="mobile-menu-icon">📷</span>
+            <div class="mobile-menu-text">
+              <span class="mobile-menu-title">Scanner Code-Barres</span>
+              <span class="mobile-menu-desc">Scan 1 par 1 ou mode rafale</span>
+            </div>
+          </button>
+          <button class="mobile-menu-item" onclick="closeMobileMenuModal(); openRandomPickerModal();">
+            <span class="mobile-menu-icon">🎲</span>
+            <div class="mobile-menu-text">
+              <span class="mobile-menu-title">Que lire ce soir ?</span>
+              <span class="mobile-menu-desc">Tirage au sort dans la pile à lire</span>
+            </div>
+          </button>
+          <button class="mobile-menu-item" onclick="closeMobileMenuModal(); openAiAssistantModal();">
+            <span class="mobile-menu-icon">🤖</span>
+            <div class="mobile-menu-text">
+              <span class="mobile-menu-title">Assistant IA</span>
+              <span class="mobile-menu-desc">Conseils de lecture & univers Marvel/DC</span>
+            </div>
+          </button>
+          <button class="mobile-menu-item" onclick="closeMobileMenuModal(); openFleaMarketModal();">
+            <span class="mobile-menu-icon">🏷️</span>
+            <div class="mobile-menu-text">
+              <span class="mobile-menu-title">Mode Brocante & Magasin</span>
+              <span class="mobile-menu-desc">Anti-doublons & tomes manquants</span>
+            </div>
+          </button>
+          <button class="mobile-menu-item" onclick="closeMobileMenuModal(); openUpcomingReleasesModal();">
+            <span class="mobile-menu-icon">📅</span>
+            <div class="mobile-menu-text">
+              <span class="mobile-menu-title">Sorties & Nouveautés</span>
+              <span class="mobile-menu-desc">Planning officiel des éditeurs</span>
+            </div>
+          </button>
+          <button class="mobile-menu-item" onclick="closeMobileMenuModal(); openCollectionsModal('ADD');">
+            <span class="mobile-menu-icon">📚</span>
+            <div class="mobile-menu-text">
+              <span class="mobile-menu-title">Collections Comics</span>
+              <span class="mobile-menu-desc">Must-Have, Omnibus, Anthologies</span>
+            </div>
+          </button>
+          <button class="mobile-menu-item" onclick="closeMobileMenuModal(); openFamilyLibraryModal();">
+            <span class="mobile-menu-icon">👥</span>
+            <div class="mobile-menu-text">
+              <span class="mobile-menu-title">Famille & Amis</span>
+              <span class="mobile-menu-desc">Collections partagées & idées cadeaux</span>
+            </div>
+          </button>
+          <button class="mobile-menu-item" onclick="closeMobileMenuModal(); openDriveSyncModal();">
+            <span class="mobile-menu-icon">☁️</span>
+            <div class="mobile-menu-text">
+              <span class="mobile-menu-title">Google Drive</span>
+              <span class="mobile-menu-desc">Sauvegarde & synchronisation cloud</span>
+            </div>
+          </button>
+          <button class="mobile-menu-item" id="mobileMenuAdminItem" style="display:none;" onclick="closeMobileMenuModal(); openAdminPanelModal();">
+            <span class="mobile-menu-icon">👑</span>
+            <div class="mobile-menu-text">
+              <span class="mobile-menu-title" style="color:#f59e0b;">Panneau d'Administration</span>
+              <span class="mobile-menu-desc">Gestion des utilisateurs & OIDC</span>
+            </div>
+          </button>
+          <button class="mobile-menu-item" onclick="toggleTheme();">
+            <span class="mobile-menu-icon" id="mobileThemeIcon">☀️</span>
+            <div class="mobile-menu-text">
+              <span class="mobile-menu-title">Basculer le Thème</span>
+              <span class="mobile-menu-desc">Mode Sombre / Clair</span>
+            </div>
+          </button>
+          <button class="mobile-menu-item" onclick="closeMobileMenuModal(); openSettingsModal();">
+            <span class="mobile-menu-icon">⚙️</span>
+            <div class="mobile-menu-text">
+              <span class="mobile-menu-title">Paramètres</span>
+              <span class="mobile-menu-desc">Options de l'application</span>
+            </div>
+          </button>
+          <button class="mobile-menu-item mobile-menu-auth" onclick="closeMobileMenuModal(); if(currentAuthUser){openAuthModal();}else{openAuthModal('login');}">
+            <span class="mobile-menu-icon">🔑</span>
+            <div class="mobile-menu-text">
+              <span class="mobile-menu-title" id="mobileMenuLoginText">Connexion / Compte</span>
+              <span class="mobile-menu-desc">Gérer mon profil</span>
+            </div>
+          </button>
+          <button class="mobile-menu-item mobile-menu-danger" id="mobileMenuLogoutItem" style="display:none;" onclick="closeMobileMenuModal(); logoutCurrentUser();">
+            <span class="mobile-menu-icon">🚪</span>
+            <div class="mobile-menu-text">
+              <span class="mobile-menu-title">Déconnexion</span>
+              <span class="mobile-menu-desc">Se déconnecter de ce compte</span>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="closeMobileMenuModal()">Fermer</button>
       </div>
     </div>
   </div>
@@ -3980,8 +4400,14 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       const series = new Set(all.map(b => b.series).filter(Boolean));
 
       document.getElementById('tabCountCollection').innerText = all.length;
+      const colMobEl = document.getElementById('tabCountCollectionMobile');
+      if (colMobEl) colMobEl.innerText = all.length;
       const catCountEl = document.getElementById('tabCountCatalog');
-      if (catCountEl && typeof OFFICIAL_CATALOG !== 'undefined') catCountEl.innerText = OFFICIAL_CATALOG.length;
+      if (catCountEl && typeof OFFICIAL_CATALOG !== 'undefined') {
+        catCountEl.innerText = OFFICIAL_CATALOG.length;
+        const catMobEl = document.getElementById('tabCountCatalogMobile');
+        if (catMobEl) catMobEl.innerText = OFFICIAL_CATALOG.length;
+      }
       document.getElementById('countAll').innerText = all.length;
       document.getElementById('countMarvel').innerText = marvel.length;
       document.getElementById('countDC').innerText = dc.length;
@@ -4262,10 +4688,32 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       } catch (e) {}
     }
 
+    // MOBILE MENU MODAL CONTROLLERS
+    function openMobileMenuModal() {
+      const mobileAdminItem = document.getElementById('mobileMenuAdminItem');
+      if (mobileAdminItem) {
+        mobileAdminItem.style.display = (currentAuthUser && currentAuthUser.role === 'admin') ? 'flex' : 'none';
+      }
+      const mobileLoginText = document.getElementById('mobileMenuLoginText');
+      if (mobileLoginText) {
+        mobileLoginText.innerText = currentAuthUser ? ('Connecté: ' + (currentAuthUser.displayName || currentAuthUser.username)) : 'Connexion / Créer un compte';
+      }
+      const mobileLogoutItem = document.getElementById('mobileMenuLogoutItem');
+      if (mobileLogoutItem) {
+        mobileLogoutItem.style.display = currentAuthUser ? 'flex' : 'none';
+      }
+      document.getElementById('mobileMenuModal').classList.add('active');
+    }
+    function closeMobileMenuModal() {
+      document.getElementById('mobileMenuModal').classList.remove('active');
+    }
+
     // SCANNER & CONTINUOUS BURST SCAN
     let isScanning = false;
     let scannerStream = null;
     let barcodeDetector = null;
+    let currentFacingMode = 'environment';
+    let currentTorchState = false;
 
     async function openScannerModal() {
       document.getElementById('scannerModal').classList.add('active');
@@ -4301,13 +4749,27 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
 
     let zxingReader = null;
 
+    async function ensureZxingLoaded() {
+      if (typeof ZXing !== 'undefined') return true;
+      return new Promise((resolve) => {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/@zxing/library@latest/umd/index.min.js';
+        script.async = true;
+        script.onload = () => resolve(typeof ZXing !== 'undefined');
+        script.onerror = () => resolve(false);
+        document.head.appendChild(script);
+      });
+    }
+
     async function initZxingScanner() {
       try {
+        await ensureZxingLoaded();
         if (typeof ZXing === 'undefined') return;
         if (!zxingReader) {
           zxingReader = new ZXing.BrowserMultiFormatReader();
         }
         const video = document.getElementById('scannerVideo');
+        if (!video) return;
         zxingReader.decodeFromVideoElement(video, (result, err) => {
           if (result && isScanning) {
             const code = result.getText().replace(/[^0-9X]/gi, '');
@@ -4323,31 +4785,125 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       }
     }
 
+    async function switchCameraDevice() {
+      currentFacingMode = (currentFacingMode === 'environment') ? 'user' : 'environment';
+      await startCamera();
+    }
+
+    async function toggleTorch() {
+      if (!scannerStream) return;
+      try {
+        const track = scannerStream.getVideoTracks()[0];
+        if (!track) return;
+        currentTorchState = !currentTorchState;
+        await track.applyConstraints({
+          advanced: [{ torch: currentTorchState }]
+        });
+      } catch (e) {
+        console.warn('Torch non supporté:', e);
+      }
+    }
+
     async function startCamera() {
       const video = document.getElementById('scannerVideo');
+      if (!video) return;
+
+      // Essential iOS / Safari video playback attributes
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+      video.setAttribute('playsinline', 'true');
+      video.setAttribute('webkit-playsinline', 'true');
+      video.setAttribute('muted', 'true');
+      video.setAttribute('autoplay', 'true');
+
+      // Stop previous stream if any
+      if (scannerStream) {
+        try { scannerStream.getTracks().forEach(t => t.stop()); } catch(e){}
+        scannerStream = null;
+      }
+      if (zxingReader) {
+        try { zxingReader.reset(); } catch(e){}
+      }
+
+      document.getElementById('scanStatusMsg').innerHTML = '⏳ <em>Démarrage de la caméra...</em>';
+
       try {
-        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-          scannerStream = await navigator.mediaDevices.getUserMedia({
-            video: { facingMode: 'environment', width: { ideal: 1280 }, height: { ideal: 720 } }
-          });
-          video.srcObject = scannerStream;
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+          throw new Error('Votre navigateur ou connexion non sécurisée (HTTP) bloque l\'accès caméra direct.');
+        }
+
+        // Progressive constraints: test from flexible environment to general video
+        const constraintAttempts = [
+          { video: { facingMode: { ideal: currentFacingMode }, width: { ideal: 1280 } } },
+          { video: { facingMode: { ideal: currentFacingMode } } },
+          { video: { facingMode: currentFacingMode } },
+          { video: true }
+        ];
+
+        let stream = null;
+        let lastError = null;
+
+        for (const constraints of constraintAttempts) {
+          try {
+            stream = await navigator.mediaDevices.getUserMedia(constraints);
+            if (stream) break;
+          } catch (err) {
+            lastError = err;
+          }
+        }
+
+        if (!stream) {
+          throw lastError || new Error('Impossible d\'activer la caméra.');
+        }
+
+        scannerStream = stream;
+        video.srcObject = scannerStream;
+
+        // Mobile play handling
+        try {
           await video.play();
-          isScanning = true;
-          if ('BarcodeDetector' in window) {
+        } catch (playErr) {
+          console.warn('Video play warning:', playErr);
+          video.onloadedmetadata = () => {
+            video.play().catch(e => console.warn('Second play attempt:', e));
+          };
+        }
+
+        isScanning = true;
+
+        // Check if torch is supported
+        try {
+          const track = stream.getVideoTracks()[0];
+          const caps = (track && track.getCapabilities) ? track.getCapabilities() : {};
+          const torchBtn = document.getElementById('btnToggleTorch');
+          if (torchBtn) {
+            torchBtn.style.display = caps.torch ? 'block' : 'none';
+          }
+        } catch (e) {}
+
+        if ('BarcodeDetector' in window) {
+          try {
             barcodeDetector = new BarcodeDetector({ formats: ['ean_13', 'isbn', 'ean_8'] });
             scanLoop();
-          } else {
-            initZxingScanner();
+          } catch(e) {
+            await initZxingScanner();
           }
         } else {
-          throw new Error('Flux vidéo non supporté sur ce navigateur');
+          await initZxingScanner();
         }
+
+        document.getElementById('scanStatusMsg').innerText = (appState.scanMode === 'CONTINUOUS')
+          ? '⚡ Mode Rafale : Passez vos BDs l\'une après l\'autre sans toucher l\'écran'
+          : 'Pointez la caméra vers le code-barres ISBN au dos de votre BD / Comic...';
+
       } catch (e) {
-        console.warn('Flux caméra direct inaccessible :', e.message);
+        console.warn('Flux caméra inaccessible :', e);
+        isScanning = false;
         document.getElementById('scanStatusMsg').innerHTML = `
-          <div style="background:rgba(225,29,72,0.1); border:1px solid rgba(225,29,72,0.3); border-radius:6px; padding:8px; margin-top:4px; font-size:0.8rem;">
-            📷 <strong>Flux vidéo direct non autorisé sur ce réseau</strong><br>
-            Appuyez ci-dessous sur <strong>« 🖼️ Importer ou prendre une photo »</strong> pour scanner directement avec votre appareil photo !
+          <div style="background:rgba(225,29,72,0.12); border:1px solid rgba(225,29,72,0.3); border-radius:8px; padding:10px; margin-top:6px; font-size:0.82rem; line-height:1.4;">
+            📷 <strong>Accès direct caméra :</strong> ${escapeHtml(e.message || 'Non autorisé')}<br>
+            <span style="color:var(--text-muted); font-size:0.75rem;">Vous pouvez utiliser le bouton <strong>« 📸 Prendre une photo »</strong> ci-dessus pour scanner immédiatement !</span>
           </div>
         `;
         document.getElementById('photoUploadSection').style.display = 'block';
@@ -4389,6 +4945,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       }
 
       // 2. Tenter détection code-barres avec ZXing
+      await ensureZxingLoaded();
       if (typeof ZXing !== 'undefined') {
         try {
           const reader = new ZXing.BrowserMultiFormatReader();
