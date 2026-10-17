@@ -857,15 +857,16 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
+    html {
+      height: 100%;
+    }
+
     body {
       font-family: var(--font-stack);
       background-color: var(--bg-main);
       color: var(--text-main);
-      min-height: 100vh;
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      overflow-x: clip;
+      min-height: 100%;
+      overflow-x: hidden;
       -webkit-overflow-scrolling: touch;
       transition: background-color 0.2s, color 0.2s;
     }
@@ -1367,22 +1368,31 @@
 
     /* SCANNER */
     .scanner-viewfinder {
-      position: relative; width: 100%; height: 280px; background: #000;
+      position: relative; width: 100%; height: 260px; background: #000;
       border-radius: var(--radius-md); overflow: hidden; display: flex; align-items: center; justify-content: center;
     }
     .scanner-video { width: 100%; height: 100%; object-fit: cover; }
+    .scanner-placeholder {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: #090d16; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; z-index: 5;
+      padding: 16px; text-align: center; gap: 8px;
+    }
+    .scanner-placeholder-spinner { font-size: 28px; }
     .scanner-laser {
-      position: absolute; top: 50%; left: 15%; right: 15%; height: 2px;
+      position: absolute; top: 50%; left: 12%; right: 12%; height: 2px;
       background: #ef4444; box-shadow: 0 0 12px #ef4444; animation: scanLaser 2s infinite ease-in-out;
+      z-index: 6; pointer-events: none;
     }
     @keyframes scanLaser {
-      0%, 100% { transform: translateY(-70px); opacity: 0.6; }
-      50% { transform: translateY(70px); opacity: 1; }
+      0%, 100% { transform: translateY(-50px); opacity: 0.6; }
+      50% { transform: translateY(50px); opacity: 1; }
     }
     .scanner-overlay-box {
-      position: absolute; width: 220px; height: 160px;
-      border: 2px solid rgba(255, 255, 255, 0.6); border-radius: 8px;
-      box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.5); pointer-events: none;
+      position: absolute; width: 75%; max-width: 250px; height: 120px;
+      border: 2px dashed rgba(239, 68, 68, 0.6); border-radius: 10px;
+      pointer-events: none; z-index: 6;
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.4);
     }
 
     .fab-btn {
@@ -1687,8 +1697,6 @@
         -webkit-backdrop-filter: none !important;
         background: var(--bg-panel) !important;
         border-bottom: 1px solid var(--border-color);
-        transform: translateZ(0);
-        will-change: transform;
       }
       .header-container {
         padding: 8px 10px 6px 10px !important;
@@ -1837,8 +1845,29 @@
         gap: 10px !important;
       }
       .comic-card {
-        contain: content;
         border-radius: var(--radius-sm) !important;
+      }
+      .scanner-modal-card {
+        max-height: 94vh !important;
+        margin: 6px !important;
+      }
+      .scanner-modal-body {
+        padding: 10px 12px !important;
+        gap: 8px !important;
+      }
+      .scanner-viewfinder {
+        height: 190px !important;
+        max-height: 28vh !important;
+      }
+      .scanner-mode-bar {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 6px;
+      }
+      .scanner-mode-btn {
+        flex: 1;
+        padding: 6px 8px !important;
+        font-size: 0.78rem !important;
       }
       .comic-info {
         padding: 6px 8px !important;
@@ -2293,26 +2322,34 @@
 
   <!-- MODAL: SCANNER AVEC MODE CONTINU / RAFALE -->
   <div class="modal-overlay" id="scannerModal">
-    <div class="modal-card">
+    <div class="modal-card scanner-modal-card">
       <div class="modal-header">
         <div class="modal-title"><span>📷</span><span>Scanner Code-Barres & Mode Rafale</span></div>
         <button class="modal-close" onclick="closeScannerModal()">✕</button>
       </div>
-      <div class="modal-body">
-        <div style="display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap;">
-          <button id="btnScanModeBarcode" class="btn btn-primary" style="flex:1;" onclick="switchScanMode('BARCODE')">
-            <span>🏷️</span> Scan 1 par 1
+      <div class="modal-body scanner-modal-body">
+        <div class="scanner-mode-bar" style="display:flex; gap:6px; margin-bottom:6px;">
+          <button id="btnScanModeBarcode" class="btn btn-primary scanner-mode-btn" onclick="switchScanMode('BARCODE')">
+            <span>🏷️ Scan 1 par 1</span>
           </button>
-          <button id="btnScanModeContinuous" class="btn btn-secondary" style="flex:1;" onclick="switchScanMode('CONTINUOUS')">
-            <span>⚡ Scan en Rafale</span>
+          <button id="btnScanModeContinuous" class="btn btn-secondary scanner-mode-btn" onclick="switchScanMode('CONTINUOUS')">
+            <span>⚡ Mode Rafale</span>
           </button>
-          <button id="btnScanModePhoto" class="btn btn-secondary" style="flex:1;" onclick="switchScanMode('PHOTO')">
-            <span>🖼️</span> Photo Jaquette
+          <button id="btnScanModePhoto" class="btn btn-secondary scanner-mode-btn" onclick="switchScanMode('PHOTO')">
+            <span>🖼️ Photo</span>
           </button>
         </div>
 
         <div class="scanner-viewfinder" id="scannerViewfinder">
           <video id="scannerVideo" class="scanner-video" autoplay playsinline webkit-playsinline muted></video>
+          <div id="scannerPlaceholder" class="scanner-placeholder">
+            <div class="scanner-placeholder-spinner">⏳</div>
+            <div id="scannerPlaceholderText" style="font-size:0.85rem; color:#cbd5e1; font-weight:600; text-align:center; padding:0 14px;">Activation de la caméra...</div>
+            <label id="scannerPlaceholderBtn" class="btn btn-sm btn-primary" style="display:none; margin-top:8px; cursor:pointer;">
+              <span>📸 Prendre une photo</span>
+              <input type="file" accept="image/*" capture="environment" style="display:none;" onchange="onCoverPhotoSelected(event)">
+            </label>
+          </div>
           <div class="scanner-laser" id="scannerLaser"></div>
           <div class="scanner-overlay-box"></div>
           <button id="btnSwitchCamera" class="btn btn-sm" style="position:absolute; top:8px; right:8px; z-index:10; background:rgba(0,0,0,0.65); color:white; border:1px solid rgba(255,255,255,0.25); border-radius:var(--radius-sm); padding:4px 8px;" onclick="switchCameraDevice()" title="Changer de caméra (avant/arrière)">
@@ -2323,35 +2360,35 @@
           </button>
         </div>
 
-        <div id="scanStatusMsg" style="text-align:center; font-size:0.85rem; color:var(--text-muted); min-height:22px;">
+        <div id="scanStatusMsg" style="text-align:center; font-size:0.8rem; color:var(--text-muted); min-height:18px;">
           Pointez la caméra vers le code-barres ISBN au dos de votre BD / Comic...
         </div>
 
         <!-- 1-TAP NATIVE CAMERA FALLBACK (Guaranteed to work on all phones) -->
-        <label class="btn btn-secondary" style="width:100%; cursor:pointer; margin-top:4px; display:flex; align-items:center; justify-content:center; gap:8px;">
-          <span>📸</span> <span>Prendre une photo avec l'appareil photo</span>
+        <label class="btn btn-secondary btn-sm" style="width:100%; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px; padding:8px 12px;">
+          <span>📸</span> <span>Prendre une photo de la BD / ISBN</span>
           <input type="file" id="instantNativeCameraInput" accept="image/*" capture="environment" style="display:none;" onchange="onCoverPhotoSelected(event)">
         </label>
 
-        <div id="continuousScanSessionBox" style="display:none; background:var(--bg-card); padding:10px; border-radius:var(--radius-sm); border:1px solid var(--border-color); font-size:0.82rem;">
+        <div id="continuousScanSessionBox" style="display:none; background:var(--bg-card); padding:8px 10px; border-radius:var(--radius-sm); border:1px solid var(--border-color); font-size:0.8rem;">
           <strong>⚡ Albums scannés dans cette session (<span id="continuousScanCount">0</span>) :</strong>
-          <div id="continuousScanList" style="margin-top:6px; max-height:80px; overflow-y:auto; color:var(--text-muted);"></div>
+          <div id="continuousScanList" style="margin-top:4px; max-height:80px; overflow-y:auto; color:var(--text-muted);"></div>
         </div>
 
-        <div style="display:flex; gap:8px; margin-top:8px;">
-          <input type="text" id="manualIsbnInput" class="form-input" placeholder="Ou tapez directement l'ISBN (ex: 9782809490127)..." style="flex:1;">
-          <button class="btn btn-primary" onclick="lookupManualIsbn()">Rechercher</button>
+        <div style="display:flex; gap:6px; margin-top:2px;">
+          <input type="text" id="manualIsbnInput" class="form-input" placeholder="Ou tapez directement l'ISBN (ex: 9782809490127)..." style="flex:1; font-size:0.82rem; padding:6px 10px;">
+          <button class="btn btn-sm btn-primary" onclick="lookupManualIsbn()">Rechercher</button>
         </div>
 
-        <div id="photoUploadSection" style="display:none; margin-top:8px;">
-          <label class="btn btn-secondary" style="width:100%; cursor:pointer;">
+        <div id="photoUploadSection" style="display:none; margin-top:4px;">
+          <label class="btn btn-sm btn-secondary" style="width:100%; cursor:pointer; text-align:center;">
             <span>📁 Importer une photo de couverture depuis vos fichiers</span>
             <input type="file" id="coverPhotoFileInput" accept="image/*" style="display:none;" onchange="onCoverPhotoSelected(event)">
           </label>
         </div>
       </div>
-      <div class="modal-footer">
-        <button class="btn btn-secondary" onclick="closeScannerModal()">Fermer</button>
+      <div class="modal-footer" style="padding:8px 14px;">
+        <button class="btn btn-sm btn-secondary" onclick="closeScannerModal()">Fermer</button>
       </div>
     </div>
   </div>
@@ -3961,49 +3998,117 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       return list;
     }
 
-    function renderGridView(container, list, isCatalog) {
-      let html = '<div class="comic-grid">';
-      for (const book of list) {
-        const universeClass = book.universe === 'MARVEL' ? 'ribbon-marvel' : book.universe === 'DC' ? 'ribbon-dc' : 'ribbon-bd';
-        const owned = isBookOwned(book);
-        const coverSrc = book.cover || getReliableCoverUrl(book.isbn);
+    let currentGridObserver = null;
+    let gridRenderedLimit = 48;
+    let lastRenderedTab = null;
+    let lastRenderedUniverse = null;
+    let lastRenderedSearch = null;
 
-        html += `
-          <div class="comic-card" onclick="onCardClick('${book.id}', ${isCatalog})">
-            <div class="comic-cover-wrap">
-              <img class="comic-cover-img" 
-                   src="${escapeHtml(coverSrc)}" 
-                   alt="${escapeHtml(book.title)}" 
-                   loading="lazy"
-                   onerror="handleCoverError(this, '${book.isbn||''}', '${escapeHtml(book.title)}', '${book.universe}')">
-              <div class="cover-ribbon ${universeClass}">${book.universe}</div>
-              ${book.format ? `<div class="cover-format-badge">${escapeHtml(book.format)}</div>` : ''}
-              ${book.isSigned ? '<div class="cover-signed-badge">✍️ Signé</div>' : ''}
-              ${!isCatalog ? getStatusBadge(book.status, book.loanedTo) : (owned ? '<div class="cover-status-badge status-read" title="Dans ma collection">✓</div>' : '')}
-            </div>
-            <div class="comic-info">
-              <div class="comic-series">${escapeHtml(book.series || 'BD')}</div>
-              <div class="comic-title">${escapeHtml(book.title)}</div>
-              <div class="comic-meta-row">
-                <span class="comic-tome-badge">${escapeHtml(book.tome || 'Tome')}</span>
-                <span style="font-size:0.75rem; color:var(--text-muted);">${book.rating ? '★ ' + book.rating : ''}</span>
-              </div>
-            </div>
-            ${isCatalog ? `
-              <div class="catalog-actions" onclick="event.stopPropagation();">
-                <button class="catalog-btn ${owned ? 'owned' : ''}" onclick="toggleCatalogBookOwned('${book.id}')">
-                  ${owned ? '✓ Possédé' : '+ Ajouter'}
-                </button>
-                <button class="catalog-btn" onclick="addCatalogBookWishlist('${book.id}')" title="Wishlist">
-                  ❤️
-                </button>
-              </div>
-            ` : ''}
+    function renderComicCardHtml(book, isCatalog) {
+      const universeClass = book.universe === 'MARVEL' ? 'ribbon-marvel' : book.universe === 'DC' ? 'ribbon-dc' : 'ribbon-bd';
+      const owned = isBookOwned(book);
+      const coverSrc = book.cover || getReliableCoverUrl(book.isbn);
+
+      return `
+        <div class="comic-card" onclick="onCardClick('${book.id}', ${isCatalog})">
+          <div class="comic-cover-wrap">
+            <img class="comic-cover-img" 
+                 src="${escapeHtml(coverSrc)}" 
+                 alt="${escapeHtml(book.title)}" 
+                 loading="lazy"
+                 onerror="handleCoverError(this, '${book.isbn||''}', '${escapeHtml(book.title)}', '${book.universe}')">
+            <div class="cover-ribbon ${universeClass}">${book.universe}</div>
+            ${book.format ? `<div class="cover-format-badge">${escapeHtml(book.format)}</div>` : ''}
+            ${book.isSigned ? '<div class="cover-signed-badge">✍️ Signé</div>' : ''}
+            ${!isCatalog ? getStatusBadge(book.status, book.loanedTo) : (owned ? '<div class="cover-status-badge status-read" title="Dans ma collection">✓</div>' : '')}
           </div>
-        `;
+          <div class="comic-info">
+            <div class="comic-series">${escapeHtml(book.series || 'BD')}</div>
+            <div class="comic-title">${escapeHtml(book.title)}</div>
+            <div class="comic-meta-row">
+              <span class="comic-tome-badge">${escapeHtml(book.tome || 'Tome')}</span>
+              <span style="font-size:0.75rem; color:var(--text-muted);">${book.rating ? '★ ' + book.rating : ''}</span>
+            </div>
+          </div>
+          ${isCatalog ? `
+            <div class="catalog-actions" onclick="event.stopPropagation();">
+              <button class="catalog-btn ${owned ? 'owned' : ''}" onclick="toggleCatalogBookOwned('${book.id}')">
+                ${owned ? '✓ Possédé' : '+ Ajouter'}
+              </button>
+              <button class="catalog-btn" onclick="addCatalogBookWishlist('${book.id}')" title="Wishlist">
+                ❤️
+              </button>
+            </div>
+          ` : ''}
+        </div>
+      `;
+    }
+
+    function renderGridView(container, list, isCatalog) {
+      if (currentGridObserver) {
+        try { currentGridObserver.disconnect(); } catch (e) {}
+        currentGridObserver = null;
       }
-      html += '</div>';
-      container.innerHTML = html;
+
+      // If tab, filter or search changed, reset rendering batch count
+      if (lastRenderedTab !== appState.mainTab || 
+          lastRenderedUniverse !== appState.currentUniverse || 
+          lastRenderedSearch !== (appState.searchQuery || '')) {
+        gridRenderedLimit = 48;
+        lastRenderedTab = appState.mainTab;
+        lastRenderedUniverse = appState.currentUniverse;
+        lastRenderedSearch = appState.searchQuery || '';
+      }
+
+      const initialCount = Math.min(list.length, Math.max(48, gridRenderedLimit));
+      let renderedCount = 0;
+
+      container.innerHTML = '<div class="comic-grid" id="mainComicGrid"></div>';
+      const grid = document.getElementById('mainComicGrid');
+
+      function appendBatch(batchSize) {
+        const nextBatch = list.slice(renderedCount, renderedCount + batchSize);
+        if (nextBatch.length === 0) return;
+
+        let batchHtml = '';
+        for (const book of nextBatch) {
+          batchHtml += renderComicCardHtml(book, isCatalog);
+        }
+
+        const oldSentinel = document.getElementById('gridLoadMoreSentinel');
+        if (oldSentinel) oldSentinel.remove();
+
+        grid.insertAdjacentHTML('beforeend', batchHtml);
+        renderedCount += nextBatch.length;
+        gridRenderedLimit = renderedCount;
+
+        if (renderedCount < list.length) {
+          const remaining = list.length - renderedCount;
+          const sentinel = document.createElement('div');
+          sentinel.id = 'gridLoadMoreSentinel';
+          sentinel.style.cssText = 'grid-column: 1 / -1; text-align: center; padding: 20px 10px;';
+          sentinel.innerHTML = `
+            <button class="btn btn-secondary" onclick="window.__loadMoreComics && window.__loadMoreComics()" style="margin: 0 auto; display: inline-flex; align-items: center; gap: 8px;">
+              <span>Afficher plus d'albums</span>
+              <span style="background: var(--bg-card); padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; font-weight: 700;">${remaining} restants</span>
+            </button>
+          `;
+          grid.appendChild(sentinel);
+
+          if ('IntersectionObserver' in window) {
+            currentGridObserver = new IntersectionObserver((entries) => {
+              if (entries[0] && entries[0].isIntersecting) {
+                if (currentGridObserver) currentGridObserver.disconnect();
+                appendBatch(48);
+              }
+            }, { rootMargin: '350px' });
+            currentGridObserver.observe(sentinel);
+          }
+        }
+      }
+
+      window.__loadMoreComics = () => appendBatch(48);
+      appendBatch(initialCount);
     }
 
     function renderSeriesView(container, list, isCatalog) {
@@ -4716,11 +4821,22 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
     let currentTorchState = false;
 
     async function openScannerModal() {
-      document.getElementById('scannerModal').classList.add('active');
+      const modal = document.getElementById('scannerModal');
+      modal.classList.add('active');
       appState.scanMode = 'BARCODE';
       appState.continuousScanCount = 0;
       appState.recentScannedCodes.clear();
       updateScanModeButtons();
+
+      const placeholder = document.getElementById('scannerPlaceholder');
+      if (placeholder) {
+        placeholder.style.display = 'flex';
+        const txt = document.getElementById('scannerPlaceholderText');
+        if (txt) txt.innerText = 'Activation de la caméra...';
+        const btn = document.getElementById('scannerPlaceholderBtn');
+        if (btn) btn.style.display = 'none';
+      }
+
       startCamera();
     }
     function closeScannerModal() {
@@ -4733,9 +4849,9 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
     }
     function updateScanModeButtons() {
       const mode = appState.scanMode;
-      document.getElementById('btnScanModeBarcode').className = mode === 'BARCODE' ? 'btn btn-primary' : 'btn btn-secondary';
-      document.getElementById('btnScanModeContinuous').className = mode === 'CONTINUOUS' ? 'btn btn-primary' : 'btn btn-secondary';
-      document.getElementById('btnScanModePhoto').className = mode === 'PHOTO' ? 'btn btn-primary' : 'btn btn-secondary';
+      document.getElementById('btnScanModeBarcode').className = mode === 'BARCODE' ? 'btn btn-primary scanner-mode-btn' : 'btn btn-secondary scanner-mode-btn';
+      document.getElementById('btnScanModeContinuous').className = mode === 'CONTINUOUS' ? 'btn btn-primary scanner-mode-btn' : 'btn btn-secondary scanner-mode-btn';
+      document.getElementById('btnScanModePhoto').className = mode === 'PHOTO' ? 'btn btn-primary scanner-mode-btn' : 'btn btn-secondary scanner-mode-btn';
       document.getElementById('scannerLaser').style.display = (mode === 'BARCODE' || mode === 'CONTINUOUS') ? 'block' : 'none';
       document.getElementById('photoUploadSection').style.display = mode === 'PHOTO' ? 'block' : 'none';
       document.getElementById('continuousScanSessionBox').style.display = mode === 'CONTINUOUS' ? 'block' : 'none';
@@ -4770,6 +4886,10 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         }
         const video = document.getElementById('scannerVideo');
         if (!video) return;
+        if (video.videoWidth === 0) {
+          setTimeout(() => { if (isScanning) initZxingScanner(); }, 200);
+          return;
+        }
         zxingReader.decodeFromVideoElement(video, (result, err) => {
           if (result && isScanning) {
             const code = result.getText().replace(/[^0-9X]/gi, '');
@@ -4830,7 +4950,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
 
       try {
         if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
-          throw new Error('Votre navigateur ou connexion non sécurisée (HTTP) bloque l\'accès caméra direct.');
+          throw new Error('Connexion non sécurisée (HTTP) ou caméra bloquée.');
         }
 
         // Progressive constraints: test from flexible environment to general video
@@ -4865,10 +4985,32 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           await video.play();
         } catch (playErr) {
           console.warn('Video play warning:', playErr);
-          video.onloadedmetadata = () => {
-            video.play().catch(e => console.warn('Second play attempt:', e));
-          };
         }
+
+        // Wait for video frames to start rendering before starting detection
+        await new Promise((resolve) => {
+          if (video.videoWidth > 0 && video.readyState >= 2) return resolve();
+          let resolved = false;
+          const onReady = () => {
+            if (!resolved) {
+              resolved = true;
+              video.removeEventListener('loadeddata', onReady);
+              video.removeEventListener('canplay', onReady);
+              resolve();
+            }
+          };
+          video.addEventListener('loadeddata', onReady);
+          video.addEventListener('canplay', onReady);
+          setTimeout(() => {
+            if (!resolved) {
+              resolved = true;
+              resolve();
+            }
+          }, 800);
+        });
+
+        const placeholder = document.getElementById('scannerPlaceholder');
+        if (placeholder) placeholder.style.display = 'none';
 
         isScanning = true;
 
@@ -4884,7 +5026,8 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
 
         if ('BarcodeDetector' in window) {
           try {
-            barcodeDetector = new BarcodeDetector({ formats: ['ean_13', 'isbn', 'ean_8'] });
+            // Fix: 'isbn' is not a valid BarcodeFormat enum, only standard formats
+            barcodeDetector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'code_128'] });
             scanLoop();
           } catch(e) {
             await initZxingScanner();
@@ -4900,10 +5043,19 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       } catch (e) {
         console.warn('Flux caméra inaccessible :', e);
         isScanning = false;
+        const placeholder = document.getElementById('scannerPlaceholder');
+        if (placeholder) {
+          placeholder.style.display = 'flex';
+          const txt = document.getElementById('scannerPlaceholderText');
+          if (txt) {
+            txt.innerHTML = '📷 <strong>Caméra directe indisponible</strong><br><span style="font-size:0.75rem; color:#94a3b8;">' + escapeHtml(e.message || 'Autorisation requise') + '</span>';
+          }
+          const btn = document.getElementById('scannerPlaceholderBtn');
+          if (btn) btn.style.display = 'inline-flex';
+        }
         document.getElementById('scanStatusMsg').innerHTML = `
-          <div style="background:rgba(225,29,72,0.12); border:1px solid rgba(225,29,72,0.3); border-radius:8px; padding:10px; margin-top:6px; font-size:0.82rem; line-height:1.4;">
-            📷 <strong>Accès direct caméra :</strong> ${escapeHtml(e.message || 'Non autorisé')}<br>
-            <span style="color:var(--text-muted); font-size:0.75rem;">Vous pouvez utiliser le bouton <strong>« 📸 Prendre une photo »</strong> ci-dessus pour scanner immédiatement !</span>
+          <div style="background:rgba(225,29,72,0.12); border:1px solid rgba(225,29,72,0.3); border-radius:8px; padding:8px; font-size:0.8rem; line-height:1.4;">
+            Utilisez le bouton <strong>« 📸 Prendre une photo »</strong> pour capturer l'album avec votre appareil photo.
           </div>
         `;
         document.getElementById('photoUploadSection').style.display = 'block';
@@ -4912,6 +5064,8 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
 
     function stopCamera() {
       isScanning = false;
+      const placeholder = document.getElementById('scannerPlaceholder');
+      if (placeholder) placeholder.style.display = 'none';
       if (zxingReader) {
         try { zxingReader.reset(); } catch (e) {}
       }
@@ -4931,7 +5085,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       if ('BarcodeDetector' in window) {
         try {
           const imgBitmap = await createImageBitmap(file);
-          const detector = new BarcodeDetector({ formats: ['ean_13', 'isbn', 'ean_8'] });
+          const detector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'code_128'] });
           const barcodes = await detector.detect(imgBitmap);
           if (barcodes && barcodes.length > 0) {
             const code = barcodes[0].rawValue.replace(/[^0-9X]/gi, '');
@@ -4972,10 +5126,16 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       };
       reader.readAsDataURL(file);
     }
+
     async function scanLoop() {
       if (!isScanning || !barcodeDetector) return;
+      const video = document.getElementById('scannerVideo');
+      if (!video || video.readyState < 2 || video.videoWidth === 0) {
+        if (isScanning) requestAnimationFrame(scanLoop);
+        return;
+      }
       try {
-        const barcodes = await barcodeDetector.detect(document.getElementById('scannerVideo'));
+        const barcodes = await barcodeDetector.detect(video);
         if (barcodes.length > 0) {
           const code = barcodes[0].rawValue.replace(/[^0-9X]/gi, '');
           if (code && !appState.recentScannedCodes.has(code)) {
