@@ -5403,13 +5403,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           const isInsecure = (typeof window !== 'undefined' && !window.isSecureContext && location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1');
 
           if (txt) {
-            if (isInsecure) {
-              txt.innerHTML = '🔒 <strong>Connexion HTTP (Non sécurisée)</strong><br><span style="font-size:0.75rem; color:#94a3b8;">La vidéo en direct requiert HTTPS sur smartphone.<br>Utilisez le bouton « Prendre une photo » ci-dessous.</span>';
-            } else if (isDenied) {
-              txt.innerHTML = '🚫 <strong>Accès Caméra Bloqué</strong><br><span style="font-size:0.75rem; color:#94a3b8;">Autorisation refusée dans le navigateur.<br>Cliquez sur l\'icône de réglages / cadenas dans la barre d\'adresse pour autoriser la caméra.</span>';
-            } else {
-              txt.innerHTML = '📷 <strong>Caméra directe indisponible</strong><br><span style="font-size:0.75rem; color:#94a3b8;">' + escapeHtml(e.message || 'Autorisation requise') + '</span>';
-            }
+            txt.innerHTML = '📷 <strong>Caméra directe indisponible</strong><br><span style="font-size:0.75rem; color:#94a3b8;">' + escapeHtml(e.message || 'Autorisation requise') + '</span>';
           }
           const btn = document.getElementById('scannerPlaceholderBtn');
           if (btn) btn.style.display = 'inline-flex';
@@ -5432,24 +5426,11 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           } catch(e) {}
         }
 
-        const isDenied = (e.name === 'NotAllowedError' || (e.message && /denied|permission/i.test(e.message)));
-        if (isDenied) {
-          document.getElementById('scanStatusMsg').innerHTML = `
-            <div style="background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.3); border-radius:8px; padding:10px; font-size:0.78rem; text-align:left; line-height:1.45;">
-              <strong style="color:#f87171;">🔓 Comment débloquer la caméra sur Android Chrome :</strong>
-              <div style="margin-top:6px; color:#cbd5e1;">
-                <strong>Méthode 1 (la plus rapide) :</strong> Sur l'écran d'accueil du téléphone, restez appuyé 2 secondes sur l'icône de <strong>Chrome</strong> &gt; appuyez sur le <strong>ℹ️</strong> &gt; <em>Autorisations</em> &gt; <em>Appareil photo</em> &gt; cochez <strong>« Autoriser »</strong>.<br>
-                <strong>Méthode 2 :</strong> Dans Chrome, appuyez sur l'icône 🎛️ (ou 🔒) tout à gauche de l'adresse web tout en haut &gt; <em>Autorisations</em> &gt; activez <strong>Appareil photo</strong>.
-              </div>
-            </div>
-          `;
-        } else {
-          document.getElementById('scanStatusMsg').innerHTML = `
-            <div style="background:rgba(225,29,72,0.12); border:1px solid rgba(225,29,72,0.3); border-radius:8px; padding:8px; font-size:0.8rem; line-height:1.4;">
-              💡 <strong>Alternative :</strong> Le bouton <strong>« 📸 Prendre une photo »</strong> ci-dessous fonctionne toujours sans aucune restriction !
-            </div>
-          `;
-        }
+        document.getElementById('scanStatusMsg').innerHTML = `
+          <div style="background:rgba(225,29,72,0.12); border:1px solid rgba(225,29,72,0.3); border-radius:8px; padding:8px; font-size:0.8rem; line-height:1.4;">
+            Utilisez le bouton <strong>« 📸 Prendre une photo »</strong> pour capturer l'album avec votre appareil photo.
+          </div>
+        `;
         document.getElementById('photoUploadSection').style.display = 'block';
       }
     }
