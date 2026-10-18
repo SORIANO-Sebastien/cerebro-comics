@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cerebro-pwa-v3.8';
+const CACHE_NAME = 'cerebro-pwa-v4.0';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -25,6 +25,7 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         keys.map((key) => {
           if (key !== CACHE_NAME) {
+            console.log('🧹 Nettoyage ancien cache PWA :', key);
             return caches.delete(key);
           }
         })
@@ -43,7 +44,23 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // 2. External CDN & media services: Network first, cache fallback
+  // 2. Catalog JSON: ALWAYS Network First with cache fallback (ensures fresh additions are seen immediately)
+  if (url.includes('all_comics_catalog.json')) {
+    event.respondWith(
+      fetch(event.request).then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200 && event.request.method === 'GET') {
+          const responseClone = networkResponse.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put(event.request, responseClone);
+          });
+        }
+        return networkResponse;
+      }).catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // 3. External CDN & media services: Network first, cache fallback
   if (url.includes('excalibur-comics.fr') || url.includes('images-na.ssl-images-amazon.com') || url.includes('googleapis.com') || url.includes('openlibrary.org') || url.includes('bnf.fr') || url.includes('tcgdex') || url.includes('googleusercontent.com') || url.includes('unpkg.com') || url.includes('jsdelivr.net')) {
     event.respondWith(
       fetch(event.request).catch(() => caches.match(event.request))

@@ -720,11 +720,17 @@ const server = http.createServer(async (req, res) => {
       res.writeHead(500);
       res.end('Erreur serveur');
     } else {
-      res.writeHead(200, {
+      const headers = {
         'Content-Type': contentType,
         'Access-Control-Allow-Origin': '*',
         'Permissions-Policy': 'camera=(self)'
-      });
+      };
+      if (ext === '.html' || ext === '.json' || ext === '.js') {
+        headers['Cache-Control'] = 'no-cache, no-store, must-revalidate';
+        headers['Pragma'] = 'no-cache';
+        headers['Expires'] = '0';
+      }
+      res.writeHead(200, headers);
       res.end(content);
     }
   });
