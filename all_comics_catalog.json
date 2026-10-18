@@ -43302,19 +43302,20 @@
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "Marvel Omnibus",
-    "series": "Immortal Hulk Tome 2 Excalibur Panini Comics",
+    "series": "Immortal Hulk",
     "tome": "Tome 2",
-    "title": "Immortal Hulk Tome 2 Excalibur Panini Comics",
+    "title": "Immortal Hulk Tome 2 (Omnibus)",
     "isbn": "9791039131988",
-    "writer": "Ewing, Al (1977-....). Auteur du texte",
+    "writer": "Al Ewing",
     "artist": "",
     "year": 2026,
-    "price": 70,
+    "price": 90,
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/25321-large_default/omnibus-immortal-hulk-tome-2.jpg",
     "synopsis": "",
     "alternateIsbns": [
-      "9791039131988"
+      "9791039131988",
+      "9791039131995"
     ]
   },
   {
@@ -45214,19 +45215,25 @@
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "Marvel Omnibus",
-    "series": "The immortal Hulk. [1]",
-    "tome": "One-Shot",
-    "title": "The immortal Hulk. [1] / [scénario], Al Ewing ; [dessin], Joe Bennett",
+    "series": "Immortal Hulk",
+    "tome": "Tome 1",
+    "title": "Immortal Hulk Tome 1 (Omnibus)",
     "isbn": "9791039107501",
-    "writer": "Ewing, Al (1977-....). Auteur du texte",
-    "artist": "",
+    "writer": "Al Ewing",
+    "artist": "Joe Bennett",
     "year": 2024,
     "price": 90,
     "usIssues": "",
     "cover": "https://www.bdfugue.com/media/catalog/product/cache/0d950bd4d3aaddc02a824ea154d9c41e/9/7/9791039107501_1_75.webp",
     "synopsis": "",
     "alternateIsbns": [
-      "9791039107501"
+      "9791039107501",
+      "9791039134071",
+      "979103913407",
+      "9782809480511",
+      "9782809494303",
+      "9782809498295",
+      "9791039147675"
     ]
   },
   {
@@ -53662,23 +53669,6 @@
     "price": 15.99,
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/28866-large_default/the-mandalorian-edition-grogu.jpg",
-    "synopsis": ""
-  },
-  {
-    "id": "st-starwarsbo-9791039134071",
-    "universe": "STAR_WARS",
-    "publisher": "Panini Comics",
-    "format": "Star Wars: Bounty Hunters & Inquisitors",
-    "series": "Bounty Hunters &...",
-    "tome": "One-Shot",
-    "title": "Bounty Hunters &...",
-    "isbn": "9791039134071",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 22,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/25242-large_default/bounty-hunters-inquisitors-4-edition-collector.jpg",
     "synopsis": ""
   },
   {

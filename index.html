@@ -4069,28 +4069,45 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       const clean = String(code).replace(/[^0-9X]/gi, '').toUpperCase();
       if (!clean) return null;
 
+      // Auto-compute 13th check digit if 12 digits provided
+      const code13 = (clean.length === 12 && (clean.startsWith('978') || clean.startsWith('979')))
+        ? clean + computeEan13Check(clean)
+        : clean;
+
       // 1. Direct exact match
-      let found = OFFICIAL_CATALOG.find(b => (b.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase() === clean);
+      let found = OFFICIAL_CATALOG.find(b => {
+        const bClean = (b.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
+        return bClean === clean || bClean === code13;
+      });
       if (found) return found;
 
       // 2. Multi-ISBN / alternate editions match (Panini re-editions, variants, VO imports)
       found = OFFICIAL_CATALOG.find(b => {
         if (Array.isArray(b.alternateIsbns)) {
-          return b.alternateIsbns.some(alt => String(alt).replace(/[^0-9X]/gi, '').toUpperCase() === clean);
+          return b.alternateIsbns.some(alt => {
+            const aClean = String(alt).replace(/[^0-9X]/gi, '').toUpperCase();
+            if (aClean === clean || aClean === code13) return true;
+            if (aClean.length === 13 && (clean.length === 13 || code13.length === 13)) {
+              const target12 = (code13.length === 13 ? code13 : clean).slice(0, 12);
+              return aClean.startsWith(target12);
+            }
+            return false;
+          });
         }
         return false;
       });
       if (found) return found;
 
       // 3. ISBN-10 <-> ISBN-13 bidirectional match
-      if (clean.length === 10) {
-        const is13 = isbn10To13(clean);
+      const targetIsbn = code13.length === 13 ? code13 : clean;
+      if (targetIsbn.length === 10) {
+        const is13 = isbn10To13(targetIsbn);
         if (is13) {
           found = OFFICIAL_CATALOG.find(b => (b.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase() === is13);
           if (found) return found;
         }
-      } else if (clean.length === 13 && clean.startsWith('978')) {
-        const is10 = isbn13To10(clean);
+      } else if (targetIsbn.length === 13 && targetIsbn.startsWith('978')) {
+        const is10 = isbn13To10(targetIsbn);
         if (is10) {
           found = OFFICIAL_CATALOG.find(b => (b.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase() === is10);
           if (found) return found;
@@ -4098,8 +4115,8 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       }
 
       // 4. 12-digit core prefix match (ignores check-digit printer/catalog discrepancies)
-      if (clean.length === 13 && (clean.startsWith('978') || clean.startsWith('979'))) {
-        const core12 = clean.slice(0, 12);
+      if (targetIsbn.length === 13 && (targetIsbn.startsWith('978') || targetIsbn.startsWith('979'))) {
+        const core12 = targetIsbn.slice(0, 12);
         found = OFFICIAL_CATALOG.find(b => {
           const bClean = (b.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
           return bClean.length === 13 && bClean.startsWith(core12);
@@ -5353,7 +5370,13 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         return null;
       }
 
-      // Case 4: UPC-A (12 digits, common on imported US / UK comics)
+      // Case 4: 12-digit ISBN starting with 978 or 979 (automatically compute 13th check digit)
+      if (clean.length === 12 && (clean.startsWith('978') || clean.startsWith('979'))) {
+        const check = computeEan13Check(clean);
+        return clean + check;
+      }
+
+      // Case 5: UPC-A (12 digits, common on imported US / UK comics)
       if (clean.length === 12 && /^\d{12}$/.test(clean)) {
         const eanCandidate = '0' + clean;
         if (isValidEan13(eanCandidate)) return eanCandidate;
