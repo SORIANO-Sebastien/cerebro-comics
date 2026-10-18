@@ -47837,8 +47837,6 @@
     "synopsis": "",
     "alternateIsbns": [
       "9791039107501",
-      "9791039134071",
-      "979103913407",
       "9782809480511",
       "9782809494303",
       "9782809498295",
@@ -68774,5 +68772,28 @@
     "cover": "https://www.excalibur-comics.fr/28420-large_default/x-men-30-collector-2025.jpg",
     "synopsis": "",
     "editionType": "VARIANT"
+  },
+  {
+    "id": "ma-marvelomni-9791039131407",
+    "universe": "MARVEL",
+    "publisher": "Panini Comics",
+    "format": "Marvel Omnibus",
+    "editionType": "VARIANT",
+    "series": "Immortal Hulk",
+    "tome": "Tome 1",
+    "title": "Immortal Hulk Tome 1 (Omnibus) (Couverture Variante)",
+    "isbn": "9791039131407",
+    "writer": "Al Ewing",
+    "artist": "Joe Bennett",
+    "year": 2025,
+    "price": 90,
+    "usIssues": "Immortal Hulk #1-30",
+    "cover": "https://www.bdfugue.com/media/catalog/product/cache/0d950bd4d3aaddc02a824ea154d9c41e/9/7/9791039131407_1_75.webp",
+    "synopsis": "Édition spéciale avec couverture variante (collector). Bruce Banner est mort. Mais la nuit tombée, l'Immortal Hulk renaît...",
+    "alternateIsbns": [
+      "9791039131407",
+      "979103913407",
+      "9791039134071"
+    ]
   }
 ]
