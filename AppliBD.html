@@ -5170,6 +5170,50 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
     let currentFacingMode = 'environment';
     let currentTorchState = false;
 
+    // Strict ISBN mathematical validator & normalizer (filters out corrupt scans, non-book barcodes & partial reads)
+    function sanitizeAndValidateIsbn(raw) {
+      if (!raw || typeof raw !== 'string') return null;
+      const clean = raw.replace(/[^0-9X]/gi, '').toUpperCase();
+
+      // Case 1: Standard ISBN-13 (Starts with 978 or 979, exact 13 digits)
+      if (clean.length === 13 && (clean.startsWith('978') || clean.startsWith('979'))) {
+        let sum = 0;
+        for (let i = 0; i < 12; i++) {
+          const d = parseInt(clean[i], 10);
+          if (isNaN(d)) return null;
+          sum += (i % 2 === 0) ? d : d * 3;
+        }
+        const check = (10 - (sum % 10)) % 10;
+        return (check === parseInt(clean[12], 10)) ? clean : null;
+      }
+
+      // Case 2: Legacy ISBN-10 (10 chars, converted to standardized ISBN-13)
+      if (clean.length === 10) {
+        let sum = 0;
+        for (let i = 0; i < 9; i++) {
+          const d = parseInt(clean[i], 10);
+          if (isNaN(d)) return null;
+          sum += d * (10 - i);
+        }
+        const lastChar = clean[9];
+        const checkVal = lastChar === 'X' ? 10 : parseInt(lastChar, 10);
+        if (isNaN(checkVal)) return null;
+        sum += checkVal;
+        if (sum % 11 === 0) {
+          const core = '978' + clean.substring(0, 9);
+          let s13 = 0;
+          for (let i = 0; i < 12; i++) {
+            s13 += parseInt(core[i], 10) * (i % 2 === 0 ? 1 : 3);
+          }
+          const c13 = (10 - (s13 % 10)) % 10;
+          return core + c13;
+        }
+        return null;
+      }
+
+      return null;
+    }
+
     async function openScannerModal() {
       const modal = document.getElementById('scannerModal');
       modal.classList.add('active');
@@ -5194,6 +5238,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
     function closeScannerModal() {
       stopCamera();
       document.getElementById('scannerModal').classList.remove('active');
+      renderApp();
     }
     function switchScanMode(mode) {
       appState.scanMode = mode;
@@ -5244,11 +5289,14 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         }
         zxingReader.decodeFromVideoElement(video, (result, err) => {
           if (result && isScanning) {
-            const code = result.getText().replace(/[^0-9X]/gi, '');
-            if (code && !appState.recentScannedCodes.has(code)) {
-              appState.recentScannedCodes.add(code);
-              setTimeout(() => appState.recentScannedCodes.delete(code), 3500);
-              onBarcodeFound(code);
+            const validIsbn = sanitizeAndValidateIsbn(result.getText());
+            if (validIsbn && !appState.recentScannedCodes.has(validIsbn)) {
+              appState.recentScannedCodes.add(validIsbn);
+              setTimeout(() => appState.recentScannedCodes.delete(validIsbn), 3500);
+              if (appState.scanMode !== 'CONTINUOUS') {
+                isScanning = false;
+              }
+              onBarcodeFound(validIsbn);
             }
           }
         });
@@ -5386,8 +5434,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
 
         if ('BarcodeDetector' in window) {
           try {
-            // Fix: 'isbn' is not a valid BarcodeFormat enum, only standard formats
-            barcodeDetector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'code_128'] });
+            barcodeDetector = new BarcodeDetector({ formats: ['ean_13'] });
             scanLoop();
           } catch(e) {
             await initZxingScanner();
@@ -5469,13 +5516,13 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       if ('BarcodeDetector' in window) {
         try {
           const imgBitmap = await createImageBitmap(file);
-          const detector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'code_128'] });
+          const detector = new BarcodeDetector({ formats: ['ean_13'] });
           const barcodes = await detector.detect(imgBitmap);
           if (barcodes && barcodes.length > 0) {
-            const code = barcodes[0].rawValue.replace(/[^0-9X]/gi, '');
-            if (code) {
-              showToast(`⚡ Code-barres détecté : ${code}`);
-              onBarcodeFound(code);
+            const validIsbn = sanitizeAndValidateIsbn(barcodes[0].rawValue);
+            if (validIsbn) {
+              showToast(`⚡ Code-barres détecté : ${validIsbn}`);
+              onBarcodeFound(validIsbn);
               return;
             }
           }
@@ -5491,10 +5538,10 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           const result = await reader.decodeFromImageUrl(imgUrl);
           URL.revokeObjectURL(imgUrl);
           if (result && result.getText()) {
-            const code = result.getText().replace(/[^0-9X]/gi, '');
-            if (code) {
-              showToast(`⚡ Code-barres détecté : ${code}`);
-              onBarcodeFound(code);
+            const validIsbn = sanitizeAndValidateIsbn(result.getText());
+            if (validIsbn) {
+              showToast(`⚡ Code-barres détecté : ${validIsbn}`);
+              onBarcodeFound(validIsbn);
               return;
             }
           }
@@ -5521,11 +5568,14 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       try {
         const barcodes = await barcodeDetector.detect(video);
         if (barcodes.length > 0) {
-          const code = barcodes[0].rawValue.replace(/[^0-9X]/gi, '');
-          if (code && !appState.recentScannedCodes.has(code)) {
-            appState.recentScannedCodes.add(code);
-            setTimeout(() => appState.recentScannedCodes.delete(code), 3500); // 3.5s cooldown
-            onBarcodeFound(code);
+          const validIsbn = sanitizeAndValidateIsbn(barcodes[0].rawValue);
+          if (validIsbn && !appState.recentScannedCodes.has(validIsbn)) {
+            appState.recentScannedCodes.add(validIsbn);
+            setTimeout(() => appState.recentScannedCodes.delete(validIsbn), 3500); // 3.5s cooldown
+            if (appState.scanMode !== 'CONTINUOUS') {
+              isScanning = false;
+            }
+            onBarcodeFound(validIsbn);
             if (appState.scanMode !== 'CONTINUOUS') return;
           }
         }
@@ -5575,6 +5625,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         if (!existing) {
           appState.books.unshift(bookToAdd);
           saveStateToStorage();
+          renderApp();
         }
 
         const listEl = document.getElementById('continuousScanList');
@@ -5596,9 +5647,14 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
     }
 
     function lookupManualIsbn() {
-      const code = document.getElementById('manualIsbnInput').value.trim();
-      if (!code) return;
-      onBarcodeFound(code);
+      const raw = document.getElementById('manualIsbnInput').value.trim();
+      if (!raw) return;
+      const validIsbn = sanitizeAndValidateIsbn(raw);
+      if (!validIsbn) {
+        showToast('⚠️ ISBN invalide (10 ou 13 chiffres requis)');
+        return;
+      }
+      onBarcodeFound(validIsbn);
     }
 
     async function fetchComicMetadataByIsbn(isbn) {
@@ -5786,7 +5842,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         if (idx !== -1) appState.books[idx] = b;
         saveStateToStorage();
         closeComicFormModal();
-        switchMainTab('COLLECTION');
+        renderApp();
         showToast('✅ Modifications enregistrées !');
       } else {
         const existing = findDuplicateBook(b);
@@ -5795,7 +5851,12 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           promptDuplicateAlert(existing, () => {
             appState.books.unshift({ ...b, id: 'bk-' + Date.now(), title: b.title + ' (Exemplaire 2)' });
             saveStateToStorage();
+            appState.currentUniverse = 'ALL';
+            appState.searchQuery = '';
+            const searchInp = document.getElementById('searchInput');
+            if (searchInp) searchInp.value = '';
             switchMainTab('COLLECTION');
+            renderApp();
             showToast(`✅ "${b.title}" ajouté (2ème exemplaire) !`);
           });
           return;
@@ -5803,7 +5864,16 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         appState.books.unshift(b);
         saveStateToStorage();
         closeComicFormModal();
+        appState.currentUniverse = 'ALL';
+        appState.searchQuery = '';
+        const searchInp = document.getElementById('searchInput');
+        if (searchInp) searchInp.value = '';
+        const filterStatus = document.getElementById('filterStatus');
+        if (filterStatus) filterStatus.value = 'ALL';
+        const filterFormat = document.getElementById('filterFormat');
+        if (filterFormat) filterFormat.value = 'ALL';
         switchMainTab('COLLECTION');
+        renderApp();
         showToast('✅ Enregistré dans votre collection !');
       }
     }
