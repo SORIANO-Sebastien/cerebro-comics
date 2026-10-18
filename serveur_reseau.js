@@ -82,7 +82,8 @@ function sendJson(res, statusCode, data) {
     'Content-Type': 'application/json; charset=utf-8',
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS'
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Permissions-Policy': 'camera=(self)'
   });
   res.end(JSON.stringify(data));
 }
@@ -721,7 +722,8 @@ const server = http.createServer(async (req, res) => {
     } else {
       res.writeHead(200, {
         'Content-Type': contentType,
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        'Permissions-Policy': 'camera=(self)'
       });
       res.end(content);
     }
