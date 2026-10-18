@@ -500,14 +500,18 @@
     "series": "Avengers",
     "tome": "Tome 7",
     "title": "Avengers Tome 7",
-    "isbn": "9791039110267",
+    "isbn": "9791039110266",
     "writer": "",
     "artist": "",
     "year": 2026,
     "price": 22,
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/15075-large_default/avengers-tome-7.jpg",
-    "synopsis": ""
+    "synopsis": "",
+    "alternateIsbns": [
+      "9791039110267",
+      "9791039110266"
+    ]
   },
   {
     "id": "ma-100marvel-9791039115056",
@@ -3186,14 +3190,18 @@
     "series": "Les Gardiens de la Galaxie...",
     "tome": "One-Shot",
     "title": "Les Gardiens de la Galaxie...",
-    "isbn": "9791039122673",
+    "isbn": "9791039122672",
     "writer": "",
     "artist": "",
     "year": 2026,
     "price": 19,
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/17979-large_default/les-gardiens-de-la-galaxie-tome-1-par-lanzing.jpg",
-    "synopsis": ""
+    "synopsis": "",
+    "alternateIsbns": [
+      "9791039122673",
+      "9791039122672"
+    ]
   },
   {
     "id": "ma-100marvel-9791039142816",
@@ -7130,14 +7138,18 @@
     "series": "Batman",
     "tome": "One-Shot",
     "title": "Batman : Damned",
-    "isbn": "9782365776805",
+    "isbn": "9782365776806",
     "writer": "Brian Azzarello",
     "artist": "Lee Bermejo",
     "year": 2019,
     "price": 30,
     "usIssues": "Batman: Damned #1-3",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365776809.08.LZZZZZZZ.jpg",
-    "synopsis": "Le Joker est retrouvé mort dans la baie de Gotham : Batman et John Constantine enquêtent."
+    "synopsis": "Le Joker est retrouvé mort dans la baie de Gotham : Batman et John Constantine enquêtent.",
+    "alternateIsbns": [
+      "9782365776805",
+      "9782365776806"
+    ]
   },
   {
     "id": "dc-dcblacklab-9791026829256",
@@ -7232,14 +7244,18 @@
     "series": "Batman",
     "tome": "One-Shot",
     "title": "Batman : Three Jokers",
-    "isbn": "9782365778205",
+    "isbn": "9782365778206",
     "writer": "Geoff Johns",
     "artist": "Jason Fabok",
     "year": 2021,
     "price": 30,
     "usIssues": "Three Jokers #1-3",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365778208.08.LZZZZZZZ.jpg",
-    "synopsis": "Batman, Batgirl et Red Hood traquent trois Jokers distincts à Gotham."
+    "synopsis": "Batman, Batgirl et Red Hood traquent trois Jokers distincts à Gotham.",
+    "alternateIsbns": [
+      "9782365778205",
+      "9782365778206"
+    ]
   },
   {
     "id": "dc-dcblacklab-9791026818359",
@@ -7487,14 +7503,18 @@
     "series": "Batman White Knight",
     "tome": "Tome 1",
     "title": "Batman : White Knight",
-    "isbn": "9782365778847",
+    "isbn": "9782365778848",
     "writer": "Sean Murphy",
     "artist": "Sean Murphy",
     "year": 2018,
     "price": 30,
     "usIssues": "White Knight #1-8",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365778844.08.LZZZZZZZ.jpg",
-    "synopsis": "Le Joker guéri devient Jack Napier et poursuit Batman en justice pour abus de violence."
+    "synopsis": "Le Joker guéri devient Jack Napier et poursuit Batman en justice pour abus de violence.",
+    "alternateIsbns": [
+      "9782365778847",
+      "9782365778848"
+    ]
   },
   {
     "id": "dc-dcblacklab-9791026820611",
@@ -7555,14 +7575,18 @@
     "series": "Batman White Knight",
     "tome": "Tome 3",
     "title": "Beyond the White Knight",
-    "isbn": "9782365779905",
+    "isbn": "9782365779906",
     "writer": "Sean Murphy",
     "artist": "Sean Murphy",
     "year": 2023,
     "price": 30,
     "usIssues": "Beyond the White Knight #1-8",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365779905.08.LZZZZZZZ.jpg",
-    "synopsis": "Dix ans après, Terry McGinnis s'empare du prototype de costume de Batman."
+    "synopsis": "Dix ans après, Terry McGinnis s'empare du prototype de costume de Batman.",
+    "alternateIsbns": [
+      "9782365779905",
+      "9782365779906"
+    ]
   },
   {
     "id": "dc-dcblacklabel-0125",
@@ -7572,14 +7596,18 @@
     "series": "Batman White Knight",
     "tome": "Tome 2",
     "title": "Curse of the White Knight",
-    "isbn": "9782365777123",
+    "isbn": "9782365777124",
     "writer": "Sean Murphy",
     "artist": "Sean Murphy",
     "year": 2020,
     "price": 30,
     "usIssues": "Curse of the White Knight #1-8",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365777120.08.LZZZZZZZ.jpg",
-    "synopsis": "Azrael et Napier déterrent les secrets ancestraux de la famille Wayne."
+    "synopsis": "Azrael et Napier déterrent les secrets ancestraux de la famille Wayne.",
+    "alternateIsbns": [
+      "9782365777123",
+      "9782365777124"
+    ]
   },
   {
     "id": "dc-dcblacklab-9791026825531",
@@ -7606,14 +7634,18 @@
     "series": "Catwoman",
     "tome": "One-Shot",
     "title": "Catwoman : Lonely City",
-    "isbn": "9782365779509",
+    "isbn": "9782365779500",
     "writer": "Cliff Chiang",
     "artist": "Cliff Chiang",
     "year": 2022,
     "price": 30,
     "usIssues": "Lonely City #1-4",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365779506.08.LZZZZZZZ.jpg",
-    "synopsis": "Selina Kyle à 50 ans prépare son ultime casse dans la Batcave."
+    "synopsis": "Selina Kyle à 50 ans prépare son ultime casse dans la Batcave.",
+    "alternateIsbns": [
+      "9782365779509",
+      "9782365779500"
+    ]
   },
   {
     "id": "dc-dcblacklab-9791026826484",
@@ -7708,14 +7740,18 @@
     "series": "Harley Quinn",
     "tome": "One-Shot",
     "title": "Harleen",
-    "isbn": "9782365777321",
+    "isbn": "9782365777322",
     "writer": "Stjepan Šejić",
     "artist": "Stjepan Šejić",
     "year": 2020,
     "price": 30,
     "usIssues": "Harleen #1-3",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365777325.08.LZZZZZZZ.jpg",
-    "synopsis": "La dérive psychologique de la psychiatre Harleen Quinzel auprès du Joker."
+    "synopsis": "La dérive psychologique de la psychiatre Harleen Quinzel auprès du Joker.",
+    "alternateIsbns": [
+      "9782365777321",
+      "9782365777322"
+    ]
   },
   {
     "id": "dc-dcblacklab-9791026827443",
@@ -8252,14 +8288,18 @@
     "series": "Wonder Woman",
     "tome": "One-Shot",
     "title": "Wonder Woman : Dead Earth",
-    "isbn": "9782365777895",
+    "isbn": "9782365777896",
     "writer": "Daniel Warren Johnson",
     "artist": "Daniel Warren Johnson",
     "year": 2020,
     "price": 30,
     "usIssues": "Dead Earth #1-4",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365777899.08.LZZZZZZZ.jpg",
-    "synopsis": "Diana tente de sauver les survivants d'une Terre post-apocalyptique radioactive."
+    "synopsis": "Diana tente de sauver les survivants d'une Terre post-apocalyptique radioactive.",
+    "alternateIsbns": [
+      "9782365777895",
+      "9782365777896"
+    ]
   },
   {
     "id": "dc-dcblacklab-9791026817857",
@@ -8949,14 +8989,18 @@
     "series": "Batman",
     "tome": "Tome 2",
     "title": "Amère Victoire",
-    "isbn": "9782365771794",
+    "isbn": "9782365771795",
     "writer": "Jeph Loeb",
     "artist": "Tim Sale",
     "year": 2014,
     "price": 35,
     "usIssues": "Dark Victory #1-14",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365771793.08.LZZZZZZZ.jpg",
-    "synopsis": "Le tueur du Pendu cible les policiers de Gotham. L'arrivée de Dick Grayson."
+    "synopsis": "Le tueur du Pendu cible les policiers de Gotham. L'arrivée de Dick Grayson.",
+    "alternateIsbns": [
+      "9782365771794",
+      "9782365771795"
+    ]
   },
   {
     "id": "dc-dcdeluxe-0121",
@@ -8966,14 +9010,18 @@
     "series": "Batman",
     "tome": "One-Shot",
     "title": "Arkham Asylum",
-    "isbn": "9782365771282",
+    "isbn": "9782365771283",
     "writer": "Grant Morrison",
     "artist": "Dave McKean",
     "year": 2014,
     "price": 35,
     "usIssues": "Arkham Asylum: A Serious House",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365771289.08.LZZZZZZZ.jpg",
-    "synopsis": "Batman s'enfonce dans les méandres psychiatriques et cauchemardesques d'Arkham."
+    "synopsis": "Batman s'enfonce dans les méandres psychiatriques et cauchemardesques d'Arkham.",
+    "alternateIsbns": [
+      "9782365771282",
+      "9782365771283"
+    ]
   },
   {
     "id": "dc-dcdeluxe-9791026814658",
@@ -9017,14 +9065,18 @@
     "series": "Batman",
     "tome": "One-Shot",
     "title": "Batman : Année Un",
-    "isbn": "9782365778809",
+    "isbn": "9782365778800",
     "writer": "Frank Miller",
     "artist": "David Mazzucchelli",
     "year": 2016,
     "price": 35,
     "usIssues": "Batman #404-407",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365778801.08.LZZZZZZZ.jpg",
-    "synopsis": "Les débuts de Bruce Wayne et de James Gordon dans la pègre de Gotham."
+    "synopsis": "Les débuts de Bruce Wayne et de James Gordon dans la pègre de Gotham.",
+    "alternateIsbns": [
+      "9782365778809",
+      "9782365778800"
+    ]
   },
   {
     "id": "dc-dcdeluxe-9791026824435",
@@ -9119,14 +9171,18 @@
     "series": "Batman",
     "tome": "One-Shot",
     "title": "Batman : Silence (Hush)",
-    "isbn": "9782365772111",
+    "isbn": "9782365772112",
     "writer": "Jeph Loeb",
     "artist": "Jim Lee",
     "year": 2013,
     "price": 35,
     "usIssues": "Batman #608-619",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365772110.08.LZZZZZZZ.jpg",
-    "synopsis": "Silence manipule l'ensemble des ennemis de Batman dans un piège mortel."
+    "synopsis": "Silence manipule l'ensemble des ennemis de Batman dans un piège mortel.",
+    "alternateIsbns": [
+      "9782365772111",
+      "9782365772112"
+    ]
   },
   {
     "id": "dc-dcdeluxe-9791026826071",
@@ -9187,14 +9243,18 @@
     "series": "Batman",
     "tome": "One-Shot",
     "title": "Killing Joke & Le Cœur de Silence",
-    "isbn": "9782365771268",
+    "isbn": "9782365771269",
     "writer": "Alan Moore, Paul Dini",
     "artist": "Brian Bolland",
     "year": 2014,
     "price": 35,
     "usIssues": "The Killing Joke",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365771262.08.LZZZZZZZ.jpg",
-    "synopsis": "Le Joker tire sur Barbara Gordon pour rendre fou le commissaire Gordon."
+    "synopsis": "Le Joker tire sur Barbara Gordon pour rendre fou le commissaire Gordon.",
+    "alternateIsbns": [
+      "9782365771268",
+      "9782365771269"
+    ]
   },
   {
     "id": "dc-dcdeluxe-0111",
@@ -9204,14 +9264,18 @@
     "series": "Batman",
     "tome": "One-Shot",
     "title": "The Dark Knight Returns",
-    "isbn": "9782365771244",
+    "isbn": "9782365771245",
     "writer": "Frank Miller",
     "artist": "Frank Miller, Klaus Janson",
     "year": 2013,
     "price": 35,
     "usIssues": "TDKR #1-4",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365771246.08.LZZZZZZZ.jpg",
-    "synopsis": "Bruce Wayne reprend la cape à 55 ans pour sauver Gotham City."
+    "synopsis": "Bruce Wayne reprend la cape à 55 ans pour sauver Gotham City.",
+    "alternateIsbns": [
+      "9782365771244",
+      "9782365771245"
+    ]
   },
   {
     "id": "dc-dcdeluxe-0113",
@@ -9221,14 +9285,18 @@
     "series": "Batman",
     "tome": "Tome 1",
     "title": "Un Long Halloween",
-    "isbn": "9782365771787",
+    "isbn": "9782365771788",
     "writer": "Jeph Loeb",
     "artist": "Tim Sale",
     "year": 2013,
     "price": 35,
     "usIssues": "The Long Halloween #1-13",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365771785.08.LZZZZZZZ.jpg",
-    "synopsis": "Batman traque le tueur Holiday qui frappe lors de chaque jour férié."
+    "synopsis": "Batman traque le tueur Holiday qui frappe lors de chaque jour férié.",
+    "alternateIsbns": [
+      "9782365771787",
+      "9782365771788"
+    ]
   },
   {
     "id": "dc-dcdeluxe-9782365777117",
@@ -9306,14 +9374,18 @@
     "series": "Batman (Snyder)",
     "tome": "Tome 3",
     "title": "L'An Zéro",
-    "isbn": "9782365773965",
+    "isbn": "9782365773966",
     "writer": "Scott Snyder",
     "artist": "Greg Capullo",
     "year": 2014,
     "price": 35,
     "usIssues": "Batman #21-33",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365773966.08.LZZZZZZZ.jpg",
-    "synopsis": "Les origines explosives de Batman face au Sphinx qui prive Gotham d'électricité."
+    "synopsis": "Les origines explosives de Batman face au Sphinx qui prive Gotham d'électricité.",
+    "alternateIsbns": [
+      "9782365773965",
+      "9782365773966"
+    ]
   },
   {
     "id": "dc-dcdeluxe-0132",
@@ -9323,14 +9395,18 @@
     "series": "Batman (Snyder)",
     "tome": "Tome 1",
     "title": "La Cour des Hiboux",
-    "isbn": "9782365770414",
+    "isbn": "9782365770415",
     "writer": "Scott Snyder",
     "artist": "Greg Capullo",
     "year": 2012,
     "price": 35,
     "usIssues": "Batman #1-11",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/236577041X.08.LZZZZZZZ.jpg",
-    "synopsis": "Batman face à la société secrète des Hiboux qui règne dans l'ombre."
+    "synopsis": "Batman face à la société secrète des Hiboux qui règne dans l'ombre.",
+    "alternateIsbns": [
+      "9782365770414",
+      "9782365770415"
+    ]
   },
   {
     "id": "dc-dcdeluxe-0133",
@@ -9340,14 +9416,18 @@
     "series": "Batman (Snyder)",
     "tome": "Tome 2",
     "title": "Le Deuil de la Famille",
-    "isbn": "9782365772081",
+    "isbn": "9782365772082",
     "writer": "Scott Snyder",
     "artist": "Greg Capullo",
     "year": 2013,
     "price": 35,
     "usIssues": "Batman #13-17",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365772080.08.LZZZZZZZ.jpg",
-    "synopsis": "Le Joker s'attaque un à un à tous les membres de la Bat-Family."
+    "synopsis": "Le Joker s'attaque un à un à tous les membres de la Bat-Family.",
+    "alternateIsbns": [
+      "9782365772081",
+      "9782365772082"
+    ]
   },
   {
     "id": "dc-dcdeluxe-0135",
@@ -9357,14 +9437,18 @@
     "series": "Batman (Snyder)",
     "tome": "Tome 4",
     "title": "Mascarade",
-    "isbn": "9782365776607",
+    "isbn": "9782365776608",
     "writer": "Scott Snyder",
     "artist": "Greg Capullo",
     "year": 2015,
     "price": 35,
     "usIssues": "Batman #35-40",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365776604.08.LZZZZZZZ.jpg",
-    "synopsis": "L'affrontement apocalyptique final entre Batman et le Joker."
+    "synopsis": "L'affrontement apocalyptique final entre Batman et le Joker.",
+    "alternateIsbns": [
+      "9782365776607",
+      "9782365776608"
+    ]
   },
   {
     "id": "dc-dcdeluxe-0136",
@@ -9374,14 +9458,18 @@
     "series": "Batman (Snyder)",
     "tome": "Tome 5",
     "title": "Superheavy",
-    "isbn": "9782365778816",
+    "isbn": "9782365778817",
     "writer": "Scott Snyder",
     "artist": "Greg Capullo",
     "year": 2016,
     "price": 35,
     "usIssues": "Batman #41-50",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/236577881X.08.LZZZZZZZ.jpg",
-    "synopsis": "Jim Gordon endosse une armure de Batman après la disparition de Bruce Wayne."
+    "synopsis": "Jim Gordon endosse une armure de Batman après la disparition de Bruce Wayne.",
+    "alternateIsbns": [
+      "9782365778816",
+      "9782365778817"
+    ]
   },
   {
     "id": "dc-dcdeluxe-9791026824527",
@@ -10445,14 +10533,18 @@
     "series": "Flash (Williamson)",
     "tome": "Tome 1",
     "title": "De Foudre et de Sang",
-    "isbn": "9782365778007",
+    "isbn": "9782365778008",
     "writer": "Joshua Williamson",
     "artist": "Carmine Di Giandomenico",
     "year": 2017,
     "price": 35,
     "usIssues": "The Flash #1-8",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365778003.08.LZZZZZZZ.jpg",
-    "synopsis": "Une tempête de force véloce crée de nouveaux bolides à Central City."
+    "synopsis": "Une tempête de force véloce crée de nouveaux bolides à Central City.",
+    "alternateIsbns": [
+      "9782365778007",
+      "9782365778008"
+    ]
   },
   {
     "id": "dc-dcdeluxe-0138",
@@ -10462,14 +10554,18 @@
     "series": "Flash (Williamson)",
     "tome": "Tome 2",
     "title": "La Vitesse de l'Ombre",
-    "isbn": "9782365778014",
+    "isbn": "9782365778015",
     "writer": "Joshua Williamson",
     "artist": "Davide Gianfelice",
     "year": 2017,
     "price": 35,
     "usIssues": "The Flash #9-13",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365778011.08.LZZZZZZZ.jpg",
-    "synopsis": "Flash affronte le criminel Godspeed qui vole la vitesse des autres coureurs."
+    "synopsis": "Flash affronte le criminel Godspeed qui vole la vitesse des autres coureurs.",
+    "alternateIsbns": [
+      "9782365778014",
+      "9782365778015"
+    ]
   },
   {
     "id": "dc-dcdeluxe-9782365771795",
@@ -10513,14 +10609,18 @@
     "series": "Gotham Central",
     "tome": "Tome 1",
     "title": "Gotham Central",
-    "isbn": "9782365773804",
+    "isbn": "9782365773805",
     "writer": "Ed Brubaker, Greg Rucka",
     "artist": "Michael Lark",
     "year": 2014,
     "price": 35,
     "usIssues": "Gotham Central #1-10",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/236577380X.08.LZZZZZZZ.jpg",
-    "synopsis": "Le quotidien dangereux des flics du MCU de Gotham face aux super-vilains."
+    "synopsis": "Le quotidien dangereux des flics du MCU de Gotham face aux super-vilains.",
+    "alternateIsbns": [
+      "9782365773804",
+      "9782365773805"
+    ]
   },
   {
     "id": "dc-dcdeluxe-9791026819578",
@@ -10768,14 +10868,18 @@
     "series": "Joker",
     "tome": "One-Shot",
     "title": "Joker",
-    "isbn": "9782365771275",
+    "isbn": "9782365771276",
     "writer": "Brian Azzarello",
     "artist": "Lee Bermejo",
     "year": 2013,
     "price": 35,
     "usIssues": "Joker OGN",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365771270.08.LZZZZZZZ.jpg",
-    "synopsis": "Sorti d'Arkham, le Joker reprend le contrôle de ses affaires avec une violence crue."
+    "synopsis": "Sorti d'Arkham, le Joker reprend le contrôle de ses affaires avec une violence crue.",
+    "alternateIsbns": [
+      "9782365771275",
+      "9782365771276"
+    ]
   },
   {
     "id": "dc-dcdeluxe-9782365773270",
@@ -10955,14 +11059,18 @@
     "series": "Justice League (Johns)",
     "tome": "Tome 1",
     "title": "Aux Origines",
-    "isbn": "9782365770421",
+    "isbn": "9782365770422",
     "writer": "Geoff Johns",
     "artist": "Jim Lee",
     "year": 2012,
     "price": 35,
     "usIssues": "Justice League #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365770428.08.LZZZZZZZ.jpg",
-    "synopsis": "La toute première réunion de Superman, Batman, Wonder Woman, Flash, Green Lantern et Aquaman."
+    "synopsis": "La toute première réunion de Superman, Batman, Wonder Woman, Flash, Green Lantern et Aquaman.",
+    "alternateIsbns": [
+      "9782365770421",
+      "9782365770422"
+    ]
   },
   {
     "id": "dc-dcdeluxe-0141",
@@ -10972,14 +11080,18 @@
     "series": "Justice League (Johns)",
     "tome": "Tome 2",
     "title": "L'Odyssée du Mal",
-    "isbn": "9782365772128",
+    "isbn": "9782365772129",
     "writer": "Geoff Johns",
     "artist": "Gene Ha",
     "year": 2013,
     "price": 35,
     "usIssues": "Justice League #7-12",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365772129.08.LZZZZZZZ.jpg",
-    "synopsis": "L'équipe affronte Graves qui utilise les fantômes des disparus pour détruire la Ligue."
+    "synopsis": "L'équipe affronte Graves qui utilise les fantômes des disparus pour détruire la Ligue.",
+    "alternateIsbns": [
+      "9782365772128",
+      "9782365772129"
+    ]
   },
   {
     "id": "dc-dcdeluxe-0145",
@@ -10989,14 +11101,18 @@
     "series": "Justice League (Johns)",
     "tome": "Tome 6",
     "title": "La Guerre de Darkseid",
-    "isbn": "9782365778823",
+    "isbn": "9782365778824",
     "writer": "Geoff Johns",
     "artist": "Jason Fabok",
     "year": 2016,
     "price": 35,
     "usIssues": "Darkseid War #1-10",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365778828.08.LZZZZZZZ.jpg",
-    "synopsis": "L'affrontement divin colossal entre Darkseid et l'Anti-Monitor."
+    "synopsis": "L'affrontement divin colossal entre Darkseid et l'Anti-Monitor.",
+    "alternateIsbns": [
+      "9782365778823",
+      "9782365778824"
+    ]
   },
   {
     "id": "dc-dcdeluxe-0143",
@@ -11006,14 +11122,18 @@
     "series": "Justice League (Johns)",
     "tome": "Tome 4",
     "title": "La Guerre des Ligues (Trinity War)",
-    "isbn": "9782365773972",
+    "isbn": "9782365773973",
     "writer": "Geoff Johns",
     "artist": "Ivan Reis",
     "year": 2014,
     "price": 35,
     "usIssues": "Trinity War #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365773974.08.LZZZZZZZ.jpg",
-    "synopsis": "La boîte de Pandore déclenche la guerre fratricide entre la Justice League et la JLA."
+    "synopsis": "La boîte de Pandore déclenche la guerre fratricide entre la Justice League et la JLA.",
+    "alternateIsbns": [
+      "9782365773972",
+      "9782365773973"
+    ]
   },
   {
     "id": "dc-dcdeluxe-0144",
@@ -11023,14 +11143,18 @@
     "series": "Justice League (Johns)",
     "tome": "Tome 5",
     "title": "Le Règne du Mal (Forever Evil)",
-    "isbn": "9782365774504",
+    "isbn": "9782365774505",
     "writer": "Geoff Johns",
     "artist": "David Finch",
     "year": 2014,
     "price": 35,
     "usIssues": "Forever Evil #1-7",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365774504.08.LZZZZZZZ.jpg",
-    "synopsis": "Le Syndicat du Crime de Terre-3 anéantit la Ligue. Lex Luthor doit sauver le monde."
+    "synopsis": "Le Syndicat du Crime de Terre-3 anéantit la Ligue. Lex Luthor doit sauver le monde.",
+    "alternateIsbns": [
+      "9782365774504",
+      "9782365774505"
+    ]
   },
   {
     "id": "dc-dcdeluxe-0142",
@@ -11040,14 +11164,18 @@
     "series": "Justice League (Johns)",
     "tome": "Tome 3",
     "title": "Le Trône d'Atlantide",
-    "isbn": "9782365772470",
+    "isbn": "9782365772471",
     "writer": "Geoff Johns",
     "artist": "Ivan Reis",
     "year": 2013,
     "price": 35,
     "usIssues": "Justice League #15-17, Aquaman #15-16",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365772471.08.LZZZZZZZ.jpg",
-    "synopsis": "L'Atlantide déclare la guerre au monde de la surface et inonde la côte Est."
+    "synopsis": "L'Atlantide déclare la guerre au monde de la surface et inonde la côte Est.",
+    "alternateIsbns": [
+      "9782365772470",
+      "9782365772471"
+    ]
   },
   {
     "id": "dc-dcdeluxe-9791026818403",
@@ -11142,14 +11270,18 @@
     "series": "Kingdom Come",
     "tome": "One-Shot",
     "title": "Kingdom Come",
-    "isbn": "9782365771251",
+    "isbn": "9782365771252",
     "writer": "Mark Waid",
     "artist": "Alex Ross",
     "year": 2012,
     "price": 35,
     "usIssues": "Kingdom Come #1-4",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365771254.08.LZZZZZZZ.jpg",
-    "synopsis": "Les héros historiques de la Justice League reviennent pour mater une jeunesse déviante."
+    "synopsis": "Les héros historiques de la Justice League reviennent pour mater une jeunesse déviante.",
+    "alternateIsbns": [
+      "9782365771251",
+      "9782365771252"
+    ]
   },
   {
     "id": "dc-dcdeluxe-9782365771856",
@@ -11839,14 +11971,18 @@
     "series": "Superman",
     "tome": "One-Shot",
     "title": "All-Star Superman",
-    "isbn": "9782365772456",
+    "isbn": "9782365772457",
     "writer": "Grant Morrison",
     "artist": "Frank Quitely",
     "year": 2013,
     "price": 35,
     "usIssues": "All-Star Superman #1-12",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365772455.08.LZZZZZZZ.jpg",
-    "synopsis": "Les douze travaux héroïques de Superman avant son départ."
+    "synopsis": "Les douze travaux héroïques de Superman avant son départ.",
+    "alternateIsbns": [
+      "9782365772456",
+      "9782365772457"
+    ]
   },
   {
     "id": "dc-dcdeluxe-9791026811671",
@@ -11890,14 +12026,18 @@
     "series": "Superman",
     "tome": "One-Shot",
     "title": "Superman : Red Son",
-    "isbn": "9782365772463",
+    "isbn": "9782365772464",
     "writer": "Mark Millar",
     "artist": "Dave Johnson",
     "year": 2014,
     "price": 35,
     "usIssues": "Superman: Red Son #1-3",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365772463.08.LZZZZZZZ.jpg",
-    "synopsis": "Et si la fusée de Kal-El avait atterri en Union Soviétique en pleine guerre froide ?"
+    "synopsis": "Et si la fusée de Kal-El avait atterri en Union Soviétique en pleine guerre froide ?",
+    "alternateIsbns": [
+      "9782365772463",
+      "9782365772464"
+    ]
   },
   {
     "id": "dc-dcdeluxe-9791026816409",
@@ -12247,14 +12387,18 @@
     "series": "V pour Vendetta",
     "tome": "Intégrale",
     "title": "V pour Vendetta - Édition Deluxe",
-    "isbn": "9782365771299",
+    "isbn": "9782365771290",
     "writer": "Alan Moore",
     "artist": "David Lloyd",
     "year": 2012,
     "price": 35,
     "usIssues": "V for Vendetta #1-10",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365771297.08.LZZZZZZZ.jpg",
-    "synopsis": "Dans une Angleterre fasciste, l'anarchiste masqué V mène sa révolution."
+    "synopsis": "Dans une Angleterre fasciste, l'anarchiste masqué V mène sa révolution.",
+    "alternateIsbns": [
+      "9782365771299",
+      "9782365771290"
+    ]
   },
   {
     "id": "dc-dcdeluxe-0110",
@@ -12264,14 +12408,18 @@
     "series": "Watchmen",
     "tome": "Intégrale",
     "title": "Watchmen - Édition Deluxe",
-    "isbn": "9782365771237",
+    "isbn": "9782365771238",
     "writer": "Alan Moore",
     "artist": "Dave Gibbons",
     "year": 2012,
     "price": 35,
     "usIssues": "Watchmen #1-12",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365771238.08.LZZZZZZZ.jpg",
-    "synopsis": "L'enquête sur le meurtre du Comédien dévoile un complot apocalyptique."
+    "synopsis": "L'enquête sur le meurtre du Comédien dévoile un complot apocalyptique.",
+    "alternateIsbns": [
+      "9782365771237",
+      "9782365771238"
+    ]
   },
   {
     "id": "dc-dcdeluxe-9791026817307",
@@ -13267,14 +13415,18 @@
     "series": "Nightwing (Taylor)",
     "tome": "Tome 1",
     "title": "Le Saut dans l'Inconnu",
-    "isbn": "9782365779806",
+    "isbn": "9782365779807",
     "writer": "Tom Taylor",
     "artist": "Bruno Redondo",
     "year": 2022,
     "price": 15,
     "usIssues": "Nightwing #78-83",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365779808.08.LZZZZZZZ.jpg",
-    "synopsis": "Dick Grayson hérite de la fortune d'Alfred et finance la renaissance de Blüdhaven."
+    "synopsis": "Dick Grayson hérite de la fortune d'Alfred et finance la renaissance de Blüdhaven.",
+    "alternateIsbns": [
+      "9782365779806",
+      "9782365779807"
+    ]
   },
   {
     "id": "dc-dcinfinite-9791026819707",
@@ -13794,14 +13946,18 @@
     "series": "Batman",
     "tome": "One-Shot",
     "title": "Batman : Année Un (Nomades)",
-    "isbn": "9782365779066",
+    "isbn": "9782365779067",
     "writer": "Frank Miller",
     "artist": "David Mazzucchelli",
     "year": 2022,
     "price": 6.9,
     "usIssues": "Batman #404-407",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365779069.08.LZZZZZZZ.jpg",
-    "synopsis": "Les origines de Batman et Gordon."
+    "synopsis": "Les origines de Batman et Gordon.",
+    "alternateIsbns": [
+      "9782365779066",
+      "9782365779067"
+    ]
   },
   {
     "id": "dc-dcnomades-0146",
@@ -13811,14 +13967,18 @@
     "series": "Batman",
     "tome": "Vol. 1",
     "title": "Batman : La Cour des Hiboux (Nomades)",
-    "isbn": "9782365779011",
+    "isbn": "9782365779012",
     "writer": "Scott Snyder",
     "artist": "Greg Capullo",
     "year": 2022,
     "price": 6.9,
     "usIssues": "Batman #1-7",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365779018.08.LZZZZZZZ.jpg",
-    "synopsis": "L'affrontement contre les Hiboux au format poche souple."
+    "synopsis": "L'affrontement contre les Hiboux au format poche souple.",
+    "alternateIsbns": [
+      "9782365779011",
+      "9782365779012"
+    ]
   },
   {
     "id": "dc-dcnomades-0149",
@@ -13828,14 +13988,18 @@
     "series": "Batman",
     "tome": "One-Shot",
     "title": "Batman : Silence (Nomades)",
-    "isbn": "9782365779042",
+    "isbn": "9782365779043",
     "writer": "Jeph Loeb",
     "artist": "Jim Lee",
     "year": 2022,
     "price": 6.9,
     "usIssues": "Batman #608-619",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365779042.08.LZZZZZZZ.jpg",
-    "synopsis": "L'intrigue culte de Jim Lee et Jeph Loeb."
+    "synopsis": "L'intrigue culte de Jim Lee et Jeph Loeb.",
+    "alternateIsbns": [
+      "9782365779042",
+      "9782365779043"
+    ]
   },
   {
     "id": "dc-dcnomades-0150",
@@ -13845,14 +14009,18 @@
     "series": "Batman",
     "tome": "One-Shot",
     "title": "Batman : The Dark Knight Returns (Nomades)",
-    "isbn": "9782365779059",
+    "isbn": "9782365779050",
     "writer": "Frank Miller",
     "artist": "Frank Miller",
     "year": 2022,
     "price": 6.9,
     "usIssues": "TDKR #1-4",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365779050.08.LZZZZZZZ.jpg",
-    "synopsis": "Le retour du Chevalier Noir au format poche."
+    "synopsis": "Le retour du Chevalier Noir au format poche.",
+    "alternateIsbns": [
+      "9782365779059",
+      "9782365779050"
+    ]
   },
   {
     "id": "dc-dcnomades-9791026853749",
@@ -14015,14 +14183,18 @@
     "series": "Flash",
     "tome": "One-Shot",
     "title": "Flashpoint (Nomades)",
-    "isbn": "9782365779028",
+    "isbn": "9782365779029",
     "writer": "Geoff Johns",
     "artist": "Andy Kubert",
     "year": 2022,
     "price": 6.9,
     "usIssues": "Flashpoint #1-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365779026.08.LZZZZZZZ.jpg",
-    "synopsis": "La réécriture de la timeline par Barry Allen."
+    "synopsis": "La réécriture de la timeline par Barry Allen.",
+    "alternateIsbns": [
+      "9782365779028",
+      "9782365779029"
+    ]
   },
   {
     "id": "dc-dcnomades-9791026853855",
@@ -14219,14 +14391,18 @@
     "series": "Justice League",
     "tome": "Vol. 1",
     "title": "Justice League : Aux Origines (Nomades)",
-    "isbn": "9782365779080",
+    "isbn": "9782365779081",
     "writer": "Geoff Johns",
     "artist": "Jim Lee",
     "year": 2022,
     "price": 6.9,
     "usIssues": "Justice League #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365779085.08.LZZZZZZZ.jpg",
-    "synopsis": "La première réunion de la Justice League face à Darkseid."
+    "synopsis": "La première réunion de la Justice League face à Darkseid.",
+    "alternateIsbns": [
+      "9782365779080",
+      "9782365779081"
+    ]
   },
   {
     "id": "dc-dcnomades-9791026856542",
@@ -14389,14 +14565,18 @@
     "series": "Superman",
     "tome": "One-Shot",
     "title": "All-Star Superman (Nomades)",
-    "isbn": "9782365779073",
+    "isbn": "9782365779074",
     "writer": "Grant Morrison",
     "artist": "Frank Quitely",
     "year": 2022,
     "price": 6.9,
     "usIssues": "All-Star Superman #1-12",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365779077.08.LZZZZZZZ.jpg",
-    "synopsis": "Le chef-d'œuvre de Grant Morrison et Frank Quitely."
+    "synopsis": "Le chef-d'œuvre de Grant Morrison et Frank Quitely.",
+    "alternateIsbns": [
+      "9782365779073",
+      "9782365779074"
+    ]
   },
   {
     "id": "dc-dcnomades-9791026825173",
@@ -14491,14 +14671,18 @@
     "series": "Watchmen",
     "tome": "Intégrale",
     "title": "Watchmen (Nomades)",
-    "isbn": "9782365779035",
+    "isbn": "9782365779036",
     "writer": "Alan Moore",
     "artist": "Dave Gibbons",
     "year": 2022,
     "price": 6.9,
     "usIssues": "Watchmen #1-12",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365779034.08.LZZZZZZZ.jpg",
-    "synopsis": "L'intégrale Watchmen au format poche Urban Nomades."
+    "synopsis": "L'intégrale Watchmen au format poche Urban Nomades.",
+    "alternateIsbns": [
+      "9782365779035",
+      "9782365779036"
+    ]
   },
   {
     "id": "dc-dcnomades-9791026856368",
@@ -17101,14 +17285,18 @@
     "series": "Avengers (Hickman)",
     "tome": "Tome 2",
     "title": "Infini",
-    "isbn": "9782809489510",
+    "isbn": "9782809489514",
     "writer": "Jonathan Hickman",
     "artist": "Jim Cheung",
     "year": 2020,
     "price": 35,
     "usIssues": "Infinity #1-6, Avengers #14-23",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809489513.08.LZZZZZZZ.jpg",
-    "synopsis": "Thanos envahit la Terre pendant la guerre galactique contre les Bâtisseurs."
+    "synopsis": "Thanos envahit la Terre pendant la guerre galactique contre les Bâtisseurs.",
+    "alternateIsbns": [
+      "9782809489510",
+      "9782809489514"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0078",
@@ -17118,14 +17306,18 @@
     "series": "Avengers (Hickman)",
     "tome": "Tome 3",
     "title": "Le Temps Fugitif",
-    "isbn": "9782809489527",
+    "isbn": "9782809489521",
     "writer": "Jonathan Hickman",
     "artist": "Mike Deodato Jr",
     "year": 2021,
     "price": 35,
     "usIssues": "Avengers #24-34, New Avengers #13-23",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809489521.08.LZZZZZZZ.jpg",
-    "synopsis": "Les Incursions s'accélèrent : la destruction du multivers semble inéluctable."
+    "synopsis": "Les Incursions s'accélèrent : la destruction du multivers semble inéluctable.",
+    "alternateIsbns": [
+      "9782809489527",
+      "9782809489521"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0079",
@@ -17135,14 +17327,18 @@
     "series": "Avengers (Hickman)",
     "tome": "Tome 4",
     "title": "Le Temps Meurt",
-    "isbn": "9782809489534",
+    "isbn": "9782809489538",
     "writer": "Jonathan Hickman",
     "artist": "Stefano Caselli",
     "year": 2021,
     "price": 35,
     "usIssues": "Avengers #35-44, New Avengers #24-33",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/280948953X.08.LZZZZZZZ.jpg",
-    "synopsis": "Huit mois plus tard, la chasse aux Illuminati est lancée avant l'ultime Incursion."
+    "synopsis": "Huit mois plus tard, la chasse aux Illuminati est lancée avant l'ultime Incursion.",
+    "alternateIsbns": [
+      "9782809489534",
+      "9782809489538"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0076",
@@ -17152,14 +17348,18 @@
     "series": "Avengers (Hickman)",
     "tome": "Tome 1",
     "title": "Monde d'Avengers",
-    "isbn": "9782809489503",
+    "isbn": "9782809489507",
     "writer": "Jonathan Hickman",
     "artist": "Jerome Opeña",
     "year": 2020,
     "price": 35,
     "usIssues": "Avengers #1-6, New Avengers #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809489505.08.LZZZZZZZ.jpg",
-    "synopsis": "L'équipe s'élargit à l'échelle cosmique pendant que les Illuminati luttent contre les Incursions."
+    "synopsis": "L'équipe s'élargit à l'échelle cosmique pendant que les Illuminati luttent contre les Incursions.",
+    "alternateIsbns": [
+      "9782809489503",
+      "9782809489507"
+    ]
   },
   {
     "id": "ma-marveldelu-9782809477009",
@@ -17526,14 +17726,18 @@
     "series": "Captain America (Brubaker)",
     "tome": "Tome 3",
     "title": "L'Homme qui a acheté l'Amérique",
-    "isbn": "9782809494408",
+    "isbn": "9782809494402",
     "writer": "Ed Brubaker",
     "artist": "Steve Epting",
     "year": 2021,
     "price": 35,
     "usIssues": "Captain America #37-50",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494401.08.LZZZZZZZ.jpg",
-    "synopsis": "Bucky Barnes endosse à son tour le costume étoilé de Captain America."
+    "synopsis": "Bucky Barnes endosse à son tour le costume étoilé de Captain America.",
+    "alternateIsbns": [
+      "9782809494408",
+      "9782809494402"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0092",
@@ -17543,14 +17747,18 @@
     "series": "Captain America (Brubaker)",
     "tome": "Tome 2",
     "title": "La Mort du Rêve",
-    "isbn": "9782809494392",
+    "isbn": "9782809494396",
     "writer": "Ed Brubaker",
     "artist": "Mike Perkins",
     "year": 2020,
     "price": 35,
     "usIssues": "Captain America #25-36",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494398.08.LZZZZZZZ.jpg",
-    "synopsis": "À l'issue de Civil War, Steve Rogers est assassiné sur les marches du tribunal."
+    "synopsis": "À l'issue de Civil War, Steve Rogers est assassiné sur les marches du tribunal.",
+    "alternateIsbns": [
+      "9782809494392",
+      "9782809494396"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0091",
@@ -17560,14 +17768,18 @@
     "series": "Captain America (Brubaker)",
     "tome": "Tome 1",
     "title": "Le Soldat de l'Hiver",
-    "isbn": "9782809494385",
+    "isbn": "9782809494389",
     "writer": "Ed Brubaker",
     "artist": "Steve Epting",
     "year": 2020,
     "price": 35,
     "usIssues": "Captain America #1-14",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/280949438X.08.LZZZZZZZ.jpg",
-    "synopsis": "Le retour du Soldat de l'Hiver et la manipulation du Cube Cosmique."
+    "synopsis": "Le retour du Soldat de l'Hiver et la manipulation du Cube Cosmique.",
+    "alternateIsbns": [
+      "9782809494385",
+      "9782809494389"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0094",
@@ -17577,14 +17789,18 @@
     "series": "Captain America (Brubaker)",
     "tome": "Tome 4",
     "title": "Renaissance",
-    "isbn": "9782809494415",
+    "isbn": "9782809494419",
     "writer": "Ed Brubaker",
     "artist": "Bryan Hitch",
     "year": 2021,
     "price": 35,
     "usIssues": "Reborn #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/280949441X.08.LZZZZZZZ.jpg",
-    "synopsis": "Steve Rogers est piégé dans les limbes temporelles orchestrées par Crâne Rouge."
+    "synopsis": "Steve Rogers est piégé dans les limbes temporelles orchestrées par Crâne Rouge.",
+    "alternateIsbns": [
+      "9782809494415",
+      "9782809494419"
+    ]
   },
   {
     "id": "ma-marveldelu-9782809476200",
@@ -17815,14 +18031,18 @@
     "series": "Daredevil (Bendis)",
     "tome": "Tome 4",
     "title": "Decalogue",
-    "isbn": "9782809498147",
+    "isbn": "9782809498141",
     "writer": "Brian Michael Bendis",
     "artist": "Alex Maleev",
     "year": 2022,
     "price": 35,
     "usIssues": "Daredevil #66-81",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498148.08.LZZZZZZZ.jpg",
-    "synopsis": "Le dénouement magistral de la période Bendis / Maleev."
+    "synopsis": "Le dénouement magistral de la période Bendis / Maleev.",
+    "alternateIsbns": [
+      "9782809498147",
+      "9782809498141"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0063",
@@ -17832,14 +18052,18 @@
     "series": "Daredevil (Bendis)",
     "tome": "Tome 3",
     "title": "Le Dossier Murdock",
-    "isbn": "9782809498130",
+    "isbn": "9782809498134",
     "writer": "Brian Michael Bendis",
     "artist": "Alex Maleev",
     "year": 2021,
     "price": 35,
     "usIssues": "Daredevil #56-65",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/280949813X.08.LZZZZZZZ.jpg",
-    "synopsis": "Procès fédéral et guerre des gangs à Hell's Kitchen."
+    "synopsis": "Procès fédéral et guerre des gangs à Hell's Kitchen.",
+    "alternateIsbns": [
+      "9782809498130",
+      "9782809498134"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0062",
@@ -17849,14 +18073,18 @@
     "series": "Daredevil (Bendis)",
     "tome": "Tome 2",
     "title": "Le Roi de Hell's Kitchen",
-    "isbn": "9782809498123",
+    "isbn": "9782809498127",
     "writer": "Brian Michael Bendis",
     "artist": "Alex Maleev",
     "year": 2021,
     "price": 35,
     "usIssues": "Daredevil #38-50",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498121.08.LZZZZZZZ.jpg",
-    "synopsis": "Daredevil terrasse le Caïd et se proclame patron du quartier."
+    "synopsis": "Daredevil terrasse le Caïd et se proclame patron du quartier.",
+    "alternateIsbns": [
+      "9782809498123",
+      "9782809498127"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0061",
@@ -17866,14 +18094,18 @@
     "series": "Daredevil (Bendis)",
     "tome": "Tome 1",
     "title": "Sous l'Aile du Diable",
-    "isbn": "9782809498116",
+    "isbn": "9782809498110",
     "writer": "Brian Michael Bendis",
     "artist": "Alex Maleev",
     "year": 2021,
     "price": 35,
     "usIssues": "Daredevil #26-37",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498113.08.LZZZZZZZ.jpg",
-    "synopsis": "L'identité de Daredevil est vendue à la presse."
+    "synopsis": "L'identité de Daredevil est vendue à la presse.",
+    "alternateIsbns": [
+      "9782809498116",
+      "9782809498110"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0065",
@@ -17883,14 +18115,18 @@
     "series": "Daredevil (Brubaker)",
     "tome": "Tome 1",
     "title": "Le Diable en Cavale",
-    "isbn": "9782809498154",
+    "isbn": "9782809498158",
     "writer": "Ed Brubaker",
     "artist": "Michael Lark",
     "year": 2021,
     "price": 35,
     "usIssues": "Daredevil #82-93",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498156.08.LZZZZZZZ.jpg",
-    "synopsis": "Matt Murdock est incarcéré à Ryker's Island entouré de tous ses pires ennemis."
+    "synopsis": "Matt Murdock est incarcéré à Ryker's Island entouré de tous ses pires ennemis.",
+    "alternateIsbns": [
+      "9782809498154",
+      "9782809498158"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0067",
@@ -17900,14 +18136,18 @@
     "series": "Daredevil (Brubaker)",
     "tome": "Tome 3",
     "title": "Le Retour du Roi",
-    "isbn": "9782809498178",
+    "isbn": "9782809498172",
     "writer": "Ed Brubaker",
     "artist": "Michael Lark",
     "year": 2022,
     "price": 35,
     "usIssues": "Daredevil #106-119, #500",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498172.08.LZZZZZZZ.jpg",
-    "synopsis": "Le Caïd revient réclamer son trône alors que la Main tente de corrompre Daredevil."
+    "synopsis": "Le Caïd revient réclamer son trône alors que la Main tente de corrompre Daredevil.",
+    "alternateIsbns": [
+      "9782809498178",
+      "9782809498172"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0066",
@@ -17917,14 +18157,18 @@
     "series": "Daredevil (Brubaker)",
     "tome": "Tome 2",
     "title": "Sans Peur",
-    "isbn": "9782809498161",
+    "isbn": "9782809498165",
     "writer": "Ed Brubaker",
     "artist": "Michael Lark",
     "year": 2022,
     "price": 35,
     "usIssues": "Daredevil #94-105",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498164.08.LZZZZZZZ.jpg",
-    "synopsis": "Une vague d'assassinats cible l'entourage de Matt Murdock à New York et en Europe."
+    "synopsis": "Une vague d'assassinats cible l'entourage de Matt Murdock à New York et en Europe.",
+    "alternateIsbns": [
+      "9782809498161",
+      "9782809498165"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0068",
@@ -17934,14 +18178,18 @@
     "series": "Daredevil (Zdarsky)",
     "tome": "Tome 1",
     "title": "Connais-toi toi-même",
-    "isbn": "9782809494507",
+    "isbn": "9782809494501",
     "writer": "Chip Zdarsky",
     "artist": "Marco Checchetto",
     "year": 2022,
     "price": 35,
     "usIssues": "Daredevil (2019) #1-10",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494509.08.LZZZZZZZ.jpg",
-    "synopsis": "Daredevil commet l'irréparable : un cambrioleur meurt sous ses coups. Le début du chef-d'œuvre de Zdarsky."
+    "synopsis": "Daredevil commet l'irréparable : un cambrioleur meurt sous ses coups. Le début du chef-d'œuvre de Zdarsky.",
+    "alternateIsbns": [
+      "9782809494507",
+      "9782809494501"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0069",
@@ -17951,14 +18199,18 @@
     "series": "Daredevil (Zdarsky)",
     "tome": "Tome 2",
     "title": "Pas de salut",
-    "isbn": "9782809494514",
+    "isbn": "9782809494518",
     "writer": "Chip Zdarsky",
     "artist": "Marco Checchetto",
     "year": 2023,
     "price": 35,
     "usIssues": "Daredevil #11-19",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494517.08.LZZZZZZZ.jpg",
-    "synopsis": "Elektra entraîne Matt Murdock pour faire face à la guerre totale déclenchée par le Caïd."
+    "synopsis": "Elektra entraîne Matt Murdock pour faire face à la guerre totale déclenchée par le Caïd.",
+    "alternateIsbns": [
+      "9782809494514",
+      "9782809494518"
+    ]
   },
   {
     "id": "ma-marveldelu-9791039117081",
@@ -18529,14 +18781,18 @@
     "series": "Immortal Hulk",
     "tome": "Tome 4",
     "title": "L'Olympe",
-    "isbn": "9782809494347",
+    "isbn": "9782809494341",
     "writer": "Al Ewing",
     "artist": "Joe Bennett",
     "year": 2023,
     "price": 35,
     "usIssues": "Immortal Hulk #31-40",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494347.08.LZZZZZZZ.jpg",
-    "synopsis": "Hulk affronte le Leader qui a pris le contrôle de la Porte Verte et de Bruce Banner."
+    "synopsis": "Hulk affronte le Leader qui a pris le contrôle de la Porte Verte et de Bruce Banner.",
+    "alternateIsbns": [
+      "9782809494347",
+      "9782809494341"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0084",
@@ -18546,14 +18802,18 @@
     "series": "Immortal Hulk",
     "tome": "Tome 2",
     "title": "La Porte Verte",
-    "isbn": "9782809494323",
+    "isbn": "9782809494327",
     "writer": "Al Ewing",
     "artist": "Joe Bennett",
     "year": 2022,
     "price": 35,
     "usIssues": "Immortal Hulk #11-20",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494320.08.LZZZZZZZ.jpg",
-    "synopsis": "Hulk plonge au plus profond des Enfers pour affronter Celui-au-Dessous-de-Tout."
+    "synopsis": "Hulk plonge au plus profond des Enfers pour affronter Celui-au-Dessous-de-Tout.",
+    "alternateIsbns": [
+      "9782809494323",
+      "9782809494327"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0087",
@@ -18563,14 +18823,18 @@
     "series": "Immortal Hulk",
     "tome": "Tome 5",
     "title": "Le Cœur de la Matière",
-    "isbn": "9782809494354",
+    "isbn": "9782809494358",
     "writer": "Al Ewing",
     "artist": "Joe Bennett",
     "year": 2023,
     "price": 35,
     "usIssues": "Immortal Hulk #41-50",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494355.08.LZZZZZZZ.jpg",
-    "synopsis": "L'ultime confrontation mystique entre Hulk, le Leader et Celui-au-Dessous-de-Tout."
+    "synopsis": "L'ultime confrontation mystique entre Hulk, le Leader et Celui-au-Dessous-de-Tout.",
+    "alternateIsbns": [
+      "9782809494354",
+      "9782809494358"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0085",
@@ -18580,14 +18844,18 @@
     "series": "Immortal Hulk",
     "tome": "Tome 3",
     "title": "Nous n'avons pas d'ombre",
-    "isbn": "9782809494330",
+    "isbn": "9782809494334",
     "writer": "Al Ewing",
     "artist": "Joe Bennett",
     "year": 2022,
     "price": 35,
     "usIssues": "Immortal Hulk #21-30",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494339.08.LZZZZZZZ.jpg",
-    "synopsis": "Hulk déclare la guerre aux grandes corporations et au capitalisme mondial."
+    "synopsis": "Hulk déclare la guerre aux grandes corporations et au capitalisme mondial.",
+    "alternateIsbns": [
+      "9782809494330",
+      "9782809494334"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0083",
@@ -18597,14 +18865,18 @@
     "series": "Immortal Hulk",
     "tome": "Tome 1",
     "title": "Où est ta victoire ?",
-    "isbn": "9782809494309",
+    "isbn": "9782809494303",
     "writer": "Al Ewing",
     "artist": "Joe Bennett",
     "year": 2021,
     "price": 35,
     "usIssues": "Immortal Hulk #1-10",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494304.08.LZZZZZZZ.jpg",
-    "synopsis": "L'homme meurt le jour, mais le Diable Hulk revient chaque nuit par la Porte Verte."
+    "synopsis": "L'homme meurt le jour, mais le Diable Hulk revient chaque nuit par la Porte Verte.",
+    "alternateIsbns": [
+      "9782809494309",
+      "9782809494303"
+    ]
   },
   {
     "id": "ma-marveldelu-9791039141437",
@@ -19056,14 +19328,18 @@
     "series": "Les Gardiens de la Galaxie",
     "tome": "Tome 4",
     "title": "Les Gardiens de la Galaxie Volume 4",
-    "isbn": "9791039115178",
+    "isbn": "9791039115179",
     "writer": "",
     "artist": "",
     "year": 2026,
     "price": 32,
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/16136-large_default/les-gardiens-de-la-galaxie-tome-4.jpg",
-    "synopsis": ""
+    "synopsis": "",
+    "alternateIsbns": [
+      "9791039115178",
+      "9791039115179"
+    ]
   },
   {
     "id": "ma-marveldelu-9782809495089",
@@ -19447,14 +19723,18 @@
     "series": "New X-Men (Morrison)",
     "tome": "Tome 1",
     "title": "E Comme Extinction",
-    "isbn": "9782809491117",
+    "isbn": "9782809491111",
     "writer": "Grant Morrison",
     "artist": "Frank Quitely",
     "year": 2020,
     "price": 35,
     "usIssues": "New X-Men #114-126",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809491119.08.LZZZZZZZ.jpg",
-    "synopsis": "Cassandra Nova anéantit 16 millions de mutants sur Génosha avec les Sentinelles."
+    "synopsis": "Cassandra Nova anéantit 16 millions de mutants sur Génosha avec les Sentinelles.",
+    "alternateIsbns": [
+      "9782809491117",
+      "9782809491111"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0081",
@@ -19464,14 +19744,18 @@
     "series": "New X-Men (Morrison)",
     "tome": "Tome 2",
     "title": "Impérial",
-    "isbn": "9782809491124",
+    "isbn": "9782809491128",
     "writer": "Grant Morrison",
     "artist": "Frank Quitely",
     "year": 2020,
     "price": 35,
     "usIssues": "New X-Men #127-141",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809491127.08.LZZZZZZZ.jpg",
-    "synopsis": "L'Empire Shi'ar sombre dans le chaos alors qu'une liaison naît entre Scott et Emma Frost."
+    "synopsis": "L'Empire Shi'ar sombre dans le chaos alors qu'une liaison naît entre Scott et Emma Frost.",
+    "alternateIsbns": [
+      "9782809491124",
+      "9782809491128"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0082",
@@ -19481,14 +19765,18 @@
     "series": "New X-Men (Morrison)",
     "tome": "Tome 3",
     "title": "Planète X",
-    "isbn": "9782809491131",
+    "isbn": "9782809491135",
     "writer": "Grant Morrison",
     "artist": "Phil Jimenez",
     "year": 2021,
     "price": 35,
     "usIssues": "New X-Men #142-154",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809491135.08.LZZZZZZZ.jpg",
-    "synopsis": "Magneto infiltre l'Institut Xavier et s'apprête à anéantir Manhattan."
+    "synopsis": "Magneto infiltre l'Institut Xavier et s'apprête à anéantir Manhattan.",
+    "alternateIsbns": [
+      "9782809491131",
+      "9782809491135"
+    ]
   },
   {
     "id": "ma-marveldelu-9782809483833",
@@ -20280,14 +20568,18 @@
     "series": "Spider-Man (JMS)",
     "tome": "Tome 2",
     "title": "Confessions",
-    "isbn": "9782809477029",
+    "isbn": "9782809477023",
     "writer": "J.M. Straczynski",
     "artist": "John Romita Jr",
     "year": 2019,
     "price": 35,
     "usIssues": "ASM #39-45",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809477027.08.LZZZZZZZ.jpg",
-    "synopsis": "Tante May découvre que Peter est Spider-Man : un dialogue historique."
+    "synopsis": "Tante May découvre que Peter est Spider-Man : un dialogue historique.",
+    "alternateIsbns": [
+      "9782809477029",
+      "9782809477023"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0074",
@@ -20297,14 +20589,18 @@
     "series": "Spider-Man (JMS)",
     "tome": "Tome 5",
     "title": "L'Autre : Évolue ou Meurs",
-    "isbn": "9782809477050",
+    "isbn": "9782809477054",
     "writer": "J.M. Straczynski",
     "artist": "Mike Wieringo",
     "year": 2020,
     "price": 35,
     "usIssues": "ASM #525-528",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809477051.08.LZZZZZZZ.jpg",
-    "synopsis": "Battu à mort par Morlun, Peter Parker subit une métamorphose arachnéenne totale."
+    "synopsis": "Battu à mort par Morlun, Peter Parker subit une métamorphose arachnéenne totale.",
+    "alternateIsbns": [
+      "9782809477050",
+      "9782809477054"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0072",
@@ -20314,14 +20610,18 @@
     "series": "Spider-Man (JMS)",
     "tome": "Tome 3",
     "title": "Le Livre d'Ezekiel",
-    "isbn": "9782809477036",
+    "isbn": "9782809477030",
     "writer": "J.M. Straczynski",
     "artist": "John Romita Jr",
     "year": 2019,
     "price": 35,
     "usIssues": "ASM #46-54",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809477035.08.LZZZZZZZ.jpg",
-    "synopsis": "Le mystère d'Ezekiel Sims et la confrontation avec Shathra la guêpe."
+    "synopsis": "Le mystère d'Ezekiel Sims et la confrontation avec Shathra la guêpe.",
+    "alternateIsbns": [
+      "9782809477036",
+      "9782809477030"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0073",
@@ -20331,14 +20631,18 @@
     "series": "Spider-Man (JMS)",
     "tome": "Tome 4",
     "title": "Péchés du Passé",
-    "isbn": "9782809477043",
+    "isbn": "9782809477047",
     "writer": "J.M. Straczynski",
     "artist": "Mike Deodato Jr",
     "year": 2020,
     "price": 35,
     "usIssues": "ASM #509-518",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809477043.08.LZZZZZZZ.jpg",
-    "synopsis": "Les jumeaux mystérieux de Gwen Stacy refont surface pour détruire Spider-Man."
+    "synopsis": "Les jumeaux mystérieux de Gwen Stacy refont surface pour détruire Spider-Man.",
+    "alternateIsbns": [
+      "9782809477043",
+      "9782809477047"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0075",
@@ -20348,14 +20652,18 @@
     "series": "Spider-Man (JMS)",
     "tome": "Tome 6",
     "title": "Un Jour de Plus",
-    "isbn": "9782809477067",
+    "isbn": "9782809477061",
     "writer": "J.M. Straczynski",
     "artist": "Joe Quesada",
     "year": 2021,
     "price": 35,
     "usIssues": "ASM #539-545",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/280947706X.08.LZZZZZZZ.jpg",
-    "synopsis": "Le pacte controversé avec Méphisto pour sauver la vie de tante May."
+    "synopsis": "Le pacte controversé avec Méphisto pour sauver la vie de tante May.",
+    "alternateIsbns": [
+      "9782809477067",
+      "9782809477061"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0070",
@@ -20365,14 +20673,18 @@
     "series": "Spider-Man (JMS)",
     "tome": "Tome 1",
     "title": "Vocation",
-    "isbn": "9782809477012",
+    "isbn": "9782809477016",
     "writer": "J.M. Straczynski",
     "artist": "John Romita Jr",
     "year": 2019,
     "price": 35,
     "usIssues": "ASM #30-38",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809477019.08.LZZZZZZZ.jpg",
-    "synopsis": "L'origine totémique de Spider-Man et le premier combat titanesque contre Morlun."
+    "synopsis": "L'origine totémique de Spider-Man et le premier combat titanesque contre Morlun.",
+    "alternateIsbns": [
+      "9782809477012",
+      "9782809477016"
+    ]
   },
   {
     "id": "ma-marveldelu-9782809479188",
@@ -20671,14 +20983,18 @@
     "series": "Thor (Aaron)",
     "tome": "Tome 2",
     "title": "La Bombe Divine",
-    "isbn": "9782809494439",
+    "isbn": "9782809494433",
     "writer": "Jason Aaron",
     "artist": "Esad Ribic",
     "year": 2021,
     "price": 35,
     "usIssues": "Thor: God of Thunder #12-25",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494436.08.LZZZZZZZ.jpg",
-    "synopsis": "Malekith le Maudit s'évade d'Hel pour déclencher la Guerre des Royaumes."
+    "synopsis": "Malekith le Maudit s'évade d'Hel pour déclencher la Guerre des Royaumes.",
+    "alternateIsbns": [
+      "9782809494439",
+      "9782809494433"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0097",
@@ -20688,14 +21004,18 @@
     "series": "Thor (Aaron)",
     "tome": "Tome 3",
     "title": "La Déesse du Tonnerre",
-    "isbn": "9782809494446",
+    "isbn": "9782809494440",
     "writer": "Jason Aaron",
     "artist": "Russell Dauterman",
     "year": 2021,
     "price": 35,
     "usIssues": "Thor (2014) #1-8",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494444.08.LZZZZZZZ.jpg",
-    "synopsis": "Thor est devenu indigne de soulever Mjolnir : une femme mystérieuse s'empare du marteau."
+    "synopsis": "Thor est devenu indigne de soulever Mjolnir : une femme mystérieuse s'empare du marteau.",
+    "alternateIsbns": [
+      "9782809494446",
+      "9782809494440"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0098",
@@ -20705,14 +21025,18 @@
     "series": "Thor (Aaron)",
     "tome": "Tome 4",
     "title": "La Guerre d'Asgard et Shi'ar",
-    "isbn": "9782809494453",
+    "isbn": "9782809494457",
     "writer": "Jason Aaron",
     "artist": "Russell Dauterman",
     "year": 2022,
     "price": 35,
     "usIssues": "Mighty Thor #13-23",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494452.08.LZZZZZZZ.jpg",
-    "synopsis": "Le duel des panthéons divins entre Asgard et les Dieux Shi'ar."
+    "synopsis": "Le duel des panthéons divins entre Asgard et les Dieux Shi'ar.",
+    "alternateIsbns": [
+      "9782809494453",
+      "9782809494457"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0100",
@@ -20722,14 +21046,18 @@
     "series": "Thor (Aaron)",
     "tome": "Tome 6",
     "title": "La Guerre des Royaumes",
-    "isbn": "9782809494477",
+    "isbn": "9782809494471",
     "writer": "Jason Aaron",
     "artist": "Russell Dauterman",
     "year": 2023,
     "price": 35,
     "usIssues": "War of the Realms #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494479.08.LZZZZZZZ.jpg",
-    "synopsis": "L'invasion totale de Midgard (la Terre) par les armées de Malekith."
+    "synopsis": "L'invasion totale de Midgard (la Terre) par les armées de Malekith.",
+    "alternateIsbns": [
+      "9782809494477",
+      "9782809494471"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0099",
@@ -20739,14 +21067,18 @@
     "series": "Thor (Aaron)",
     "tome": "Tome 5",
     "title": "La Mort de la Puissante Thor",
-    "isbn": "9782809494460",
+    "isbn": "9782809494464",
     "writer": "Jason Aaron",
     "artist": "Russell Dauterman",
     "year": 2022,
     "price": 35,
     "usIssues": "Mighty Thor #700-706",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494460.08.LZZZZZZZ.jpg",
-    "synopsis": "Mangog dévaste Asgardia : Jane Foster utilise Mjolnir au prix de sa propre survie."
+    "synopsis": "Mangog dévaste Asgardia : Jane Foster utilise Mjolnir au prix de sa propre survie.",
+    "alternateIsbns": [
+      "9782809494460",
+      "9782809494464"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0095",
@@ -20756,14 +21088,18 @@
     "series": "Thor (Aaron)",
     "tome": "Tome 1",
     "title": "Le Massacreur de Dieux",
-    "isbn": "9782809494422",
+    "isbn": "9782809494426",
     "writer": "Jason Aaron",
     "artist": "Esad Ribic",
     "year": 2020,
     "price": 35,
     "usIssues": "Thor: God of Thunder #1-11",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494428.08.LZZZZZZZ.jpg",
-    "synopsis": "La traque millénaire de Gorr à travers le passé, le présent et le futur."
+    "synopsis": "La traque millénaire de Gorr à travers le passé, le présent et le futur.",
+    "alternateIsbns": [
+      "9782809494422",
+      "9782809494426"
+    ]
   },
   {
     "id": "ma-marveldelu-9791039134347",
@@ -21130,14 +21466,18 @@
     "series": "Venom (Cates)",
     "tome": "Tome 2",
     "title": "Carnage Absolu",
-    "isbn": "9782809494361",
+    "isbn": "9782809494365",
     "writer": "Donny Cates",
     "artist": "Ryan Stegman",
     "year": 2022,
     "price": 35,
     "usIssues": "Absolute Carnage #1-5, Venom #16-20",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494363.08.LZZZZZZZ.jpg",
-    "synopsis": "Carnage traque tous les porteurs historiques de symbiotes pour réveiller Knull."
+    "synopsis": "Carnage traque tous les porteurs historiques de symbiotes pour réveiller Knull.",
+    "alternateIsbns": [
+      "9782809494361",
+      "9782809494365"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0090",
@@ -21147,14 +21487,18 @@
     "series": "Venom (Cates)",
     "tome": "Tome 3",
     "title": "Le Roi en Noir",
-    "isbn": "9782809494378",
+    "isbn": "9782809494372",
     "writer": "Donny Cates",
     "artist": "Ryan Stegman",
     "year": 2023,
     "price": 35,
     "usIssues": "King in Black #1-5, Venom #31-35",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494371.08.LZZZZZZZ.jpg",
-    "synopsis": "L'armée de dragons symbiotiques de Knull plonge la Terre dans l'obscurité totale."
+    "synopsis": "L'armée de dragons symbiotiques de Knull plonge la Terre dans l'obscurité totale.",
+    "alternateIsbns": [
+      "9782809494378",
+      "9782809494372"
+    ]
   },
   {
     "id": "ma-marveldeluxe-0088",
@@ -21164,14 +21508,18 @@
     "series": "Venom (Cates)",
     "tome": "Tome 1",
     "title": "Rex",
-    "isbn": "9782809494316",
+    "isbn": "9782809494310",
     "writer": "Donny Cates",
     "artist": "Ryan Stegman",
     "year": 2021,
     "price": 35,
     "usIssues": "Venom (2018) #1-12",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494312.08.LZZZZZZZ.jpg",
-    "synopsis": "Knull, le Dieu des ténèbres et géniteur des symbiotes, s'éveille."
+    "synopsis": "Knull, le Dieu des ténèbres et géniteur des symbiotes, s'éveille.",
+    "alternateIsbns": [
+      "9782809494316",
+      "9782809494310"
+    ]
   },
   {
     "id": "ma-marveldelu-9782809470512",
@@ -22082,14 +22430,18 @@
     "series": "All-New Wolverine",
     "tome": "Tome 1",
     "title": "All-New Wolverine : Les Quatre Sœurs",
-    "isbn": "9782809498277",
+    "isbn": "9782809498271",
     "writer": "Tom Taylor",
     "artist": "David Lopez",
     "year": 2021,
     "price": 16,
     "usIssues": "All-New Wolverine #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/280949827X.08.LZZZZZZZ.jpg",
-    "synopsis": "Laura Kinney (X-23) reprend le costume de Wolverine et découvre des clones de sa personne."
+    "synopsis": "Laura Kinney (X-23) reprend le costume de Wolverine et découvre des clones de sa personne.",
+    "alternateIsbns": [
+      "9782809498277",
+      "9782809498271"
+    ]
   },
   {
     "id": "ma-marvelmust-9782809498318",
@@ -22150,14 +22502,18 @@
     "series": "Avengers",
     "tome": "One-Shot",
     "title": "Avengers : La Séparation",
-    "isbn": "9782809496686",
+    "isbn": "9782809496680",
     "writer": "Brian Michael Bendis",
     "artist": "David Finch",
     "year": 2021,
     "price": 16,
     "usIssues": "Avengers #500-503",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809496684.08.LZZZZZZZ.jpg",
-    "synopsis": "Le pire jour des Avengers : des attaques inexpliquées entraînent la mort de plusieurs membres."
+    "synopsis": "Le pire jour des Avengers : des attaques inexpliquées entraînent la mort de plusieurs membres.",
+    "alternateIsbns": [
+      "9782809496686",
+      "9782809496680"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039100748",
@@ -22235,14 +22591,18 @@
     "series": "Avengers",
     "tome": "One-Shot",
     "title": "Avengers vs X-Men",
-    "isbn": "9782809498345",
+    "isbn": "9782809498349",
     "writer": "Brian Michael Bendis, Jason Aaron",
     "artist": "John Romita Jr",
     "year": 2022,
     "price": 16,
     "usIssues": "AvX #0-12",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498342.08.LZZZZZZZ.jpg",
-    "synopsis": "Le retour de la Force Phénix provoque un affrontement titanesque entre Avengers et X-Men."
+    "synopsis": "Le retour de la Force Phénix provoque un affrontement titanesque entre Avengers et X-Men.",
+    "alternateIsbns": [
+      "9782809498345",
+      "9782809498349"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0034",
@@ -22252,14 +22612,18 @@
     "series": "Avengers",
     "tome": "Tome 1",
     "title": "New Avengers : Évasion",
-    "isbn": "9782809498376",
+    "isbn": "9782809498370",
     "writer": "Brian Michael Bendis",
     "artist": "David Finch",
     "year": 2022,
     "price": 16,
     "usIssues": "New Avengers #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498377.08.LZZZZZZZ.jpg",
-    "synopsis": "Une évasion massive à la prison du Raft force Captain America et Iron Man à créer les New Avengers."
+    "synopsis": "Une évasion massive à la prison du Raft force Captain America et Iron Man à créer les New Avengers.",
+    "alternateIsbns": [
+      "9782809498376",
+      "9782809498370"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0016",
@@ -22269,14 +22633,18 @@
     "series": "Avengers",
     "tome": "One-Shot",
     "title": "Secret Wars (2015)",
-    "isbn": "9782809496754",
+    "isbn": "9782809496758",
     "writer": "Jonathan Hickman",
     "artist": "Esad Ribic",
     "year": 2021,
     "price": 16,
     "usIssues": "Secret Wars #1-9",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809496757.08.LZZZZZZZ.jpg",
-    "synopsis": "Le multivers s'effondre. Le Dieu Fatalis règne sur le monde patchwork de Battleworld."
+    "synopsis": "Le multivers s'effondre. Le Dieu Fatalis règne sur le monde patchwork de Battleworld.",
+    "alternateIsbns": [
+      "9782809496754",
+      "9782809496758"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039110822",
@@ -22337,14 +22705,18 @@
     "series": "Black Panther",
     "tome": "One-Shot",
     "title": "Black Panther : Qui est la Panthère Noire ?",
-    "isbn": "9782809498260",
+    "isbn": "9782809498264",
     "writer": "Reginald Hudlin",
     "artist": "John Romita Jr",
     "year": 2021,
     "price": 16,
     "usIssues": "Black Panther (2005) #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498261.08.LZZZZZZZ.jpg",
-    "synopsis": "Les origines modernes de T'Challa et la défense du Wakanda contre Klaw."
+    "synopsis": "Les origines modernes de T'Challa et la défense du Wakanda contre Klaw.",
+    "alternateIsbns": [
+      "9782809498260",
+      "9782809498264"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039124157",
@@ -22388,14 +22760,18 @@
     "series": "Captain America",
     "tome": "Tome 2",
     "title": "Captain America : La Mort de Captain America",
-    "isbn": "9782809498475",
+    "isbn": "9782809498479",
     "writer": "Ed Brubaker",
     "artist": "Steve Epting",
     "year": 2022,
     "price": 16,
     "usIssues": "Captain America #25-30",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498474.08.LZZZZZZZ.jpg",
-    "synopsis": "Steve Rogers est assassiné sur les marches du tribunal."
+    "synopsis": "Steve Rogers est assassiné sur les marches du tribunal.",
+    "alternateIsbns": [
+      "9782809498475",
+      "9782809498479"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039114325",
@@ -22456,14 +22832,18 @@
     "series": "Captain America",
     "tome": "Tome 1",
     "title": "Captain America : Le Soldat de l'Hiver",
-    "isbn": "9782809498215",
+    "isbn": "9782809498219",
     "writer": "Ed Brubaker",
     "artist": "Steve Epting",
     "year": 2021,
     "price": 16,
     "usIssues": "Captain America #1-14",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498210.08.LZZZZZZZ.jpg",
-    "synopsis": "Steve Rogers découvre que le légendaire assassin soviétique est son vieil ami Bucky."
+    "synopsis": "Steve Rogers découvre que le légendaire assassin soviétique est son vieil ami Bucky.",
+    "alternateIsbns": [
+      "9782809498215",
+      "9782809498219"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039122788",
@@ -22490,14 +22870,18 @@
     "series": "Carnage",
     "tome": "One-Shot",
     "title": "Carnage USA",
-    "isbn": "9782809498406",
+    "isbn": "9782809498400",
     "writer": "Zeb Wells",
     "artist": "Clayton Crain",
     "year": 2022,
     "price": 16,
     "usIssues": "Carnage U.S.A. #1-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498407.08.LZZZZZZZ.jpg",
-    "synopsis": "Cletus Kasady prend le contrôle d'une ville entière du Colorado avec son symbiote sanguinaire."
+    "synopsis": "Cletus Kasady prend le contrôle d'une ville entière du Colorado avec son symbiote sanguinaire.",
+    "alternateIsbns": [
+      "9782809498406",
+      "9782809498400"
+    ]
   },
   {
     "id": "ma-marvelmust-9782809486957",
@@ -22524,14 +22908,18 @@
     "series": "Civil War",
     "tome": "One-Shot",
     "title": "Civil War",
-    "isbn": "9782809490127",
+    "isbn": "9782809490121",
     "writer": "Mark Millar",
     "artist": "Steve McNiven",
     "year": 2020,
     "price": 16,
     "usIssues": "Civil War #1-7",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809490120.08.LZZZZZZZ.jpg",
-    "synopsis": "La loi de recensement divise la communauté des super-héros : Iron Man contre Captain America."
+    "synopsis": "La loi de recensement divise la communauté des super-héros : Iron Man contre Captain America.",
+    "alternateIsbns": [
+      "9782809490127",
+      "9782809490121"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039122498",
@@ -22558,14 +22946,18 @@
     "series": "Daredevil",
     "tome": "One-Shot",
     "title": "Daredevil : Born Again",
-    "isbn": "9782809490134",
+    "isbn": "9782809490138",
     "writer": "Frank Miller",
     "artist": "David Mazzucchelli",
     "year": 2020,
     "price": 16,
     "usIssues": "Daredevil #227-233",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809490139.08.LZZZZZZZ.jpg",
-    "synopsis": "Le Caïd découvre l'identité de Daredevil et anéantit méthodiquement sa vie."
+    "synopsis": "Le Caïd découvre l'identité de Daredevil et anéantit méthodiquement sa vie.",
+    "alternateIsbns": [
+      "9782809490134",
+      "9782809490138"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039133616",
@@ -22626,14 +23018,18 @@
     "series": "Daredevil",
     "tome": "One-Shot",
     "title": "Daredevil : L'Homme sans peur",
-    "isbn": "9782809498468",
+    "isbn": "9782809498462",
     "writer": "Frank Miller",
     "artist": "John Romita Jr",
     "year": 2022,
     "price": 16,
     "usIssues": "Daredevil: Man Without Fear #1-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498466.08.LZZZZZZZ.jpg",
-    "synopsis": "Les origines définitives de Matt Murdock, Elektra et Stick."
+    "synopsis": "Les origines définitives de Matt Murdock, Elektra et Stick.",
+    "alternateIsbns": [
+      "9782809498468",
+      "9782809498462"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039124164",
@@ -22694,14 +23090,18 @@
     "series": "Daredevil",
     "tome": "One-Shot",
     "title": "Daredevil : Sous l'aile du diable",
-    "isbn": "9782809498352",
+    "isbn": "9782809498356",
     "writer": "Kevin Smith",
     "artist": "Joe Quesada",
     "year": 2022,
     "price": 16,
     "usIssues": "Daredevil (1998) #1-8",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498350.08.LZZZZZZZ.jpg",
-    "synopsis": "Un mystérieux bébé confié à Matt Murdock pourrait être l'antéchrist ou le nouveau messie."
+    "synopsis": "Un mystérieux bébé confié à Matt Murdock pourrait être l'antéchrist ou le nouveau messie.",
+    "alternateIsbns": [
+      "9782809498352",
+      "9782809498356"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039113717",
@@ -22813,14 +23213,18 @@
     "series": "Deadpool",
     "tome": "Tome 1",
     "title": "Deadpool : Le Bon, la Brute et le Truand",
-    "isbn": "9782809498505",
+    "isbn": "9782809498509",
     "writer": "Gerry Duggan, Brian Posehn",
     "artist": "Declan Shalvey",
     "year": 2022,
     "price": 16,
     "usIssues": "Deadpool (2012) #15-19",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498504.08.LZZZZZZZ.jpg",
-    "synopsis": "Deadpool s'allie avec Wolverine et Captain America pour infiltrer un camp en Corée du Nord."
+    "synopsis": "Deadpool s'allie avec Wolverine et Captain America pour infiltrer un camp en Corée du Nord.",
+    "alternateIsbns": [
+      "9782809498505",
+      "9782809498509"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039124546",
@@ -22864,14 +23268,18 @@
     "series": "Deadpool",
     "tome": "One-Shot",
     "title": "Deadpool massacre l'univers Marvel",
-    "isbn": "9782809490165",
+    "isbn": "9782809490169",
     "writer": "Cullen Bunn",
     "artist": "Dalibor Talajic",
     "year": 2020,
     "price": 16,
     "usIssues": "Deadpool Kills #1-4",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809490163.08.LZZZZZZZ.jpg",
-    "synopsis": "Deadpool devient fou et massacre l'ensemble des héros et vilains de l'univers Marvel."
+    "synopsis": "Deadpool devient fou et massacre l'ensemble des héros et vilains de l'univers Marvel.",
+    "alternateIsbns": [
+      "9782809490165",
+      "9782809490169"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039116831",
@@ -22915,14 +23323,18 @@
     "series": "Doctor Strange",
     "tome": "One-Shot",
     "title": "Doctor Strange : Le Serment",
-    "isbn": "9782809498222",
+    "isbn": "9782809498226",
     "writer": "Brian K. Vaughan",
     "artist": "Marcos Martin",
     "year": 2021,
     "price": 16,
     "usIssues": "Doctor Strange #1-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498229.08.LZZZZZZZ.jpg",
-    "synopsis": "Stephen Strange mène une quête mystique pour guérir Wong d'une maladie incurable."
+    "synopsis": "Stephen Strange mène une quête mystique pour guérir Wong d'une maladie incurable.",
+    "alternateIsbns": [
+      "9782809498222",
+      "9782809498226"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0057",
@@ -22932,14 +23344,18 @@
     "series": "Doctor Strange",
     "tome": "One-Shot",
     "title": "Doctor Strange : Le Triomphe et le Tourment",
-    "isbn": "9782809498604",
+    "isbn": "9782809498608",
     "writer": "Roger Stern",
     "artist": "Mike Mignola",
     "year": 2023,
     "price": 16,
     "usIssues": "Graphic Novel #49",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498601.08.LZZZZZZZ.jpg",
-    "synopsis": "Stephen Strange et le Docteur Fatalis descendent aux Enfers de Méphisto libérer l'âme de Cynthia Von Fatalis."
+    "synopsis": "Stephen Strange et le Docteur Fatalis descendent aux Enfers de Méphisto libérer l'âme de Cynthia Von Fatalis.",
+    "alternateIsbns": [
+      "9782809498604",
+      "9782809498608"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0058",
@@ -22949,14 +23365,18 @@
     "series": "Fantastic Four",
     "tome": "One-Shot",
     "title": "Fantastic Four : 1234",
-    "isbn": "9782809498611",
+    "isbn": "9782809498615",
     "writer": "Grant Morrison",
     "artist": "Jae Lee",
     "year": 2023,
     "price": 16,
     "usIssues": "1234 #1-4",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/280949861X.08.LZZZZZZZ.jpg",
-    "synopsis": "Fatalis utilise une machine primordiale pour exaucer les faiblesses secrètes des Quatre Fantastiques."
+    "synopsis": "Fatalis utilise une machine primordiale pour exaucer les faiblesses secrètes des Quatre Fantastiques.",
+    "alternateIsbns": [
+      "9782809498611",
+      "9782809498615"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039125406",
@@ -23051,14 +23471,18 @@
     "series": "Gardiens de la Galaxie",
     "tome": "Tome 1",
     "title": "Guardians of the Galaxy : Cosmic Avengers",
-    "isbn": "9782809498314",
+    "isbn": "9782809498318",
     "writer": "Brian Michael Bendis",
     "artist": "Steve McNiven",
     "year": 2021,
     "price": 16,
     "usIssues": "Guardians #0.1, #1-3",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498318.08.LZZZZZZZ.jpg",
-    "synopsis": "Star-Lord, Gamora, Drax, Rocket et Groot font équipe avec Iron Man dans l'espace."
+    "synopsis": "Star-Lord, Gamora, Drax, Rocket et Groot font équipe avec Iron Man dans l'espace.",
+    "alternateIsbns": [
+      "9782809498314",
+      "9782809498318"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039110327",
@@ -23085,14 +23509,18 @@
     "series": "Ghost Rider",
     "tome": "One-Shot",
     "title": "Ghost Rider : Route vers l'enfer",
-    "isbn": "9782809498437",
+    "isbn": "9782809498431",
     "writer": "Garth Ennis",
     "artist": "Clayton Crain",
     "year": 2022,
     "price": 16,
     "usIssues": "Road to Damnation #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498431.08.LZZZZZZZ.jpg",
-    "synopsis": "Johnny Blaze conclut un pacte avec un ange pour tenter d'échapper aux flammes de l'enfer."
+    "synopsis": "Johnny Blaze conclut un pacte avec un ange pour tenter d'échapper aux flammes de l'enfer.",
+    "alternateIsbns": [
+      "9782809498437",
+      "9782809498431"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0035",
@@ -23102,14 +23530,18 @@
     "series": "Hawkeye",
     "tome": "Tome 1",
     "title": "Hawkeye : Ma vie est une arme",
-    "isbn": "9782809498383",
+    "isbn": "9782809498387",
     "writer": "Matt Fraction",
     "artist": "David Aja",
     "year": 2022,
     "price": 16,
     "usIssues": "Hawkeye (2012) #1-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498385.08.LZZZZZZZ.jpg",
-    "synopsis": "Le quotidien drôle et chaotique de Clint Barton et Kate Bishop à Brooklyn."
+    "synopsis": "Le quotidien drôle et chaotique de Clint Barton et Kate Bishop à Brooklyn.",
+    "alternateIsbns": [
+      "9782809498383",
+      "9782809498387"
+    ]
   },
   {
     "id": "ma-marvelmust-9782809496680",
@@ -23136,14 +23568,18 @@
     "series": "House of X",
     "tome": "One-Shot",
     "title": "House of X / Powers of X",
-    "isbn": "9782809498567",
+    "isbn": "9782809498561",
     "writer": "Jonathan Hickman",
     "artist": "Pepe Larraz, R.B. Silva",
     "year": 2023,
     "price": 16,
     "usIssues": "House of X #1-6, Powers of X #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498563.08.LZZZZZZZ.jpg",
-    "synopsis": "L'avènement de la nation mutante de Krakoa : la réinvention moderne des X-Men."
+    "synopsis": "L'avènement de la nation mutante de Krakoa : la réinvention moderne des X-Men.",
+    "alternateIsbns": [
+      "9782809498567",
+      "9782809498561"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0059",
@@ -23153,14 +23589,18 @@
     "series": "Hulk",
     "tome": "One-Shot",
     "title": "Hulk : Futur Imparfait",
-    "isbn": "9782809498628",
+    "isbn": "9782809498622",
     "writer": "Peter David",
     "artist": "George Pérez",
     "year": 2023,
     "price": 16,
     "usIssues": "Future Imperfect #1-2",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498628.08.LZZZZZZZ.jpg",
-    "synopsis": "Hulk est transporté dans un futur dévasté par une guerre nucléaire où règne le Maestro."
+    "synopsis": "Hulk est transporté dans un futur dévasté par une guerre nucléaire où règne le Maestro.",
+    "alternateIsbns": [
+      "9782809498628",
+      "9782809498622"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039115155",
@@ -23238,14 +23678,18 @@
     "series": "Hulk",
     "tome": "Tome 1",
     "title": "Planet Hulk",
-    "isbn": "9782809490172",
+    "isbn": "9782809490176",
     "writer": "Greg Pak",
     "artist": "Carlo Pagulayan",
     "year": 2020,
     "price": 16,
     "usIssues": "Incredible Hulk #92-105",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809490171.08.LZZZZZZZ.jpg",
-    "synopsis": "Exilé par les Illuminati, Hulk devient gladiateur puis libérateur de la planète Sakaar."
+    "synopsis": "Exilé par les Illuminati, Hulk devient gladiateur puis libérateur de la planète Sakaar.",
+    "alternateIsbns": [
+      "9782809490172",
+      "9782809490176"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0008",
@@ -23255,14 +23699,18 @@
     "series": "Hulk",
     "tome": "Tome 2",
     "title": "World War Hulk",
-    "isbn": "9782809496679",
+    "isbn": "9782809496673",
     "writer": "Greg Pak",
     "artist": "John Romita Jr",
     "year": 2021,
     "price": 16,
     "usIssues": "World War Hulk #1-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809496676.08.LZZZZZZZ.jpg",
-    "synopsis": "Hulk revient sur Terre pour se venger des héros qui l'ont exilé."
+    "synopsis": "Hulk revient sur Terre pour se venger des héros qui l'ont exilé.",
+    "alternateIsbns": [
+      "9782809496679",
+      "9782809496673"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039112369",
@@ -23289,14 +23737,18 @@
     "series": "Immortal Hulk",
     "tome": "Tome 1",
     "title": "Immortal Hulk : Où est ta victoire ?",
-    "isbn": "9782809498291",
+    "isbn": "9782809498295",
     "writer": "Al Ewing",
     "artist": "Joe Bennett",
     "year": 2021,
     "price": 16,
     "usIssues": "Immortal Hulk #1-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498296.08.LZZZZZZZ.jpg",
-    "synopsis": "L'horreur s'éveille la nuit : Bruce Banner ne peut plus mourir car le Diable Hulk revient."
+    "synopsis": "L'horreur s'éveille la nuit : Bruce Banner ne peut plus mourir car le Diable Hulk revient.",
+    "alternateIsbns": [
+      "9782809498291",
+      "9782809498295"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0052",
@@ -23306,14 +23758,18 @@
     "series": "Infinity",
     "tome": "One-Shot",
     "title": "Infinity",
-    "isbn": "9782809498550",
+    "isbn": "9782809498554",
     "writer": "Jonathan Hickman",
     "artist": "Jim Cheung",
     "year": 2023,
     "price": 16,
     "usIssues": "Infinity #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498555.08.LZZZZZZZ.jpg",
-    "synopsis": "Pendant que les Avengers combattent les Bâtisseurs dans l'espace, Thanos attaque la Terre."
+    "synopsis": "Pendant que les Avengers combattent les Bâtisseurs dans l'espace, Thanos attaque la Terre.",
+    "alternateIsbns": [
+      "9782809498550",
+      "9782809498554"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039126212",
@@ -23357,14 +23813,18 @@
     "series": "Iron Man",
     "tome": "One-Shot",
     "title": "Iron Man : Extremis",
-    "isbn": "9782809498208",
+    "isbn": "9782809498202",
     "writer": "Warren Ellis",
     "artist": "Adi Granov",
     "year": 2021,
     "price": 16,
     "usIssues": "Iron Man (2004) #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498202.08.LZZZZZZZ.jpg",
-    "synopsis": "Tony Stark fusionne son armure avec le virus biotechnologique Extremis."
+    "synopsis": "Tony Stark fusionne son armure avec le virus biotechnologique Extremis.",
+    "alternateIsbns": [
+      "9782809498208",
+      "9782809498202"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0060",
@@ -23374,14 +23834,18 @@
     "series": "Iron Man",
     "tome": "One-Shot",
     "title": "Iron Man : Le Démon en Bouteille",
-    "isbn": "9782809498635",
+    "isbn": "9782809498639",
     "writer": "David Michelinie, Bob Layton",
     "artist": "John Romita Jr",
     "year": 2023,
     "price": 16,
     "usIssues": "Iron Man #120-128",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498636.08.LZZZZZZZ.jpg",
-    "synopsis": "La déchéance tragique de Tony Stark confronté à son alcoolisme et à Justin Hammer."
+    "synopsis": "La déchéance tragique de Tony Stark confronté à son alcoolisme et à Justin Hammer.",
+    "alternateIsbns": [
+      "9782809498635",
+      "9782809498639"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039129107",
@@ -23544,14 +24008,18 @@
     "series": "Magneto",
     "tome": "One-Shot",
     "title": "Magneto : Testament",
-    "isbn": "9782809498321",
+    "isbn": "9782809498325",
     "writer": "Greg Pak",
     "artist": "Carmine Di Giandomenico",
     "year": 2021,
     "price": 16,
     "usIssues": "Magneto: Testament #1-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498326.08.LZZZZZZZ.jpg",
-    "synopsis": "L'enfance déchirante de Max Eisenhardt dans l'enfer d'Auschwitz pendant la Shoah."
+    "synopsis": "L'enfance déchirante de Max Eisenhardt dans l'enfer d'Auschwitz pendant la Shoah.",
+    "alternateIsbns": [
+      "9782809498321",
+      "9782809498325"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039120357",
@@ -23629,14 +24097,18 @@
     "series": "Marvel Zombies",
     "tome": "One-Shot",
     "title": "Marvel Zombies",
-    "isbn": "9782809498338",
+    "isbn": "9782809498332",
     "writer": "Robert Kirkman",
     "artist": "Sean Phillips",
     "year": 2021,
     "price": 16,
     "usIssues": "Marvel Zombies #1-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498334.08.LZZZZZZZ.jpg",
-    "synopsis": "Dans un univers parallèle, un virus transforme tous les super-héros en zombies affamés."
+    "synopsis": "Dans un univers parallèle, un virus transforme tous les super-héros en zombies affamés.",
+    "alternateIsbns": [
+      "9782809498338",
+      "9782809498332"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0042",
@@ -23646,14 +24118,18 @@
     "series": "Marvels",
     "tome": "One-Shot",
     "title": "Marvels",
-    "isbn": "9782809498451",
+    "isbn": "9782809498455",
     "writer": "Kurt Busiek",
     "artist": "Alex Ross",
     "year": 2022,
     "price": 16,
     "usIssues": "Marvels #1-4",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498458.08.LZZZZZZZ.jpg",
-    "synopsis": "La naissance de l'ère des super-héros Marvel vue à travers les yeux du photographe Phil Sheldon."
+    "synopsis": "La naissance de l'ère des super-héros Marvel vue à travers les yeux du photographe Phil Sheldon.",
+    "alternateIsbns": [
+      "9782809498451",
+      "9782809498455"
+    ]
   },
   {
     "id": "ma-marvelmust-9782809498325",
@@ -23697,14 +24173,18 @@
     "series": "Moon Knight",
     "tome": "One-Shot",
     "title": "Moon Knight : De Charybde...",
-    "isbn": "9782809498307",
+    "isbn": "9782809498301",
     "writer": "Warren Ellis",
     "artist": "Declan Shalvey",
     "year": 2021,
     "price": 16,
     "usIssues": "Moon Knight (2014) #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/280949830X.08.LZZZZZZZ.jpg",
-    "synopsis": "Marc Spector devient Mr. Knight pour résoudre des crimes surnaturels à New York."
+    "synopsis": "Marc Spector devient Mr. Knight pour résoudre des crimes surnaturels à New York.",
+    "alternateIsbns": [
+      "9782809498307",
+      "9782809498301"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0038",
@@ -23714,14 +24194,18 @@
     "series": "Ms Marvel",
     "tome": "Tome 1",
     "title": "Ms Marvel : Métamorphose",
-    "isbn": "9782809498413",
+    "isbn": "9782809498417",
     "writer": "G. Willow Wilson",
     "artist": "Adrian Alphona",
     "year": 2022,
     "price": 16,
     "usIssues": "Ms. Marvel (2014) #1-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498415.08.LZZZZZZZ.jpg",
-    "synopsis": "Kamala Khan, adolescente de Jersey City, découvre ses pouvoirs d'Inhumaine métamorphe."
+    "synopsis": "Kamala Khan, adolescente de Jersey City, découvre ses pouvoirs d'Inhumaine métamorphe.",
+    "alternateIsbns": [
+      "9782809498413",
+      "9782809498417"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039122481",
@@ -23850,14 +24334,18 @@
     "series": "Punisher",
     "tome": "One-Shot",
     "title": "Punisher : Bienvenue chez Frank",
-    "isbn": "9782809498253",
+    "isbn": "9782809498257",
     "writer": "Garth Ennis",
     "artist": "Steve Dillon",
     "year": 2021,
     "price": 16,
     "usIssues": "Punisher (2000) #1-12",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498253.08.LZZZZZZZ.jpg",
-    "synopsis": "Frank Castle déclare une guerre sans merci à la famille mafieuse Gnucci à New York."
+    "synopsis": "Frank Castle déclare une guerre sans merci à la famille mafieuse Gnucci à New York.",
+    "alternateIsbns": [
+      "9782809498253",
+      "9782809498257"
+    ]
   },
   {
     "id": "ma-marvelmust-9782809493702",
@@ -23884,14 +24372,18 @@
     "series": "Punisher",
     "tome": "One-Shot",
     "title": "Punisher : Born",
-    "isbn": "9782809498543",
+    "isbn": "9782809498547",
     "writer": "Garth Ennis",
     "artist": "Darick Robertson",
     "year": 2023,
     "price": 16,
     "usIssues": "Born #1-4",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498547.08.LZZZZZZZ.jpg",
-    "synopsis": "Dans l'enfer de la guerre du Vietnam, Frank Castle fait son pacte avec la Mort."
+    "synopsis": "Dans l'enfer de la guerre du Vietnam, Frank Castle fait son pacte avec la Mort.",
+    "alternateIsbns": [
+      "9782809498543",
+      "9782809498547"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039119979",
@@ -23935,14 +24427,18 @@
     "series": "Secret Invasion",
     "tome": "One-Shot",
     "title": "Secret Invasion",
-    "isbn": "9782809498529",
+    "isbn": "9782809498523",
     "writer": "Brian Michael Bendis",
     "artist": "Leinil Francis Yu",
     "year": 2022,
     "price": 16,
     "usIssues": "Secret Invasion #1-8",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498520.08.LZZZZZZZ.jpg",
-    "synopsis": "Qui pouvez-vous croire ? Les aliens Skrulls métamorphes ont infiltré chaque équipe de héros."
+    "synopsis": "Qui pouvez-vous croire ? Les aliens Skrulls métamorphes ont infiltré chaque équipe de héros.",
+    "alternateIsbns": [
+      "9782809498529",
+      "9782809498523"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039103565",
@@ -24020,14 +24516,18 @@
     "series": "Siege",
     "tome": "One-Shot",
     "title": "Siège (Siege)",
-    "isbn": "9782809498536",
+    "isbn": "9782809498530",
     "writer": "Brian Michael Bendis",
     "artist": "Olivier Coipel",
     "year": 2022,
     "price": 16,
     "usIssues": "Siege #1-4",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498539.08.LZZZZZZZ.jpg",
-    "synopsis": "Norman Osborn et ses Dark Avengers lancent l'assaut final contre la cité d'Asgard en Oklahoma."
+    "synopsis": "Norman Osborn et ses Dark Avengers lancent l'assaut final contre la cité d'Asgard en Oklahoma.",
+    "alternateIsbns": [
+      "9782809498536",
+      "9782809498530"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039100984",
@@ -24088,14 +24588,18 @@
     "series": "Silver Surfer",
     "tome": "One-Shot",
     "title": "Silver Surfer : Requiem",
-    "isbn": "9782809498239",
+    "isbn": "9782809498233",
     "writer": "J.M. Straczynski",
     "artist": "Esad Ribic",
     "year": 2021,
     "price": 16,
     "usIssues": "Silver Surfer: Requiem #1-4",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498237.08.LZZZZZZZ.jpg",
-    "synopsis": "Condamné par un mal mystérieux, Norrin Radd entame son dernier voyage vers les étoiles."
+    "synopsis": "Condamné par un mal mystérieux, Norrin Radd entame son dernier voyage vers les étoiles.",
+    "alternateIsbns": [
+      "9782809498239",
+      "9782809498233"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039117869",
@@ -24292,14 +24796,18 @@
     "series": "Spider-Gwen",
     "tome": "Tome 1",
     "title": "Spider-Gwen : Plus grande que nature",
-    "isbn": "9782809498390",
+    "isbn": "9782809498394",
     "writer": "Jason Latour",
     "artist": "Robbi Rodriguez",
     "year": 2022,
     "price": 16,
     "usIssues": "Spider-Gwen #1-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498393.08.LZZZZZZZ.jpg",
-    "synopsis": "Sur la Terre-65, c'est Gwen Stacy qui a été mordue par l'araignée radioactive."
+    "synopsis": "Sur la Terre-65, c'est Gwen Stacy qui a été mordue par l'araignée radioactive.",
+    "alternateIsbns": [
+      "9782809498390",
+      "9782809498394"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0002",
@@ -24309,14 +24817,18 @@
     "series": "Spider-Man",
     "tome": "One-Shot",
     "title": "Spider-Man : Bleu",
-    "isbn": "9782809496662",
+    "isbn": "9782809496666",
     "writer": "Jeph Loeb",
     "artist": "Tim Sale",
     "year": 2020,
     "price": 16,
     "usIssues": "Spider-Man: Blue #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809496668.08.LZZZZZZZ.jpg",
-    "synopsis": "Peter Parker se remémore avec nostalgie et émotion son amour pour Gwen Stacy."
+    "synopsis": "Peter Parker se remémore avec nostalgie et émotion son amour pour Gwen Stacy.",
+    "alternateIsbns": [
+      "9782809496662",
+      "9782809496666"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0014",
@@ -24326,14 +24838,18 @@
     "series": "Spider-Man",
     "tome": "One-Shot",
     "title": "Spider-Man : La Dernière Chasse de Kraven",
-    "isbn": "9782809496730",
+    "isbn": "9782809496734",
     "writer": "J.M. DeMatteis",
     "artist": "Mike Zeck",
     "year": 2021,
     "price": 16,
     "usIssues": "ASM #293-294",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809496730.08.LZZZZZZZ.jpg",
-    "synopsis": "Kraven enterre Spider-Man vivant et endosse son costume pour prouver sa supériorité."
+    "synopsis": "Kraven enterre Spider-Man vivant et endosse son costume pour prouver sa supériorité.",
+    "alternateIsbns": [
+      "9782809496730",
+      "9782809496734"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0055",
@@ -24343,14 +24859,18 @@
     "series": "Spider-Man",
     "tome": "One-Shot",
     "title": "Spider-Man : La Mort de Jean DeWolff",
-    "isbn": "9782809498581",
+    "isbn": "9782809498585",
     "writer": "Peter David",
     "artist": "Rich Buckler",
     "year": 2023,
     "price": 16,
     "usIssues": "Spectacular Spider-Man #107-110",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/280949858X.08.LZZZZZZZ.jpg",
-    "synopsis": "L'inspectrice Jean DeWolff est sauvagement abattue par le Rédempteur (Sin-Eater)."
+    "synopsis": "L'inspectrice Jean DeWolff est sauvagement abattue par le Rédempteur (Sin-Eater).",
+    "alternateIsbns": [
+      "9782809498581",
+      "9782809498585"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0039",
@@ -24360,14 +24880,18 @@
     "series": "Spider-Man",
     "tome": "Tome 1",
     "title": "Spider-Man : Miles Morales",
-    "isbn": "9782809498420",
+    "isbn": "9782809498424",
     "writer": "Brian Michael Bendis",
     "artist": "Sara Pichelli",
     "year": 2022,
     "price": 16,
     "usIssues": "Ultimate Spider-Man #1-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498423.08.LZZZZZZZ.jpg",
-    "synopsis": "Après la mort de Peter Parker, le jeune Miles Morales reprend le flambeau."
+    "synopsis": "Après la mort de Peter Parker, le jeune Miles Morales reprend le flambeau.",
+    "alternateIsbns": [
+      "9782809498420",
+      "9782809498424"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0025",
@@ -24377,14 +24901,18 @@
     "series": "Spider-Man",
     "tome": "One-Shot",
     "title": "Spider-Verse",
-    "isbn": "9782809498284",
+    "isbn": "9782809498288",
     "writer": "Dan Slott",
     "artist": "Olivier Coipel",
     "year": 2021,
     "price": 16,
     "usIssues": "Amazing Spider-Man #9-15",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498288.08.LZZZZZZZ.jpg",
-    "synopsis": "Tous les Spider-Men du multivers s'unissent contre la famille des Héritiers de Morlun."
+    "synopsis": "Tous les Spider-Men du multivers s'unissent contre la famille des Héritiers de Morlun.",
+    "alternateIsbns": [
+      "9782809498284",
+      "9782809498288"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0046",
@@ -24394,14 +24922,18 @@
     "series": "Spider-Man",
     "tome": "Tome 1",
     "title": "Superior Spider-Man : Le Pire Cauchemar",
-    "isbn": "9782809498499",
+    "isbn": "9782809498493",
     "writer": "Dan Slott",
     "artist": "Ryan Stegman",
     "year": 2022,
     "price": 16,
     "usIssues": "Superior Spider-Man #1-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498490.08.LZZZZZZZ.jpg",
-    "synopsis": "Otto Octavius s'empare du corps de Peter Parker et devient un Spider-Man impitoyable."
+    "synopsis": "Otto Octavius s'empare du corps de Peter Parker et devient un Spider-Man impitoyable.",
+    "alternateIsbns": [
+      "9782809498499",
+      "9782809498493"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039114455",
@@ -24445,14 +24977,18 @@
     "series": "Thanos",
     "tome": "One-Shot",
     "title": "Le Gant de l'Infini (Infinity Gauntlet)",
-    "isbn": "9782809496747",
+    "isbn": "9782809496741",
     "writer": "Jim Starlin",
     "artist": "George Pérez",
     "year": 2021,
     "price": 16,
     "usIssues": "Infinity Gauntlet #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809496749.08.LZZZZZZZ.jpg",
-    "synopsis": "Thanos efface la moitié de la création d'un claquement de doigts."
+    "synopsis": "Thanos efface la moitié de la création d'un claquement de doigts.",
+    "alternateIsbns": [
+      "9782809496747",
+      "9782809496741"
+    ]
   },
   {
     "id": "ma-marvelmust-9782809488197",
@@ -24479,14 +25015,18 @@
     "series": "Thanos",
     "tome": "One-Shot",
     "title": "Thanos Gagne",
-    "isbn": "9782809490158",
+    "isbn": "9782809490152",
     "writer": "Donny Cates",
     "artist": "Geoff Shaw",
     "year": 2020,
     "price": 16,
     "usIssues": "Thanos #13-18",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809490155.08.LZZZZZZZ.jpg",
-    "synopsis": "Au bout du temps, le vieux Thanos triomphant convoque son double du passé."
+    "synopsis": "Au bout du temps, le vieux Thanos triomphant convoque son double du passé.",
+    "alternateIsbns": [
+      "9782809490158",
+      "9782809490152"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039120166",
@@ -24513,14 +25053,18 @@
     "series": "Thor",
     "tome": "Tome 1",
     "title": "Thor : La Déesse du Tonnerre",
-    "isbn": "9782809498512",
+    "isbn": "9782809498516",
     "writer": "Jason Aaron",
     "artist": "Russell Dauterman",
     "year": 2022,
     "price": 16,
     "usIssues": "Thor (2014) #1-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498512.08.LZZZZZZZ.jpg",
-    "synopsis": "Jane Foster soulève le marteau Mjolnir et devient la nouvelle Déesse du Tonnerre."
+    "synopsis": "Jane Foster soulève le marteau Mjolnir et devient la nouvelle Déesse du Tonnerre.",
+    "alternateIsbns": [
+      "9782809498512",
+      "9782809498516"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0013",
@@ -24530,14 +25074,18 @@
     "series": "Thor",
     "tome": "Tome 1",
     "title": "Thor : Le Massacreur de Dieux",
-    "isbn": "9782809496723",
+    "isbn": "9782809496727",
     "writer": "Jason Aaron",
     "artist": "Esad Ribic",
     "year": 2021,
     "price": 16,
     "usIssues": "Thor: God of Thunder #1-11",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809496722.08.LZZZZZZZ.jpg",
-    "synopsis": "Gorr sillonne le cosmos pour éradiquer tous les dieux. Trois époques de Thor s'unissent."
+    "synopsis": "Gorr sillonne le cosmos pour éradiquer tous les dieux. Trois époques de Thor s'unissent.",
+    "alternateIsbns": [
+      "9782809496723",
+      "9782809496727"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039114554",
@@ -24683,14 +25231,18 @@
     "series": "Venom",
     "tome": "Tome 1",
     "title": "Venom : Rex",
-    "isbn": "9782809498444",
+    "isbn": "9782809498448",
     "writer": "Donny Cates",
     "artist": "Ryan Stegman",
     "year": 2022,
     "price": 16,
     "usIssues": "Venom (2018) #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/280949844X.08.LZZZZZZZ.jpg",
-    "synopsis": "Eddie Brock affronte Knull, le terrifiant Dieu primordial et créateur des symbiotes."
+    "synopsis": "Eddie Brock affronte Knull, le terrifiant Dieu primordial et créateur des symbiotes.",
+    "alternateIsbns": [
+      "9782809498444",
+      "9782809498448"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039128971",
@@ -24717,14 +25269,18 @@
     "series": "Vision",
     "tome": "One-Shot",
     "title": "Vision : Un peu pire qu'un homme",
-    "isbn": "9782809496716",
+    "isbn": "9782809496710",
     "writer": "Tom King",
     "artist": "Gabriel Hernandez Walta",
     "year": 2021,
     "price": 16,
     "usIssues": "The Vision #1-12",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809496714.08.LZZZZZZZ.jpg",
-    "synopsis": "Vision tente de vivre une vie de famille ordinaire en banlieue américaine."
+    "synopsis": "Vision tente de vivre une vie de famille ordinaire en banlieue américaine.",
+    "alternateIsbns": [
+      "9782809496716",
+      "9782809496710"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039107877",
@@ -24768,14 +25324,18 @@
     "series": "Wolverine",
     "tome": "Tome 1",
     "title": "Wolverine : Ennemi d'État",
-    "isbn": "9782809498246",
+    "isbn": "9782809498240",
     "writer": "Mark Millar",
     "artist": "John Romita Jr",
     "year": 2021,
     "price": 16,
     "usIssues": "Wolverine (2003) #20-32",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498245.08.LZZZZZZZ.jpg",
-    "synopsis": "Conditionné par l'Hydra et la Main, Wolverine est transformé en machine à tuer contre ses amis."
+    "synopsis": "Conditionné par l'Hydra et la Main, Wolverine est transformé en machine à tuer contre ses amis.",
+    "alternateIsbns": [
+      "9782809498246",
+      "9782809498240"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039103824",
@@ -24836,14 +25396,18 @@
     "series": "Wolverine",
     "tome": "One-Shot",
     "title": "Wolverine : Old Man Logan",
-    "isbn": "9782809490141",
+    "isbn": "9782809490145",
     "writer": "Mark Millar",
     "artist": "Steve McNiven",
     "year": 2020,
     "price": 16,
     "usIssues": "Wolverine #66-72",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809490147.08.LZZZZZZZ.jpg",
-    "synopsis": "Dans un futur où les super-vilains ont gagné, Logan entreprend un ultime périple."
+    "synopsis": "Dans un futur où les super-vilains ont gagné, Logan entreprend un ultime périple.",
+    "alternateIsbns": [
+      "9782809490141",
+      "9782809490145"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0056",
@@ -24853,14 +25417,18 @@
     "series": "Wolverine",
     "tome": "One-Shot",
     "title": "Wolverine par Claremont & Miller",
-    "isbn": "9782809498598",
+    "isbn": "9782809498592",
     "writer": "Chris Claremont",
     "artist": "Frank Miller",
     "year": 2023,
     "price": 16,
     "usIssues": "Wolverine (1982) #1-4",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498598.08.LZZZZZZZ.jpg",
-    "synopsis": "Logan voyage au Japon pour retrouver Mariko Yashida et affronte la pègre yakuza."
+    "synopsis": "Logan voyage au Japon pour retrouver Mariko Yashida et affronte la pègre yakuza.",
+    "alternateIsbns": [
+      "9782809498598",
+      "9782809498592"
+    ]
   },
   {
     "id": "ma-marvelmust-9791039106740",
@@ -25074,14 +25642,18 @@
     "series": "X-Men",
     "tome": "Tome 1",
     "title": "Astonishing X-Men : Surdoués",
-    "isbn": "9782809496709",
+    "isbn": "9782809496703",
     "writer": "Joss Whedon",
     "artist": "John Cassaday",
     "year": 2021,
     "price": 16,
     "usIssues": "Astonishing X-Men #1-6",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809496706.08.LZZZZZZZ.jpg",
-    "synopsis": "La découverte d'un remède contre la mutation bouleverse les X-Men."
+    "synopsis": "La découverte d'un remède contre la mutation bouleverse les X-Men.",
+    "alternateIsbns": [
+      "9782809496709",
+      "9782809496703"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0010",
@@ -25091,14 +25663,18 @@
     "series": "X-Men",
     "tome": "One-Shot",
     "title": "House of M",
-    "isbn": "9782809496693",
+    "isbn": "9782809496697",
     "writer": "Brian Michael Bendis",
     "artist": "Olivier Coipel",
     "year": 2021,
     "price": 16,
     "usIssues": "House of M #1-8",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809496692.08.LZZZZZZZ.jpg",
-    "synopsis": "La Sorcière Rouge réécrit la réalité où les mutants sont l'espèce dominante."
+    "synopsis": "La Sorcière Rouge réécrit la réalité où les mutants sont l'espèce dominante.",
+    "alternateIsbns": [
+      "9782809496693",
+      "9782809496697"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0054",
@@ -25108,14 +25684,18 @@
     "series": "X-Men",
     "tome": "One-Shot",
     "title": "X-Men : Deuxième Genèse",
-    "isbn": "9782809498574",
+    "isbn": "9782809498578",
     "writer": "Chris Claremont, Len Wein",
     "artist": "Dave Cockrum",
     "year": 2023,
     "price": 16,
     "usIssues": "Giant-Size X-Men #1, UXM #94-100",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498571.08.LZZZZZZZ.jpg",
-    "synopsis": "La naissance de la nouvelle équipe internationale : Wolverine, Tornade, Diablo, Colossus."
+    "synopsis": "La naissance de la nouvelle équipe internationale : Wolverine, Tornade, Diablo, Colossus.",
+    "alternateIsbns": [
+      "9782809498574",
+      "9782809498578"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0045",
@@ -25125,14 +25705,18 @@
     "series": "X-Men",
     "tome": "One-Shot",
     "title": "X-Men : Dieu crée, l'homme détruit",
-    "isbn": "9782809498482",
+    "isbn": "9782809498486",
     "writer": "Chris Claremont",
     "artist": "Brent Anderson",
     "year": 2022,
     "price": 16,
     "usIssues": "Marvel Graphic Novel #5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498482.08.LZZZZZZZ.jpg",
-    "synopsis": "Le révérend William Stryker lance sa croisade fanatique anti-mutants."
+    "synopsis": "Le révérend William Stryker lance sa croisade fanatique anti-mutants.",
+    "alternateIsbns": [
+      "9782809498482",
+      "9782809498486"
+    ]
   },
   {
     "id": "ma-marvelmusthave-0033",
@@ -25142,14 +25726,18 @@
     "series": "X-Men",
     "tome": "One-Shot",
     "title": "X-Men : Le Complexe du Messie",
-    "isbn": "9782809498369",
+    "isbn": "9782809498363",
     "writer": "Ed Brubaker, Mike Carey",
     "artist": "Marc Silvestri",
     "year": 2022,
     "price": 16,
     "usIssues": "X-Men: Messiah Complex",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498369.08.LZZZZZZZ.jpg",
-    "synopsis": "Le premier enfant mutant né depuis le M-Day déclenche une guerre sans merci."
+    "synopsis": "Le premier enfant mutant né depuis le M-Day déclenche une guerre sans merci.",
+    "alternateIsbns": [
+      "9782809498369",
+      "9782809498363"
+    ]
   },
   {
     "id": "ma-marvelomni-9782809424171",
@@ -25567,14 +26155,20 @@
     "series": "Conan le Barbare",
     "tome": "Vol. 1",
     "title": "Conan le Barbare : L'Ère Marvel Originale",
-    "isbn": "9782809495092",
+    "isbn": "9782809495096",
     "writer": "Roy Thomas",
     "artist": "Barry Windsor-Smith",
     "year": 2019,
     "price": 90,
     "usIssues": "Conan the Barbarian #1-26",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809495092.08.LZZZZZZZ.jpg",
-    "synopsis": "Les premières aventures légendaires du Cimmérien chez Marvel."
+    "synopsis": "Les premières aventures légendaires du Cimmérien chez Marvel.",
+    "alternateIsbns": [
+      "9791039100786",
+      "9791039109444",
+      "9782809495096",
+      "9782809495092"
+    ]
   },
   {
     "id": "ma-marvelomni-9791039147262",
@@ -25635,14 +26229,20 @@
     "series": "Daredevil",
     "tome": "Vol. 1",
     "title": "Daredevil par Brian Michael Bendis",
-    "isbn": "9782809495054",
+    "isbn": "9782809495058",
     "writer": "Brian Michael Bendis",
     "artist": "Alex Maleev",
     "year": 2022,
     "price": 90,
     "usIssues": "Daredevil #16-19, #26-50",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/280949505X.08.LZZZZZZZ.jpg",
-    "synopsis": "L'intégrale du premier cycle magistral de Bendis et Maleev."
+    "synopsis": "L'intégrale du premier cycle magistral de Bendis et Maleev.",
+    "alternateIsbns": [
+      "9782809495058",
+      "9782809495054",
+      "9791039126281",
+      "9791039133876"
+    ]
   },
   {
     "id": "ma-marvelomnibus-0103",
@@ -25652,14 +26252,21 @@
     "series": "Daredevil",
     "tome": "Vol. 1",
     "title": "Daredevil par Frank Miller & Klaus Janson",
-    "isbn": "9782809495023",
+    "isbn": "9791039118538",
     "writer": "Frank Miller",
     "artist": "Frank Miller, Klaus Janson",
     "year": 2021,
     "price": 90,
     "usIssues": "Daredevil #158-191",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809495025.08.LZZZZZZZ.jpg",
-    "synopsis": "L'arrivée d'Elektra, Bullseye et la réinvention totale de Daredevil."
+    "synopsis": "L'arrivée d'Elektra, Bullseye et la réinvention totale de Daredevil.",
+    "alternateIsbns": [
+      "9791039118538",
+      "9782809408737",
+      "9791039123778",
+      "9782809495027",
+      "9782809495023"
+    ]
   },
   {
     "id": "ma-marvelomni-9791039143073",
@@ -25890,14 +26497,20 @@
     "series": "Fantastic Four",
     "tome": "Vol. 1",
     "title": "Fantastic Four par Jonathan Hickman",
-    "isbn": "9782809495078",
+    "isbn": "9791039114424",
     "writer": "Jonathan Hickman",
     "artist": "Dale Eaglesham, Steve Epting",
     "year": 2022,
     "price": 90,
     "usIssues": "Dark Reign: FF #1-5, FF #570-588",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809495076.08.LZZZZZZZ.jpg",
-    "synopsis": "La Fondation du Futur et la mort héroïque de la Torche Humaine."
+    "synopsis": "La Fondation du Futur et la mort héroïque de la Torche Humaine.",
+    "alternateIsbns": [
+      "9791039114424",
+      "9791039123099",
+      "9782809495072",
+      "9782809495078"
+    ]
   },
   {
     "id": "ma-marvelomni-9791039101059",
@@ -27403,14 +28016,20 @@
     "series": "Spider-Man",
     "tome": "Vol. 2",
     "title": "The Amazing Spider-Man par Stan Lee & John Romita",
-    "isbn": "9782809495047",
+    "isbn": "9782809495041",
     "writer": "Stan Lee",
     "artist": "John Romita Sr",
     "year": 2022,
     "price": 90,
     "usIssues": "ASM #39-67, Annual #3-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809495041.08.LZZZZZZZ.jpg",
-    "synopsis": "L'arrivée de Mary Jane Watson, le Bouffon Vert et le Caïd."
+    "synopsis": "L'arrivée de Mary Jane Watson, le Bouffon Vert et le Caïd.",
+    "alternateIsbns": [
+      "9782809495041",
+      "9782809495047",
+      "9782809463200",
+      "9781302919375"
+    ]
   },
   {
     "id": "ma-marvelomnibus-0101",
@@ -27420,14 +28039,20 @@
     "series": "Spider-Man",
     "tome": "Vol. 1",
     "title": "The Amazing Spider-Man par Stan Lee & Steve Ditko",
-    "isbn": "9782809495016",
+    "isbn": "9782809495010",
     "writer": "Stan Lee",
     "artist": "Steve Ditko",
     "year": 2021,
     "price": 90,
     "usIssues": "Amazing Fantasy #15, ASM #1-38",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809495017.08.LZZZZZZZ.jpg",
-    "synopsis": "Les débuts légendaires de Spider-Man dans un volume grand format de plus de 1000 pages."
+    "synopsis": "Les débuts légendaires de Spider-Man dans un volume grand format de plus de 1000 pages.",
+    "alternateIsbns": [
+      "9782809495010",
+      "9782809495016",
+      "9782809463194",
+      "9781302900823"
+    ]
   },
   {
     "id": "ma-marvelomni-9782809401318",
@@ -27777,14 +28402,21 @@
     "series": "Thor",
     "tome": "Vol. 1",
     "title": "Thor par Walter Simonson",
-    "isbn": "9782809495085",
+    "isbn": "9782809478600",
     "writer": "Walter Simonson",
     "artist": "Walter Simonson",
     "year": 2021,
     "price": 90,
     "usIssues": "Thor #337-367",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809495084.08.LZZZZZZZ.jpg",
-    "synopsis": "L'arrivée de Beta Ray Bill et la bataille contre Surtur pour Asgard."
+    "synopsis": "L'arrivée de Beta Ray Bill et la bataille contre Surtur pour Asgard.",
+    "alternateIsbns": [
+      "9782809478600",
+      "9782809480337",
+      "9782809495089",
+      "9782809495085",
+      "9791039109437"
+    ]
   },
   {
     "id": "ma-marvelomni-9791039107372",
@@ -28389,14 +29021,20 @@
     "series": "X-Men",
     "tome": "Vol. 2",
     "title": "Uncanny X-Men par Chris Claremont",
-    "isbn": "9782809495061",
+    "isbn": "9791039107976",
     "writer": "Chris Claremont",
     "artist": "John Byrne, Dave Cockrum",
     "year": 2021,
     "price": 90,
     "usIssues": "UXM #132-153, Annual #4-5",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809495068.08.LZZZZZZZ.jpg",
-    "synopsis": "Days of Future Past et l'avènement des Sentinelles."
+    "synopsis": "Days of Future Past et l'avènement des Sentinelles.",
+    "alternateIsbns": [
+      "9782809495065",
+      "9782809495061",
+      "9782809419139",
+      "9781302918583"
+    ]
   },
   {
     "id": "ma-marvelomnibus-0105",
@@ -28406,14 +29044,20 @@
     "series": "X-Men",
     "tome": "Vol. 1",
     "title": "Uncanny X-Men par Chris Claremont & John Byrne",
-    "isbn": "9782809495030",
+    "isbn": "9782809495034",
     "writer": "Chris Claremont",
     "artist": "John Byrne",
     "year": 2020,
     "price": 90,
     "usIssues": "Giant-Size X-Men #1, UXM #94-131",
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809495033.08.LZZZZZZZ.jpg",
-    "synopsis": "La saga du Phénix Noir et la renaissance des mutants."
+    "synopsis": "La saga du Phénix Noir et la renaissance des mutants.",
+    "alternateIsbns": [
+      "9782809495034",
+      "9782809495030",
+      "9782809409895",
+      "9781302927028"
+    ]
   },
   {
     "id": "ma-mightymarv-9791039114738",
