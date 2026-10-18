@@ -2898,7 +2898,7 @@
         <div class="form-grid form-grid-2">
           <div class="form-group">
             <label class="form-label">Univers *</label>
-            <select id="formUniverse" class="form-select">
+            <select id="formUniverse" class="form-select" onchange="onFormUniverseChanged()">
               <option value="MARVEL">🔴 Marvel (Panini Comics)</option>
               <option value="DC">🔵 DC Comics (Urban Comics)</option>
               <option value="BD">🟢 Franco-Belge</option>
@@ -2908,7 +2908,7 @@
           </div>
           <div class="form-group">
             <label class="form-label">Éditeur *</label>
-            <input type="text" id="formPublisher" class="form-input" placeholder="Panini Comics, Urban Comics...">
+            <input type="text" id="formPublisher" class="form-input" placeholder="Panini Comics, Urban Comics..." oninput="onFormPublisherInput()">
           </div>
         </div>
 
@@ -4137,11 +4137,17 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         const savedBooks = localStorage.getItem(STORAGE_KEY);
         if (savedBooks) {
           appState.books = JSON.parse(savedBooks);
-          // Migration automatique : Réalignement immédiat de tous les albums existants sur le Prix Neuf Officiel
+          // Migration automatique : Réalignement immédiat de tous les albums existants sur le Prix Neuf Officiel et Univers exact
           appState.books.forEach(b => {
             const officialPrice = getOfficialNewPriceForBook(b);
             if (!b.isCustomPrice || !b.price || [75, 32, 14, 18].includes(parseFloat(b.price))) {
               b.price = officialPrice;
+            }
+            if (b.universe === 'MARVEL' || !b.universe) {
+              const deduced = deduceBookMetadata(b.isbn, { title: b.title, series: b.series, publisher: b.publisher });
+              if (deduced.universe && deduced.universe !== 'MARVEL' && deduced.universe !== 'OTHER') {
+                b.universe = deduced.universe;
+              }
             }
           });
           syncCollectionWithCatalog();
@@ -4745,14 +4751,15 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
     }
 
     function addMissingTomeToWishlist(seriesName, tomeNum) {
+      const deduced = deduceBookMetadata('', { series: seriesName, title: seriesName });
       appState.books.push({
         id: 'bk-' + Date.now(),
-        universe: 'MARVEL',
-        publisher: 'Panini / Urban',
+        universe: deduced.universe,
+        publisher: deduced.publisher || 'Panini / Urban',
         series: seriesName,
         tome: 'Tome ' + tomeNum,
         title: seriesName + ' - Tome ' + tomeNum,
-        format: 'Album BD',
+        format: deduced.format || 'Album BD',
         isbn: '',
         writer: '',
         artist: '',
@@ -5046,52 +5053,25 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           dateAdded: new Date().toISOString()
         };
       } else {
-        try {
-          const resp = await fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${clean}&format=json&jscmd=data`);
-          const data = await resp.json();
-          const item = data[`ISBN:${clean}`];
-          if (item) {
-            candidateBook = {
-              id: 'bk-' + Date.now(),
-              universe: 'MARVEL',
-              publisher: item.publishers?.[0]?.name || 'Panini / Urban',
-              series: item.title || 'Comic',
-              tome: 'Tome 1',
-              title: item.title || 'Album (ISBN ' + clean + ')',
-              format: 'Album BD',
-              isbn: clean,
-              writer: item.authors?.[0]?.name || '',
-              artist: '',
-              cover: coverUrl,
-              status: chosenStatus,
-              rating: 5,
-              location: 'Bibliothèque',
-              price: 18,
-              dateAdded: new Date().toISOString()
-            };
-          }
-        } catch (e) {}
-
-        if (!candidateBook) {
-          candidateBook = {
-            id: 'bk-' + Date.now(),
-            universe: 'MARVEL',
-            publisher: 'Panini / Urban / BD',
-            series: 'Comics',
-            tome: 'Tome 1',
-            title: 'Album (ISBN ' + clean + ')',
-            format: 'Album BD',
-            isbn: clean,
-            writer: '',
-            artist: '',
-            cover: coverUrl,
-            status: chosenStatus,
-            rating: 5,
-            location: 'Bibliothèque',
-            price: 18,
-            dateAdded: new Date().toISOString()
-          };
-        }
+        const meta = await fetchFullComicMetadata(clean);
+        candidateBook = {
+          id: 'bk-' + Date.now(),
+          universe: meta.universe,
+          publisher: meta.publisher || (meta.universe === 'DC' ? 'Urban Comics' : meta.universe === 'MARVEL' ? 'Panini Comics' : 'Éditeur BD'),
+          series: meta.series || (meta.universe === 'DC' ? 'DC Comics' : meta.universe === 'MARVEL' ? 'Marvel' : 'Bande Dessinée'),
+          tome: meta.tome || 'Tome 1',
+          title: meta.title || ('Album (ISBN ' + clean + ')'),
+          format: meta.format || 'Album BD',
+          isbn: clean,
+          writer: meta.writer || '',
+          artist: meta.artist || '',
+          cover: meta.cover || coverUrl,
+          status: chosenStatus,
+          rating: 5,
+          location: 'Bibliothèque',
+          price: meta.price || 18,
+          dateAdded: new Date().toISOString()
+        };
       }
 
       const existing = findDuplicateBook(candidateBook);
@@ -5114,7 +5094,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
     }
 
     async function autoFillByFormIsbn() {
-      const clean = document.getElementById('formIsbn').value.replace(/[^0-9X]/gi, '');
+      const clean = document.getElementById('formIsbn').value.replace(/[^0-9X]/gi, '').toUpperCase();
       if (!clean) {
         showToast('Saisissez un ISBN d\'abord');
         return;
@@ -5130,17 +5110,13 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         return;
       }
 
-      try {
-        const resp = await fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${clean}&format=json&jscmd=data`);
-        const data = await resp.json();
-        const item = data[`ISBN:${clean}`];
-        if (item) {
-          if (item.title) document.getElementById('formTitle').value = item.title;
-          if (item.publishers?.[0]?.name) document.getElementById('formPublisher').value = item.publishers[0].name;
-          if (item.authors?.[0]?.name) document.getElementById('formWriter').value = item.authors[0].name;
-          showToast('📖 Infos chargées en ligne !');
-        }
-      } catch (e) {}
+      const meta = await fetchFullComicMetadata(clean);
+      openAddModalWithPrefill(meta);
+      if (meta.title) {
+        showToast('📖 Infos chargées en ligne !');
+      } else {
+        showToast(`🏷️ Univers ${meta.universe} identifié`);
+      }
     }
 
     // MOBILE MENU MODAL CONTROLLERS
@@ -5212,6 +5188,219 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       }
 
       return null;
+    }
+
+    // Automatic universe, publisher, format and series deduction engine
+    function deduceBookMetadata(isbn, rawMeta = {}) {
+      const clean = (isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
+      let universe = rawMeta.universe || null;
+      let publisher = (rawMeta.publisher || '').trim();
+      let format = (rawMeta.format || '').trim();
+      let series = (rawMeta.series || '').trim();
+      let title = (rawMeta.title || '').trim();
+      let tome = rawMeta.tome || 'Tome 1';
+      let writer = (rawMeta.writer || '').trim();
+      let artist = (rawMeta.artist || '').trim();
+      let cover = rawMeta.cover || '';
+      let price = rawMeta.price || 0;
+
+      // 1. Check in official catalog first
+      if (typeof OFFICIAL_CATALOG !== 'undefined' && Array.isArray(OFFICIAL_CATALOG) && clean) {
+        const cat = OFFICIAL_CATALOG.find(c => c.isbn === clean);
+        if (cat) return { ...cat };
+      }
+
+      // 2. ISBN prefix deduction (French publishers standard prefixes)
+      if (clean.startsWith('978236577') || clean.startsWith('97910268')) {
+        universe = universe || 'DC';
+        publisher = publisher || 'Urban Comics';
+        format = format || 'Urban Comics';
+      } else if (clean.startsWith('97828094') || clean.startsWith('97910391') || clean.startsWith('979107026')) {
+        universe = universe || 'MARVEL';
+        publisher = publisher || 'Panini Comics';
+        format = format || '100% Marvel';
+      } else if (clean.startsWith('97828001')) {
+        universe = universe || 'BD';
+        publisher = publisher || 'Dupuis';
+        format = format || 'Album BD';
+      } else if (clean.startsWith('9782205')) {
+        universe = universe || 'BD';
+        publisher = publisher || 'Dargaud';
+        format = format || 'Album BD';
+      } else if (clean.startsWith('9782203') || clean.startsWith('978287097')) {
+        universe = universe || 'BD';
+        publisher = publisher || 'Casterman';
+        format = format || 'Album BD';
+      } else if (clean.startsWith('97827234') || clean.startsWith('9782344')) {
+        universe = universe || 'BD';
+        publisher = publisher || 'Glénat';
+        format = format || 'Album BD';
+      } else if (clean.startsWith('9782302')) {
+        universe = universe || 'BD';
+        publisher = publisher || 'Soleil';
+        format = format || 'Album BD';
+      } else if (clean.startsWith('978286497')) {
+        universe = universe || 'BD';
+        publisher = publisher || 'Éditions Albert René';
+        format = format || 'Album BD';
+      } else if (clean.startsWith('97827560') || clean.startsWith('9782413')) {
+        universe = universe || 'OTHER';
+        publisher = publisher || 'Delcourt';
+        format = format || 'Comics / BD';
+      } else if (clean.startsWith('9782505')) {
+        universe = universe || 'MANGA';
+        publisher = publisher || 'Kana';
+        format = format || 'Manga';
+      } else if (clean.startsWith('97828116')) {
+        universe = universe || 'MANGA';
+        publisher = publisher || 'Pika Édition';
+        format = format || 'Manga';
+      } else if (clean.startsWith('978235142')) {
+        universe = universe || 'MANGA';
+        publisher = publisher || 'Ki-oon';
+        format = format || 'Manga';
+      }
+
+      // 3. Deduction from publisher string
+      const pubLower = publisher.toLowerCase();
+      if (pubLower.includes('urban') || pubLower.includes('dc comics') || pubLower.includes('dc')) {
+        universe = 'DC';
+        publisher = 'Urban Comics';
+      } else if (pubLower.includes('panini') || pubLower.includes('marvel')) {
+        universe = 'MARVEL';
+        publisher = 'Panini Comics';
+      } else if (/dupuis|dargaud|casterman|soleil|lombard|albert rené|moulinsart|futuropolis/.test(pubLower)) {
+        universe = 'BD';
+      } else if (/kana|kurokawa|pika|ki-oon|crunchyroll|manga/.test(pubLower)) {
+        universe = 'MANGA';
+      }
+
+      // 4. Deduction from title/series keywords
+      const titleLower = (title + ' ' + series).toLowerCase();
+      const dcKeywords = /\b(batman|superman|wonder woman|flash|green lantern|aquaman|justice league|harley quinn|joker|nightwing|robin|catwoman|teen titans|sandman|watchmen|gotham|metropolis|shazam|swamp thing|constantine|suicide squad|hellblazer|supergirl|batgirl|peacemaker|green arrow|birds of prey)\b/i;
+      const marvelKeywords = /\b(spider-man|spiderman|avengers|iron man|thor|hulk|captain america|wolverine|x-men|deadpool|daredevil|punisher|venom|carnage|fantastic four|quatre fantastiques|thanos|black panther|doctor strange|docteur strange|gardiens de la galaxie|guardians of the galaxy|moon knight|ghost rider|blade|black cat|miles morales|magneto|ms\. marvel|she-hulk|silver surfer|hawkeye)\b/i;
+      const bdKeywords = /\b(astérix|asterix|tintin|spirou|lucky luke|gaston|thorgal|blake et mortimer|lanfeust|largo winch|xiii|schtroumpf|blacksad|titeuf|boule et bill|alix|corto maltese|valérian|valerian|michel vaillant|ric hochet|tanguy|yoko tsuno|tuniques bleues|profs|ducobu|léonard|le chat|donjon)\b/i;
+      const mangaKeywords = /\b(naruto|one piece|dragon ball|bleach|attack on titan|attaque des titans|demon slayer|jujutsu kaisen|my hero academia|death note|berserk|tokyo ghoul|hunter x hunter|chainsaw man|fullmetal alchemist|fairy tail)\b/i;
+
+      if (dcKeywords.test(titleLower)) {
+        universe = 'DC';
+        if (!publisher) publisher = 'Urban Comics';
+      } else if (marvelKeywords.test(titleLower)) {
+        universe = 'MARVEL';
+        if (!publisher) publisher = 'Panini Comics';
+      } else if (bdKeywords.test(titleLower)) {
+        universe = 'BD';
+      } else if (mangaKeywords.test(titleLower)) {
+        universe = 'MANGA';
+      }
+
+      if (!universe) universe = 'MARVEL';
+
+      if (!format) {
+        format = universe === 'MARVEL' ? '100% Marvel' : universe === 'DC' ? 'Urban Comics' : universe === 'MANGA' ? 'Manga' : 'Album BD';
+      }
+
+      return {
+        isbn: clean,
+        universe: universe,
+        publisher: publisher,
+        format: format,
+        series: series || (title ? title.split(/[-–:•]/)[0].trim() : ''),
+        tome: tome,
+        title: title,
+        writer: writer,
+        artist: artist,
+        cover: cover || (clean ? getReliableCoverUrl(clean) : ''),
+        price: price || 16,
+        synopsis: rawMeta.synopsis || ''
+      };
+    }
+
+    // High-precision online metadata fetcher: BnF (legal deposit) -> OpenLibrary -> ISBN prefix heuristics
+    async function fetchFullComicMetadata(isbn) {
+      const clean = (isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
+      const coverUrl = getReliableCoverUrl(clean);
+
+      // 1. Check official catalog first
+      if (typeof OFFICIAL_CATALOG !== 'undefined' && Array.isArray(OFFICIAL_CATALOG) && clean) {
+        const cat = OFFICIAL_CATALOG.find(c => c.isbn === clean);
+        if (cat) return { ...cat };
+      }
+
+      // 2. Query BnF SRU API (Bibliothèque Nationale de France - Official French Legal Deposit)
+      try {
+        const bnfUrl = `https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.isbn%20adj%20%22${clean}%22&recordSchema=dublincore`;
+        const ctrl = new AbortController();
+        const timeout = setTimeout(() => ctrl.abort(), 3500);
+        const resp = await fetch(bnfUrl, { signal: ctrl.signal });
+        clearTimeout(timeout);
+        if (resp.ok) {
+          const text = await resp.text();
+          const numRecordsMatch = text.match(/<srw:numberOfRecords>(\d+)<\/srw:numberOfRecords>/);
+          if (numRecordsMatch && parseInt(numRecordsMatch[1], 10) > 0) {
+            let title = '';
+            const titleMatch = text.match(/<dc:title>(.*?)<\/dc:title>/s);
+            if (titleMatch) {
+              title = titleMatch[1].split('/')[0].replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').trim();
+            }
+
+            let publisher = '';
+            const pubMatch = text.match(/<dc:publisher>(.*?)<\/dc:publisher>/s);
+            if (pubMatch) {
+              publisher = pubMatch[1].replace(/\s*\(.*?\)\s*/g, '').replace(/&amp;/g, '&').trim();
+            }
+
+            let writer = '';
+            const creatorMatch = text.match(/<dc:creator>(.*?)<\/dc:creator>/s);
+            if (creatorMatch) {
+              writer = creatorMatch[1].split('(')[0].replace(/,\s*/, ' ').replace(/&amp;/g, '&').trim();
+            }
+
+            let format = '';
+            const descMatches = [...text.matchAll(/<dc:description>(.*?)<\/dc:description>/gs)];
+            for (const dm of descMatches) {
+              const dContent = dm[1];
+              if (dContent.includes('Collection :')) {
+                format = dContent.replace(/Collection\s*:\s*/i, '').replace(/&amp;/g, '&').trim();
+                break;
+              }
+            }
+
+            if (title) {
+              return deduceBookMetadata(clean, {
+                title,
+                publisher,
+                writer,
+                format,
+                cover: coverUrl
+              });
+            }
+          }
+        }
+      } catch (e) {}
+
+      // 3. Fallback: Query OpenLibrary
+      try {
+        const ctrl = new AbortController();
+        const timeout = setTimeout(() => ctrl.abort(), 3000);
+        const resp = await fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${clean}&format=json&jscmd=data`, { signal: ctrl.signal });
+        clearTimeout(timeout);
+        if (resp.ok) {
+          const data = await resp.json();
+          const item = data[`ISBN:${clean}`];
+          if (item && item.title) {
+            return deduceBookMetadata(clean, {
+              title: item.title,
+              publisher: item.publishers?.[0]?.name || '',
+              writer: item.authors?.[0]?.name || '',
+              cover: coverUrl
+            });
+          }
+        }
+      } catch (e) {}
+
+      // 4. Fallback: Deduce universe, publisher, format strictly from ISBN prefix
+      return deduceBookMetadata(clean, { cover: coverUrl });
     }
 
     async function openScannerModal() {
@@ -5593,14 +5782,15 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         
         let bookToAdd = OFFICIAL_CATALOG.find(b => b.isbn === code);
         if (!bookToAdd) {
+          const deduced = deduceBookMetadata(code);
           bookToAdd = {
             id: 'bk-' + Date.now(),
-            universe: 'MARVEL',
-            publisher: 'Panini / Urban',
-            series: 'Comics',
+            universe: deduced.universe,
+            publisher: deduced.publisher || (deduced.universe === 'DC' ? 'Urban Comics' : deduced.universe === 'MARVEL' ? 'Panini Comics' : 'Éditeur BD'),
+            series: deduced.series || (deduced.universe === 'DC' ? 'DC Comics' : deduced.universe === 'MARVEL' ? 'Marvel' : 'Bande Dessinée'),
             tome: 'Tome 1',
-            title: 'Album ISBN ' + code,
-            format: 'Album BD',
+            title: deduced.title || ('Album ISBN ' + code),
+            format: deduced.format || 'Album BD',
             isbn: code,
             price: 16,
             status: 'READ',
@@ -5659,23 +5849,13 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
 
     async function fetchComicMetadataByIsbn(isbn) {
       showToast(`🔍 Recherche en ligne pour ${isbn}...`);
-      const coverUrl = getReliableCoverUrl(isbn);
-      try {
-        const resp = await fetch(`https://openlibrary.org/api/books?bibkeys=ISBN:${isbn}&format=json&jscmd=data`);
-        const data = await resp.json();
-        const item = data[`ISBN:${isbn}`];
-        if (item) {
-          openAddModalWithPrefill({
-            isbn: isbn,
-            title: item.title || '',
-            publisher: item.publishers?.[0]?.name || '',
-            writer: item.authors?.[0]?.name || '',
-            cover: coverUrl
-          });
-          return;
-        }
-      } catch (e) {}
-      openAddModalWithPrefill({ isbn: isbn, cover: coverUrl });
+      const meta = await fetchFullComicMetadata(isbn);
+      openAddModalWithPrefill(meta);
+      if (meta.title) {
+        showToast(`📖 Album identifié : "${meta.title}"`);
+      } else {
+        showToast(`🏷️ Univers ${meta.universe} identifié : complétez le titre`);
+      }
     }
 
     // RANDOM COMIC PICKER (Que lire ce soir ?)
@@ -5759,13 +5939,47 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       if (row) row.style.display = status === 'LOANED' ? 'grid' : 'none';
     }
 
+    function onFormUniverseChanged() {
+      const u = document.getElementById('formUniverse').value;
+      const pubInput = document.getElementById('formPublisher');
+      const formatInput = document.getElementById('formFormat');
+      const curPub = pubInput.value.trim();
+      if (!curPub || curPub === 'Panini Comics' || curPub === 'Urban Comics') {
+        if (u === 'MARVEL') pubInput.value = 'Panini Comics';
+        else if (u === 'DC') pubInput.value = 'Urban Comics';
+        else pubInput.value = '';
+      }
+      const curFmt = formatInput.value.trim();
+      if (!curFmt || curFmt === 'Marvel Must-Have' || curFmt === 'Urban Comics' || curFmt === '100% Marvel' || curFmt === 'Album BD') {
+        if (u === 'MARVEL') formatInput.value = '100% Marvel';
+        else if (u === 'DC') formatInput.value = 'Urban Comics';
+        else if (u === 'MANGA') formatInput.value = 'Manga';
+        else formatInput.value = 'Album BD';
+      }
+    }
+
+    function onFormPublisherInput() {
+      const pub = (document.getElementById('formPublisher').value || '').toLowerCase();
+      const univSelect = document.getElementById('formUniverse');
+      if (pub.includes('urban') || pub.includes('dc')) {
+        univSelect.value = 'DC';
+      } else if (pub.includes('panini') || pub.includes('marvel')) {
+        univSelect.value = 'MARVEL';
+      } else if (/dupuis|dargaud|casterman|soleil|glénat|glenat|lombard|albert rené/.test(pub)) {
+        univSelect.value = 'BD';
+      } else if (/kana|kurokawa|pika|ki-oon|crunchyroll|manga/.test(pub)) {
+        univSelect.value = 'MANGA';
+      }
+    }
+
     function openAddModal() {
       document.getElementById('editBookId').value = '';
+      document.getElementById('formUniverse').value = 'MARVEL';
       document.getElementById('formTitle').value = '';
       document.getElementById('formSeries').value = '';
       document.getElementById('formTome').value = 'Tome 1';
-      document.getElementById('formPublisher').value = 'Panini Comics';
-      document.getElementById('formFormat').value = 'Marvel Must-Have';
+      document.getElementById('formPublisher').value = '';
+      document.getElementById('formFormat').value = '';
       document.getElementById('formEditionType').value = 'STANDARD';
       document.getElementById('formIsSigned').checked = false;
       document.getElementById('formSignatureNote').value = '';
@@ -5780,11 +5994,31 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
     }
     function openAddModalWithPrefill(data) {
       openAddModal();
+      if (data.universe) {
+        document.getElementById('formUniverse').value = data.universe;
+      } else if (data.publisher || data.title) {
+        const deduced = deduceBookMetadata(data.isbn, { title: data.title, series: data.series, publisher: data.publisher });
+        document.getElementById('formUniverse').value = deduced.universe;
+      }
       if (data.title) document.getElementById('formTitle').value = data.title;
       if (data.series) document.getElementById('formSeries').value = data.series;
       if (data.tome) document.getElementById('formTome').value = data.tome;
-      if (data.publisher) document.getElementById('formPublisher').value = data.publisher;
-      if (data.format) document.getElementById('formFormat').value = data.format;
+      if (data.publisher) {
+        document.getElementById('formPublisher').value = data.publisher;
+      } else {
+        const u = document.getElementById('formUniverse').value;
+        if (u === 'MARVEL') document.getElementById('formPublisher').value = 'Panini Comics';
+        else if (u === 'DC') document.getElementById('formPublisher').value = 'Urban Comics';
+      }
+      if (data.format) {
+        document.getElementById('formFormat').value = data.format;
+      } else {
+        const u = document.getElementById('formUniverse').value;
+        if (u === 'MARVEL') document.getElementById('formFormat').value = '100% Marvel';
+        else if (u === 'DC') document.getElementById('formFormat').value = 'Urban Comics';
+        else if (u === 'MANGA') document.getElementById('formFormat').value = 'Manga';
+        else document.getElementById('formFormat').value = 'Album BD';
+      }
       if (data.editionType) document.getElementById('formEditionType').value = data.editionType;
       if (data.isSigned) document.getElementById('formIsSigned').checked = true;
       if (data.signatureNote) document.getElementById('formSignatureNote').value = data.signatureNote;
@@ -5812,9 +6046,19 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       let cover = document.getElementById('formCover').value.trim();
       if (!cover && isbn) cover = getReliableCoverUrl(isbn);
 
+      let universeVal = document.getElementById('formUniverse').value;
+      const pubVal = document.getElementById('formPublisher').value;
+      const serVal = document.getElementById('formSeries').value;
+      if (universeVal === 'MARVEL' && (pubVal || serVal || isbn)) {
+        const check = deduceBookMetadata(isbn, { title: title, series: serVal, publisher: pubVal });
+        if (check.universe && check.universe !== 'MARVEL' && check.universe !== 'OTHER') {
+          universeVal = check.universe;
+        }
+      }
+
       const b = {
         id: editId || 'bk-' + Date.now(),
-        universe: document.getElementById('formUniverse').value,
+        universe: universeVal,
         publisher: document.getElementById('formPublisher').value,
         series: document.getElementById('formSeries').value,
         tome: document.getElementById('formTome').value,
