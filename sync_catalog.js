@@ -183,11 +183,21 @@ function isbn13to10(isbn13) {
   return core + check;
 }
 
-// Multi-tier cover resolver: Amazon CDN -> BDFugue WebP -> Cultura JPG
+// Multi-tier cover resolver: ePagine HD -> Amazon CDN -> Cultura JPG -> BDFugue WebP
 async function findHighResCover(isbn13) {
   if (!isbn13 || isbn13.length !== 13) return null;
 
-  // 1. Amazon CDN
+  // 1. ePagine HD CDN (Base officielle des libraires français)
+  const epagineUrl = `https://images.epagine.fr/${isbn13.slice(-3)}/${isbn13}_1_75.jpg`;
+  const epagineOk = await new Promise(res => {
+    https.get(epagineUrl, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 4000 }, r => {
+      const len = parseInt(r.headers['content-length'] || '0', 10);
+      res(r.statusCode === 200 && len > 1500);
+    }).on('error', () => res(false));
+  });
+  if (epagineOk) return epagineUrl;
+
+  // 2. Amazon CDN
   const isbn10 = isbn13to10(isbn13);
   if (isbn10) {
     const amzUrl = `https://images-na.ssl-images-amazon.com/images/P/${isbn10}.01._SCLZZZZZZZ_.jpg`;
@@ -259,9 +269,29 @@ function cleanTitleAndSeries(rawTitle, rawFormat) {
     tome = 'Tome ' + tomeMatch[1];
   }
 
-  let series = title.split(/[:\-\/]/)[0].trim();
-  if (rawFormat.includes('Anthologie') && title.toLowerCase().startsWith('je suis ')) {
-    series = title.replace(/^Je suis /i, '').trim();
+  // Franchise extraction without breaking hyphenated names (X-Factor, Spider-Man, X-Men)
+  const FRANCHISES = [
+    'X-Factor', 'X-Men', 'X-Force', 'X-Statix', 'X-Treme X-Men',
+    'Spider-Man', 'Spider-Gwen', 'Spider-Woman', 'Ant-Man', 'Shang-Chi',
+    'Iron Man', 'Captain America', 'Fantastic Four', 'Quatre Fantastiques',
+    'Avengers', 'Doctor Strange', 'Docteur Strange', 'Daredevil', 'Deadpool',
+    'Wolverine', 'Hulk', 'Thor', 'Batman', 'Superman', 'Wonder Woman',
+    'Flash', 'Green Lantern', 'Justice League', 'Harley Quinn', 'Nightwing', 'Catwoman', 'Star Wars'
+  ];
+  let series = '';
+  for (const f of FRANCHISES) {
+    const rx = new RegExp('^' + f + '\\b', 'i');
+    if (rx.test(title)) {
+      series = f;
+      break;
+    }
+  }
+  if (!series) {
+    if (rawFormat.includes('Anthologie') && title.toLowerCase().startsWith('je suis ')) {
+      series = title.replace(/^Je suis /i, '').trim();
+    } else {
+      series = title.split(/\s+[-–—]\s+|[:•\/]/)[0].trim();
+    }
   }
   series = series.replace(/\s*(?:Tome|Vol(?:\.|ume)?)\s*[0-9]+/i, '').trim();
   if (!series || series.length > 35) {
