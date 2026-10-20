@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cerebro-pwa-v4.0';
+const CACHE_NAME = 'cerebro-pwa-v4.1';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -61,7 +61,7 @@ self.addEventListener('fetch', (event) => {
   }
 
   // 3. External CDN & media services: Network first, cache fallback
-  if (url.includes('excalibur-comics.fr') || url.includes('images-na.ssl-images-amazon.com') || url.includes('googleapis.com') || url.includes('openlibrary.org') || url.includes('bnf.fr') || url.includes('tcgdex') || url.includes('googleusercontent.com') || url.includes('unpkg.com') || url.includes('jsdelivr.net')) {
+  if (url.includes('excalibur-comics.fr') || url.includes('images.epagine.fr') || url.includes('bdfugue.com') || url.includes('sanctuary.fr') || url.includes('images-na.ssl-images-amazon.com') || url.includes('googleapis.com') || url.includes('openlibrary.org') || url.includes('bnf.fr') || url.includes('tcgdex') || url.includes('googleusercontent.com') || url.includes('unpkg.com') || url.includes('jsdelivr.net')) {
     event.respondWith(
       fetch(event.request).catch(() => caches.match(event.request))
     );
