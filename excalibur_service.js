@@ -259,7 +259,7 @@ async function lookupExcalibur(query) {
               ...parent,
               title: varTitle,
               isbn: clean,
-              cover: `https://images.epagine.fr/${clean.slice(-3)}/${clean}_1_75.jpg`,
+              cover: parent.cover || `https://images.epagine.fr/${clean.slice(-3)}/${clean}_1_75.jpg`,
               parentIsbn: adjIsbn,
               editionType: 'VARIANT',
               isVariant: true,

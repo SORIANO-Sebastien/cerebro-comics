@@ -3306,6 +3306,16 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           </button>
         </div>
 
+        <div style="margin-top:14px; background:rgba(2, 132, 199, 0.08); padding:14px; border-radius:var(--radius-md); border:1px solid rgba(2, 132, 199, 0.3);">
+          <div style="font-weight:700; color:#38bdf8; margin-bottom:6px;">🛠️ Audit & Réparation de la Collection</div>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:10px;">
+            Vérifie et réaligne automatiquement tous vos albums : résout les ISBNs, remplace les couvertures manquantes ou temporaires par les visuels officiels HD d'Excalibur Comics, et dé-tronque les titres.
+          </p>
+          <button class="btn btn-secondary" style="border-color:#0284c7; color:#38bdf8; width:100%; font-weight:700;" onclick="auditAndRepairCollection()">
+            <span>🔍 Lancer l'Audit & Réparation Automatique</span>
+          </button>
+        </div>
+
         <div style="margin-top:14px; background:rgba(239, 68, 68, 0.08); padding:14px; border-radius:var(--radius-md); border:1px solid rgba(239, 68, 68, 0.3);">
           <div style="font-weight:700; color:#ef4444; margin-bottom:6px;">🗑️ Remettre ma collection à Zéro</div>
           <p style="font-size:0.8rem; color:var(--text-muted); margin-bottom:10px;">
@@ -4225,6 +4235,18 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       const cat = findCatalogBookByIsbn(isbn13);
       if (cat && cat.cover) return cat.cover;
       const clean = (isbn13 || '').replace(/[^0-9]/g, '');
+
+      // 2. Proximité variante Panini / Urban : couverture officielle de l'album régulier si variante non publiée
+      if (clean.length === 13 && (clean.startsWith('97910391') || clean.startsWith('97828094') || clean.startsWith('978236577') || clean.startsWith('97910268'))) {
+        const coreNum = parseInt(clean.slice(0, 12), 10);
+        for (const delta of [-1, 1, -2, 2]) {
+          const adjCore = String(coreNum + delta);
+          const adjIsbn = adjCore + computeEan13Check(adjCore);
+          const parent = findCatalogBookByIsbn(adjIsbn);
+          if (parent && parent.cover) return parent.cover;
+        }
+      }
+
       if (clean.length === 13) {
         return 'https://images.epagine.fr/' + clean.slice(-3) + '/' + clean + '_1_75.jpg';
       }
@@ -6998,18 +7020,113 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
 
     function syncCollectionWithCatalog() {
       if (!Array.isArray(OFFICIAL_CATALOG) || !appState || !Array.isArray(appState.books)) return;
-      let changed = false;
+      auditAndRepairCollection(true);
+    }
+
+    function auditAndRepairCollection(isSilent = false) {
+      if (!Array.isArray(OFFICIAL_CATALOG) || !appState || !Array.isArray(appState.books)) return;
+      let repairedCount = 0;
+      let isbnsFixed = 0;
+      let titlesFixed = 0;
+      let coversFixed = 0;
+
       for (const book of appState.books) {
-        if (book) {
-          let catBook = null;
-          if (book.catId) catBook = OFFICIAL_CATALOG.find(c => c.id === book.catId);
-          if (!catBook && book.isbn) catBook = findCatalogBookByIsbn(book.isbn);
-          if (!catBook && book.title) catBook = findCatalogBookByTitle(book.title, book.writer || '');
-          if (catBook) {
-            if (!book.catId || book.catId !== catBook.id) {
-              book.catId = catBook.id;
-              changed = true;
-            }
+        if (!book) continue;
+        let modified = false;
+
+        // 1. Détection et correction mathématique des ISBNs invalides (checksum EAN-13)
+        const cleanIsbn = (book.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
+        if (cleanIsbn.length === 13 && cleanIsbn.startsWith('97')) {
+          const core12 = cleanIsbn.slice(0, 12);
+          const validCheck = computeEan13Check(core12);
+          if (cleanIsbn[12] !== validCheck) {
+            const corrected = core12 + validCheck;
+            book.isbn = corrected;
+            isbnsFixed++;
+            modified = true;
+          }
+        }
+
+        // 2. Recherche correspondance dans le catalogue officiel
+        let catBook = null;
+        if (book.catId) catBook = OFFICIAL_CATALOG.find(c => c.id === book.catId);
+        if (!catBook && book.isbn) catBook = findCatalogBookByIsbn(book.isbn);
+        if (!catBook && book.title) catBook = findCatalogBookByTitle(book.title, book.writer || '');
+
+        if (catBook) {
+          if (!book.catId || book.catId !== catBook.id) {
+            book.catId = catBook.id;
+            modified = true;
+          }
+
+          // 3. Titre tronqué avec '...' ou générique
+          const bTitle = book.title || '';
+          if (!bTitle || bTitle.endsWith('...') || bTitle.endsWith('…') || bTitle.startsWith('Album (ISBN') || (catBook.format && catBook.format.includes('Omnibus') && !bTitle.includes('Omnibus'))) {
+            book.title = catBook.title;
+            titlesFixed++;
+            modified = true;
+          }
+
+          // 4. Couvertures défaillantes, placeholders ou temporaires
+          const isPlaceholder = !book.cover || 
+                                book.cover.includes('openlibrary') || 
+                                book.cover.includes('data:image') ||
+                                book.cover.includes('no-image') ||
+                                (book.cover.includes('epagine.fr') && (book.editionType === 'VARIANT' || bTitle.includes('Variante')));
+          if ((isPlaceholder || book.cover !== catBook.cover) && catBook.cover) {
+            book.cover = catBook.cover;
+            coversFixed++;
+            modified = true;
+          }
+
+          // 5. Normalisation série et tome
+          if (!book.series || book.series === 'BD' || catBook.series.length > (book.series || '').length) {
+            book.series = catBook.series;
+            modified = true;
+          }
+          if (catBook.tome && (!book.tome || book.tome === 'Tome 1')) {
+            book.tome = catBook.tome;
+            modified = true;
+          }
+          if (catBook.format && (!book.format || book.format === 'Album BD')) {
+            book.format = catBook.format;
+            modified = true;
+          }
+          if (catBook.price && (!book.price || book.price === 16)) {
+            book.price = catBook.price;
+            modified = true;
+          }
+          if (catBook.editionType && book.editionType !== catBook.editionType) {
+            book.editionType = catBook.editionType;
+            modified = true;
+          }
+          if (!book.writer && catBook.writer) { book.writer = catBook.writer; modified = true; }
+          if (!book.artist && catBook.artist) { book.artist = catBook.artist; modified = true; }
+        } else {
+          // Album hors catalogue : s'assurer d'une couverture fiable
+          const reliable = getReliableCoverUrl(book.isbn);
+          if (reliable && (!book.cover || book.cover.includes('openlibrary') || book.cover.includes('data:image'))) {
+            book.cover = reliable;
+            coversFixed++;
+            modified = true;
+          }
+        }
+
+        if (modified) repairedCount++;
+      }
+
+      if (repairedCount > 0) {
+        saveStateToStorage();
+        renderApp();
+        if (!isSilent) {
+          showToast(`✅ ${repairedCount} albums réparés ! (${coversFixed} couvertures HD, ${titlesFixed} titres, ${isbnsFixed} ISBNs)`);
+        } else {
+          console.log(`🖼️ Audit & Réparation auto : ${repairedCount} albums actualisés avec succès !`);
+        }
+      } else if (!isSilent) {
+        showToast('✨ Tous vos albums sont parfaitement identifiés et conformes !');
+      }
+    }
             const bTitleLow = (book.title || '').toLowerCase();
             const isGenericTitle = !book.title || 
                                   bTitleLow.startsWith('album') || 
