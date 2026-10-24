@@ -7127,49 +7127,6 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         showToast('✨ Tous vos albums sont parfaitement identifiés et conformes !');
       }
     }
-            const bTitleLow = (book.title || '').toLowerCase();
-            const isGenericTitle = !book.title || 
-                                  bTitleLow.startsWith('album') || 
-                                  bTitleLow.includes('isbn') || 
-                                  book.title.endsWith('...') ||
-                                  (!book.title.includes('Omnibus') && catBook.format && catBook.format.includes('Omnibus'));
-            if (isGenericTitle && catBook.title) {
-              book.title = catBook.title;
-              changed = true;
-            }
-            const isBrokenSeries = !book.series || 
-                                   ['BD', 'X', 'Spider', 'Iron', 'Ant', 'Shang', 'He'].includes(book.series) || 
-                                   book.series === book.publisher;
-            if (isBrokenSeries && catBook.series) {
-              book.series = catBook.series;
-              changed = true;
-            } else if (catBook.series && catBook.series.length > (book.series || '').length && catBook.series.toLowerCase().startsWith((book.series || '').toLowerCase())) {
-              book.series = catBook.series;
-              changed = true;
-            }
-            if (catBook.cover && (!book.cover || book.cover !== catBook.cover || book.cover.includes('bdfugue') || book.cover.includes('openlibrary') || book.cover.includes('data:image/svg'))) {
-              book.cover = catBook.cover;
-              changed = true;
-            }
-            if (catBook.editionType && book.editionType !== catBook.editionType) {
-              book.editionType = catBook.editionType;
-              changed = true;
-            }
-            if (!book.writer && catBook.writer) { book.writer = catBook.writer; changed = true; }
-            if (!book.artist && catBook.artist) { book.artist = catBook.artist; changed = true; }
-            if ((!book.price || book.price === 16) && catBook.price) { book.price = catBook.price; changed = true; }
-            if (catBook.format && (!book.format || (catBook.format.includes('Omnibus') && !book.format.includes('Omnibus')))) {
-              book.format = catBook.format;
-              changed = true;
-            }
-          }
-        }
-      }
-      if (changed) {
-        saveStateToStorage();
-        console.log('🖼️ Couvertures HD et métadonnées de votre collection actualisées avec succès !');
-      }
-    }
 
     async function loadExternalCatalog() {
       try {
