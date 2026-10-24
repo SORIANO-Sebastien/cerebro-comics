@@ -3092,6 +3092,12 @@
             <span>🤖 Conseils & Résumé IA</span>
           </button>
 
+          <!-- Excalibur Comics Live Link button -->
+          <a id="detailExcaliburBtn" class="btn btn-secondary detail-excalibur-btn" href="https://www.excalibur-comics.fr/" target="_blank" rel="noopener noreferrer" style="display:flex; align-items:center; justify-content:center; gap:8px; margin-top:8px; text-decoration:none; background:rgba(234, 88, 12, 0.12); border:1px solid #ea580c; color:#fb923c; font-weight:700; border-radius:var(--radius-md); padding:10px 14px; font-size:0.88rem; transition:all 0.2s;">
+            <span>🗡️ Voir sur Excalibur Comics</span>
+            <span style="font-size:0.75rem; opacity:0.8;">↗</span>
+          </a>
+
           <!-- Metadata box -->
           <div class="detail-meta-box">
             <div class="detail-meta-item"><strong>Scénario :</strong> <span id="detailWriter">-</span></div>
@@ -5579,6 +5585,57 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       const cat = findCatalogBookByIsbn(clean);
       if (cat) return { ...cat };
 
+      // 2. Query Excalibur Comics live proxy & cross-referencing
+      try {
+        const ctrl = new AbortController();
+        const timeout = setTimeout(() => ctrl.abort(), 4000);
+        const excalResp = await fetch(`/api/lookup/excalibur?q=${encodeURIComponent(clean)}`, { signal: ctrl.signal });
+        clearTimeout(timeout);
+        if (excalResp.ok) {
+          const excalData = await excalResp.json();
+          if (excalData.found && excalData.product) {
+            const p = excalData.product;
+            const catMatch = findCatalogBookByIsbn(p.isbn) || (p.parentIsbn ? findCatalogBookByIsbn(p.parentIsbn) : null) || findCatalogBookByTitle(p.title);
+            if (catMatch) {
+              return {
+                ...catMatch,
+                isbn: clean,
+                title: p.title || catMatch.title,
+                series: p.series || catMatch.series,
+                tome: p.tome || catMatch.tome,
+                format: p.format || catMatch.format,
+                price: p.price || catMatch.price,
+                cover: p.cover || catMatch.cover || coverUrl,
+                excaliburUrl: p.link,
+                link: p.link,
+                editionType: p.editionType || catMatch.editionType || 'STANDARD',
+                source: 'EXCALIBUR_MATCH'
+              };
+            }
+            return {
+              id: 'excal-' + clean,
+              isbn: clean,
+              title: p.title,
+              series: p.series || p.title,
+              tome: p.tome || 'Tome 1',
+              universe: p.universe || 'MARVEL',
+              format: p.format || 'Album BD',
+              publisher: p.publisher || (p.universe === 'DC' ? 'Urban Comics' : 'Panini Comics'),
+              cover: p.cover || coverUrl,
+              price: p.price || 0,
+              excaliburUrl: p.link,
+              link: p.link,
+              editionType: p.editionType || 'STANDARD',
+              writer: p.writer || '',
+              artist: p.artist || '',
+              source: 'EXCALIBUR_LIVE'
+            };
+          }
+        }
+      } catch (e) {
+        console.warn('Excalibur lookup error:', e);
+      }
+
       // 2. Query BnF SRU API (Bibliothèque Nationale de France - Official French Legal Deposit)
       try {
         const bnfUrl = `https://catalogue.bnf.fr/api/SRU?version=1.2&operation=searchRetrieve&query=bib.isbn%20all%20%22${clean}%22&recordSchema=dublincore`;
@@ -6524,6 +6581,12 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       if (quickStatusSelect) quickStatusSelect.value = book.status || 'READ';
 
       document.getElementById('detailSynopsis').innerText = book.synopsis || book.syn || '';
+            const excalBtn = document.getElementById('detailExcaliburBtn');
+      if (excalBtn) {
+        const targetUrl = book.link || book.excaliburUrl || (book.isbn ? `https://www.excalibur-comics.fr/recherche?controller=search&s=${encodeURIComponent(book.isbn)}` : `https://www.excalibur-comics.fr/recherche?controller=search&s=${encodeURIComponent(book.title || '')}`);
+        excalBtn.href = targetUrl;
+      }
+
       document.getElementById('comicDetailModal').classList.add('active');
     }
     function closeComicDetailModal() {

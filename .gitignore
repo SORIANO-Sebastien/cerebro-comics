@@ -5,6 +5,7 @@
 # Personal / Runtime User Data
 data/users.json
 data/sessions.json
+data/collections_config.json
 data/user_collections/*
 !data/user_collections/.gitkeep
 

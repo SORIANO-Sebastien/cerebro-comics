@@ -699,6 +699,21 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // API Route: Live Excalibur Comics lookup & cross-referencing
+  if (urlPath === '/api/lookup/excalibur') {
+    const q = urlObj.searchParams.get('q') || '';
+    if (!q) {
+      return sendJson(res, 400, { success: false, error: 'Paramètre q manquant.' });
+    }
+    try {
+      const excaliburService = require('./excalibur_service.js');
+      const lookupResult = await excaliburService.lookupExcalibur(q);
+      return sendJson(res, 200, lookupResult);
+    } catch (err) {
+      return sendJson(res, 500, { success: false, error: err.message });
+    }
+  }
+
   // Static File Serving
   let relativePath = (urlPath === '/' || urlPath === '') ? 'index.html' : urlPath.replace(/^\/+/, '');
   let filePath = path.join(__dirname, relativePath);
