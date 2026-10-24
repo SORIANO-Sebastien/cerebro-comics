@@ -720,6 +720,27 @@
       "universe": "DC",
       "format": "Batman",
       "publisher": "Urban Comics"
+    },
+    {
+      "name": "Marvel Comics Softcover (2022-2025)",
+      "slug": "1083-marvel-comics-softcover-2022-2025",
+      "universe": "MARVEL",
+      "format": "Marvel Comics Softcover (2022-2025)",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel First (2027)",
+      "slug": "1378-marvel-first-2027",
+      "universe": "MARVEL",
+      "format": "Marvel First (2027)",
+      "publisher": "Panini Comics"
+    },
+    {
+      "name": "Marvel World (2025-2026)",
+      "slug": "1353-marvel-world-2025-2026",
+      "universe": "MARVEL",
+      "format": "Marvel World (2025-2026)",
+      "publisher": "Panini Comics"
     }
   ],
   "bnfQueries": [
