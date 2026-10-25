@@ -714,6 +714,22 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
+  // API Route: Auto-discover full series tomes (e.g. BRZRKR, Saga, etc.)
+  if (urlPath === '/api/series/lookup') {
+    const series = urlObj.searchParams.get('series') || urlObj.searchParams.get('q') || '';
+    const publisher = urlObj.searchParams.get('publisher') || '';
+    if (!series) {
+      return sendJson(res, 400, { success: false, error: 'Paramètre series manquant.' });
+    }
+    try {
+      const seriesService = require('./series_service.js');
+      const result = await seriesService.lookupSeries(series, publisher);
+      return sendJson(res, 200, result);
+    } catch (err) {
+      return sendJson(res, 500, { success: false, error: err.message });
+    }
+  }
+
   // Static File Serving
   let relativePath = (urlPath === '/' || urlPath === '') ? 'index.html' : urlPath.replace(/^\/+/, '');
   let filePath = path.join(__dirname, relativePath);

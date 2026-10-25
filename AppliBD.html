@@ -1207,7 +1207,7 @@
     .status-loaned { background: #8b5cf6 !important; color: white !important; }
 
     .cover-variant-badge {
-      position: absolute; bottom: 8px; left: 8px;
+      position: absolute; top: 8px; left: 8px;
       background: linear-gradient(135deg, #ec4899, #8b5cf6);
       color: #fff; font-size: 0.65rem; font-weight: 800; padding: 2px 6px;
       border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.5); z-index: 2;
@@ -2559,6 +2559,8 @@
             <option value="DC Renaissance">DC Renaissance</option>
             <option value="DC Essentiels">DC Essentiels</option>
             <option value="DC Nomades">DC Nomades</option>
+            <option value="Urban Comics 4,90€">Urban Comics 4,90€ (DC / Batman)</option>
+            <option value="Comics Delcourt">Comics Delcourt (BRZRKR, Spawn...)</option>
             <option value="Star Wars Omnibus">Star Wars Omnibus</option>
             <option value="Star Wars Deluxe">Star Wars Deluxe</option>
           </select>
@@ -4525,7 +4527,17 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       if (statusVal !== 'ALL') list = list.filter(b => b.status === statusVal);
 
       const formatVal = document.getElementById('filterFormat')?.value || 'ALL';
-      if (formatVal !== 'ALL') list = list.filter(b => b.format === formatVal);
+      if (formatVal !== 'ALL') {
+        list = list.filter(b => {
+          if (formatVal === 'Urban Comics 4,90€') {
+            return b.format === 'Urban Comics 4,90€' || (b.format && b.format.includes('4,90')) || (b.collection && b.collection.includes('4,90'));
+          }
+          if (formatVal === 'Marvel Carrefour') {
+            return b.format === 'Marvel Carrefour' || (b.collection && b.collection.toLowerCase().includes('carrefour'));
+          }
+          return b.format === formatVal;
+        });
+      }
 
       const q = (appState.searchQuery || '').trim().toLowerCase();
       if (q) {
@@ -4551,7 +4563,17 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       }
 
       const formatVal = document.getElementById('filterFormat')?.value || 'ALL';
-      if (formatVal !== 'ALL') list = list.filter(b => b.format === formatVal);
+      if (formatVal !== 'ALL') {
+        list = list.filter(b => {
+          if (formatVal === 'Urban Comics 4,90€') {
+            return b.format === 'Urban Comics 4,90€' || (b.format && b.format.includes('4,90')) || (b.collection && b.collection.includes('4,90'));
+          }
+          if (formatVal === 'Marvel Carrefour') {
+            return b.format === 'Marvel Carrefour' || (b.collection && b.collection.toLowerCase().includes('carrefour'));
+          }
+          return b.format === formatVal;
+        });
+      }
 
       const q = (appState.searchQuery || '').trim().toLowerCase();
       if (q) {
@@ -5365,6 +5387,9 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
 
       const meta = await fetchFullComicMetadata(clean);
       openAddModalWithPrefill(meta);
+      if (meta.series) {
+        triggerSeriesLookupIfNeeded(meta.series, meta.publisher);
+      }
       if (meta.title) {
         showToast('📖 Infos chargées en ligne !');
       } else {
@@ -5530,6 +5555,18 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         }
       }
 
+      // Normalize Urban 4,90 promo collections
+      if (format.includes('4,90') || format.toLowerCase().includes('meilleur du comics') || format.toLowerCase().includes('meilleur de batman')) {
+        format = 'Urban Comics 4,90€';
+        universe = 'DC';
+        publisher = 'Urban Comics';
+        if (!price) price = 4.90;
+      }
+      if (publisher && publisher.toLowerCase().includes('delcourt')) {
+        format = 'Comics Delcourt';
+        universe = 'BD';
+      }
+
       // 5. Intelligent Format deduction (Omnibus, Must-Have, Deluxe, Chronicles, Nomades...)
       if (!format || format === 'Album BD' || format === '100% Marvel' || format === 'Urban Comics') {
         if (titleLower.includes('omnibus')) {
@@ -5693,6 +5730,9 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
               const dContent = dm[1];
               if (dContent.includes('Collection :')) {
                 format = dContent.replace(/Collection\s*:\s*/i, '').replace(/&amp;/g, '&').trim();
+                if (format.includes('4,90') || format.toLowerCase().includes('meilleur du comics') || format.toLowerCase().includes('meilleur de batman')) {
+                  format = 'Urban Comics 4,90€';
+                }
                 break;
               }
             }
@@ -6609,11 +6649,182 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         excalBtn.href = targetUrl;
       }
 
+      // Render Series Complete Checklist
+      renderSeriesChecklistForModal(book);
+
       document.getElementById('comicDetailModal').classList.add('active');
     }
     function closeComicDetailModal() {
       document.getElementById('comicDetailModal').classList.remove('active');
     }
+    
+    // =========================================================================
+    // 📚 SERIES COMPLETION & CHECKLIST ENGINE
+    // =========================================================================
+    async function triggerSeriesLookupIfNeeded(seriesName, publisher = '') {
+      if (!seriesName || seriesName.length < 2) return;
+      const clean = seriesName.trim();
+      const existingInCatalog = OFFICIAL_CATALOG.filter(b => (b.series||'').toLowerCase() === clean.toLowerCase());
+      if (existingInCatalog.length >= 2) return; // Already complete
+
+      try {
+        const resp = await fetch(`/api/series/lookup?series=${encodeURIComponent(clean)}&publisher=${encodeURIComponent(publisher || '')}`);
+        if (resp.ok) {
+          const data = await resp.json();
+          if (data.success && Array.isArray(data.albums)) {
+            let added = 0;
+            const existingIsbns = new Set(OFFICIAL_CATALOG.map(b => b.isbn));
+            for (const alb of data.albums) {
+              if (alb.isbn && !existingIsbns.has(alb.isbn)) {
+                OFFICIAL_CATALOG.push(alb);
+                existingIsbns.add(alb.isbn);
+                added++;
+              }
+            }
+            if (added > 0) {
+              updateCounts();
+              if (appState.mainTab === 'CATALOG') renderApp();
+              console.log(`📚 Complétion auto série : +${added} tomes ajoutés pour '${clean}' !`);
+            }
+          }
+        }
+      } catch (e) {
+        console.warn('Series lookup error:', e);
+      }
+    }
+
+    async function renderSeriesChecklistForModal(book) {
+      const container = document.getElementById('detailSeriesChecklistContainer');
+      if (!container) return;
+      if (!book || !book.series || book.series === 'BD' || book.series === 'Comics') {
+        container.innerHTML = '';
+        container.style.display = 'none';
+        return;
+      }
+
+      const seriesName = book.series.trim();
+      container.style.display = 'block';
+
+      // Find all tomes in catalog
+      let tomes = OFFICIAL_CATALOG.filter(b => {
+        const s = (b.series || '').toLowerCase();
+        const t = (b.title || '').toLowerCase();
+        return s === seriesName.toLowerCase() || s.includes(seriesName.toLowerCase()) || t.startsWith(seriesName.toLowerCase());
+      });
+
+      // Deduplicate by tome or isbn
+      const uniqueTomes = [];
+      const seen = new Set();
+      for (const t of tomes) {
+        const key = t.isbn || (t.tome + '-' + t.title);
+        if (!seen.has(key)) {
+          seen.add(key);
+          uniqueTomes.push(t);
+        }
+      }
+
+      uniqueTomes.sort((a, b) => {
+        const na = parseInt((a.tome || '').replace(/[^0-9]/g, ''), 10) || 999;
+        const nb = parseInt((b.tome || '').replace(/[^0-9]/g, ''), 10) || 999;
+        return na - nb;
+      });
+
+      // Count owned
+      const ownedIsbns = new Set(appState.books.map(b => b.isbn).filter(Boolean));
+      const ownedTitles = new Set(appState.books.map(b => (b.title || '').toLowerCase()));
+      
+      let ownedCount = 0;
+      uniqueTomes.forEach(t => {
+        if (ownedIsbns.has(t.isbn) || ownedTitles.has((t.title || '').toLowerCase())) {
+          ownedCount++;
+        }
+      });
+
+      const totalTomes = uniqueTomes.length;
+      const pct = totalTomes > 0 ? Math.round((ownedCount / totalTomes) * 100) : 0;
+
+      container.innerHTML = `
+        <div style="background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-md); padding:14px; margin-top:16px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:6px;">
+            <div style="font-weight:800; font-size:0.95rem; color:var(--text-main);">
+              📚 Série complète : ${escapeHtml(seriesName)}
+            </div>
+            <div style="font-size:0.8rem; font-weight:700; color:var(--primary);">
+              ${ownedCount} / ${totalTomes} tomes possédés (${pct}%)
+            </div>
+          </div>
+          <div style="background:var(--bg-panel); border-radius:var(--radius-full); height:7px; overflow:hidden; margin-bottom:12px; border:1px solid rgba(255,255,255,0.06);">
+            <div style="background:linear-gradient(90deg, #10b981, #0284c7); height:100%; width:${pct}%; transition:width 0.4s ease;"></div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px; max-height:260px; overflow-y:auto; padding-right:4px;">
+            ${uniqueTomes.map(t => {
+              const isOwned = ownedIsbns.has(t.isbn) || ownedTitles.has((t.title || '').toLowerCase());
+              return `
+                <div style="display:flex; align-items:center; justify-content:space-between; padding:6px 10px; background:var(--bg-panel); border-radius:var(--radius-sm); border:1px solid ${isOwned ? 'rgba(16,185,129,0.3)' : 'var(--border-color)'}; gap:10px;">
+                  <div style="display:flex; align-items:center; gap:10px; min-width:0;">
+                    <img src="${escapeHtml(t.cover || getReliableCoverUrl(t.isbn))}" style="width:32px; height:46px; object-fit:cover; border-radius:3px; flex-shrink:0; background:#000;" onerror="this.style.display='none'">
+                    <div style="min-width:0;">
+                      <div style="font-size:0.82rem; font-weight:700; color:var(--text-main); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+                        ${escapeHtml(t.title)}
+                      </div>
+                      <div style="font-size:0.72rem; color:var(--text-muted);">
+                        ${escapeHtml(t.tome || 'Tome')} • ${escapeHtml(t.format || '')}
+                      </div>
+                    </div>
+                  </div>
+                  <div style="flex-shrink:0;">
+                    ${isOwned ? `
+                      <span style="font-size:0.75rem; font-weight:800; color:#10b981; background:rgba(16,185,129,0.15); padding:3px 8px; border-radius:4px; border:1px solid rgba(16,185,129,0.3);">
+                        ✓ Possédé
+                      </span>
+                    ` : `
+                      <div style="display:flex; gap:4px;">
+                        <button class="btn btn-sm btn-primary" style="padding:3px 8px; font-size:0.72rem;" onclick="addTomeFromChecklist('${t.id || t.isbn}', false)">
+                          + Ajouter
+                        </button>
+                        <button class="btn btn-sm btn-secondary" style="padding:3px 8px; font-size:0.72rem;" onclick="addTomeFromChecklist('${t.id || t.isbn}', true)" title="Ajouter à la Wishlist">
+                          ❤️
+                        </button>
+                      </div>
+                    `}
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
+
+      // If series has < 2 tomes in catalog, auto-trigger online lookup in background
+      if (uniqueTomes.length < 2) {
+        triggerSeriesLookupIfNeeded(seriesName, book.publisher).then(() => {
+          // Re-render checklist if modal is still open
+          if (document.getElementById('comicDetailModal').classList.contains('active') && appState.selectedBookId === book.id) {
+            renderSeriesChecklistForModal(book);
+          }
+        });
+      }
+    }
+
+    function addTomeFromChecklist(tomeIdOrIsbn, isWishlist) {
+      const catBook = OFFICIAL_CATALOG.find(b => b.id === tomeIdOrIsbn || b.isbn === tomeIdOrIsbn);
+      if (!catBook) return;
+      const newBook = {
+        ...catBook,
+        id: 'bk-' + Date.now(),
+        status: isWishlist ? 'WISHLIST' : 'READ',
+        dateAdded: new Date().toISOString(),
+        location: 'Bibliothèque'
+      };
+      appState.books.unshift(newBook);
+      saveStateToStorage();
+      renderApp();
+      showToast(isWishlist ? `❤️ "${catBook.title}" ajouté à votre Wishlist !` : `✅ "${catBook.title}" ajouté à votre collection !`);
+      
+      const currentBook = appState.books.find(b => b.id === appState.selectedBookId) || catBook;
+      renderSeriesChecklistForModal(currentBook);
+    }
+
     function changeCurrentBookStatus(newStatus) {
       const b = appState.books.find(x => x.id === appState.selectedBookId);
       if (!b) return;
@@ -7034,6 +7245,20 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         if (!book) continue;
         let modified = false;
 
+        // Auto-clean Urban 4,90 collections and Carrefour
+        const rawFmt = (book.format || '') + ' ' + (book.title || '') + ' ' + (book.series || '');
+        if (rawFmt.includes('4,90') || rawFmt.toLowerCase().includes('meilleur du comics') || rawFmt.toLowerCase().includes('meilleur de batman')) {
+          if (book.format !== 'Urban Comics 4,90€') { book.format = 'Urban Comics 4,90€'; modified = true; }
+          if (book.universe !== 'DC') { book.universe = 'DC'; modified = true; }
+          if (book.publisher !== 'Urban Comics') { book.publisher = 'Urban Comics'; modified = true; }
+          if (!book.price || book.price === 16) { book.price = 4.90; modified = true; }
+          if (book.editionType === 'VARIANT') { book.editionType = 'STANDARD'; modified = true; }
+        }
+        if (book.format === 'Marvel Carrefour' && book.editionType === 'VARIANT') {
+          book.editionType = 'STANDARD';
+          modified = true;
+        }
+
         // 1. Détection et correction mathématique des ISBNs invalides (checksum EAN-13)
         const cleanIsbn = (book.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
         if (cleanIsbn.length === 13 && cleanIsbn.startsWith('97')) {
@@ -7069,7 +7294,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
 
           // 4. Couvertures défaillantes, placeholders ou temporaires
           const isPlaceholder = !book.cover || 
-                                book.cover.includes('openlibrary') || 
+                                (!catBook?.cover?.includes('openlibrary') && book.cover.includes('openlibrary')) || 
                                 book.cover.includes('data:image') ||
                                 book.cover.includes('no-image') ||
                                 (book.cover.includes('epagine.fr') && (book.editionType === 'VARIANT' || bTitle.includes('Variante')));
