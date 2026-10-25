@@ -1107,6 +1107,246 @@
           "price": 3
         }
       ]
+    },
+    {
+      "collectionName": "Urban Comics 4,90€ (2020)",
+      "format": "Urban Comics 4,90€",
+      "universe": "DC",
+      "publisher": "Urban Comics",
+      "year": 2020,
+      "price": 4.9,
+      "books": [
+        {
+          "isbn": "9791026817116",
+          "title": "Batman : White Knight",
+          "tome": "Tome 1",
+          "year": 2020,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026818182",
+          "title": "Batman : La Cour des Hiboux",
+          "tome": "Tome 2",
+          "year": 2020,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026819417",
+          "title": "Harley Quinn : Complètement marteau",
+          "tome": "Tome 3",
+          "year": 2020,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026819394",
+          "title": "Wonder Woman : Année Un",
+          "tome": "Tome 4",
+          "year": 2020,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026817987",
+          "title": "Superman : Red Son",
+          "tome": "Tome 5",
+          "year": 2020,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026818687",
+          "title": "Justice League : La Promesse",
+          "tome": "Tome 6",
+          "year": 2020,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026822103",
+          "title": "Batman : Silence",
+          "tome": "Tome 7",
+          "year": 2020,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026820239",
+          "title": "Joker : Le Deuil de la Famille",
+          "tome": "Tome 8",
+          "year": 2020,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026818205",
+          "title": "Batman : Le Chevalier Noir",
+          "tome": "Tome 9",
+          "year": 2020,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026819783",
+          "title": "Injustice : Année Un",
+          "tome": "Tome 10",
+          "year": 2020,
+          "price": 4.9
+        }
+      ]
+    },
+    {
+      "collectionName": "Urban Comics 4,90€ (2021)",
+      "format": "Urban Comics 4,90€",
+      "universe": "DC",
+      "publisher": "Urban Comics",
+      "year": 2021,
+      "price": 4.9,
+      "books": [
+        {
+          "isbn": "9791026826767",
+          "title": "Batman : Bane",
+          "tome": "Tome 1",
+          "year": 2021,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026828952",
+          "title": "Batman vs Deathstroke",
+          "tome": "Tome 2",
+          "year": 2021,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026829027",
+          "title": "Batman vs Le Pingouin",
+          "tome": "Tome 3",
+          "year": 2021,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026827269",
+          "title": "Batman : L'Asile d'Arkham",
+          "tome": "Tome 4",
+          "year": 2021,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026827856",
+          "title": "Joker : Mauvaises Fréquentations",
+          "tome": "Tome 5",
+          "year": 2021,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026820505",
+          "title": "Harley Quinn Rebirth",
+          "tome": "Tome 6",
+          "year": 2021,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026820697",
+          "title": "Les Sirènes de Gotham",
+          "tome": "Tome 7",
+          "year": 2021,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026828174",
+          "title": "Justice League : Forever Evil",
+          "tome": "Tome 8",
+          "year": 2021,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026829508",
+          "title": "Suicide Squad Rebirth",
+          "tome": "Tome 9",
+          "year": 2021,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026827764",
+          "title": "Justice League vs Suicide Squad",
+          "tome": "Tome 10",
+          "year": 2021,
+          "price": 4.9
+        }
+      ]
+    },
+    {
+      "collectionName": "Batman 4,90€ (2022)",
+      "format": "Urban Comics 4,90€",
+      "universe": "DC",
+      "publisher": "Urban Comics",
+      "year": 2022,
+      "price": 4.9,
+      "books": [
+        {
+          "isbn": "9791026819295",
+          "title": "Batman : The Dark Knight Returns",
+          "tome": "Tome 1",
+          "year": 2022,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026828570",
+          "title": "Batman : Année Un",
+          "tome": "Tome 2",
+          "year": 2022,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026824572",
+          "title": "Batman : Arkham Asylum",
+          "tome": "Tome 3",
+          "year": 2022,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026819592",
+          "title": "Batman Aventures",
+          "tome": "Tome 4",
+          "year": 2022,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026816980",
+          "title": "Batman : Le Fils de Batman",
+          "tome": "Tome 5",
+          "year": 2022,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026815945",
+          "title": "Batman : Le Cœur de Silence",
+          "tome": "Tome 6",
+          "year": 2022,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026820130",
+          "title": "Batman : Terre-Un",
+          "tome": "Tome 7",
+          "year": 2022,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026817512",
+          "title": "Batman : Sombre Reflet",
+          "tome": "Tome 8",
+          "year": 2022,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026818519",
+          "title": "Batman : Année Zéro",
+          "tome": "Tome 9",
+          "year": 2022,
+          "price": 4.9
+        },
+        {
+          "isbn": "9791026819486",
+          "title": "Batman : Curse of the White Knight",
+          "tome": "Tome 10",
+          "year": 2022,
+          "price": 4.9
+        }
+      ]
     }
   ]
 }

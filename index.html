@@ -4150,33 +4150,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         if (found) return found;
       }
 
-      // 5. Automatic Panini/Urban Variant & Omnibus Proximity Matcher (+1 / -1 sequential ISBNs)
-      if (targetIsbn.length === 13 && (targetIsbn.startsWith('97910391') || targetIsbn.startsWith('97828094') || targetIsbn.startsWith('978236577') || targetIsbn.startsWith('97910268'))) {
-        const coreNum = parseInt(targetIsbn.slice(0, 12), 10);
-        for (const delta of [-1, 1, -2, 2]) {
-          const adjCore = String(coreNum + delta);
-          const adjCode = adjCore + computeEan13Check(adjCore);
-          const parent = OFFICIAL_CATALOG.find(b => {
-            const bClean = (b.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
-            return bClean === adjCode || (Array.isArray(b.alternateIsbns) && b.alternateIsbns.includes(adjCode));
-          });
-          if (parent && (parent.format.includes('Omnibus') || parent.format.includes('Deluxe') || parent.format.includes('Limited') || parent.title.includes('Omnibus'))) {
-            const isVariant = delta > 0 || !parent.title.includes('Variante');
-            const varTitle = isVariant && !parent.title.includes('Variante') ? `${parent.title} (Couverture Variante)` : parent.title;
-            const newVar = {
-              ...parent,
-              id: 'var-auto-' + targetIsbn,
-              title: varTitle,
-              isbn: targetIsbn,
-              editionType: 'VARIANT',
-              cover: 'https://images.epagine.fr/' + targetIsbn.slice(-3) + '/' + targetIsbn + '_1_75.jpg',
-              alternateIsbns: [targetIsbn, parent.isbn]
-            };
-            OFFICIAL_CATALOG.push(newVar);
-            return newVar;
-          }
-        }
-      }
+// 5. Strict catalog matching (adjacent ISBN variant guessing removed to prevent cross-contamination)
 
       return null;
     }
@@ -4238,16 +4212,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       if (cat && cat.cover) return cat.cover;
       const clean = (isbn13 || '').replace(/[^0-9]/g, '');
 
-      // 2. Proximité variante Panini / Urban : couverture officielle de l'album régulier si variante non publiée
-      if (clean.length === 13 && (clean.startsWith('97910391') || clean.startsWith('97828094') || clean.startsWith('978236577') || clean.startsWith('97910268'))) {
-        const coreNum = parseInt(clean.slice(0, 12), 10);
-        for (const delta of [-1, 1, -2, 2]) {
-          const adjCore = String(coreNum + delta);
-          const adjIsbn = adjCore + computeEan13Check(adjCore);
-          const parent = findCatalogBookByIsbn(adjIsbn);
-          if (parent && parent.cover) return parent.cover;
-        }
-      }
+// 2. Direct ePagine / Amazon resolution
 
       if (clean.length === 13) {
         return 'https://images.epagine.fr/' + clean.slice(-3) + '/' + clean + '_1_75.jpg';
@@ -7255,6 +7220,59 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           if (book.editionType === 'VARIANT') { book.editionType = 'STANDARD'; modified = true; }
         }
         if (book.format === 'Marvel Carrefour' && book.editionType === 'VARIANT') {
+          book.editionType = 'STANDARD';
+          modified = true;
+        }
+
+        // 0. Auto-réparation prioritaire des anomalies connues et contaminations
+        const cleanRawIsbn = (book.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
+        if (cleanRawIsbn === '9791039106825') {
+          book.title = 'Aliens Volume 1';
+          book.series = 'Aliens';
+          book.tome = 'Tome 1';
+          book.format = 'Marvel Omnibus';
+          book.publisher = 'Panini Comics';
+          book.universe = 'MARVEL';
+          book.cover = 'https://www.excalibur-comics.fr/29752-large_default/occasion-omnibus-aliens-volume-1.jpg';
+          book.editionType = 'STANDARD';
+          book.catId = 'ma-marvelomni-9791039106825';
+          modified = true;
+        } else if (cleanRawIsbn === '9791039134897') {
+          book.title = "Le Gant de L'infini (Le Défi de Thanos) (Couverture Variante)";
+          book.series = "Le Gant de L'infini";
+          book.cover = 'https://www.comics-zone.com/1469061-large_default/le-gant-de-l-infini-edition-collector-omnibus-150ex-couverture-jim-starlin.jpg';
+          book.editionType = 'VARIANT';
+          modified = true;
+        } else if (cleanRawIsbn === '9791039134057') {
+          book.title = 'Wolverine : En Enfer par Jason Aaron (Couverture Variante)';
+          book.series = 'Wolverine : En Enfer';
+          book.cover = 'https://www.panini.fr/media/catalog/product/9/7/9791039134057.jpg';
+          book.editionType = 'VARIANT';
+          modified = true;
+        }
+
+        if (book.format === 'Urban Comics 4,90€') {
+          if (book.title && book.title.includes('Sombre Reflet')) {
+            book.isbn = '9791026817512';
+            book.cover = 'https://images.epagine.fr/512/9791026817512_1_75.jpg';
+            modified = true;
+          } else if (book.title && book.title.includes('Terre-Un')) {
+            book.isbn = '9791026820130';
+            book.cover = 'https://images.epagine.fr/130/9791026820130_1_75.jpg';
+            modified = true;
+          } else if (book.title && book.title.includes('Année Zéro')) {
+            book.isbn = '9791026818519';
+            book.cover = 'https://images.epagine.fr/519/9791026818519_1_75.jpg';
+            modified = true;
+          }
+          if (book.title && book.title.includes('(Couverture Variante)')) {
+            book.title = book.title.replace(/\s*\(Couverture Variante\)/gi, '').trim();
+            book.editionType = 'STANDARD';
+            modified = true;
+          }
+        }
+        if (book.format === 'Marvel Carrefour' && book.title && book.title.includes('(Couverture Variante)')) {
+          book.title = book.title.replace(/\s*\(Couverture Variante\)/gi, '').trim();
           book.editionType = 'STANDARD';
           modified = true;
         }

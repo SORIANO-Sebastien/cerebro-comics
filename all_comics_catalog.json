@@ -12463,16 +12463,19 @@
     "series": "Batman",
     "tome": "Tome 8",
     "title": "Batman : Sombre Reflet",
-    "isbn": "9791026819448",
+    "isbn": "9791026817512",
     "writer": "Scott Snyder",
     "artist": "Jock, Francesco Francavilla",
     "year": 2022,
     "price": 4.9,
     "usIssues": "",
-    "cover": "https://images.epagine.fr/448/9791026819448_1_75.jpg",
+    "cover": "https://images.epagine.fr/512/9791026817512_1_75.jpg",
     "synopsis": "",
     "editionType": "STANDARD",
-    "collection": "Batman 4,90€"
+    "collection": "Batman 4,90€",
+    "alternateIsbns": [
+      "9791026817512"
+    ]
   },
   {
     "id": "dc-dcantholog-9782365772006",
@@ -51086,7 +51089,6 @@
     "synopsis": "",
     "alternateIsbns": [
       "9791039108034",
-      "9791039106825",
       "9791039108041"
     ],
     "editionType": "STANDARD"
@@ -51096,22 +51098,20 @@
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "Marvel Omnibus",
-    "series": "Le Tombeau de Dracula",
-    "tome": "Tome 3",
-    "title": "Le Tombeau de Dracula Tome 3",
+    "series": "Aliens",
+    "tome": "Tome 1",
+    "title": "Aliens Volume 1",
     "isbn": "9791039106825",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
+    "writer": "Arcudi, John ; Verheiden, Mark ; Nelson, Mark A.",
+    "artist": "Kieth, Sam ; Jones, Kelley",
+    "year": 2022,
     "price": 80,
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/29752-large_default/occasion-omnibus-aliens-volume-1.jpg",
     "synopsis": "",
     "alternateIsbns": [
       "9791039106825",
-      "9791039108034",
-      "9791039106832",
-      "9791039106818"
+      "9791039106832"
     ],
     "editionType": "STANDARD"
   },
@@ -74891,28 +74891,6 @@
     ]
   },
   {
-    "id": "var-omni-9791039126267",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Aliens",
-    "tome": "Tome 4",
-    "title": "Aliens Volume 4 (Couverture Variante)",
-    "isbn": "9791039126267",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 80,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/22008-large_default/conan-le-barbare-integrale-1982-1983.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039126267",
-      "9791039126274"
-    ]
-  },
-  {
     "id": "var-omni-9782809492538",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -75041,28 +75019,6 @@
     "synopsis": "Édition spéciale avec couverture variante (collector).",
     "alternateIsbns": [
       "9791039118569",
-      "9791039118552"
-    ]
-  },
-  {
-    "id": "var-omni-9791039118545",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Annihilation Omnibus (Nouvelle édition)",
-    "tome": "One-Shot",
-    "title": "Annihilation Omnibus (Nouvelle édition) (Couverture Variante)",
-    "isbn": "9791039118545",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 70,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/16674-large_default/daredevil-par-frank-miller-omnibus.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039118545",
       "9791039118552"
     ]
   },
@@ -75595,28 +75551,6 @@
     ]
   },
   {
-    "id": "var-omni-9791039126298",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Daredevil",
-    "tome": "Vol. 1",
-    "title": "Daredevil par Brian Michael Bendis (Couverture Variante)",
-    "isbn": "9791039126298",
-    "writer": "Brian Michael Bendis",
-    "artist": "Alex Maleev",
-    "year": 2022,
-    "price": 90,
-    "usIssues": "Daredevil #16-19, #26-50",
-    "cover": "https://www.excalibur-comics.fr/22166-large_default/aliens-volume-4-omnibus.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Édition spéciale avec couverture variante (collector). L'intégrale du premier cycle magistral de Bendis et Maleev.",
-    "alternateIsbns": [
-      "9791039126298",
-      "9791039126281"
-    ]
-  },
-  {
     "id": "var-omni-9791039133869",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -75723,28 +75657,6 @@
     "synopsis": "Édition spéciale avec couverture variante (collector).",
     "alternateIsbns": [
       "9791039118262",
-      "9791039118255"
-    ]
-  },
-  {
-    "id": "var-omni-9791039118248",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Daredevil par Mark Waid Omnibus",
-    "tome": "Tome 1",
-    "title": "Daredevil par Mark Waid Omnibus Tome 1 (Couverture Variante)",
-    "isbn": "9791039118248",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 70,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/17687-large_default/star-wars-legendes-la-nouvelle-republique-tome-2-edition-collector.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039118248",
       "9791039118255"
     ]
   },
@@ -75881,28 +75793,6 @@
     ]
   },
   {
-    "id": "var-omni-9791039101042",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Fantastic Four par John Byrne",
-    "tome": "Tome 1",
-    "title": "Fantastic Four par John Byrne Vol 1 (Couverture Variante)",
-    "isbn": "9791039101042",
-    "writer": "Byrne, John (1950-....). Auteur du texte",
-    "artist": "",
-    "year": 2026,
-    "price": 70,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/13367-large_default/x-men-integrale-1987-volume-1-nouvelle-edition.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039101042",
-      "9791039101059"
-    ]
-  },
-  {
     "id": "var-omni-9791039107440",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -76035,28 +75925,6 @@
     ]
   },
   {
-    "id": "var-omni-9791039131414",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Immortal Hulk",
-    "tome": "Tome 1",
-    "title": "Immortal Hulk Tome 1 (Omnibus) (Couverture Variante)",
-    "isbn": "9791039131414",
-    "writer": "Al Ewing",
-    "artist": "Joe Bennett",
-    "year": 2025,
-    "price": 90,
-    "usIssues": "Immortal Hulk #1-30",
-    "cover": "https://www.excalibur-comics.fr/23402-large_default/wolverine-tome-3.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Édition spéciale avec couverture variante (collector). Bruce Banner est mort. Mais la nuit tombée, l'Immortal Hulk renaît...",
-    "alternateIsbns": [
-      "9791039131414",
-      "9791039131407"
-    ]
-  },
-  {
     "id": "var-omni-9782809480504",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -76101,28 +75969,6 @@
     ]
   },
   {
-    "id": "var-omni-9791039110648",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Kick Ass Omnibus",
-    "tome": "One-Shot",
-    "title": "Kick Ass Omnibus (Couverture Variante)",
-    "isbn": "9791039110648",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 70,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/29880-large_default/occasion-star-wars-crimson-reign-3-edition-collector.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039110648",
-      "9791039110655"
-    ]
-  },
-  {
     "id": "var-omni-9791039127622",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -76141,28 +75987,6 @@
     "synopsis": "Édition spéciale avec couverture variante (collector).",
     "alternateIsbns": [
       "9791039127622",
-      "9791039127615"
-    ]
-  },
-  {
-    "id": "var-omni-9791039127608",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "King Conan",
-    "tome": "Tome 2",
-    "title": "King Conan Volume 2 (Couverture Variante)",
-    "isbn": "9791039127608",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 70,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/23417-large_default/omnibus-predator-tome-2.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039127608",
       "9791039127615"
     ]
   },
@@ -76304,7 +76128,7 @@
     "publisher": "Panini Comics",
     "format": "Marvel Omnibus",
     "editionType": "VARIANT",
-    "series": "Le Gant de l'Infini",
+    "series": "Le Gant de L'infini",
     "tome": "One-Shot",
     "title": "Le Gant de L'infini (Le Défi de Thanos) (Couverture Variante)",
     "isbn": "9791039134897",
@@ -76313,7 +76137,7 @@
     "year": 2026,
     "price": 90,
     "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/25748-large_default/omnibus-le-gant-de-l-infini.jpg",
+    "cover": "https://www.comics-zone.com/1469061-large_default/le-gant-de-l-infini-edition-collector-omnibus-150ex-couverture-jim-starlin.jpg",
     "synopsis": "Édition spéciale avec couverture variante (collector).",
     "alternateIsbns": [
       "9791039134897",
@@ -76362,50 +76186,6 @@
     "alternateIsbns": [
       "9791039108041",
       "9791039108034"
-    ]
-  },
-  {
-    "id": "var-omni-9791039106832",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Le Tombeau de Dracula",
-    "tome": "Tome 3",
-    "title": "Le Tombeau de Dracula Tome 3 (Couverture Variante)",
-    "isbn": "9791039106832",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 80,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/29752-large_default/occasion-omnibus-aliens-volume-1.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039106832",
-      "9791039106825"
-    ]
-  },
-  {
-    "id": "var-omni-9791039106818",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Le Tombeau de Dracula",
-    "tome": "Tome 3",
-    "title": "Le Tombeau de Dracula Tome 3 (Couverture Variante)",
-    "isbn": "9791039106818",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 80,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/14647-large_default/star-wars-tome-3-2021.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039106818",
-      "9791039106825"
     ]
   },
   {
@@ -76471,28 +76251,6 @@
     "synopsis": "Édition spéciale avec couverture variante (collector).",
     "alternateIsbns": [
       "9791039118323",
-      "9791039118316"
-    ]
-  },
-  {
-    "id": "var-omni-9791039118309",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Man",
-    "tome": "Tome 1",
-    "title": "Man-Thing Omnibus Tome 1 Panini (Couverture Variante)",
-    "isbn": "9791039118309",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/16483-large_default/spider-man-par-michelinie-et-mcfarlane-omnibus.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039118309",
       "9791039118316"
     ]
   },
@@ -76651,28 +76409,6 @@
     ]
   },
   {
-    "id": "var-omni-9782809492620",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Oméga",
-    "tome": "One-Shot",
-    "title": "Oméga / [scénario], Alex Ross, Jim Krueger ; [dessin], Doug Braithwaite (Couverture Variante)",
-    "isbn": "9782809492620",
-    "writer": "Ross, Alex (1970-....). Auteur du texte",
-    "artist": "Krueger, Jim. Auteur du texte",
-    "year": 2020,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/12233-large_default/spider-man-de-pere-en-fils-edition-nb-collector.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809492620",
-      "9782809492637"
-    ]
-  },
-  {
     "id": "var-omni-9782809448139",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -76801,28 +76537,6 @@
     "synopsis": "Édition spéciale avec couverture variante (collector).",
     "alternateIsbns": [
       "9791039141383",
-      "9791039141376"
-    ]
-  },
-  {
-    "id": "var-omni-9791039141369",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Punisher par Garth...",
-    "tome": "One-Shot",
-    "title": "Punisher par Garth Ennis Volume 3 (Couverture Variante)",
-    "isbn": "9791039141369",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 80,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/28400-large_default/omnibus-x-factor-par-peter-david-tome-3.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039141369",
       "9791039141376"
     ]
   },
@@ -77000,28 +76714,6 @@
     "alternateIsbns": [
       "9791039123808",
       "9791039123792"
-    ]
-  },
-  {
-    "id": "var-omni-9791039126779",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Savage Sword of...",
-    "tome": "One-Shot",
-    "title": "The Savage Sword of Conan Volume 4 (1979-1981) (Couverture Variante)",
-    "isbn": "9791039126779",
-    "writer": "Thomas, Roy (1940-....). Auteur du texte",
-    "artist": "",
-    "year": 2026,
-    "price": 80,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/22612-large_default/star-wars-l-heritier-de-l-empire-la-trilogie-de-thrawn.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039126779",
-      "9791039126786"
     ]
   },
   {
@@ -77245,28 +76937,6 @@
     ]
   },
   {
-    "id": "var-omni-9782809490008",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Spider-Man",
-    "tome": "Tome 3",
-    "title": "Spider-Man : La Saga du Clone Tome 3 (Couverture Variante)",
-    "isbn": "9782809490008",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 60,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/12128-large_default/avengers-integrale-1967.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809490008",
-      "9782809490015"
-    ]
-  },
-  {
     "id": "var-omni-9791039115704",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -77418,28 +77088,6 @@
     "alternateIsbns": [
       "9782809463217",
       "9782809463200"
-    ]
-  },
-  {
-    "id": "var-omni-9782809495003",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Spider-Man",
-    "tome": "Vol. 1",
-    "title": "The Amazing Spider-Man par Stan Lee & Steve Ditko (Couverture Variante)",
-    "isbn": "9782809495003",
-    "writer": "Stan Lee",
-    "artist": "Steve Ditko",
-    "year": 2021,
-    "price": 90,
-    "usIssues": "Amazing Fantasy #15, ASM #1-38",
-    "cover": "https://www.excalibur-comics.fr/12359-large_default/deadpool-tome-2-le-bon-la-brute-et-le-truand.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Les débuts légendaires de Spider-Man dans un volume grand format de plus de 1000 pages.",
-    "alternateIsbns": [
-      "9782809495003",
-      "9782809495010"
     ]
   },
   {
@@ -77619,138 +77267,6 @@
     ]
   },
   {
-    "id": "var-omni-9782809408621",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Starman omnibus.",
-    "tome": "Tome 1",
-    "title": "Starman omnibus. Volume 1 (Couverture Variante)",
-    "isbn": "9782809408621",
-    "writer": "Robinson, James (1963-....). Auteur du texte",
-    "artist": "Harris, Tony (1969-....). Auteur du texte",
-    "year": 2009,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809408610.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809408621",
-      "9782809408614"
-    ]
-  },
-  {
-    "id": "var-omni-9782809408607",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Starman omnibus.",
-    "tome": "Tome 1",
-    "title": "Starman omnibus. Volume 1 (Couverture Variante)",
-    "isbn": "9782809408607",
-    "writer": "Robinson, James (1963-....). Auteur du texte",
-    "artist": "Harris, Tony (1969-....). Auteur du texte",
-    "year": 2009,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809408610.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809408607",
-      "9782809408614"
-    ]
-  },
-  {
-    "id": "var-omni-9782809412499",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Starman omnibus.",
-    "tome": "Tome 2",
-    "title": "Starman omnibus. Volume 2 (Couverture Variante)",
-    "isbn": "9782809412499",
-    "writer": "Robinson, James (1963-....). Auteur du texte",
-    "artist": "Harris, Tony (1969-....). Auteur du texte",
-    "year": 2010,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809412480.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809412499",
-      "9782809412482"
-    ]
-  },
-  {
-    "id": "var-omni-9782809412475",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Starman omnibus.",
-    "tome": "Tome 2",
-    "title": "Starman omnibus. Volume 2 (Couverture Variante)",
-    "isbn": "9782809412475",
-    "writer": "Robinson, James (1963-....). Auteur du texte",
-    "artist": "Harris, Tony (1969-....). Auteur du texte",
-    "year": 2010,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809412480.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809412475",
-      "9782809412482"
-    ]
-  },
-  {
-    "id": "var-omni-9782809414158",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Starman omnibus.",
-    "tome": "Tome 3",
-    "title": "Starman omnibus. Volume 3 (Couverture Variante)",
-    "isbn": "9782809414158",
-    "writer": "Robinson, James (1963-....). Auteur du texte",
-    "artist": "Harris, Tony (1969-....). Auteur du texte",
-    "year": 2010,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809414149.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809414158",
-      "9782809414141"
-    ]
-  },
-  {
-    "id": "var-omni-9782809414134",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Starman omnibus.",
-    "tome": "Tome 3",
-    "title": "Starman omnibus. Volume 3 (Couverture Variante)",
-    "isbn": "9782809414134",
-    "writer": "Robinson, James (1963-....). Auteur du texte",
-    "artist": "Harris, Tony (1969-....). Auteur du texte",
-    "year": 2010,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809414149.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809414134",
-      "9782809414141"
-    ]
-  },
-  {
     "id": "var-omni-9791039147453",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -77770,72 +77286,6 @@
     "alternateIsbns": [
       "9791039147453",
       "9791039147446"
-    ]
-  },
-  {
-    "id": "var-omni-9782809403664",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Superman",
-    "tome": "One-Shot",
-    "title": "Superman : sa mort, son retour (Couverture Variante)",
-    "isbn": "9782809403664",
-    "writer": "",
-    "artist": "",
-    "year": 2008,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809403651.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809403664",
-      "9782809403657"
-    ]
-  },
-  {
-    "id": "var-omni-9782809403640",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Superman",
-    "tome": "One-Shot",
-    "title": "Superman : sa mort, son retour (Couverture Variante)",
-    "isbn": "9782809403640",
-    "writer": "",
-    "artist": "",
-    "year": 2008,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809403651.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809403640",
-      "9782809403657"
-    ]
-  },
-  {
-    "id": "var-omni-9791039109468",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "The boys.",
-    "tome": "Tome 1",
-    "title": "The boys. Tome 1 (Couverture Variante)",
-    "isbn": "9791039109468",
-    "writer": "Ennis, Garth (1970-....). Auteur du texte",
-    "artist": "",
-    "year": 2022,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images.epagine.fr/451/9791039109451_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039109468",
-      "9791039109451"
     ]
   },
   {
@@ -77883,72 +77333,6 @@
     ]
   },
   {
-    "id": "var-omni-9782809442120",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "The evolutionary war",
-    "tome": "One-Shot",
-    "title": "The evolutionary war / [scénario, Louise Simonson, Mike Baron, Steve Englehart, et al.] ; [dessin, Terry Shoemaker, Mark Texeira, Joe Staton, et al.] (Couverture Variante)",
-    "isbn": "9782809442120",
-    "writer": "",
-    "artist": "",
-    "year": 2014,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809442118.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809442120",
-      "9782809442113"
-    ]
-  },
-  {
-    "id": "var-omni-9782809414240",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "The Punisher",
-    "tome": "One-Shot",
-    "title": "The Punisher / Garth Ennis, Steve Dillon (Couverture Variante)",
-    "isbn": "9782809414240",
-    "writer": "Miller, Frank (1957-....). Auteur du texte",
-    "artist": "Dillon, Steve (1962-2016). Auteur du texte",
-    "year": 2010,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809414238.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809414240",
-      "9782809414233"
-    ]
-  },
-  {
-    "id": "var-omni-9782809414226",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "The Punisher",
-    "tome": "One-Shot",
-    "title": "The Punisher / Garth Ennis, Steve Dillon (Couverture Variante)",
-    "isbn": "9782809414226",
-    "writer": "Miller, Frank (1957-....). Auteur du texte",
-    "artist": "Dillon, Steve (1962-2016). Auteur du texte",
-    "year": 2010,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809414238.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809414226",
-      "9782809414233"
-    ]
-  },
-  {
     "id": "var-omni-9791039109420",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -77993,28 +77377,6 @@
     ]
   },
   {
-    "id": "var-omni-9782809480344",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Thor",
-    "tome": "Vol. 1",
-    "title": "Thor par Walter Simonson (Couverture Variante)",
-    "isbn": "9782809480344",
-    "writer": "Walter Simonson",
-    "artist": "Walter Simonson",
-    "year": 2021,
-    "price": 90,
-    "usIssues": "Thor #337-367",
-    "cover": "https://images.epagine.fr/320/9782809480320_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Édition spéciale avec couverture variante (collector). L'arrivée de Beta Ray Bill et la bataille contre Surtur pour Asgard.",
-    "alternateIsbns": [
-      "9782809480344",
-      "9782809480337"
-    ]
-  },
-  {
     "id": "var-omni-9782809480320",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -78034,28 +77396,6 @@
     "alternateIsbns": [
       "9782809480320",
       "9782809480337"
-    ]
-  },
-  {
-    "id": "var-omni-9791039107365",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Thor Déesse du Tonnerre Omnibus",
-    "tome": "One-Shot",
-    "title": "Thor Déesse du Tonnerre Omnibus (Couverture Variante)",
-    "isbn": "9791039107365",
-    "writer": "Aaron, Jason (1973-....). Auteur du texte",
-    "artist": "",
-    "year": 2026,
-    "price": 80,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/14653-large_default/thor-deesse-du-tonnerre-omnibus.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039107365",
-      "9791039107372"
     ]
   },
   {
@@ -78103,28 +77443,6 @@
     ]
   },
   {
-    "id": "var-omni-9782809491531",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Tomb of Dracula",
-    "tome": "Tome 1",
-    "title": "Tomb of Dracula Tome 1 (Couverture Variante)",
-    "isbn": "9782809491531",
-    "writer": "Wolfman, Marv (1946-....). Auteur du texte",
-    "artist": "",
-    "year": 2026,
-    "price": 70,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/11651-large_default/le-tombeau-de-dracula-tome-1-omnibus-panini.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809491531",
-      "9782809491524"
-    ]
-  },
-  {
     "id": "var-omni-9791039149020",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -78169,28 +77487,6 @@
     ]
   },
   {
-    "id": "var-omni-9782809496383",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Ultimate Spider",
-    "tome": "Tome 1",
-    "title": "Ultimate Spider-Man Volume 1 - Pouvoirs et Responsabilités (Couverture Variante)",
-    "isbn": "9782809496383",
-    "writer": "Bendis, Brian Michael (1967-....). Auteur du texte",
-    "artist": "Jemas, Bill. Auteur du texte",
-    "year": 2026,
-    "price": 70,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/12949-large_default/ultimate-spider-man-volume-1-pouvoirs-et-responsabilites.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809496383",
-      "9782809496376"
-    ]
-  },
-  {
     "id": "var-omni-9791039101219",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -78213,28 +77509,6 @@
     ]
   },
   {
-    "id": "var-omni-9791039118385",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Ultimate X",
-    "tome": "One-Shot",
-    "title": "New Mutants par Chris Claremont Volume 1 (Couverture Variante)",
-    "isbn": "9791039118385",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/22058-large_default/ultimate-x-men-omnibus-tome-2.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039118385",
-      "9791039118378"
-    ]
-  },
-  {
     "id": "var-omni-9791039124676",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -78254,94 +77528,6 @@
     "alternateIsbns": [
       "9791039124676",
       "9791039124669"
-    ]
-  },
-  {
-    "id": "var-omni-9782809442090",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Universe X",
-    "tome": "One-Shot",
-    "title": "Universe X (Couverture Variante)",
-    "isbn": "9782809442090",
-    "writer": "Ross, Alex (1970-....). Auteur du texte",
-    "artist": "Krueger, Jim. Auteur du texte",
-    "year": 2014,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/280944210X.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809442090",
-      "9782809442106"
-    ]
-  },
-  {
-    "id": "var-omni-9782809467031",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Wolverine",
-    "tome": "One-Shot",
-    "title": "Wolverine : la revanche (Couverture Variante)",
-    "isbn": "9782809467031",
-    "writer": "Aaron, Jason (1973-....). Auteur du texte",
-    "artist": "",
-    "year": 2017,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809467021.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809467031",
-      "9782809467024"
-    ]
-  },
-  {
-    "id": "var-omni-9782809467017",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Wolverine",
-    "tome": "One-Shot",
-    "title": "Wolverine : la revanche (Couverture Variante)",
-    "isbn": "9782809467017",
-    "writer": "Aaron, Jason (1973-....). Auteur du texte",
-    "artist": "",
-    "year": 2017,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809467021.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809467017",
-      "9782809467024"
-    ]
-  },
-  {
-    "id": "var-omni-9782809456950",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Wolverine",
-    "tome": "One-Shot",
-    "title": "Wolverine / Jason Aaron ; [dessin de] Ron Garney, Yanick Paquette (Couverture Variante)",
-    "isbn": "9782809456950",
-    "writer": "Aaron, Jason (1973-....). Auteur du texte",
-    "artist": "",
-    "year": 2016,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809456941.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809456950",
-      "9782809456943"
     ]
   },
   {
@@ -78394,7 +77580,7 @@
     "publisher": "Panini Comics",
     "format": "Marvel Omnibus",
     "editionType": "VARIANT",
-    "series": "Wolverine",
+    "series": "Wolverine : En Enfer",
     "tome": "One-Shot",
     "title": "Wolverine : En Enfer par Jason Aaron (Couverture Variante)",
     "isbn": "9791039134057",
@@ -78403,7 +77589,7 @@
     "year": 2026,
     "price": 80,
     "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/25669-large_default/omnibus-wolverine-en-enfer.jpg",
+    "cover": "https://www.panini.fr/media/catalog/product/9/7/9791039134057.jpg",
     "synopsis": "Édition spéciale avec couverture variante (collector).",
     "alternateIsbns": [
       "9791039134057",
@@ -78430,72 +77616,6 @@
     "alternateIsbns": [
       "9791039107983",
       "9791039107976"
-    ]
-  },
-  {
-    "id": "var-omni-9791039107969",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "X-Men",
-    "tome": "Vol. 2",
-    "title": "Uncanny X-Men par Chris Claremont (Couverture Variante)",
-    "isbn": "9791039107969",
-    "writer": "Chris Claremont",
-    "artist": "John Byrne, Dave Cockrum",
-    "year": 2021,
-    "price": 90,
-    "usIssues": "UXM #132-153, Annual #4-5",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809495068.08.LZZZZZZZ.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Days of Future Past et l'avènement des Sentinelles.",
-    "alternateIsbns": [
-      "9791039107969",
-      "9791039107976"
-    ]
-  },
-  {
-    "id": "var-omni-9782809419146",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "X-Men",
-    "tome": "Vol. 2",
-    "title": "Uncanny X-Men par Chris Claremont (Couverture Variante)",
-    "isbn": "9782809419146",
-    "writer": "Chris Claremont",
-    "artist": "John Byrne, Dave Cockrum",
-    "year": 2021,
-    "price": 90,
-    "usIssues": "UXM #132-153, Annual #4-5",
-    "cover": "https://images.epagine.fr/122/9782809419122_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Édition spéciale avec couverture variante (collector). Days of Future Past et l'avènement des Sentinelles.",
-    "alternateIsbns": [
-      "9782809419146",
-      "9782809419139"
-    ]
-  },
-  {
-    "id": "var-omni-9782809419122",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "X-Men",
-    "tome": "Vol. 2",
-    "title": "Uncanny X-Men par Chris Claremont (Couverture Variante)",
-    "isbn": "9782809419122",
-    "writer": "Chris Claremont",
-    "artist": "John Byrne, Dave Cockrum",
-    "year": 2021,
-    "price": 90,
-    "usIssues": "UXM #132-153, Annual #4-5",
-    "cover": "https://images.epagine.fr/122/9782809419122_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Édition spéciale avec couverture variante (collector). Days of Future Past et l'avènement des Sentinelles.",
-    "alternateIsbns": [
-      "9782809419122",
-      "9782809419139"
     ]
   },
   {
@@ -78543,72 +77663,6 @@
     ]
   },
   {
-    "id": "var-omni-9782809474503",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "X-Men",
-    "tome": "One-Shot",
-    "title": "X-Men : l'ère d'apocalypse (Couverture Variante)",
-    "isbn": "9782809474503",
-    "writer": "",
-    "artist": "",
-    "year": 2018,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809474494.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809474503",
-      "9782809474497"
-    ]
-  },
-  {
-    "id": "var-omni-9782809474480",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "X-Men",
-    "tome": "One-Shot",
-    "title": "X-Men : l'ère d'apocalypse (Couverture Variante)",
-    "isbn": "9782809474480",
-    "writer": "",
-    "artist": "",
-    "year": 2018,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/8218-large_default/marvel-legacy-spider-man-1-variant-excalibur.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809474480",
-      "9782809474497"
-    ]
-  },
-  {
-    "id": "var-omni-9782809491104",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "X-Men",
-    "tome": "One-Shot",
-    "title": "X-Men : l'ère d'apocalypse (Couverture Variante)",
-    "isbn": "9782809491104",
-    "writer": "",
-    "artist": "",
-    "year": 2021,
-    "price": 90,
-    "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809491097.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809491104",
-      "9782809491098"
-    ]
-  },
-  {
     "id": "var-omni-9782809491081",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -78628,50 +77682,6 @@
     "alternateIsbns": [
       "9782809491081",
       "9782809491098"
-    ]
-  },
-  {
-    "id": "var-omni-9782809477139",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "X-Men",
-    "tome": "One-Shot",
-    "title": "X-Men : Le Retour du Messie (Couverture Variante)",
-    "isbn": "9782809477139",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 70,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/9239-large_default/x-men-retour-du-messie.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809477139",
-      "9782809477122"
-    ]
-  },
-  {
-    "id": "var-omni-9782809477115",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "X-Men",
-    "tome": "One-Shot",
-    "title": "X-Men : Le Retour du Messie (Couverture Variante)",
-    "isbn": "9782809477115",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 70,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/9239-large_default/x-men-retour-du-messie.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9782809477115",
-      "9782809477122"
     ]
   },
   {
@@ -79184,7 +78194,7 @@
   },
   {
     "id": "urban-490-2022-t7",
-    "isbn": "9791026820352",
+    "isbn": "9791026820130",
     "title": "Batman : Terre-Un",
     "series": "Batman",
     "tome": "Tome 7",
@@ -79195,13 +78205,16 @@
     "editionType": "STANDARD",
     "price": 4.9,
     "year": 2022,
-    "cover": "https://images.epagine.fr/352/9791026820352_1_75.jpg",
+    "cover": "https://images.epagine.fr/130/9791026820130_1_75.jpg",
     "writer": "Geoff Johns",
-    "artist": "Gary Frank"
+    "artist": "Gary Frank",
+    "alternateIsbns": [
+      "9791026820130"
+    ]
   },
   {
     "id": "urban-490-2022-t9",
-    "isbn": "9791026819479",
+    "isbn": "9791026818519",
     "title": "Batman : Année Zéro",
     "series": "Batman",
     "tome": "Tome 9",
@@ -79212,9 +78225,12 @@
     "editionType": "STANDARD",
     "price": 4.9,
     "year": 2022,
-    "cover": "https://images.epagine.fr/479/9791026819479_1_75.jpg",
+    "cover": "https://images.epagine.fr/519/9791026818519_1_75.jpg",
     "writer": "Scott Snyder",
-    "artist": "Greg Capullo"
+    "artist": "Greg Capullo",
+    "alternateIsbns": [
+      "9791026818519"
+    ]
   },
   {
     "id": "urban-490-2022-t10",
