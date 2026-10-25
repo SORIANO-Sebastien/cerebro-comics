@@ -50034,95 +50034,66 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "ma-marvelomnibus-0104",
+    "id": "ma-marvelintg-9782809495058",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "series": "Daredevil",
-    "tome": "Vol. 1",
-    "title": "Daredevil par Brian Michael Bendis",
+    "format": "Marvel Intégrale",
+    "series": "Thor",
+    "tome": "1964",
+    "title": "Thor : L'intégrale 1964 (Nouvelle édition)",
     "isbn": "9782809495058",
-    "writer": "Brian Michael Bendis",
-    "artist": "Alex Maleev",
-    "year": 2022,
-    "price": 90,
+    "writer": "Stan Lee",
+    "artist": "Jack Kirby",
+    "year": 2020,
+    "price": 36,
     "usIssues": "Daredevil #16-19, #26-50",
-    "cover": "https://www.excalibur-comics.fr/12352-large_default/thor-integrale-1964.jpg",
+    "cover": "https://www.panini.fr/media/catalog/product/F/T/FTHOI006NED_0.jpg",
     "synopsis": "L'intégrale du premier cycle magistral de Bendis et Maleev.",
     "alternateIsbns": [
-      "9782809495058",
-      "9782809495054",
-      "9791039126281",
-      "9791039133876"
+      "9782809495058"
     ],
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809495054",
+    "id": "var-omni-9791039126281",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "Marvel Omnibus",
     "editionType": "VARIANT",
-    "series": "Daredevil",
-    "tome": "Vol. 1",
-    "title": "Daredevil par Brian Michael Bendis (Couverture Variante)",
-    "isbn": "9782809495058",
-    "writer": "Brian Michael Bendis",
-    "artist": "Alex Maleev",
-    "year": 2022,
-    "price": 90,
-    "usIssues": "Daredevil #16-19, #26-50",
-    "cover": "https://images.epagine.fr/047/9782809495047_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'intégrale du premier cycle magistral de Bendis et Maleev.",
-    "alternateIsbns": [
-      "9782809495054",
-      "9782809495058"
-    ]
-  },
-  {
-    "id": "var-marvel-9791039126281",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Daredevil",
-    "tome": "Vol. 1",
-    "title": "Daredevil par Brian Michael Bendis (Couverture Variante)",
+    "series": "Aliens",
+    "tome": "Tome 4",
+    "title": "Aliens Volume 4 (Couverture Variante)",
     "isbn": "9791039126281",
-    "writer": "Brian Michael Bendis",
-    "artist": "Alex Maleev",
-    "year": 2022,
-    "price": 90,
+    "writer": "Brian Wood, James Stokoe",
+    "artist": "Tristan Jones",
+    "year": 2024,
+    "price": 80,
     "usIssues": "Daredevil #16-19, #26-50",
-    "cover": "https://www.excalibur-comics.fr/22166-large_default/aliens-volume-4-omnibus.jpg",
+    "cover": "https://images.epagine.fr/281/9791039126281_1_75.jpg",
     "synopsis": "Édition spéciale avec couverture variante (collector). L'intégrale du premier cycle magistral de Bendis et Maleev.",
     "alternateIsbns": [
-      "9791039126281",
-      "9782809495058",
-      "9791039126298"
+      "9791039126281"
     ]
   },
   {
-    "id": "var-marvel-9791039133876",
+    "id": "var-soft-9791039133876",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
+    "format": "Marvel Softcover",
     "editionType": "VARIANT",
-    "series": "Daredevil",
-    "tome": "Vol. 1",
-    "title": "Daredevil par Brian Michael Bendis (Couverture Variante)",
+    "series": "Ultimate Universe",
+    "tome": "N° 2",
+    "title": "Ultimate Universe N° 2 (Couverture Variante)",
     "isbn": "9791039133876",
     "writer": "Brian Michael Bendis",
     "artist": "Alex Maleev",
     "year": 2022,
     "price": 90,
     "usIssues": "Daredevil #16-19, #26-50",
-    "cover": "https://images.epagine.fr/869/9791039133869_1_75.jpg",
+    "cover": "https://images.epagine.fr/876/9791039133876_1_75.jpg",
     "synopsis": "Édition spéciale avec couverture variante (collector). L'intégrale du premier cycle magistral de Bendis et Maleev.",
     "alternateIsbns": [
-      "9791039133876",
-      "9782809495058",
-      "9791039133869"
+      "9791039133876"
     ]
   },
   {
@@ -51066,8 +51037,7 @@
     "cover": "https://www.excalibur-comics.fr/13344-large_default/le-tombeau-de-dracula-tome-2-omnibus.jpg",
     "synopsis": "",
     "alternateIsbns": [
-      "9791039100816",
-      "9791039100823"
+      "9791039100816"
     ],
     "editionType": "STANDARD"
   },
@@ -51088,8 +51058,7 @@
     "cover": "https://www.excalibur-comics.fr/15374-large_default/le-tombeau-de-dracula-tome-3.jpg",
     "synopsis": "",
     "alternateIsbns": [
-      "9791039108034",
-      "9791039108041"
+      "9791039108034"
     ],
     "editionType": "STANDARD"
   },
@@ -51110,8 +51079,7 @@
     "cover": "https://www.excalibur-comics.fr/29752-large_default/occasion-omnibus-aliens-volume-1.jpg",
     "synopsis": "",
     "alternateIsbns": [
-      "9791039106825",
-      "9791039106832"
+      "9791039106825"
     ],
     "editionType": "STANDARD"
   },
@@ -53167,9 +53135,9 @@
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "Marvel Omnibus",
-    "series": "Tomb of Dracula",
+    "series": "Le Tombeau de Dracula",
     "tome": "Tome 1",
-    "title": "Tomb of Dracula Tome 1",
+    "title": "Le Tombeau de Dracula Tome 1",
     "isbn": "9782809491524",
     "writer": "Wolfman, Marv (1946-....). Auteur du texte",
     "artist": "",
@@ -53179,8 +53147,7 @@
     "cover": "https://www.excalibur-comics.fr/11651-large_default/le-tombeau-de-dracula-tome-1-omnibus-panini.jpg",
     "synopsis": "",
     "alternateIsbns": [
-      "9782809491524",
-      "9782809491531"
+      "9782809491524"
     ],
     "editionType": "STANDARD"
   },
@@ -74883,7 +74850,7 @@
     "year": 2026,
     "price": 80,
     "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/17960-large_default/aliens-volume-3-omnibus.jpg",
+    "cover": "https://images.epagine.fr/047/9791039122047_1_75.jpg",
     "synopsis": "Édition spéciale avec couverture variante (collector).",
     "alternateIsbns": [
       "9791039122047",
@@ -75568,8 +75535,7 @@
     "cover": "https://images.epagine.fr/869/9791039133869_1_75.jpg",
     "synopsis": "Édition spéciale avec couverture variante (collector). Édition spéciale avec couverture variante (collector). L'intégrale du premier cycle magistral de Bendis et Maleev.",
     "alternateIsbns": [
-      "9791039133869",
-      "9791039133876"
+      "9791039133869"
     ]
   },
   {
@@ -76145,28 +76111,6 @@
     ]
   },
   {
-    "id": "var-omni-9791039100823",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Le Tombeau de Dracula",
-    "tome": "Tome 2",
-    "title": "Le Tombeau de Dracula Tome 2 (Couverture Variante)",
-    "isbn": "9791039100823",
-    "writer": "Wolfman, Marv (1946-....). Auteur du texte",
-    "artist": "",
-    "year": 2026,
-    "price": 70,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/13344-large_default/le-tombeau-de-dracula-tome-2-omnibus.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "9791039100823",
-      "9791039100816"
-    ]
-  },
-  {
     "id": "var-omni-9791039108041",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -76181,11 +76125,10 @@
     "year": 2026,
     "price": 80,
     "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/15374-large_default/le-tombeau-de-dracula-tome-3.jpg",
+    "cover": "https://www.panini.fr/media/catalog/product/f/m/fmo22009v_0.jpg",
     "synopsis": "Édition spéciale avec couverture variante (collector).",
     "alternateIsbns": [
-      "9791039108041",
-      "9791039108034"
+      "9791039108041"
     ]
   },
   {
@@ -78424,5 +78367,26 @@
     "writer": "Reeves Keanu",
     "artist": "",
     "autoDiscovered": true
+  },
+  {
+    "id": "ma-marvelomni-9791039107525",
+    "universe": "MARVEL",
+    "publisher": "Panini Comics",
+    "format": "Marvel Omnibus",
+    "series": "Aliens",
+    "tome": "Tome 2",
+    "title": "Aliens Volume 2",
+    "isbn": "9791039107525",
+    "writer": "John Arcudi, Peter Milligan, John Byrne",
+    "artist": "Paul Johnson, Damon Willis",
+    "year": 2023,
+    "price": 80,
+    "usIssues": "Aliens: Rogue 1-4, Labyrinth 1-4, Colonial Marines 1-10, Salvation, Music of the Spears 1-4, Stronghold 1-4",
+    "cover": "https://images.epagine.fr/525/9791039107525_1_75.jpg",
+    "synopsis": "Le deuxième volume de l'intégrale Aliens Omnibus réunissant les récits cultes parus chez Dark Horse.",
+    "alternateIsbns": [
+      "9791039107525"
+    ],
+    "editionType": "STANDARD"
   }
 ]
