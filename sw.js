@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cerebro-pwa-v4.8';
+const CACHE_NAME = 'cerebro-pwa-v5.0';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
