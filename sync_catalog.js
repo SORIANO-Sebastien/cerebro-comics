@@ -308,11 +308,16 @@ function generateBookId(universe, format, isbn) {
 }
 
 function parseExcaliburPage(html, defaultUniverse, defaultFormat, defaultPublisher) {
-  const articles = html.match(/<article class="product-miniature[^>]*>[\s\S]*?<\/article>/gi) || [];
+  let containerHtml = html;
+  const listMatch = html.match(/<section\s+id="products"[\s\S]*?<\/section>/i) ||
+                    html.match(/<div\s+id="js-product-list"[\s\S]*?<\/div>/i);
+  if (listMatch) {
+    containerHtml = listMatch[0];
+  }
+  const articles = containerHtml.match(/<article class="product-miniature[^>]*>[\s\S]*?<\/article>/gi) || [];
   const results = [];
-  const startIndex = articles.length > 7 ? 7 : 0;
 
-  for (let i = startIndex; i < articles.length; i++) {
+  for (let i = 0; i < articles.length; i++) {
     const item = articles[i];
 
     const linkMatch = item.match(/class="product-title"[^>]*>\s*<a href="([^"]+)"[^>]*>(.*?)<\/a>/i) ||
@@ -324,7 +329,8 @@ function parseExcaliburPage(html, defaultUniverse, defaultFormat, defaultPublish
       rawTitle = altMatch ? altMatch[1] : '';
     }
 
-    const isbnMatch = link.match(/-([0-9]{13})\.html$/);
+    // Extraction robuste de l'ISBN (dans le lien ou dans l'article)
+    const isbnMatch = link.match(/-([0-9]{13})\.html$/) || link.match(/([0-9]{13})/);
     const isbn = isbnMatch ? isbnMatch[1] : '';
     if (!isbn) continue;
 

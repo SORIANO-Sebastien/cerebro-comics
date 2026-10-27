@@ -239,37 +239,10 @@ async function lookupExcalibur(query) {
       };
     }
 
-    // 2. Proximity variant search (+1, -1, +2, -2) for Panini / Urban sequential codes
-    if (clean.length === 13 && (clean.startsWith('97910391') || clean.startsWith('97828094') || clean.startsWith('978236577') || clean.startsWith('97910268'))) {
-      const coreNum = parseInt(clean.slice(0, 12), 10);
-      for (const delta of [-1, 1, -2, 2]) {
-        const adjCore = String(coreNum + delta);
-        const adjIsbn = adjCore + computeEan13Check(adjCore);
-        const parent = await searchExcaliburByIsbn(adjIsbn);
-        if (parent) {
-          let varTitle = parent.title;
-          if (!/variante|collector|variant/i.test(varTitle)) {
-            varTitle += ' (Couverture Variante)';
-          }
-          return {
-            success: true,
-            found: true,
-            matchType: 'EXCALIBUR_VARIANT_PROXIMITY',
-            product: {
-              ...parent,
-              title: varTitle,
-              isbn: clean,
-              cover: parent.cover || `https://images.epagine.fr/${clean.slice(-3)}/${clean}_1_75.jpg`,
-              parentIsbn: adjIsbn,
-              editionType: 'VARIANT',
-              isVariant: true,
-              source: 'EXCALIBUR_VARIANT'
-            }
-          };
-        }
-      }
-    }
-
+    // Note: Ne JAMAIS deviner de variantes par arithmétique d'ISBN (+/- 1) !
+    // Les éditeurs (Panini, Urban) attribuent les ISBNs de manière séquentielle
+    // à des séries et titres totalement différents. Deviner un variant par proximité
+    // corrompait des albums entiers (ex: Aliens transformé en Dracula).
     return { success: true, found: false };
   }
 
