@@ -158,15 +158,28 @@ function parseProductArticle(art, targetIsbn = '') {
     format = 'Marvel Must-Have';
   }
 
+  // Strip reseller & bookstore search trailer keywords (Excalibur, Panini Comics, Urban Comics)
+  const RESELLER_RX = /(?:\s*-\s*|\s+)(?:panini\s*comics\s*excalibur(?:\s*comics)?(?:\s*vf)?|excalibur\s*comics\s*panini(?:\s*comics)?(?:\s*vf)?|urban\s*comics\s*excalibur(?:\s*comics)?(?:\s*vf)?|excalibur\s*urban\s*comics(?:\s*vf)?|panini\s*excalibur\s*comics(?:\s*vf)?|excalibur\s*panini(?:\s*comics)?(?:\s*vf)?|excalibur\s*comics(?:\s*vf)?|urban\s*comics\s*blast\s*excalibur|urban\s*excalibur|panini\s*comics(?:\s*vf)?|urban\s*comics(?:\s*vf)?|excalibur(?:\s*vf)?)\s*$/i;
+  const FORMAT_TRAILERS = /(?:\s*-\s*|\s+)(?:Marvel\s*Pocket(?:\s*panini\s*comics)?|Nomad(?:\s*Urban\s*Comics)?(?:\s*Excalibur)?|Poche(?:\s*Excalibur\s*Comics\s*Panini)?|Édition\s+Prestige\s+Panini\s+Comics|Edition\s+Collector\s+Panini\s+Comics(?:\s*Excalibur)?)\s*$/i;
+
+  title = title.replace(RESELLER_RX, '').replace(FORMAT_TRAILERS, '').replace(RESELLER_RX, '').trim();
+
   // Parse Series & Tome
   let series = title;
   let tome = 'Tome 1';
   const tomeMatch = title.match(/(?:Tome|Vol(?:\.|ume)?|T\.)\s*(\d+)/i);
   if (tomeMatch) {
-    tome = 'Tome ' + tomeMatch[1];
+    tome = 'Tome ' + parseInt(tomeMatch[1], 10);
     series = title.replace(new RegExp(`(?:Tome|Vol(?:\\.|ume)?|T\\.)\\s*${tomeMatch[1]}`, 'i'), '').trim();
+  } else {
+    const endNumMatch = title.match(/\b([0-9]{1,2})\b(?:\s*\([0-9]{4}\))?$/i);
+    if (endNumMatch) {
+      tome = 'Tome ' + parseInt(endNumMatch[1], 10);
+      series = title.replace(/\b([0-9]{1,2})\b(?:\s*\([0-9]{4}\))?$/i, '').trim();
+    }
   }
   series = series.replace(/^Omnibus\s+/i, '').replace(/^(?:Marvel Deluxe|100% Marvel|Marvel Must-Have)\s*:\s*/i, '').trim();
+  series = series.replace(RESELLER_RX, '').replace(FORMAT_TRAILERS, '').trim();
 
   return {
     title,

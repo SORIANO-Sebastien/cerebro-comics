@@ -263,37 +263,51 @@ function cleanTitleAndSeries(rawTitle, rawFormat) {
     .replace(/^Omnibus\s+/gi, '')
     .trim();
 
+  // Strip reseller & bookstore search trailer keywords (Excalibur, Panini Comics, Urban Comics)
+  const RESELLER_RX = /(?:\s*-\s*|\s+)(?:panini\s*comics\s*excalibur(?:\s*comics)?(?:\s*vf)?|excalibur\s*comics\s*panini(?:\s*comics)?(?:\s*vf)?|urban\s*comics\s*excalibur(?:\s*comics)?(?:\s*vf)?|excalibur\s*urban\s*comics(?:\s*vf)?|panini\s*excalibur\s*comics(?:\s*vf)?|excalibur\s*panini(?:\s*comics)?(?:\s*vf)?|excalibur\s*comics(?:\s*vf)?|urban\s*comics\s*blast\s*excalibur|urban\s*excalibur|panini\s*comics(?:\s*vf)?|urban\s*comics(?:\s*vf)?|excalibur(?:\s*vf)?)\s*$/i;
+  const FORMAT_TRAILERS = /(?:\s*-\s*|\s+)(?:Marvel\s*Pocket(?:\s*panini\s*comics)?|Nomad(?:\s*Urban\s*Comics)?(?:\s*Excalibur)?|Poche(?:\s*Excalibur\s*Comics\s*Panini)?|Édition\s+Prestige\s+Panini\s+Comics|Edition\s+Collector\s+Panini\s+Comics(?:\s*Excalibur)?)\s*$/i;
+
+  title = title.replace(RESELLER_RX, '').replace(FORMAT_TRAILERS, '').replace(RESELLER_RX, '').trim();
+
   let tome = 'One-Shot';
   const tomeMatch = title.match(/(?:Tome|Vol(?:\.|ume)?)\s*([0-9]+)/i);
   if (tomeMatch) {
-    tome = 'Tome ' + tomeMatch[1];
+    tome = 'Tome ' + parseInt(tomeMatch[1], 10);
+  } else {
+    // If title ends with a standalone number, like "Ultimate Universe 12" or "Fall of X 03"
+    const endNumMatch = title.match(/\b([0-9]{1,2})\b(?:\s*\([0-9]{4}\))?$/i);
+    if (endNumMatch) {
+      tome = 'Tome ' + parseInt(endNumMatch[1], 10);
+    }
   }
 
   // Franchise extraction without breaking hyphenated names (X-Factor, Spider-Man, X-Men)
   const FRANCHISES = [
+    'Ultimate Fantastic Four', 'Fantastic Four', 'Quatre Fantastiques',
     'X-Factor', 'X-Men', 'X-Force', 'X-Statix', 'X-Treme X-Men',
     'Spider-Man', 'Spider-Gwen', 'Spider-Woman', 'Ant-Man', 'Shang-Chi',
-    'Iron Man', 'Captain America', 'Fantastic Four', 'Quatre Fantastiques',
+    'Iron Man', 'Captain America', 'Predator', 'Aliens',
     'Avengers', 'Doctor Strange', 'Docteur Strange', 'Daredevil', 'Deadpool',
     'Wolverine', 'Hulk', 'Thor', 'Batman', 'Superman', 'Wonder Woman',
     'Flash', 'Green Lantern', 'Justice League', 'Harley Quinn', 'Nightwing', 'Catwoman', 'Star Wars'
   ];
   let series = '';
   for (const f of FRANCHISES) {
-    const rx = new RegExp('^' + f + '\\b', 'i');
+    const rx = new RegExp('^' + f.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&') + '\\b', 'i');
     if (rx.test(title)) {
       series = f;
       break;
     }
   }
   if (!series) {
-    if (rawFormat.includes('Anthologie') && title.toLowerCase().startsWith('je suis ')) {
+    if (rawFormat && rawFormat.includes('Anthologie') && title.toLowerCase().startsWith('je suis ')) {
       series = title.replace(/^Je suis /i, '').trim();
     } else {
       series = title.split(/\s+[-–—]\s+|[:•\/]/)[0].trim();
     }
   }
   series = series.replace(/\s*(?:Tome|Vol(?:\.|ume)?)\s*[0-9]+/i, '').trim();
+  series = series.replace(RESELLER_RX, '').replace(FORMAT_TRAILERS, '').trim();
   if (!series || series.length > 35) {
     series = title;
   }
