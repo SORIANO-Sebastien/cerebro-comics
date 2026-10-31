@@ -2,6 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const os = require('os');
+const zlib = require('zlib');
 const auth = require('./auth_system.js');
 
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 8080;
@@ -91,6 +92,15 @@ function sendJson(res, statusCode, data) {
 const server = http.createServer(async (req, res) => {
   const urlObj = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
   const urlPath = urlObj.pathname;
+  // Favicon explicit route
+  if (urlPath === '/favicon.ico') {
+    const favPath = path.join(__dirname, 'favicon.ico');
+    if (fs.existsSync(favPath)) {
+      res.writeHead(200, { 'Content-Type': 'image/x-icon', 'Cache-Control': 'public, max-age=86400' });
+      fs.createReadStream(favPath).pipe(res);
+      return;
+    }
+  }
 
   // CORS Preflight
   if (req.method === 'OPTIONS') {
@@ -761,8 +771,27 @@ const server = http.createServer(async (req, res) => {
         headers['Pragma'] = 'no-cache';
         headers['Expires'] = '0';
       }
-      res.writeHead(200, headers);
-      res.end(content);
+      const acceptEncoding = req.headers['accept-encoding'] || '';
+      const isCompressible = ['.html', '.json', '.js', '.css', '.svg'].includes(ext);
+
+      if (isCompressible && acceptEncoding.includes('gzip')) {
+        headers['Content-Encoding'] = 'gzip';
+        zlib.gzip(content, { level: 6 }, (gzipErr, compressed) => {
+          if (!gzipErr && compressed) {
+            headers['Content-Length'] = compressed.length;
+            res.writeHead(200, headers);
+            res.end(compressed);
+          } else {
+            headers['Content-Length'] = content.length;
+            res.writeHead(200, headers);
+            res.end(content);
+          }
+        });
+      } else {
+        headers['Content-Length'] = content.length;
+        res.writeHead(200, headers);
+        res.end(content);
+      }
     }
   });
 });

@@ -1,9 +1,14 @@
-const CACHE_NAME = 'cerebro-pwa-v5.9';
+const CACHE_NAME = 'cerebro-pwa-v6.0';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './AppliBD.html',
   './manifest.json',
+  './favicon.svg',
+  './favicon.ico',
+  './favicon-32x32.png',
+  './icon-192.png',
+  './icon-512.png',
   './all_comics_catalog.json',
   './covers/predator_tome_2_variant_omnibus.jpg',
   './covers/predator_tome_2_variant.jpg',
