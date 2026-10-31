@@ -1,10 +1,12 @@
-const CACHE_NAME = 'cerebro-pwa-v5.6';
+const CACHE_NAME = 'cerebro-pwa-v5.7';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
   './AppliBD.html',
   './manifest.json',
   './all_comics_catalog.json',
+  './covers/predator_tome_2_variant.jpg',
+  './covers/xtreme_xmen_tome_2_variant.jpg',
   './sw.js'
 ];
 

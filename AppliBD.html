@@ -4271,6 +4271,20 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       const step = parseInt(img.dataset.errorStep || '0', 10);
       const cleanIsbn = (isbn || '').replace(/[^0-9X]/gi, '');
 
+      // Protection absolue : ne jamais basculer les variantes certifiees locales sur des placeholders ou provisoires
+      if (cleanIsbn === '9791039127578') {
+        if (!img.src.includes('xtreme_xmen_tome_2_variant.jpg')) {
+          img.src = 'covers/xtreme_xmen_tome_2_variant.jpg';
+          return;
+        }
+      }
+      if (cleanIsbn === '9791039127608') {
+        if (!img.src.includes('predator_tome_2_variant.jpg')) {
+          img.src = 'covers/predator_tome_2_variant.jpg';
+          return;
+        }
+      }
+
       if (step === 0 && cleanIsbn && cleanIsbn.length === 13) {
         img.dataset.errorStep = '1';
         img.src = 'https://images.epagine.fr/' + cleanIsbn.slice(-3) + '/' + cleanIsbn + '_1_75.jpg';
@@ -7300,6 +7314,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           book.editionType = 'STANDARD';
           book.catId = 'ma-marvelomni-9791039107525';
           modified = true;
+          repairedCount++;
           continue;
         }
 
@@ -7319,6 +7334,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           book.editionType = 'STANDARD';
           book.catId = 'ma-marvelomni-9782809491524';
           modified = true;
+          repairedCount++;
           continue;
         }
 
@@ -7337,6 +7353,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           book.editionType = 'STANDARD';
           book.catId = 'ma-marvelomni-9791039100816';
           modified = true;
+          repairedCount++;
           continue;
         }
 
@@ -7355,6 +7372,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           book.editionType = 'VARIANT';
           book.catId = 'var-omni-9791039108041';
           modified = true;
+          repairedCount++;
           continue;
         }
 
@@ -7373,6 +7391,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           book.editionType = 'STANDARD';
           book.catId = 'ma-marvelomni-9791039108034';
           modified = true;
+          repairedCount++;
           continue;
         }
 
@@ -7393,6 +7412,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           book.catId = 'var-omni-9791039134897';
           book.price = 90;
           modified = true;
+          repairedCount++;
           continue;
         }
 
@@ -7412,6 +7432,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           book.catId = 'var-omni-9791039134057';
           book.price = 90;
           modified = true;
+          repairedCount++;
           continue;
         }
 
@@ -7428,11 +7449,12 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           book.publisher = 'Panini Comics';
           book.universe = 'MARVEL';
           book.isbn = '9791039127608';
-          book.cover = 'https://images.penguinrandomhouse.com/cover/9781302928995';
+          book.cover = 'covers/predator_tome_2_variant.jpg';
           book.editionType = 'VARIANT';
           book.catId = 'var-omni-9791039127608';
           book.price = 80;
           modified = true;
+          repairedCount++;
           continue;
         }
 
@@ -7452,6 +7474,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           book.catId = 'ma-marvelomni-9791039127592';
           book.price = 80;
           modified = true;
+          repairedCount++;
           continue;
         }
 
@@ -7467,11 +7490,12 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           book.publisher = 'Panini Comics';
           book.universe = 'MARVEL';
           book.isbn = '9791039127578';
-          book.cover = 'https://images.epagine.fr/578/9791039127578_1_75.jpg';
+          book.cover = 'covers/xtreme_xmen_tome_2_variant.jpg';
           book.editionType = 'VARIANT';
           book.catId = 'var-omni-9791039127578';
           book.price = 80;
           modified = true;
+          repairedCount++;
           continue;
         }
 
@@ -7492,6 +7516,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           book.catId = 'var-omni-9791039135191';
           book.price = 70;
           modified = true;
+          repairedCount++;
           continue;
         }
 
@@ -7511,6 +7536,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           book.catId = 'ma-marvelomni-9791039135184';
           book.price = 70;
           modified = true;
+          repairedCount++;
           continue;
         }
 
@@ -7529,6 +7555,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           book.catId = 'var-omni-9791039149020';
           book.price = 70;
           modified = true;
+          repairedCount++;
           continue;
         }
 
@@ -7547,6 +7574,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           book.catId = 'ma-marvelomni-9791039149013';
           book.price = 70;
           modified = true;
+          repairedCount++;
           continue;
         }
 
