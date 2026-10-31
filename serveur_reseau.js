@@ -756,7 +756,7 @@ const server = http.createServer(async (req, res) => {
         'Access-Control-Allow-Origin': '*',
         'Permissions-Policy': 'camera=(self)'
       };
-      if (ext === '.html' || ext === '.json' || ext === '.js') {
+      if (ext === '.html' || ext === '.json' || ext === '.js' || relativePath.startsWith('covers/')) {
         headers['Cache-Control'] = 'no-cache, no-store, must-revalidate';
         headers['Pragma'] = 'no-cache';
         headers['Expires'] = '0';
