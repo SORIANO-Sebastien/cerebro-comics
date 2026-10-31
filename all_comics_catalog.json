@@ -1554,14 +1554,14 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "st-100starwar-9782809464306",
+    "id": "st-100starwar-9782809465570",
     "universe": "STAR_WARS",
     "publisher": "Panini Comics",
     "format": "100 % Star Wars",
     "series": "STAR WARS",
     "tome": "Tome 3",
     "title": "STAR WARS - Poe Dameron Tome 3",
-    "isbn": "9782809464306",
+    "isbn": "9782809465570",
     "writer": "",
     "artist": "",
     "year": 2026,
@@ -1569,7 +1569,10 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/7328-large_default/star-wars-dark-maul.jpg",
     "synopsis": "",
-    "editionType": "STANDARD"
+    "editionType": "STANDARD",
+    "alternateIsbns": [
+      "9782809465570"
+    ]
   },
   {
     "id": "st-100starwar-9782809474510",
@@ -2201,14 +2204,14 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "ma-100marvel-9782809460735",
+    "id": "ma-100marvel-9782809460728",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "100% Marvel",
     "series": "ALL NEW BLACK WIDOW",
     "tome": "Tome 1",
     "title": "ALL NEW BLACK WIDOW TOME 1",
-    "isbn": "9782809460735",
+    "isbn": "9782809460728",
     "writer": "",
     "artist": "",
     "year": 2026,
@@ -2216,7 +2219,10 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/6549-large_default/all-new-panthere-noire-tome-1.jpg",
     "synopsis": "",
-    "editionType": "STANDARD"
+    "editionType": "STANDARD",
+    "alternateIsbns": [
+      "9782809460728"
+    ]
   },
   {
     "id": "ma-100marvel-9782809465112",
@@ -2687,7 +2693,7 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "ma-100marvel-9791039110267",
+    "id": "ma-100marvel-9791039110266",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "100% Marvel",
@@ -2703,24 +2709,9 @@
     "cover": "https://www.excalibur-comics.fr/15075-large_default/avengers-tome-7.jpg",
     "synopsis": "",
     "editionType": "STANDARD",
-    "alternateIsbns": []
-  },
-  {
-    "id": "ma-100marvel-9791039110267",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "100% Marvel",
-    "series": "Avengers",
-    "tome": "Tome 7",
-    "title": "Avengers Tome 7",
-    "isbn": "9791039110267",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 22,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/15075-large_default/avengers-tome-7.jpg",
-    "synopsis": ""
+    "alternateIsbns": [
+      "9791039110266"
+    ]
   },
   {
     "id": "ma-100marvel-9791039115056",
@@ -4071,14 +4062,14 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "ma-100marvel-9782809471250",
+    "id": "ma-100marvel-9782809471236",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "100% Marvel",
     "series": "DOCTOR STRANGE ET LES SORCIERS SUPREMES Tome 2 sur 2",
     "tome": "Tome 2",
     "title": "DOCTOR STRANGE ET LES SORCIERS SUPREMES Tome 2 sur 2",
-    "isbn": "9782809471250",
+    "isbn": "9782809471236",
     "writer": "",
     "artist": "",
     "year": 2026,
@@ -4086,7 +4077,10 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/8212-large_default/inhumans-rois-d-hier-et-de-demain.jpg",
     "synopsis": "",
-    "editionType": "STANDARD"
+    "editionType": "STANDARD",
+    "alternateIsbns": [
+      "9782809471236"
+    ]
   },
   {
     "id": "ma-100marvel-9782809477900",
@@ -5634,47 +5628,13 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "ma-100marvel-9791039125322",
+    "id": "ma-100marvel-9791039125321",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "100% Marvel",
     "series": "Les Gardiens de la Galaxie...",
-    "tome": "One-Shot",
-    "title": "Les Gardiens de la Galaxie...",
-    "isbn": "9791039125322",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 19,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/21314-large_default/les-gardiens-de-la-galaxie-tome-2.jpg",
-    "synopsis": ""
-  },
-  {
-    "id": "ma-100marvel-9791039122673",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "100% Marvel",
-    "series": "Les Gardiens de la Galaxie...",
-    "tome": "One-Shot",
-    "title": "Les Gardiens de la Galaxie...",
-    "isbn": "9791039122673",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 19,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/17979-large_default/les-gardiens-de-la-galaxie-tome-1-par-lanzing.jpg",
-    "synopsis": ""
-  },
-  {
-    "id": "ma-100marvel-9791039125322",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "100% Marvel",
-    "series": "Les Gardiens de la Galaxie...",
-    "tome": "One-Shot",
-    "title": "Les Gardiens de la Galaxie... : L'aube de Groot",
+    "tome": "Tome 2",
+    "title": "Les Gardiens de la Galaxie Tome 2 : L'aube de Groot",
     "isbn": "9791039125321",
     "writer": "",
     "artist": "",
@@ -5683,17 +5643,18 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/21314-large_default/les-gardiens-de-la-galaxie-tome-2.jpg",
     "synopsis": "",
-    "editionType": "STANDARD",
-    "alternateIsbns": []
+    "alternateIsbns": [
+      "9791039125321"
+    ]
   },
   {
-    "id": "ma-100marvel-9791039122673",
+    "id": "ma-100marvel-9791039122672",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "100% Marvel",
     "series": "Les Gardiens de la Galaxie...",
-    "tome": "One-Shot",
-    "title": "Les Gardiens de la Galaxie... : La chute de Groot",
+    "tome": "Tome 1",
+    "title": "Les Gardiens de la Galaxie Tome 1 : La chute de Groot",
     "isbn": "9791039122672",
     "writer": "",
     "artist": "",
@@ -5702,8 +5663,9 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/17979-large_default/les-gardiens-de-la-galaxie-tome-1-par-lanzing.jpg",
     "synopsis": "",
-    "editionType": "STANDARD",
-    "alternateIsbns": []
+    "alternateIsbns": [
+      "9791039122672"
+    ]
   },
   {
     "id": "ma-100marvel-9791039142816",
@@ -9424,27 +9386,6 @@
     ]
   },
   {
-    "id": "var-exc-8292042003",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Album BD",
-    "editionType": "VARIANT",
-    "series": "Bottled",
-    "tome": "One-Shot",
-    "title": "Bottled",
-    "isbn": "8292042003",
-    "writer": "",
-    "artist": "",
-    "year": 2024,
-    "price": 25,
-    "usIssues": "",
-    "cover": "https://images.epagine.fr/003/8292042003_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "8292042003"
-    ]
-  },
-  {
     "id": "var-exc-9782375781067",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -10180,27 +10121,6 @@
     ]
   },
   {
-    "id": "var-exc-8241309144",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Album BD",
-    "editionType": "VARIANT",
-    "series": "Stand Still Variante Exclusive Csa",
-    "tome": "One-Shot",
-    "title": "Stand Still Variante Exclusive Csa",
-    "isbn": "8241309144",
-    "writer": "",
-    "artist": "",
-    "year": 2024,
-    "price": 27.5,
-    "usIssues": "",
-    "cover": "https://images.epagine.fr/144/8241309144_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "8241309144"
-    ]
-  },
-  {
     "id": "var-exc-9791090314672",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -10366,27 +10286,6 @@
     "synopsis": "Édition spéciale avec couverture variante (collector).",
     "alternateIsbns": [
       "9782413096610"
-    ]
-  },
-  {
-    "id": "var-exc-8241309890",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Album BD",
-    "editionType": "VARIANT",
-    "series": "Warm Fusion",
-    "tome": "One-Shot",
-    "title": "Warm Fusion - Variante exclusive CSA",
-    "isbn": "8241309890",
-    "writer": "",
-    "artist": "",
-    "year": 2024,
-    "price": 25.5,
-    "usIssues": "",
-    "cover": "https://images.epagine.fr/890/8241309890_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector).",
-    "alternateIsbns": [
-      "8241309890"
     ]
   },
   {
@@ -13208,28 +13107,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-dc-9782365778205",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Black Label",
-    "editionType": "VARIANT",
-    "series": "Batman",
-    "tome": "One-Shot",
-    "title": "Batman : Three Jokers (Couverture Variante)",
-    "isbn": "9782365778206",
-    "writer": "Geoff Johns",
-    "artist": "Jason Fabok",
-    "year": 2021,
-    "price": 30,
-    "usIssues": "Three Jokers #1-3",
-    "cover": "https://images.epagine.fr/205/9782365778205_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Batman, Batgirl et Red Hood traquent trois Jokers distincts à Gotham.",
-    "alternateIsbns": [
-      "9782365778205",
-      "9782365778206"
-    ]
-  },
-  {
     "id": "dc-dcblacklab-9791026818359",
     "universe": "DC",
     "publisher": "Urban Comics",
@@ -13482,28 +13359,6 @@
     "editionType": "BW"
   },
   {
-    "id": "var-dc-9782365778847",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Black Label",
-    "editionType": "VARIANT",
-    "series": "Batman White Knight",
-    "tome": "Tome 1",
-    "title": "Batman : White Knight (Couverture Variante)",
-    "isbn": "9782365778848",
-    "writer": "Sean Murphy",
-    "artist": "Sean Murphy",
-    "year": 2018,
-    "price": 30,
-    "usIssues": "White Knight #1-8",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2365778836.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Le Joker guéri devient Jack Napier et poursuit Batman en justice pour abus de violence.",
-    "alternateIsbns": [
-      "9782365778847",
-      "9782365778848"
-    ]
-  },
-  {
     "id": "dc-dcblacklab-9791026829386",
     "universe": "DC",
     "publisher": "Urban Comics",
@@ -13577,28 +13432,6 @@
     "alternateIsbns": [
       "9782365779905",
       "9782365779906"
-    ]
-  },
-  {
-    "id": "var-dc-9782365777123",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Black Label",
-    "editionType": "VARIANT",
-    "series": "Batman White Knight",
-    "tome": "Tome 2",
-    "title": "Curse of the White Knight (Couverture Variante)",
-    "isbn": "9782365777124",
-    "writer": "Sean Murphy",
-    "artist": "Sean Murphy",
-    "year": 2020,
-    "price": 30,
-    "usIssues": "Curse of the White Knight #1-8",
-    "cover": "https://www.excalibur-comics.fr/5635-large_default/batman-la-malediction-qui-s-abattit-sur-gotham.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Azrael et Napier déterrent les secrets ancestraux de la famille Wayne.",
-    "alternateIsbns": [
-      "9782365777123",
-      "9782365777124"
     ]
   },
   {
@@ -14006,14 +13839,14 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "dc-dcblacklab-9791026823872",
+    "id": "dc-dcblacklab-9791026821205",
     "universe": "DC",
     "publisher": "Urban Comics",
     "format": "DC Black Label",
     "series": "Sandman",
     "tome": "Tome 1",
     "title": "Sandman - Nightmare Country Tome 1",
-    "isbn": "9791026823872",
+    "isbn": "9791026821205",
     "writer": "",
     "artist": "",
     "year": 2026,
@@ -14021,7 +13854,10 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/15830-large_default/something-is-killing-the-children-tome-5.jpg",
     "synopsis": "",
-    "editionType": "STANDARD"
+    "editionType": "STANDARD",
+    "alternateIsbns": [
+      "9791026821205"
+    ]
   },
   {
     "id": "dc-dcblacklab-9791026827740",
@@ -15219,28 +15055,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-dc-9782365772111",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Batman",
-    "tome": "One-Shot",
-    "title": "Batman : Silence (Hush) (Couverture Variante)",
-    "isbn": "9782365772112",
-    "writer": "Jeph Loeb",
-    "artist": "Jim Lee",
-    "year": 2013,
-    "price": 35,
-    "usIssues": "Batman #608-619",
-    "cover": "https://images.epagine.fr/128/9782365772128_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Silence manipule l'ensemble des ennemis de Batman dans un piège mortel.",
-    "alternateIsbns": [
-      "9782365772111",
-      "9782365772112"
-    ]
-  },
-  {
     "id": "dc-dcdeluxe-9791026826071",
     "universe": "DC",
     "publisher": "Urban Comics",
@@ -15389,28 +15203,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-dc-9782365773965",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Batman (Snyder)",
-    "tome": "Tome 3",
-    "title": "L'An Zéro (Couverture Variante)",
-    "isbn": "9782365773966",
-    "writer": "Scott Snyder",
-    "artist": "Greg Capullo",
-    "year": 2014,
-    "price": 35,
-    "usIssues": "Batman #21-33",
-    "cover": "https://images.epagine.fr/972/9782365773972_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Les origines explosives de Batman face au Sphinx qui prive Gotham d'électricité.",
-    "alternateIsbns": [
-      "9782365773965",
-      "9782365773966"
-    ]
-  },
-  {
     "id": "var-dc-9782365772081",
     "universe": "DC",
     "publisher": "Urban Comics",
@@ -15430,28 +15222,6 @@
     "alternateIsbns": [
       "9782365772081",
       "9782365772082"
-    ]
-  },
-  {
-    "id": "var-dc-9782365776607",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Batman (Snyder)",
-    "tome": "Tome 4",
-    "title": "Mascarade (Couverture Variante)",
-    "isbn": "9782365776608",
-    "writer": "Scott Snyder",
-    "artist": "Greg Capullo",
-    "year": 2015,
-    "price": 35,
-    "usIssues": "Batman #35-40",
-    "cover": "https://images.epagine.fr/607/9782365776607_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'affrontement apocalyptique final entre Batman et le Joker.",
-    "alternateIsbns": [
-      "9782365776607",
-      "9782365776608"
     ]
   },
   {
@@ -16593,28 +16363,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-dc-9782365778007",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Flash (Williamson)",
-    "tome": "Tome 1",
-    "title": "De Foudre et de Sang (Couverture Variante)",
-    "isbn": "9782365778008",
-    "writer": "Joshua Williamson",
-    "artist": "Carmine Di Giandomenico",
-    "year": 2017,
-    "price": 35,
-    "usIssues": "The Flash #1-8",
-    "cover": "https://www.excalibur-comics.fr/5044-large_default/batman-tome-7-mascarade.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Une tempête de force véloce crée de nouveaux bolides à Central City.",
-    "alternateIsbns": [
-      "9782365778007",
-      "9782365778008"
-    ]
-  },
-  {
     "id": "dc-dcdeluxe-9782365771795",
     "universe": "DC",
     "publisher": "Urban Comics",
@@ -16649,28 +16397,6 @@
     "cover": "https://images-na.ssl-images-amazon.com/images/P/236577251X.01._SCLZZZZZZZ_.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-dc-9782365773804",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Gotham Central",
-    "tome": "Tome 1",
-    "title": "Gotham Central (Couverture Variante)",
-    "isbn": "9782365773805",
-    "writer": "Ed Brubaker, Greg Rucka",
-    "artist": "Michael Lark",
-    "year": 2014,
-    "price": 35,
-    "usIssues": "Gotham Central #1-10",
-    "cover": "https://images.epagine.fr/804/9782365773804_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Le quotidien dangereux des flics du MCU de Gotham face aux super-vilains.",
-    "alternateIsbns": [
-      "9782365773804",
-      "9782365773805"
-    ]
   },
   {
     "id": "dc-dcdeluxe-9791026819578",
@@ -17015,28 +16741,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-dc-9782365771275",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Joker",
-    "tome": "One-Shot",
-    "title": "Joker (Couverture Variante)",
-    "isbn": "9782365771276",
-    "writer": "Brian Azzarello",
-    "artist": "Lee Bermejo",
-    "year": 2013,
-    "price": 35,
-    "usIssues": "Joker OGN",
-    "cover": "https://www.excalibur-comics.fr/2262-large_default/batman-noel.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Sorti d'Arkham, le Joker reprend le contrôle de ses affaires avec une violence crue.",
-    "alternateIsbns": [
-      "9782365771275",
-      "9782365771276"
-    ]
-  },
-  {
     "id": "dc-dcdeluxe-9782365778411",
     "universe": "DC",
     "publisher": "Urban Comics",
@@ -17127,94 +16831,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-dc-9782365770421",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Justice League (Johns)",
-    "tome": "Tome 1",
-    "title": "Aux Origines (Couverture Variante)",
-    "isbn": "9782365770422",
-    "writer": "Geoff Johns",
-    "artist": "Jim Lee",
-    "year": 2012,
-    "price": 35,
-    "usIssues": "Justice League #1-6",
-    "cover": "https://www.excalibur-comics.fr/2281-large_default/batman-tome-1-la-cour-des-hiboux.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). La toute première réunion de Superman, Batman, Wonder Woman, Flash, Green Lantern et Aquaman.",
-    "alternateIsbns": [
-      "9782365770421",
-      "9782365770422"
-    ]
-  },
-  {
-    "id": "var-dc-9782365772128",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Justice League (Johns)",
-    "tome": "Tome 2",
-    "title": "L'Odyssée du Mal (Couverture Variante)",
-    "isbn": "9782365772129",
-    "writer": "Geoff Johns",
-    "artist": "Gene Ha",
-    "year": 2013,
-    "price": 35,
-    "usIssues": "Justice League #7-12",
-    "cover": "https://images.epagine.fr/128/9782365772128_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'équipe affronte Graves qui utilise les fantômes des disparus pour détruire la Ligue.",
-    "alternateIsbns": [
-      "9782365772128",
-      "9782365772129"
-    ]
-  },
-  {
-    "id": "var-dc-9782365778823",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Justice League (Johns)",
-    "tome": "Tome 6",
-    "title": "La Guerre de Darkseid (Couverture Variante)",
-    "isbn": "9782365778824",
-    "writer": "Geoff Johns",
-    "artist": "Jason Fabok",
-    "year": 2016,
-    "price": 35,
-    "usIssues": "Darkseid War #1-10",
-    "cover": "https://www.excalibur-comics.fr/5789-large_default/planetary-tome-1.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'affrontement divin colossal entre Darkseid et l'Anti-Monitor.",
-    "alternateIsbns": [
-      "9782365778823",
-      "9782365778824"
-    ]
-  },
-  {
-    "id": "var-dc-9782365773972",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Justice League (Johns)",
-    "tome": "Tome 4",
-    "title": "La Guerre des Ligues (Trinity War) (Couverture Variante)",
-    "isbn": "9782365773973",
-    "writer": "Geoff Johns",
-    "artist": "Ivan Reis",
-    "year": 2014,
-    "price": 35,
-    "usIssues": "Trinity War #1-6",
-    "cover": "https://www.excalibur-comics.fr/4496-large_default/casanova-au-service-de-l-empire-tome-3-urban-indies.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). La boîte de Pandore déclenche la guerre fratricide entre la Justice League et la JLA.",
-    "alternateIsbns": [
-      "9782365773972",
-      "9782365773973"
-    ]
-  },
-  {
     "id": "var-dc-9782365774504",
     "universe": "DC",
     "publisher": "Urban Comics",
@@ -17234,28 +16850,6 @@
     "alternateIsbns": [
       "9782365774504",
       "9782365774505"
-    ]
-  },
-  {
-    "id": "var-dc-9782365772470",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Justice League (Johns)",
-    "tome": "Tome 3",
-    "title": "Le Trône d'Atlantide (Couverture Variante)",
-    "isbn": "9782365772471",
-    "writer": "Geoff Johns",
-    "artist": "Ivan Reis",
-    "year": 2013,
-    "price": 35,
-    "usIssues": "Justice League #15-17, Aquaman #15-16",
-    "cover": "https://images.epagine.fr/463/9782365772463_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'Atlantide déclare la guerre au monde de la surface et inonde la côte Est.",
-    "alternateIsbns": [
-      "9782365772470",
-      "9782365772471"
     ]
   },
   {
@@ -17347,28 +16941,6 @@
     "cover": "https://images.epagine.fr/245/9791026814245_1_75.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-dc-9782365771251",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Kingdom Come",
-    "tome": "One-Shot",
-    "title": "Kingdom Come (Couverture Variante)",
-    "isbn": "9782365771252",
-    "writer": "Mark Waid",
-    "artist": "Alex Ross",
-    "year": 2012,
-    "price": 35,
-    "usIssues": "Kingdom Come #1-4",
-    "cover": "https://www.excalibur-comics.fr/21163-large_default/joker-les-derniers-jours-d-un-clown.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Les héros historiques de la Justice League reviennent pour mater une jeunesse déviante.",
-    "alternateIsbns": [
-      "9782365771251",
-      "9782365771252"
-    ]
   },
   {
     "id": "dc-dcdeluxe-9782365771856",
@@ -18073,28 +17645,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-dc-9782365772456",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Superman",
-    "tome": "One-Shot",
-    "title": "All-Star Superman (Couverture Variante)",
-    "isbn": "9782365772457",
-    "writer": "Grant Morrison",
-    "artist": "Frank Quitely",
-    "year": 2013,
-    "price": 35,
-    "usIssues": "All-Star Superman #1-12",
-    "cover": "https://www.excalibur-comics.fr/2581-large_default/brightest-day-tome-1.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Les douze travaux héroïques de Superman avant son départ.",
-    "alternateIsbns": [
-      "9782365772456",
-      "9782365772457"
-    ]
-  },
-  {
     "id": "dc-dcdeluxe-9791026811671",
     "universe": "DC",
     "publisher": "Urban Comics",
@@ -18129,28 +17679,6 @@
     "cover": "https://www.excalibur-comics.fr/18761-large_default/superman-lost.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-dc-9782365772463",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Superman",
-    "tome": "One-Shot",
-    "title": "Superman : Red Son (Couverture Variante)",
-    "isbn": "9782365772464",
-    "writer": "Mark Millar",
-    "artist": "Dave Johnson",
-    "year": 2014,
-    "price": 35,
-    "usIssues": "Superman: Red Son #1-3",
-    "cover": "https://www.excalibur-comics.fr/2581-large_default/brightest-day-tome-1.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Et si la fusée de Kal-El avait atterri en Union Soviétique en pleine guerre froide ?",
-    "alternateIsbns": [
-      "9782365772463",
-      "9782365772464"
-    ]
   },
   {
     "id": "dc-dcdeluxe-9791026816409",
@@ -18511,50 +18039,6 @@
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2365770460.01._SCLZZZZZZZ_.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-dc-9782365771299",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "V pour Vendetta",
-    "tome": "Intégrale",
-    "title": "V pour Vendetta - Édition Deluxe (Couverture Variante)",
-    "isbn": "9782365771290",
-    "writer": "Alan Moore",
-    "artist": "David Lloyd",
-    "year": 2012,
-    "price": 35,
-    "usIssues": "V for Vendetta #1-10",
-    "cover": "https://images.epagine.fr/275/9782365771275_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Dans une Angleterre fasciste, l'anarchiste masqué V mène sa révolution.",
-    "alternateIsbns": [
-      "9782365771299",
-      "9782365771290"
-    ]
-  },
-  {
-    "id": "var-dc-9782365771237",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Deluxe",
-    "editionType": "VARIANT",
-    "series": "Watchmen",
-    "tome": "Intégrale",
-    "title": "Watchmen - Édition Deluxe (Couverture Variante)",
-    "isbn": "9782365771238",
-    "writer": "Alan Moore",
-    "artist": "Dave Gibbons",
-    "year": 2012,
-    "price": 35,
-    "usIssues": "Watchmen #1-12",
-    "cover": "https://www.excalibur-comics.fr/21163-large_default/joker-les-derniers-jours-d-un-clown.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'enquête sur le meurtre du Comédien dévoile un complot apocalyptique.",
-    "alternateIsbns": [
-      "9782365771237",
-      "9782365771238"
-    ]
   },
   {
     "id": "dc-dcdeluxe-9791026817307",
@@ -19652,28 +19136,6 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/15140-large_default/nightwing-infinite-tome-2.jpg",
     "synopsis": ""
-  },
-  {
-    "id": "var-dc-9782365779806",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "DC Infinite",
-    "editionType": "VARIANT",
-    "series": "Nightwing (Taylor)",
-    "tome": "Tome 1",
-    "title": "Le Saut dans l'Inconnu (Couverture Variante)",
-    "isbn": "9782365779807",
-    "writer": "Tom Taylor",
-    "artist": "Bruno Redondo",
-    "year": 2022,
-    "price": 15,
-    "usIssues": "Nightwing #78-83",
-    "cover": "https://images.epagine.fr/806/9782365779806_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Dick Grayson hérite de la fortune d'Alfred et finance la renaissance de Blüdhaven.",
-    "alternateIsbns": [
-      "9782365779806",
-      "9782365779807"
-    ]
   },
   {
     "id": "dc-dcinfinite-9791026819707",
@@ -21510,21 +20972,24 @@
     "editionType": "LIMITED"
   },
   {
-    "id": "dc-dcrebirth-9791026813767",
+    "id": "dc-dcrebirth-9791026813477",
     "universe": "DC",
     "publisher": "Urban Comics",
     "format": "DC Rebirth",
     "series": "ALL STAR BATMAN",
     "tome": "Tome 2",
     "title": "ALL STAR BATMAN TOME 2",
-    "isbn": "9791026813767",
+    "isbn": "9791026813477",
     "writer": "",
     "artist": "",
     "year": 2026,
     "price": 18.5,
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/7765-large_default/deathstroke-rebirth-tome-1.jpg",
-    "synopsis": ""
+    "synopsis": "",
+    "alternateIsbns": [
+      "9791026813477"
+    ]
   },
   {
     "id": "dc-dcrebirth-9791026822547",
@@ -28312,72 +27777,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809489510",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Avengers (Hickman)",
-    "tome": "Tome 2",
-    "title": "Infini (Couverture Variante)",
-    "isbn": "9782809489514",
-    "writer": "Jonathan Hickman",
-    "artist": "Jim Cheung",
-    "year": 2020,
-    "price": 35,
-    "usIssues": "Infinity #1-6, Avengers #14-23",
-    "cover": "https://images.epagine.fr/503/9782809489503_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Thanos envahit la Terre pendant la guerre galactique contre les Bâtisseurs.",
-    "alternateIsbns": [
-      "9782809489510",
-      "9782809489514"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809489527",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Avengers (Hickman)",
-    "tome": "Tome 3",
-    "title": "Le Temps Fugitif (Couverture Variante)",
-    "isbn": "9782809489521",
-    "writer": "Jonathan Hickman",
-    "artist": "Mike Deodato Jr",
-    "year": 2021,
-    "price": 35,
-    "usIssues": "Avengers #24-34, New Avengers #13-23",
-    "cover": "https://www.excalibur-comics.fr/11552-large_default/punisher-tome-3-guerre-dans-la-rue.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Les Incursions s'accélèrent : la destruction du multivers semble inéluctable.",
-    "alternateIsbns": [
-      "9782809489527",
-      "9782809489521"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809489534",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Avengers (Hickman)",
-    "tome": "Tome 4",
-    "title": "Le Temps Meurt (Couverture Variante)",
-    "isbn": "9782809489538",
-    "writer": "Jonathan Hickman",
-    "artist": "Stefano Caselli",
-    "year": 2021,
-    "price": 35,
-    "usIssues": "Avengers #35-44, New Avengers #24-33",
-    "cover": "https://images.epagine.fr/503/9782809489503_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Huit mois plus tard, la chasse aux Illuminati est lancée avant l'ultime Incursion.",
-    "alternateIsbns": [
-      "9782809489534",
-      "9782809489538"
-    ]
-  },
-  {
     "id": "var-marvel-9782809489503",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -28938,14 +28337,14 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "ma-marveldelu-9782809423686",
+    "id": "ma-marveldelu-9782809412819",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "Marvel Deluxe",
     "series": "CIVIL WAR",
     "tome": "Tome 3",
     "title": "Civil War Volume 3 : Vendetta",
-    "isbn": "9782809423686",
+    "isbn": "9782809412819",
     "writer": "Paul Jenkins",
     "artist": "Ramon Bachs",
     "year": 2012,
@@ -28954,7 +28353,7 @@
     "cover": "https://images.epagine.fr/686/9782809423686_1_75.jpg",
     "synopsis": "Le troisième volume de la collection Civil War Deluxe.",
     "alternateIsbns": [
-      "9782809423686"
+      "9782809412819"
     ],
     "editionType": "STANDARD"
   },
@@ -29119,138 +28518,6 @@
     "cover": "https://www.excalibur-comics.fr/21376-large_default/daredevil-volume-2-par-zdarsky.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809498147",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Daredevil (Bendis)",
-    "tome": "Tome 4",
-    "title": "Decalogue (Couverture Variante)",
-    "isbn": "9782809498141",
-    "writer": "Brian Michael Bendis",
-    "artist": "Alex Maleev",
-    "year": 2022,
-    "price": 35,
-    "usIssues": "Daredevil #66-81",
-    "cover": "https://images.epagine.fr/130/9782809498130_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Le dénouement magistral de la période Bendis / Maleev.",
-    "alternateIsbns": [
-      "9782809498147",
-      "9782809498141"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498130",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Daredevil (Bendis)",
-    "tome": "Tome 3",
-    "title": "Le Dossier Murdock (Couverture Variante)",
-    "isbn": "9782809498134",
-    "writer": "Brian Michael Bendis",
-    "artist": "Alex Maleev",
-    "year": 2021,
-    "price": 35,
-    "usIssues": "Daredevil #56-65",
-    "cover": "https://images.epagine.fr/123/9782809498123_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Procès fédéral et guerre des gangs à Hell's Kitchen.",
-    "alternateIsbns": [
-      "9782809498130",
-      "9782809498134"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498123",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Daredevil (Bendis)",
-    "tome": "Tome 2",
-    "title": "Le Roi de Hell's Kitchen (Couverture Variante)",
-    "isbn": "9782809498127",
-    "writer": "Brian Michael Bendis",
-    "artist": "Alex Maleev",
-    "year": 2021,
-    "price": 35,
-    "usIssues": "Daredevil #38-50",
-    "cover": "https://images.epagine.fr/116/9782809498116_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Daredevil terrasse le Caïd et se proclame patron du quartier.",
-    "alternateIsbns": [
-      "9782809498123",
-      "9782809498127"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498116",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Daredevil (Bendis)",
-    "tome": "Tome 1",
-    "title": "Sous l'Aile du Diable (Couverture Variante)",
-    "isbn": "9782809498110",
-    "writer": "Brian Michael Bendis",
-    "artist": "Alex Maleev",
-    "year": 2021,
-    "price": 35,
-    "usIssues": "Daredevil #26-37",
-    "cover": "https://images.epagine.fr/116/9782809498116_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'identité de Daredevil est vendue à la presse.",
-    "alternateIsbns": [
-      "9782809498116",
-      "9782809498110"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498154",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Daredevil (Brubaker)",
-    "tome": "Tome 1",
-    "title": "Le Diable en Cavale (Couverture Variante)",
-    "isbn": "9782809498158",
-    "writer": "Ed Brubaker",
-    "artist": "Michael Lark",
-    "year": 2021,
-    "price": 35,
-    "usIssues": "Daredevil #82-93",
-    "cover": "https://images.epagine.fr/130/9782809498130_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Matt Murdock est incarcéré à Ryker's Island entouré de tous ses pires ennemis.",
-    "alternateIsbns": [
-      "9782809498154",
-      "9782809498158"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498178",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Daredevil (Brubaker)",
-    "tome": "Tome 3",
-    "title": "Le Retour du Roi (Couverture Variante)",
-    "isbn": "9782809498172",
-    "writer": "Ed Brubaker",
-    "artist": "Michael Lark",
-    "year": 2022,
-    "price": 35,
-    "usIssues": "Daredevil #106-119, #500",
-    "cover": "https://images.epagine.fr/161/9782809498161_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Le Caïd revient réclamer son trône alors que la Main tente de corrompre Daredevil.",
-    "alternateIsbns": [
-      "9782809498178",
-      "9782809498172"
-    ]
   },
   {
     "id": "var-marvel-9782809498161",
@@ -29917,50 +29184,6 @@
     ]
   },
   {
-    "id": "var-marvel-9782809494354",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Immortal Hulk",
-    "tome": "Tome 5",
-    "title": "Le Cœur de la Matière (Couverture Variante)",
-    "isbn": "9782809494358",
-    "writer": "Al Ewing",
-    "artist": "Joe Bennett",
-    "year": 2023,
-    "price": 35,
-    "usIssues": "Immortal Hulk #41-50",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494347.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'ultime confrontation mystique entre Hulk, le Leader et Celui-au-Dessous-de-Tout.",
-    "alternateIsbns": [
-      "9782809494354",
-      "9782809494358"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809494309",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Immortal Hulk",
-    "tome": "Tome 1",
-    "title": "Où est ta victoire ? (Couverture Variante)",
-    "isbn": "9782809494303",
-    "writer": "Al Ewing",
-    "artist": "Joe Bennett",
-    "year": 2021,
-    "price": 35,
-    "usIssues": "Immortal Hulk #1-10",
-    "cover": "https://www.excalibur-comics.fr/12241-large_default/marvel-action-avengers-tome-4.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'homme meurt le jour, mais le Diable Hulk revient chaque nuit par la Porte Verte.",
-    "alternateIsbns": [
-      "9782809494309",
-      "9782809494303"
-    ]
-  },
-  {
     "id": "ma-marveldelu-9791039141437",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -30410,7 +29633,7 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "ma-marveldelu-9791039115178",
+    "id": "ma-marveldelu-9791039115179",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "Marvel Deluxe",
@@ -30426,24 +29649,9 @@
     "cover": "https://www.excalibur-comics.fr/16136-large_default/les-gardiens-de-la-galaxie-tome-4.jpg",
     "synopsis": "",
     "editionType": "STANDARD",
-    "alternateIsbns": []
-  },
-  {
-    "id": "ma-marveldelu-9791039115178",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "series": "Les Gardiens de la Galaxie",
-    "tome": "Tome 4",
-    "title": "Les Gardiens de la Galaxie Volume 4",
-    "isbn": "9791039115178",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 32,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/16136-large_default/les-gardiens-de-la-galaxie-tome-4.jpg",
-    "synopsis": ""
+    "alternateIsbns": [
+      "9791039115179"
+    ]
   },
   {
     "id": "ma-marveldelu-9791039136037",
@@ -30478,24 +29686,6 @@
     "price": 24,
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/8318-large_default/loki-agent-d-asgard-tome-2.jpg",
-    "synopsis": "",
-    "editionType": "STANDARD"
-  },
-  {
-    "id": "ma-marveldelu-9782809473018",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "series": "LOKI",
-    "tome": "Tome 2",
-    "title": "LOKI - Agent d'Asgard Volume 2 sur 2",
-    "isbn": "9782809473018",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 32,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/8320-large_default/les-eternels-de-jack-kirby-deluxe.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
   },
@@ -30822,50 +30012,6 @@
     "cover": "https://www.excalibur-comics.fr/9763-large_default/new-mutants-et-loki.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809491117",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "New X-Men (Morrison)",
-    "tome": "Tome 1",
-    "title": "E Comme Extinction (Couverture Variante)",
-    "isbn": "9782809491111",
-    "writer": "Grant Morrison",
-    "artist": "Frank Quitely",
-    "year": 2020,
-    "price": 35,
-    "usIssues": "New X-Men #114-126",
-    "cover": "https://images.epagine.fr/104/9782809491104_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Cassandra Nova anéantit 16 millions de mutants sur Génosha avec les Sentinelles.",
-    "alternateIsbns": [
-      "9782809491117",
-      "9782809491111"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809491131",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "New X-Men (Morrison)",
-    "tome": "Tome 3",
-    "title": "Planète X (Couverture Variante)",
-    "isbn": "9782809491135",
-    "writer": "Grant Morrison",
-    "artist": "Phil Jimenez",
-    "year": 2021,
-    "price": 35,
-    "usIssues": "New X-Men #142-154",
-    "cover": "https://www.excalibur-comics.fr/13134-large_default/marvel-verse-venom.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Magneto infiltre l'Institut Xavier et s'apprête à anéantir Manhattan.",
-    "alternateIsbns": [
-      "9782809491131",
-      "9782809491135"
-    ]
   },
   {
     "id": "ma-marveldelu-9782809483833",
@@ -31662,138 +30808,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809477029",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Spider-Man (JMS)",
-    "tome": "Tome 2",
-    "title": "Confessions (Couverture Variante)",
-    "isbn": "9782809477023",
-    "writer": "J.M. Straczynski",
-    "artist": "John Romita Jr",
-    "year": 2019,
-    "price": 35,
-    "usIssues": "ASM #39-45",
-    "cover": "https://images.epagine.fr/012/9782809477012_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Tante May découvre que Peter est Spider-Man : un dialogue historique.",
-    "alternateIsbns": [
-      "9782809477029",
-      "9782809477023"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809477050",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Spider-Man (JMS)",
-    "tome": "Tome 5",
-    "title": "L'Autre : Évolue ou Meurs (Couverture Variante)",
-    "isbn": "9782809477054",
-    "writer": "J.M. Straczynski",
-    "artist": "Mike Wieringo",
-    "year": 2020,
-    "price": 35,
-    "usIssues": "ASM #525-528",
-    "cover": "https://www.excalibur-comics.fr/9292-large_default/avengers-integrale-1980.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Battu à mort par Morlun, Peter Parker subit une métamorphose arachnéenne totale.",
-    "alternateIsbns": [
-      "9782809477050",
-      "9782809477054"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809477036",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Spider-Man (JMS)",
-    "tome": "Tome 3",
-    "title": "Le Livre d'Ezekiel (Couverture Variante)",
-    "isbn": "9782809477030",
-    "writer": "J.M. Straczynski",
-    "artist": "John Romita Jr",
-    "year": 2019,
-    "price": 35,
-    "usIssues": "ASM #46-54",
-    "cover": "https://www.excalibur-comics.fr/9146-large_default/thanos-gouffre-infini.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Le mystère d'Ezekiel Sims et la confrontation avec Shathra la guêpe.",
-    "alternateIsbns": [
-      "9782809477036",
-      "9782809477030"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809477043",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Spider-Man (JMS)",
-    "tome": "Tome 4",
-    "title": "Péchés du Passé (Couverture Variante)",
-    "isbn": "9782809477047",
-    "writer": "J.M. Straczynski",
-    "artist": "Mike Deodato Jr",
-    "year": 2020,
-    "price": 35,
-    "usIssues": "ASM #509-518",
-    "cover": "https://images.epagine.fr/012/9782809477012_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Les jumeaux mystérieux de Gwen Stacy refont surface pour détruire Spider-Man.",
-    "alternateIsbns": [
-      "9782809477043",
-      "9782809477047"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809477067",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Spider-Man (JMS)",
-    "tome": "Tome 6",
-    "title": "Un Jour de Plus (Couverture Variante)",
-    "isbn": "9782809477061",
-    "writer": "J.M. Straczynski",
-    "artist": "Joe Quesada",
-    "year": 2021,
-    "price": 35,
-    "usIssues": "ASM #539-545",
-    "cover": "https://www.excalibur-comics.fr/9293-large_default/captain-america-integrale-1975.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Le pacte controversé avec Méphisto pour sauver la vie de tante May.",
-    "alternateIsbns": [
-      "9782809477067",
-      "9782809477061"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809477012",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Spider-Man (JMS)",
-    "tome": "Tome 1",
-    "title": "Vocation (Couverture Variante)",
-    "isbn": "9782809477016",
-    "writer": "J.M. Straczynski",
-    "artist": "John Romita Jr",
-    "year": 2019,
-    "price": 35,
-    "usIssues": "ASM #30-38",
-    "cover": "https://www.excalibur-comics.fr/9289-large_default/avengers-academy-1.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'origine totémique de Spider-Man et le premier combat titanesque contre Morlun.",
-    "alternateIsbns": [
-      "9782809477012",
-      "9782809477016"
-    ]
-  },
-  {
     "id": "ma-marveldelu-9782809474671",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -32135,14 +31149,14 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "ma-marveldelu-9782809465457",
+    "id": "ma-marveldelu-9782809455519",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "Marvel Deluxe",
     "series": "THOR",
     "tome": "One-Shot",
     "title": "THOR - Les Dévoreurs de Mondes",
-    "isbn": "9782809465457",
+    "isbn": "9782809455519",
     "writer": "",
     "artist": "",
     "year": 2026,
@@ -32150,7 +31164,10 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/12520-large_default/loki-agent-d-asgard-volume-1.jpg",
     "synopsis": "",
-    "editionType": "STANDARD"
+    "editionType": "STANDARD",
+    "alternateIsbns": [
+      "9782809455519"
+    ]
   },
   {
     "id": "var-marvel-9782809494439",
@@ -32663,28 +31680,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809494361",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Venom (Cates)",
-    "tome": "Tome 2",
-    "title": "Carnage Absolu (Couverture Variante)",
-    "isbn": "9782809494365",
-    "writer": "Donny Cates",
-    "artist": "Ryan Stegman",
-    "year": 2022,
-    "price": 35,
-    "usIssues": "Absolute Carnage #1-5, Venom #16-20",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809494347.01._SCLZZZZZZZ_.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Carnage traque tous les porteurs historiques de symbiotes pour réveiller Knull.",
-    "alternateIsbns": [
-      "9782809494361",
-      "9782809494365"
-    ]
-  },
-  {
     "id": "var-marvel-9782809494378",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -32704,28 +31699,6 @@
     "alternateIsbns": [
       "9782809494378",
       "9782809494372"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809494316",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Deluxe",
-    "editionType": "VARIANT",
-    "series": "Venom (Cates)",
-    "tome": "Tome 1",
-    "title": "Rex (Couverture Variante)",
-    "isbn": "9782809494310",
-    "writer": "Donny Cates",
-    "artist": "Ryan Stegman",
-    "year": 2021,
-    "price": 35,
-    "usIssues": "Venom (2018) #1-12",
-    "cover": "https://images.epagine.fr/316/9782809494316_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Knull, le Dieu des ténèbres et géniteur des symbiotes, s'éveille.",
-    "alternateIsbns": [
-      "9782809494316",
-      "9782809494310"
     ]
   },
   {
@@ -34526,24 +33499,6 @@
     "synopsis": ""
   },
   {
-    "id": "ma-marvelgrap-9782809468311",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Graphic Novel",
-    "series": "THOR Vs LOKI",
-    "tome": "One-Shot",
-    "title": "THOR Vs LOKI",
-    "isbn": "9782809468311",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 22,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/7583-large_default/les-gardiens-de-la-galaxie-mere-entropie.jpg",
-    "synopsis": "",
-    "editionType": "STANDARD"
-  },
-  {
     "id": "ma-marvelhero-9791039135542",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -35530,14 +34485,14 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "ma-marvelicon-9782809457186",
+    "id": "ma-marvelicon-9782809456516",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "Marvel Icons",
     "series": "PUNISHER par ENNIS & DILLON",
     "tome": "Tome 1",
     "title": "PUNISHER par ENNIS & DILLON TOME 1",
-    "isbn": "9782809457186",
+    "isbn": "9782809456516",
     "writer": "",
     "artist": "",
     "year": 2026,
@@ -35545,7 +34500,10 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/6234-large_default/wolverine-origines-icons.jpg",
     "synopsis": "",
-    "editionType": "STANDARD"
+    "editionType": "STANDARD",
+    "alternateIsbns": [
+      "9782809456516"
+    ]
   },
   {
     "id": "ma-marvelintg-9782809495058",
@@ -40564,14 +39522,14 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "ma-marvelintg-9782809464245",
+    "id": "ma-marvelintg-9782809464252",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "Marvel Intégrales",
     "series": "SPECTACULAR SPIDER",
     "tome": "One-Shot",
     "title": "SPECTACULAR SPIDER-MAN L'INTEGRALE 1984",
-    "isbn": "9782809464245",
+    "isbn": "9782809464252",
     "writer": "",
     "artist": "",
     "year": 2026,
@@ -40579,7 +39537,10 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/7066-large_default/iron-fist-l-integrale-1974-1975.jpg",
     "synopsis": "",
-    "editionType": "STANDARD"
+    "editionType": "STANDARD",
+    "alternateIsbns": [
+      "9782809464252"
+    ]
   },
   {
     "id": "ma-marvelintg-9791070261873",
@@ -43351,28 +42312,6 @@
     ]
   },
   {
-    "id": "var-marvel-9782809498376",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Avengers",
-    "tome": "Tome 1",
-    "title": "New Avengers : Évasion (Couverture Variante)",
-    "isbn": "9782809498370",
-    "writer": "Brian Michael Bendis",
-    "artist": "David Finch",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "New Avengers #1-6",
-    "cover": "https://www.excalibur-comics.fr/13183-large_default/thanos-vs-mephisto-revelation.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Une évasion massive à la prison du Raft force Captain America et Iron Man à créer les New Avengers.",
-    "alternateIsbns": [
-      "9782809498376",
-      "9782809498370"
-    ]
-  },
-  {
     "id": "var-marvel-9782809496754",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -43543,28 +42482,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809498215",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Captain America",
-    "tome": "Tome 1",
-    "title": "Captain America : Le Soldat de l'Hiver (Couverture Variante)",
-    "isbn": "9782809498219",
-    "writer": "Ed Brubaker",
-    "artist": "Steve Epting",
-    "year": 2021,
-    "price": 16,
-    "usIssues": "Captain America #1-14",
-    "cover": "https://images.epagine.fr/208/9782809498208_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Steve Rogers découvre que le légendaire assassin soviétique est son vieil ami Bucky.",
-    "alternateIsbns": [
-      "9782809498215",
-      "9782809498219"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9791039126229",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -43599,28 +42516,6 @@
     "cover": "https://www.excalibur-comics.fr/17822-large_default/la-mort-de-captain-marvel-must-have.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809498406",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Carnage",
-    "tome": "One-Shot",
-    "title": "Carnage USA (Couverture Variante)",
-    "isbn": "9782809498400",
-    "writer": "Zeb Wells",
-    "artist": "Clayton Crain",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Carnage U.S.A. #1-5",
-    "cover": "https://www.excalibur-comics.fr/13143-large_default/miss-marvel-integrale-1977-1978.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Cletus Kasady prend le contrôle d'une ville entière du Colorado avec son symbiote sanguinaire.",
-    "alternateIsbns": [
-      "9782809498406",
-      "9782809498400"
-    ]
   },
   {
     "id": "ma-marvelmust-9782809486957",
@@ -43797,28 +42692,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809498352",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Daredevil",
-    "tome": "One-Shot",
-    "title": "Daredevil : Sous l'aile du diable (Couverture Variante)",
-    "isbn": "9782809498356",
-    "writer": "Kevin Smith",
-    "artist": "Joe Quesada",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Daredevil (1998) #1-8",
-    "cover": "https://images.epagine.fr/338/9782809498338_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Un mystérieux bébé confié à Matt Murdock pourrait être l'antéchrist ou le nouveau messie.",
-    "alternateIsbns": [
-      "9782809498352",
-      "9782809498356"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9791039113717",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -43963,28 +42836,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809498505",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Deadpool",
-    "tome": "Tome 1",
-    "title": "Deadpool : Le Bon, la Brute et le Truand (Couverture Variante)",
-    "isbn": "9782809498509",
-    "writer": "Gerry Duggan, Brian Posehn",
-    "artist": "Declan Shalvey",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Deadpool (2012) #15-19",
-    "cover": "https://images.epagine.fr/499/9782809498499_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Deadpool s'allie avec Wolverine et Captain America pour infiltrer un camp en Corée du Nord.",
-    "alternateIsbns": [
-      "9782809498505",
-      "9782809498509"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9791039115292",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -44079,50 +42930,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809498222",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Doctor Strange",
-    "tome": "One-Shot",
-    "title": "Doctor Strange : Le Serment (Couverture Variante)",
-    "isbn": "9782809498226",
-    "writer": "Brian K. Vaughan",
-    "artist": "Marcos Martin",
-    "year": 2021,
-    "price": 16,
-    "usIssues": "Doctor Strange #1-5",
-    "cover": "https://www.excalibur-comics.fr/13644-large_default/the-marvels-la-guerre-de-siancong.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Stephen Strange mène une quête mystique pour guérir Wong d'une maladie incurable.",
-    "alternateIsbns": [
-      "9782809498222",
-      "9782809498226"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498604",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Doctor Strange",
-    "tome": "One-Shot",
-    "title": "Doctor Strange : Le Triomphe et le Tourment (Couverture Variante)",
-    "isbn": "9782809498608",
-    "writer": "Roger Stern",
-    "artist": "Mike Mignola",
-    "year": 2023,
-    "price": 16,
-    "usIssues": "Graphic Novel #49",
-    "cover": "https://www.excalibur-comics.fr/13348-large_default/x-men-x-of-swords-3-edition-collector.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Stephen Strange et le Docteur Fatalis descendent aux Enfers de Méphisto libérer l'âme de Cynthia Von Fatalis.",
-    "alternateIsbns": [
-      "9782809498604",
-      "9782809498608"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9791039125406",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -44139,28 +42946,6 @@
     "cover": "https://images.epagine.fr/406/9791039125406_1_75.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809498611",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Fantastic Four",
-    "tome": "One-Shot",
-    "title": "Fantastic Four : 1234 (Couverture Variante)",
-    "isbn": "9782809498615",
-    "writer": "Grant Morrison",
-    "artist": "Jae Lee",
-    "year": 2023,
-    "price": 16,
-    "usIssues": "1234 #1-4",
-    "cover": "https://images.epagine.fr/598/9782809498598_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Fatalis utilise une machine primordiale pour exaucer les faiblesses secrètes des Quatre Fantastiques.",
-    "alternateIsbns": [
-      "9782809498611",
-      "9782809498615"
-    ]
   },
   {
     "id": "ma-marvelmust-9782809491791",
@@ -44235,28 +43020,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809498314",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Gardiens de la Galaxie",
-    "tome": "Tome 1",
-    "title": "Guardians of the Galaxy : Cosmic Avengers (Couverture Variante)",
-    "isbn": "9782809498318",
-    "writer": "Brian Michael Bendis",
-    "artist": "Steve McNiven",
-    "year": 2021,
-    "price": 16,
-    "usIssues": "Guardians #0.1, #1-3",
-    "cover": "https://www.excalibur-comics.fr/13114-large_default/annihilation-must-have.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Star-Lord, Gamora, Drax, Rocket et Groot font équipe avec Iron Man dans l'espace.",
-    "alternateIsbns": [
-      "9782809498314",
-      "9782809498318"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9791039110327",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -44273,50 +43036,6 @@
     "cover": "https://www.excalibur-comics.fr/15081-large_default/ghost-rider-enfer-et-damnation-must-have.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809498437",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Ghost Rider",
-    "tome": "One-Shot",
-    "title": "Ghost Rider : Route vers l'enfer (Couverture Variante)",
-    "isbn": "9782809498431",
-    "writer": "Garth Ennis",
-    "artist": "Clayton Crain",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Road to Damnation #1-6",
-    "cover": "https://www.excalibur-comics.fr/14262-large_default/avengers-integrale-1969-nouvelle-edition.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Johnny Blaze conclut un pacte avec un ange pour tenter d'échapper aux flammes de l'enfer.",
-    "alternateIsbns": [
-      "9782809498437",
-      "9782809498431"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498383",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Hawkeye",
-    "tome": "Tome 1",
-    "title": "Hawkeye : Ma vie est une arme (Couverture Variante)",
-    "isbn": "9782809498387",
-    "writer": "Matt Fraction",
-    "artist": "David Aja",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Hawkeye (2012) #1-5",
-    "cover": "https://images.epagine.fr/369/9782809498369_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Le quotidien drôle et chaotique de Clint Barton et Kate Bishop à Brooklyn.",
-    "alternateIsbns": [
-      "9782809498383",
-      "9782809498387"
-    ]
   },
   {
     "id": "ma-marvelmust-9782809496680",
@@ -44337,28 +43056,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809498567",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "House of X",
-    "tome": "One-Shot",
-    "title": "House of X / Powers of X (Couverture Variante)",
-    "isbn": "9782809498561",
-    "writer": "Jonathan Hickman",
-    "artist": "Pepe Larraz, R.B. Silva",
-    "year": 2023,
-    "price": 16,
-    "usIssues": "House of X #1-6, Powers of X #1-6",
-    "cover": "https://images.epagine.fr/550/9782809498550_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'avènement de la nation mutante de Krakoa : la réinvention moderne des X-Men.",
-    "alternateIsbns": [
-      "9782809498567",
-      "9782809498561"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9791039115155",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -44375,28 +43072,6 @@
     "cover": "https://www.excalibur-comics.fr/16207-large_default/hulk-futur-imparfait-must-have.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809498628",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Hulk",
-    "tome": "One-Shot",
-    "title": "Hulk : Futur Imparfait (Couverture Variante)",
-    "isbn": "9782809498622",
-    "writer": "Peter David",
-    "artist": "George Pérez",
-    "year": 2023,
-    "price": 16,
-    "usIssues": "Future Imperfect #1-2",
-    "cover": "https://images.epagine.fr/598/9782809498598_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Hulk est transporté dans un futur dévasté par une guerre nucléaire où règne le Maestro.",
-    "alternateIsbns": [
-      "9782809498628",
-      "9782809498622"
-    ]
   },
   {
     "id": "ma-marvelmust-9782809490527",
@@ -44493,50 +43168,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809498291",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Immortal Hulk",
-    "tome": "Tome 1",
-    "title": "Immortal Hulk : Où est ta victoire ? (Couverture Variante)",
-    "isbn": "9782809498295",
-    "writer": "Al Ewing",
-    "artist": "Joe Bennett",
-    "year": 2021,
-    "price": 16,
-    "usIssues": "Immortal Hulk #1-5",
-    "cover": "https://www.excalibur-comics.fr/13138-large_default/x-men-x-of-swords-2-edition-collector.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'horreur s'éveille la nuit : Bruce Banner ne peut plus mourir car le Diable Hulk revient.",
-    "alternateIsbns": [
-      "9782809498291",
-      "9782809498295"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498550",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Infinity",
-    "tome": "One-Shot",
-    "title": "Infinity (Couverture Variante)",
-    "isbn": "9782809498554",
-    "writer": "Jonathan Hickman",
-    "artist": "Jim Cheung",
-    "year": 2023,
-    "price": 16,
-    "usIssues": "Infinity #1-6",
-    "cover": "https://images.epagine.fr/543/9782809498543_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Pendant que les Avengers combattent les Bâtisseurs dans l'espace, Thanos attaque la Terre.",
-    "alternateIsbns": [
-      "9782809498550",
-      "9782809498554"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9791039126212",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -44592,28 +43223,6 @@
     "alternateIsbns": [
       "9782809498208",
       "9782809498202"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498635",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Iron Man",
-    "tome": "One-Shot",
-    "title": "Iron Man : Le Démon en Bouteille (Couverture Variante)",
-    "isbn": "9782809498639",
-    "writer": "David Michelinie, Bob Layton",
-    "artist": "John Romita Jr",
-    "year": 2023,
-    "price": 16,
-    "usIssues": "Iron Man #120-128",
-    "cover": "https://images.epagine.fr/598/9782809498598_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). La déchéance tragique de Tony Stark confronté à son alcoolisme et à Justin Hammer.",
-    "alternateIsbns": [
-      "9782809498635",
-      "9782809498639"
     ]
   },
   {
@@ -44873,28 +43482,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809498338",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Marvel Zombies",
-    "tome": "One-Shot",
-    "title": "Marvel Zombies (Couverture Variante)",
-    "isbn": "9782809498332",
-    "writer": "Robert Kirkman",
-    "artist": "Sean Phillips",
-    "year": 2021,
-    "price": 16,
-    "usIssues": "Marvel Zombies #1-5",
-    "cover": "https://www.excalibur-comics.fr/13181-large_default/spider-man-par-dan-slott-tome-1.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Dans un univers parallèle, un virus transforme tous les super-héros en zombies affamés.",
-    "alternateIsbns": [
-      "9782809498338",
-      "9782809498332"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9782809498325",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -44911,28 +43498,6 @@
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809498326.01._SCLZZZZZZZ_.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809498451",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Marvels",
-    "tome": "One-Shot",
-    "title": "Marvels (Couverture Variante)",
-    "isbn": "9782809498455",
-    "writer": "Kurt Busiek",
-    "artist": "Alex Ross",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Marvels #1-4",
-    "cover": "https://www.excalibur-comics.fr/14169-large_default/docteur-aphra-tome-1-destin-et-fortune.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). La naissance de l'ère des super-héros Marvel vue à travers les yeux du photographe Phil Sheldon.",
-    "alternateIsbns": [
-      "9782809498451",
-      "9782809498455"
-    ]
   },
   {
     "id": "ma-marvelmust-9782809490497",
@@ -44972,28 +43537,6 @@
     "alternateIsbns": [
       "9782809498307",
       "9782809498301"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498413",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Ms Marvel",
-    "tome": "Tome 1",
-    "title": "Ms Marvel : Métamorphose (Couverture Variante)",
-    "isbn": "9782809498417",
-    "writer": "G. Willow Wilson",
-    "artist": "Adrian Alphona",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Ms. Marvel (2014) #1-5",
-    "cover": "https://images.epagine.fr/390/9782809498390_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Kamala Khan, adolescente de Jersey City, découvre ses pouvoirs d'Inhumaine métamorphe.",
-    "alternateIsbns": [
-      "9782809498413",
-      "9782809498417"
     ]
   },
   {
@@ -45123,28 +43666,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809498253",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Punisher",
-    "tome": "One-Shot",
-    "title": "Punisher : Bienvenue chez Frank (Couverture Variante)",
-    "isbn": "9782809498257",
-    "writer": "Garth Ennis",
-    "artist": "Steve Dillon",
-    "year": 2021,
-    "price": 16,
-    "usIssues": "Punisher (2000) #1-12",
-    "cover": "https://www.excalibur-comics.fr/13174-large_default/daredevil-tome-4-au-bout-de-l-enfer.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Frank Castle déclare une guerre sans merci à la famille mafieuse Gnucci à New York.",
-    "alternateIsbns": [
-      "9782809498253",
-      "9782809498257"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9782809493702",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -45161,28 +43682,6 @@
     "cover": "https://www.excalibur-comics.fr/12150-large_default/punisher-bienvenue-frank-must-have.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809498543",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Punisher",
-    "tome": "One-Shot",
-    "title": "Punisher : Born (Couverture Variante)",
-    "isbn": "9782809498547",
-    "writer": "Garth Ennis",
-    "artist": "Darick Robertson",
-    "year": 2023,
-    "price": 16,
-    "usIssues": "Born #1-4",
-    "cover": "https://images.epagine.fr/536/9782809498536_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Dans l'enfer de la guerre du Vietnam, Frank Castle fait son pacte avec la Mort.",
-    "alternateIsbns": [
-      "9782809498543",
-      "9782809498547"
-    ]
   },
   {
     "id": "ma-marvelmust-9791039122771",
@@ -45239,28 +43738,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809498529",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Secret Invasion",
-    "tome": "One-Shot",
-    "title": "Secret Invasion (Couverture Variante)",
-    "isbn": "9782809498523",
-    "writer": "Brian Michael Bendis",
-    "artist": "Leinil Francis Yu",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Secret Invasion #1-8",
-    "cover": "https://images.epagine.fr/512/9782809498512_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Qui pouvez-vous croire ? Les aliens Skrulls métamorphes ont infiltré chaque équipe de héros.",
-    "alternateIsbns": [
-      "9782809498529",
-      "9782809498523"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9791039109147",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -45313,28 +43790,6 @@
     "cover": "https://www.excalibur-comics.fr/25894-large_default/sentry-marvel-must-have.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809498536",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Siege",
-    "tome": "One-Shot",
-    "title": "Siège (Siege) (Couverture Variante)",
-    "isbn": "9782809498530",
-    "writer": "Brian Michael Bendis",
-    "artist": "Olivier Coipel",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Siege #1-4",
-    "cover": "https://images.epagine.fr/512/9782809498512_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Norman Osborn et ses Dark Avengers lancent l'assaut final contre la cité d'Asgard en Oklahoma.",
-    "alternateIsbns": [
-      "9782809498536",
-      "9782809498530"
-    ]
   },
   {
     "id": "ma-marvelmust-9791039100984",
@@ -45391,72 +43846,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809498239",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Silver Surfer",
-    "tome": "One-Shot",
-    "title": "Silver Surfer : Requiem (Couverture Variante)",
-    "isbn": "9782809498233",
-    "writer": "J.M. Straczynski",
-    "artist": "Esad Ribic",
-    "year": 2021,
-    "price": 16,
-    "usIssues": "Silver Surfer: Requiem #1-4",
-    "cover": "https://www.excalibur-comics.fr/13139-large_default/deadpool-tome-2.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Condamné par un mal mystérieux, Norrin Radd entame son dernier voyage vers les étoiles.",
-    "alternateIsbns": [
-      "9782809498239",
-      "9782809498233"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498390",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Spider-Gwen",
-    "tome": "Tome 1",
-    "title": "Spider-Gwen : Plus grande que nature (Couverture Variante)",
-    "isbn": "9782809498394",
-    "writer": "Jason Latour",
-    "artist": "Robbi Rodriguez",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Spider-Gwen #1-5",
-    "cover": "https://images.epagine.fr/369/9782809498369_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Sur la Terre-65, c'est Gwen Stacy qui a été mordue par l'araignée radioactive.",
-    "alternateIsbns": [
-      "9782809498390",
-      "9782809498394"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809496662",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Spider-Man",
-    "tome": "One-Shot",
-    "title": "Spider-Man : Bleu (Couverture Variante)",
-    "isbn": "9782809496666",
-    "writer": "Jeph Loeb",
-    "artist": "Tim Sale",
-    "year": 2020,
-    "price": 16,
-    "usIssues": "Spider-Man: Blue #1-6",
-    "cover": "https://www.excalibur-comics.fr/12763-large_default/venom-tome-4-la-guerre-des-royaumes.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Peter Parker se remémore avec nostalgie et émotion son amour pour Gwen Stacy.",
-    "alternateIsbns": [
-      "9782809496662",
-      "9782809496666"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9791039117869",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -45491,72 +43880,6 @@
     "cover": "https://images-na.ssl-images-amazon.com/images/P/2809496676.01._SCLZZZZZZZ_.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809496730",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Spider-Man",
-    "tome": "One-Shot",
-    "title": "Spider-Man : La Dernière Chasse de Kraven (Couverture Variante)",
-    "isbn": "9782809496734",
-    "writer": "J.M. DeMatteis",
-    "artist": "Mike Zeck",
-    "year": 2021,
-    "price": 16,
-    "usIssues": "ASM #293-294",
-    "cover": "https://www.excalibur-comics.fr/12769-large_default/little-marvel-avx.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Kraven enterre Spider-Man vivant et endosse son costume pour prouver sa supériorité.",
-    "alternateIsbns": [
-      "9782809496730",
-      "9782809496734"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498581",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Spider-Man",
-    "tome": "One-Shot",
-    "title": "Spider-Man : La Mort de Jean DeWolff (Couverture Variante)",
-    "isbn": "9782809498585",
-    "writer": "Peter David",
-    "artist": "Rich Buckler",
-    "year": 2023,
-    "price": 16,
-    "usIssues": "Spectacular Spider-Man #107-110",
-    "cover": "https://images.epagine.fr/574/9782809498574_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'inspectrice Jean DeWolff est sauvagement abattue par le Rédempteur (Sin-Eater).",
-    "alternateIsbns": [
-      "9782809498581",
-      "9782809498585"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498420",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Spider-Man",
-    "tome": "Tome 1",
-    "title": "Spider-Man : Miles Morales (Couverture Variante)",
-    "isbn": "9782809498424",
-    "writer": "Brian Michael Bendis",
-    "artist": "Sara Pichelli",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Ultimate Spider-Man #1-5",
-    "cover": "https://www.excalibur-comics.fr/13045-large_default/deathlok-integrale-1974-1983.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Après la mort de Peter Parker, le jeune Miles Morales reprend le flambeau.",
-    "alternateIsbns": [
-      "9782809498420",
-      "9782809498424"
-    ]
   },
   {
     "id": "ma-marvelmust-9791039128964",
@@ -45685,50 +44008,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809498284",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Spider-Man",
-    "tome": "One-Shot",
-    "title": "Spider-Verse (Couverture Variante)",
-    "isbn": "9782809498288",
-    "writer": "Dan Slott",
-    "artist": "Olivier Coipel",
-    "year": 2021,
-    "price": 16,
-    "usIssues": "Amazing Spider-Man #9-15",
-    "cover": "https://www.excalibur-comics.fr/13137-large_default/x-men-x-of-swords-2.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Tous les Spider-Men du multivers s'unissent contre la famille des Héritiers de Morlun.",
-    "alternateIsbns": [
-      "9782809498284",
-      "9782809498288"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498499",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Spider-Man",
-    "tome": "Tome 1",
-    "title": "Superior Spider-Man : Le Pire Cauchemar (Couverture Variante)",
-    "isbn": "9782809498493",
-    "writer": "Dan Slott",
-    "artist": "Ryan Stegman",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Superior Spider-Man #1-5",
-    "cover": "https://images.epagine.fr/482/9782809498482_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Otto Octavius s'empare du corps de Peter Parker et devient un Spider-Man impitoyable.",
-    "alternateIsbns": [
-      "9782809498499",
-      "9782809498493"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9791039123617",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -45819,28 +44098,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809490158",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Thanos",
-    "tome": "One-Shot",
-    "title": "Thanos Gagne (Couverture Variante)",
-    "isbn": "9782809490152",
-    "writer": "Donny Cates",
-    "artist": "Geoff Shaw",
-    "year": 2020,
-    "price": 16,
-    "usIssues": "Thanos #13-18",
-    "cover": "https://images.epagine.fr/141/9782809490141_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Au bout du temps, le vieux Thanos triomphant convoque son double du passé.",
-    "alternateIsbns": [
-      "9782809490158",
-      "9782809490152"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9791039120166",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -45857,50 +44114,6 @@
     "cover": "https://www.excalibur-comics.fr/17664-large_default/thanos-gagne-must-have.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809498512",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Thor",
-    "tome": "Tome 1",
-    "title": "Thor : La Déesse du Tonnerre (Couverture Variante)",
-    "isbn": "9782809498516",
-    "writer": "Jason Aaron",
-    "artist": "Russell Dauterman",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Thor (2014) #1-5",
-    "cover": "https://www.excalibur-comics.fr/13053-large_default/rocket-racoon-groot.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Jane Foster soulève le marteau Mjolnir et devient la nouvelle Déesse du Tonnerre.",
-    "alternateIsbns": [
-      "9782809498512",
-      "9782809498516"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809496723",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Thor",
-    "tome": "Tome 1",
-    "title": "Thor : Le Massacreur de Dieux (Couverture Variante)",
-    "isbn": "9782809496727",
-    "writer": "Jason Aaron",
-    "artist": "Esad Ribic",
-    "year": 2021,
-    "price": 16,
-    "usIssues": "Thor: God of Thunder #1-11",
-    "cover": "https://www.excalibur-comics.fr/12563-large_default/le-magicien-d-oz.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Gorr sillonne le cosmos pour éradiquer tous les dieux. Trois époques de Thor s'unissent.",
-    "alternateIsbns": [
-      "9782809496723",
-      "9782809496727"
-    ]
   },
   {
     "id": "ma-marvelmust-9782809494051",
@@ -46047,28 +44260,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809498444",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Venom",
-    "tome": "Tome 1",
-    "title": "Venom : Rex (Couverture Variante)",
-    "isbn": "9782809498448",
-    "writer": "Donny Cates",
-    "artist": "Ryan Stegman",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Venom (2018) #1-6",
-    "cover": "https://images.epagine.fr/420/9782809498420_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Eddie Brock affronte Knull, le terrifiant Dieu primordial et créateur des symbiotes.",
-    "alternateIsbns": [
-      "9782809498444",
-      "9782809498448"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9791039128971",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -46085,50 +44276,6 @@
     "cover": "https://www.excalibur-comics.fr/23072-large_default/vision-must-have.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809496716",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Vision",
-    "tome": "One-Shot",
-    "title": "Vision : Un peu pire qu'un homme (Couverture Variante)",
-    "isbn": "9782809496710",
-    "writer": "Tom King",
-    "artist": "Gabriel Hernandez Walta",
-    "year": 2021,
-    "price": 16,
-    "usIssues": "The Vision #1-12",
-    "cover": "https://images.epagine.fr/709/9782809496709_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Vision tente de vivre une vie de famille ordinaire en banlieue américaine.",
-    "alternateIsbns": [
-      "9782809496716",
-      "9782809496710"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498277",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Wolverine",
-    "tome": "Tome 1",
-    "title": "All-New Wolverine : Les Quatre Sœurs (Couverture Variante)",
-    "isbn": "9782809498271",
-    "writer": "Tom Taylor",
-    "artist": "David Lopez",
-    "year": 2021,
-    "price": 16,
-    "usIssues": "All-New Wolverine #1-6",
-    "cover": "https://www.excalibur-comics.fr/13502-large_default/avengers-tome-5.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Laura Kinney (X-23) reprend le costume de Wolverine et découvre des clones de sa personne.",
-    "alternateIsbns": [
-      "9782809498277",
-      "9782809498271"
-    ]
   },
   {
     "id": "ma-marvelmust-9791039107877",
@@ -46265,28 +44412,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809498598",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "Wolverine",
-    "tome": "One-Shot",
-    "title": "Wolverine par Claremont & Miller (Couverture Variante)",
-    "isbn": "9782809498592",
-    "writer": "Chris Claremont",
-    "artist": "Frank Miller",
-    "year": 2023,
-    "price": 16,
-    "usIssues": "Wolverine (1982) #1-4",
-    "cover": "https://www.excalibur-comics.fr/13347-large_default/x-men-x-of-swords-3.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Logan voyage au Japon pour retrouver Mariko Yashida et affronte la pègre yakuza.",
-    "alternateIsbns": [
-      "9782809498598",
-      "9782809498592"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9782809490503",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -46341,50 +44466,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "var-marvel-9782809496709",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "X-Men",
-    "tome": "Tome 1",
-    "title": "Astonishing X-Men : Surdoués (Couverture Variante)",
-    "isbn": "9782809496703",
-    "writer": "Joss Whedon",
-    "artist": "John Cassaday",
-    "year": 2021,
-    "price": 16,
-    "usIssues": "Astonishing X-Men #1-6",
-    "cover": "https://images.epagine.fr/693/9782809496693_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). La découverte d'un remède contre la mutation bouleverse les X-Men.",
-    "alternateIsbns": [
-      "9782809496709",
-      "9782809496703"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809496693",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "X-Men",
-    "tome": "One-Shot",
-    "title": "House of M (Couverture Variante)",
-    "isbn": "9782809496697",
-    "writer": "Brian Michael Bendis",
-    "artist": "Olivier Coipel",
-    "year": 2021,
-    "price": 16,
-    "usIssues": "House of M #1-8",
-    "cover": "https://www.excalibur-comics.fr/12845-large_default/thanos-vs-silver-surfer-la-renaissance-de-thanos.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). La Sorcière Rouge réécrit la réalité où les mutants sont l'espèce dominante.",
-    "alternateIsbns": [
-      "9782809496693",
-      "9782809496697"
-    ]
-  },
-  {
     "id": "ma-marvelmust-9791039133975",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -46419,50 +44500,6 @@
     "cover": "https://www.excalibur-comics.fr/22696-large_default/x-men-extermination-must-have.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809498574",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "X-Men",
-    "tome": "One-Shot",
-    "title": "X-Men : Deuxième Genèse (Couverture Variante)",
-    "isbn": "9782809498578",
-    "writer": "Chris Claremont, Len Wein",
-    "artist": "Dave Cockrum",
-    "year": 2023,
-    "price": 16,
-    "usIssues": "Giant-Size X-Men #1, UXM #94-100",
-    "cover": "https://images.epagine.fr/550/9782809498550_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). La naissance de la nouvelle équipe internationale : Wolverine, Tornade, Diablo, Colossus.",
-    "alternateIsbns": [
-      "9782809498574",
-      "9782809498578"
-    ]
-  },
-  {
-    "id": "var-marvel-9782809498482",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "X-Men",
-    "tome": "One-Shot",
-    "title": "X-Men : Dieu crée, l'homme détruit (Couverture Variante)",
-    "isbn": "9782809498486",
-    "writer": "Chris Claremont",
-    "artist": "Brent Anderson",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "Marvel Graphic Novel #5",
-    "cover": "https://www.excalibur-comics.fr/12833-large_default/star-wars-volume-2.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Le révérend William Stryker lance sa croisade fanatique anti-mutants.",
-    "alternateIsbns": [
-      "9782809498482",
-      "9782809498486"
-    ]
   },
   {
     "id": "ma-marvelmust-9791039119665",
@@ -46535,28 +44572,6 @@
     "cover": "https://www.excalibur-comics.fr/22176-large_default/x-men-lifedeath-must-have.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809498369",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Must-Have",
-    "editionType": "VARIANT",
-    "series": "X-Men",
-    "tome": "One-Shot",
-    "title": "X-Men : Le Complexe du Messie (Couverture Variante)",
-    "isbn": "9782809498363",
-    "writer": "Ed Brubaker, Mike Carey",
-    "artist": "Marc Silvestri",
-    "year": 2022,
-    "price": 16,
-    "usIssues": "X-Men: Messiah Complex",
-    "cover": "https://www.excalibur-comics.fr/13368-large_default/deadpool-tome-3-le-mariage-de-deadpool.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Le premier enfant mutant né depuis le M-Day déclenche une guerre sans merci.",
-    "alternateIsbns": [
-      "9782809498369",
-      "9782809498363"
-    ]
   },
   {
     "id": "ma-marvelmust-9791039113656",
@@ -48521,28 +46536,6 @@
       "9791039101233"
     ],
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809495092",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Conan le Barbare",
-    "tome": "Vol. 1",
-    "title": "Conan le Barbare : L'Ère Marvel Originale (Couverture Variante)",
-    "isbn": "9782809495096",
-    "writer": "Roy Thomas",
-    "artist": "Barry Windsor-Smith",
-    "year": 2019,
-    "price": 90,
-    "usIssues": "Conan the Barbarian #1-26",
-    "cover": "https://images.epagine.fr/085/9782809495085_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Les premières aventures légendaires du Cimmérien chez Marvel.",
-    "alternateIsbns": [
-      "9782809495092",
-      "9782809495096"
-    ]
   },
   {
     "id": "var-marvel-9791039109444",
@@ -51941,28 +49934,6 @@
     ]
   },
   {
-    "id": "var-marvel-9782809495016",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Spider-Man",
-    "tome": "Vol. 1",
-    "title": "The Amazing Spider-Man par Stan Lee & Steve Ditko (Couverture Variante)",
-    "isbn": "9782809495010",
-    "writer": "Stan Lee",
-    "artist": "Steve Ditko",
-    "year": 2021,
-    "price": 90,
-    "usIssues": "Amazing Fantasy #15, ASM #1-38",
-    "cover": "https://www.excalibur-comics.fr/12229-large_default/ghost-rider-integrale-1972-1974.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Les débuts légendaires de Spider-Man dans un volume grand format de plus de 1000 pages.",
-    "alternateIsbns": [
-      "9782809495016",
-      "9782809495010"
-    ]
-  },
-  {
     "id": "var-marvel-9782809463194",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -52152,27 +50123,6 @@
     ]
   },
   {
-    "id": "ma-marvelomni-9791039114615",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "series": "Star Wars La série Originale Marvel Volume 2 Omnibus",
-    "tome": "Tome 2",
-    "title": "Star Wars La série Originale Marvel Volume 2 Omnibus",
-    "isbn": "9791039114615",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 70,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/15716-large_default/miracleman-omnibus.jpg",
-    "synopsis": "",
-    "alternateIsbns": [
-      "9791039114615"
-    ],
-    "editionType": "STANDARD"
-  },
-  {
     "id": "ma-marvelomni-9791039113779",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
@@ -52184,9 +50134,9 @@
     "writer": "",
     "artist": "",
     "year": 2026,
-    "price": 80,
+    "price": 70,
     "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/16131-large_default/star-wars-la-serie-originale-marvel-volume-2-omnibus.jpg",
+    "cover": "https://www.excalibur-comics.fr/15716-large_default/miracleman-omnibus.jpg",
     "synopsis": "",
     "alternateIsbns": [
       "9791039113779"
@@ -52613,27 +50563,6 @@
       "9782809495085"
     ],
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809495085",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "Thor",
-    "tome": "Vol. 1",
-    "title": "Thor par Walter Simonson (Couverture Variante)",
-    "isbn": "9782809495089",
-    "writer": "Walter Simonson",
-    "artist": "Walter Simonson",
-    "year": 2021,
-    "price": 90,
-    "usIssues": "Thor #337-367",
-    "cover": "https://www.excalibur-comics.fr/12558-large_default/les-gardiens-de-la-galaxie-x-men-le-vortex-noir-deluxe.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'arrivée de Beta Ray Bill et la bataille contre Surtur pour Asgard.",
-    "alternateIsbns": [
-      "9782809495085"
-    ]
   },
   {
     "id": "var-marvel-9782809480337",
@@ -53513,27 +51442,6 @@
       "9791039107976"
     ],
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-marvel-9782809419139",
-    "universe": "MARVEL",
-    "publisher": "Panini Comics",
-    "format": "Marvel Omnibus",
-    "editionType": "VARIANT",
-    "series": "X-Men",
-    "tome": "Vol. 2",
-    "title": "Uncanny X-Men par Chris Claremont (Couverture Variante)",
-    "isbn": "9782809419139",
-    "writer": "Chris Claremont",
-    "artist": "John Byrne, Dave Cockrum",
-    "year": 2021,
-    "price": 90,
-    "usIssues": "UXM #132-153, Annual #4-5",
-    "cover": "https://images.epagine.fr/122/9782809419122_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). Days of Future Past et l'avènement des Sentinelles.",
-    "alternateIsbns": [
-      "9782809419139"
-    ]
   },
   {
     "id": "var-marvel-9781302918583",
@@ -59269,14 +57177,14 @@
     "synopsis": ""
   },
   {
-    "id": "ma-selectfusi-9782809450415",
+    "id": "ma-selectfusi-9782809439861",
     "universe": "MARVEL",
     "publisher": "Panini Comics",
     "format": "Select Fusion",
     "series": "CROSSED + 100",
     "tome": "Tome 1",
     "title": "CROSSED + 100 Tome 1",
-    "isbn": "9782809450415",
+    "isbn": "9782809439861",
     "writer": "",
     "artist": "",
     "year": 2026,
@@ -59284,7 +57192,10 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/4721-large_default/the-boys-tome-1.jpg",
     "synopsis": "",
-    "editionType": "STANDARD"
+    "editionType": "STANDARD",
+    "alternateIsbns": [
+      "9782809439861"
+    ]
   },
   {
     "id": "ma-selectfusi-9782809495874",
@@ -65585,14 +63496,14 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "dc-urbancomic-9791026829706",
+    "id": "dc-urbancomic-9791026823681",
     "universe": "DC",
     "publisher": "Urban Comics",
     "format": "Urban Comics",
     "series": "Void Rivals",
     "tome": "Tome 3",
     "title": "Void Rivals Tome 3",
-    "isbn": "9791026829706",
+    "isbn": "9791026823681",
     "writer": "Robert Kirkman",
     "artist": "Lorenzo De Felici",
     "year": 2025,
@@ -65601,7 +63512,7 @@
     "cover": "https://images.epagine.fr/706/9791026829706_1_75.jpg",
     "synopsis": "Troisième tome de l'Energon Universe par Robert Kirkman.",
     "alternateIsbns": [
-      "9791026829706"
+      "9791026823681"
     ],
     "editionType": "STANDARD"
   },
@@ -65638,24 +63549,6 @@
     "price": 18.5,
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/29884-large_default/void-rivals-tome-5.jpg",
-    "synopsis": "",
-    "editionType": "STANDARD"
-  },
-  {
-    "id": "dc-urbancomic-9791026823681",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "Urban Comics",
-    "series": "Void Rivals",
-    "tome": "Tome 3",
-    "title": "Void Rivals Tome 3",
-    "isbn": "9791026823681",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 18.5,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/25902-large_default/void-rivals-tome-3.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
   },
@@ -66685,14 +64578,14 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "dc-urbangraph-9791026813019",
+    "id": "dc-urbangraph-9782365775847",
     "universe": "DC",
     "publisher": "Urban Comics",
     "format": "Urban Graphic",
     "series": "Manathan Projects",
     "tome": "Tome 1",
     "title": "Manathan Projects Tome 1",
-    "isbn": "9791026813019",
+    "isbn": "9782365775847",
     "writer": "",
     "artist": "",
     "year": 2026,
@@ -66700,7 +64593,10 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/7781-large_default/ad-after-death.jpg",
     "synopsis": "",
-    "editionType": "STANDARD"
+    "editionType": "STANDARD",
+    "alternateIsbns": [
+      "9782365775847"
+    ]
   },
   {
     "id": "dc-urbangraph-9791026815341",
@@ -66828,24 +64724,6 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "dc-urbanindie-9791026812906",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "Urban Indies & Astrolabe",
-    "series": "Black Hammer",
-    "tome": "Tome 1",
-    "title": "Black Hammer Tome 1 : Origines Secrètes",
-    "isbn": "9791026812906",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 18.5,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/7374-large_default/moonshine-tome-1.jpg",
-    "synopsis": "",
-    "editionType": "STANDARD"
-  },
-  {
     "id": "dc-urbanindie-9791026814290",
     "universe": "DC",
     "publisher": "Urban Comics",
@@ -66864,14 +64742,14 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "dc-urbanindie-9791026814214",
+    "id": "dc-urbanindie-9791026815129",
     "universe": "DC",
     "publisher": "Urban Comics",
     "format": "Urban Indies & Astrolabe",
     "series": "Black Hammer présente",
     "tome": "One-Shot",
     "title": "Black Hammer présente : Sherlock Frankenstein & la Ligue du Mal",
-    "isbn": "9791026814214",
+    "isbn": "9791026815129",
     "writer": "",
     "artist": "",
     "year": 2026,
@@ -66879,7 +64757,10 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/8398-large_default/ether-tome-1.jpg",
     "synopsis": "",
-    "editionType": "STANDARD"
+    "editionType": "STANDARD",
+    "alternateIsbns": [
+      "9791026815129"
+    ]
   },
   {
     "id": "dc-urbanindie-9791026829546",
@@ -66900,14 +64781,14 @@
     "editionType": "VARIANT"
   },
   {
-    "id": "dc-urbanindie-9791026814450",
+    "id": "dc-urbanindie-9791026814603",
     "universe": "DC",
     "publisher": "Urban Comics",
     "format": "Urban Indies & Astrolabe",
     "series": "BLACK SCIENCE",
     "tome": "Tome 7",
     "title": "BLACK SCIENCE TOME 7",
-    "isbn": "9791026814450",
+    "isbn": "9791026814603",
     "writer": "",
     "artist": "",
     "year": 2026,
@@ -66915,7 +64796,10 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/8376-large_default/god-country.jpg",
     "synopsis": "",
-    "editionType": "STANDARD"
+    "editionType": "STANDARD",
+    "alternateIsbns": [
+      "9791026814603"
+    ]
   },
   {
     "id": "dc-urbanindie-9791026820031",
@@ -67193,14 +65077,14 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "dc-urbanindie-9782365778350",
+    "id": "dc-urbanindie-9782365778664",
     "universe": "DC",
     "publisher": "Urban Comics",
     "format": "Urban Indies & Astrolabe",
     "series": "EAST OF WEST",
     "tome": "Tome 5",
     "title": "EAST OF WEST TOME 5",
-    "isbn": "9782365778350",
+    "isbn": "9782365778664",
     "writer": "",
     "artist": "",
     "year": 2026,
@@ -67208,7 +65092,10 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/5628-large_default/the-autumnlands-tome-1.jpg",
     "synopsis": "",
-    "editionType": "STANDARD"
+    "editionType": "STANDARD",
+    "alternateIsbns": [
+      "9782365778664"
+    ]
   },
   {
     "id": "dc-urbanindie-9791026817390",
@@ -67768,14 +65655,14 @@
     "editionType": "STANDARD"
   },
   {
-    "id": "dc-urbanindie-9792488807005",
+    "id": "dc-urbanindie-9782488807005",
     "universe": "DC",
     "publisher": "Urban Comics",
     "format": "Urban Indies & Astrolabe",
     "series": "Le Dernier Pilote",
     "tome": "One-Shot",
     "title": "Le Dernier Pilote",
-    "isbn": "9792488807004",
+    "isbn": "9782488807005",
     "writer": "",
     "artist": "",
     "year": 2026,
@@ -67784,24 +65671,9 @@
     "cover": "https://www.excalibur-comics.fr/29890-large_default/le-dernier-pilote-astrolabe.jpg",
     "synopsis": "",
     "editionType": "STANDARD",
-    "alternateIsbns": []
-  },
-  {
-    "id": "dc-urbanindie-9792488807005",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "Urban Indies & Astrolabe",
-    "series": "Le Dernier Pilote",
-    "tome": "One-Shot",
-    "title": "Le Dernier Pilote",
-    "isbn": "9792488807005",
-    "writer": "",
-    "artist": "",
-    "year": 2026,
-    "price": 25,
-    "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/29890-large_default/le-dernier-pilote-astrolabe.jpg",
-    "synopsis": ""
+    "alternateIsbns": [
+      "9782488807005"
+    ]
   },
   {
     "id": "dc-urbanindie-9782488807012",
@@ -69224,14 +67096,14 @@
     "editionType": "VARIANT"
   },
   {
-    "id": "dc-urbanindie-9782365777940",
+    "id": "dc-urbanindie-9782365779708",
     "universe": "DC",
     "publisher": "Urban Comics",
     "format": "Urban Indies & Astrolabe",
     "series": "Tokyo Ghost",
     "tome": "Tome 1",
     "title": "Tokyo Ghost Tome 1",
-    "isbn": "9782365777940",
+    "isbn": "9782365779708",
     "writer": "",
     "artist": "",
     "year": 2026,
@@ -69239,7 +67111,10 @@
     "usIssues": "",
     "cover": "https://www.excalibur-comics.fr/5792-large_default/ei8ht-tome-1-urban-indies.jpg",
     "synopsis": "",
-    "editionType": "STANDARD"
+    "editionType": "STANDARD",
+    "alternateIsbns": [
+      "9782365779708"
+    ]
   },
   {
     "id": "dc-urbanindie-9782365778275",
@@ -69422,7 +67297,7 @@
     "editionType": "LIMITED"
   },
   {
-    "id": "var-exc-9102682794",
+    "id": "var-exc-9791026827948",
     "universe": "DC",
     "publisher": "Urban Comics",
     "format": "Urban Limited",
@@ -69430,7 +67305,7 @@
     "series": "Kingdom Come Urban Limited",
     "tome": "One-Shot",
     "title": "Kingdom Come Urban Limited",
-    "isbn": "9102682794",
+    "isbn": "9791026827948",
     "writer": "",
     "artist": "",
     "year": 2024,
@@ -69439,7 +67314,7 @@
     "cover": "https://images.epagine.fr/794/9102682794_1_75.jpg",
     "synopsis": "Édition spéciale avec couverture variante (collector).",
     "alternateIsbns": [
-      "9102682794"
+      "9791026827948"
     ]
   },
   {
@@ -69701,28 +67576,6 @@
     "cover": "https://www.excalibur-comics.fr/22717-large_default/batman-silence-nomad.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-dc-9782365779042",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "Urban Nomad",
-    "editionType": "VARIANT",
-    "series": "Batman",
-    "tome": "One-Shot",
-    "title": "Batman : Silence (Nomades) (Couverture Variante)",
-    "isbn": "9782365779043",
-    "writer": "Jeph Loeb",
-    "artist": "Jim Lee",
-    "year": 2022,
-    "price": 6.9,
-    "usIssues": "Batman #608-619",
-    "cover": "https://images.epagine.fr/035/9782365779035_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'intrigue culte de Jim Lee et Jeph Loeb.",
-    "alternateIsbns": [
-      "9782365779042",
-      "9782365779043"
-    ]
   },
   {
     "id": "dc-urbannomad-9791026826989",
@@ -70357,28 +68210,6 @@
     "cover": "https://www.excalibur-comics.fr/26511-large_default/urban-comics-nomad-fables-tome-9.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-dc-9782365779028",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "Urban Nomad",
-    "editionType": "VARIANT",
-    "series": "Flash",
-    "tome": "One-Shot",
-    "title": "Flashpoint (Nomades) (Couverture Variante)",
-    "isbn": "9782365779029",
-    "writer": "Geoff Johns",
-    "artist": "Andy Kubert",
-    "year": 2022,
-    "price": 6.9,
-    "usIssues": "Flashpoint #1-5",
-    "cover": "https://images.epagine.fr/028/9782365779028_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). La réécriture de la timeline par Barry Allen.",
-    "alternateIsbns": [
-      "9782365779028",
-      "9782365779029"
-    ]
   },
   {
     "id": "dc-urbannomad-9791026820918",
@@ -71353,28 +69184,6 @@
     "cover": "https://www.excalibur-comics.fr/14476-large_default/watchmen-urban-comics-nomad.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
-  },
-  {
-    "id": "var-dc-9782365779035",
-    "universe": "DC",
-    "publisher": "Urban Comics",
-    "format": "Urban Nomad",
-    "editionType": "VARIANT",
-    "series": "Watchmen",
-    "tome": "Intégrale",
-    "title": "Watchmen (Nomades) (Couverture Variante)",
-    "isbn": "9782365779036",
-    "writer": "Alan Moore",
-    "artist": "Dave Gibbons",
-    "year": 2022,
-    "price": 6.9,
-    "usIssues": "Watchmen #1-12",
-    "cover": "https://images.epagine.fr/028/9782365779028_1_75.jpg",
-    "synopsis": "Édition spéciale avec couverture variante (collector). L'intégrale Watchmen au format poche Urban Nomades.",
-    "alternateIsbns": [
-      "9782365779035",
-      "9782365779036"
-    ]
   },
   {
     "id": "dc-urbannomad-9791026825630",
@@ -76515,5 +74324,385 @@
     "alternateIsbns": [
       "9791039127608"
     ]
+  },
+  {
+    "id": "dc-vertigo-9791026829706",
+    "universe": "DC",
+    "publisher": "Urban Comics",
+    "format": "Vertigo Essentiels",
+    "series": "Jack of Fables",
+    "tome": "Tome 3",
+    "title": "Jack of Fables Tome 3",
+    "isbn": "9791026829706",
+    "writer": "Bill Willingham",
+    "artist": "Tony Akins",
+    "year": 2021,
+    "price": 28,
+    "usIssues": "Jack of Fables #17-32",
+    "cover": "https://images.epagine.fr/706/9791026829706_1_75.jpg",
+    "synopsis": "Jack Horner poursuit ses aventures rocambolesques dans le monde des fables.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "dc-urbangraph-9791026813019",
+    "universe": "DC",
+    "publisher": "Urban Comics",
+    "format": "Urban Graphic",
+    "series": "A.D. After Death",
+    "tome": "One-Shot",
+    "title": "A.D. After Death",
+    "isbn": "9791026813019",
+    "writer": "Scott Snyder",
+    "artist": "Jeff Lemire",
+    "year": 2018,
+    "price": 23,
+    "usIssues": "A.D. After Death #1-3",
+    "cover": "https://images.epagine.fr/019/9791026813019_1_75.jpg",
+    "synopsis": "Dans un futur proche, la mort a été vaincue grâce à un traitement génétique révolutionnaire.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "dc-urbanindie-9791026812906",
+    "universe": "DC",
+    "publisher": "Urban Comics",
+    "format": "Urban Indies",
+    "series": "Moonshine",
+    "tome": "Tome 1",
+    "title": "Moonshine Tome 1",
+    "isbn": "9791026812906",
+    "writer": "Brian Azzarello",
+    "artist": "Eduardo Risso",
+    "year": 2017,
+    "price": 16,
+    "usIssues": "Moonshine #1-6",
+    "cover": "https://images.epagine.fr/906/9791026812906_1_75.jpg",
+    "synopsis": "En pleine Prohibition, Lou Pirlo arrive en Virginie occidentale pour négocier un accord avec le meilleur trafiquant d'alcool de contrebande.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "dc-urbanindie-9791026814214",
+    "universe": "DC",
+    "publisher": "Urban Comics",
+    "format": "Urban Indies",
+    "series": "Ether",
+    "tome": "Tome 1",
+    "title": "Ether Tome 1 : L'assassinat de la flamme d'or",
+    "isbn": "9791026814214",
+    "writer": "Matt Kindt",
+    "artist": "David Rubín",
+    "year": 2018,
+    "price": 16,
+    "usIssues": "Ether #1-5",
+    "cover": "https://images.epagine.fr/214/9791026814214_1_75.jpg",
+    "synopsis": "Boone Dias est un scientifique qui a découvert un moyen de franchir les frontières entre notre réalité et l'Ether.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "dc-urbanindie-9791026814450",
+    "universe": "DC",
+    "publisher": "Urban Comics",
+    "format": "Urban Indies",
+    "series": "God Country",
+    "tome": "One-Shot",
+    "title": "God Country",
+    "isbn": "9791026814450",
+    "writer": "Donny Cates",
+    "artist": "Geoff Shaw",
+    "year": 2018,
+    "price": 18,
+    "usIssues": "God Country #1-6",
+    "cover": "https://images.epagine.fr/450/9791026814450_1_75.jpg",
+    "synopsis": "Emmet Quinlan souffre d'Alzheimer et sa famille ne sait plus comment gérer ses accès de démence jusqu'à l'arrivée d'une épée enchantée.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "dc-urbanindie-9782365778350",
+    "universe": "DC",
+    "publisher": "Urban Comics",
+    "format": "Urban Indies",
+    "series": "The Autumnlands",
+    "tome": "Tome 1",
+    "title": "The Autumnlands Tome 1 : De griffes et de crocs",
+    "isbn": "9782365778350",
+    "writer": "Kurt Busiek",
+    "artist": "Benjamin Dewey",
+    "year": 2016,
+    "price": 16,
+    "usIssues": "Tooth & Claw / The Autumnlands #1-6",
+    "cover": "https://images.epagine.fr/350/9782365778350_1_75.jpg",
+    "synopsis": "Dans un monde fantastique où les animaux anthropomorphes règnent par la magie, celle-ci vient à manquer.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "dc-urbanindie-9782365777940",
+    "universe": "DC",
+    "publisher": "Urban Comics",
+    "format": "Urban Indies",
+    "series": "Ei8ht",
+    "tome": "Tome 1",
+    "title": "Ei8ht Tome 1 : Exilé",
+    "isbn": "9782365777940",
+    "writer": "Rafael Albuquerque, Mike Johnson",
+    "artist": "Rafael Albuquerque",
+    "year": 2016,
+    "price": 15,
+    "usIssues": "Ei8ht #1-5",
+    "cover": "https://images.epagine.fr/940/9782365777940_1_75.jpg",
+    "synopsis": "Joshua est un voyageur temporel projeté dans une dimension hors du temps appelée La Friche.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "dc-indies-9791026823872",
+    "universe": "DC",
+    "publisher": "Urban Comics",
+    "format": "Urban Indies",
+    "series": "Something Is Killing The Children",
+    "tome": "Tome 5",
+    "title": "Something Is Killing The Children Tome 5",
+    "isbn": "9791026823872",
+    "writer": "James Tynion IV",
+    "artist": "Werther Dell'Edera",
+    "year": 2023,
+    "price": 18,
+    "usIssues": "Something Is Killing The Children #21-25",
+    "cover": "https://images.epagine.fr/872/9791026823872_1_75.jpg",
+    "synopsis": "Erica Slaughter a quitté Archer's Peak et tente d'échapper à l'Ordre de Saint-Georges.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "dc-rebirth-9791026813767",
+    "universe": "DC",
+    "publisher": "Urban Comics",
+    "format": "DC Rebirth",
+    "series": "Deathstroke",
+    "tome": "Tome 1",
+    "title": "Deathstroke Rebirth Tome 1 : Le Professionnel",
+    "isbn": "9791026813767",
+    "writer": "Christopher Priest",
+    "artist": "Carlo Pagulayan",
+    "year": 2018,
+    "price": 16,
+    "usIssues": "Deathstroke Rebirth #1 + #1-5",
+    "cover": "https://images.epagine.fr/767/9791026813767_1_75.jpg",
+    "synopsis": "Slade Wilson est le mercenaire le plus redoutable de la planète.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "ma-theboys-9782809450415",
+    "universe": "MARVEL",
+    "publisher": "Panini Comics",
+    "format": "Select Fusion",
+    "series": "The Boys",
+    "tome": "Tome 1",
+    "title": "The Boys Tome 1 : Ça va faire très mal !",
+    "isbn": "9782809450415",
+    "writer": "Garth Ennis",
+    "artist": "Darick Robertson",
+    "year": 2015,
+    "price": 15,
+    "usIssues": "The Boys #1-6",
+    "cover": "https://images.epagine.fr/415/9782809450415_1_75.jpg",
+    "synopsis": "Une équipe de la CIA est chargée de surveiller les super-héros qui abusent de leurs pouvoirs.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "ma-omni-9791039114615",
+    "universe": "MARVEL",
+    "publisher": "Panini Comics",
+    "format": "Panini Omnibus",
+    "series": "Miracleman",
+    "tome": "Tome 1",
+    "title": "Miracleman Omnibus",
+    "isbn": "9791039114615",
+    "writer": "Alan Moore, Neil Gaiman",
+    "artist": "Garry Leach, Alan Davis, Chuck Austen, Rick Veitch, John Totleben",
+    "year": 2023,
+    "price": 70,
+    "usIssues": "Miracleman (1985) #1-24 + matériel",
+    "cover": "https://images.epagine.fr/615/9791039114615_1_75.jpg",
+    "synopsis": "La déconstruction magistrale du mythe du super-héros par Alan Moore.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "ma-icons-9782809457186",
+    "universe": "MARVEL",
+    "publisher": "Panini Comics",
+    "format": "Marvel Icons",
+    "series": "Wolverine",
+    "tome": "Tome 1",
+    "title": "Wolverine par Paul Jenkins & Andy Kubert (Marvel Icons)",
+    "isbn": "9782809457186",
+    "writer": "Paul Jenkins, Kieron Gillen",
+    "artist": "Andy Kubert, Adam Kubert",
+    "year": 2016,
+    "price": 36,
+    "usIssues": "Origin #1-6 + Origin II #1-5",
+    "cover": "https://images.epagine.fr/186/9782809457186_1_75.jpg",
+    "synopsis": "Les origines officielles de Wolverine révélées.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "ma-intg-9782809464245",
+    "universe": "MARVEL",
+    "publisher": "Panini Comics",
+    "format": "Marvel Classic Intégrale",
+    "series": "Iron Fist",
+    "tome": "1974-1975",
+    "title": "Iron Fist : L'Intégrale 1974-1975",
+    "isbn": "9782809464245",
+    "writer": "Roy Thomas, Chris Claremont",
+    "artist": "Gil Kane, John Byrne",
+    "year": 2017,
+    "price": 32,
+    "usIssues": "Marvel Premiere #15-25 + Iron Fist (1975) #1-2",
+    "cover": "https://images.epagine.fr/245/9782809464245_1_75.jpg",
+    "synopsis": "Les premières apparitions mythiques de Danny Rand, l'Immortel Iron Fist.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "ma-grap-9782809468311",
+    "universe": "MARVEL",
+    "publisher": "Panini Comics",
+    "format": "Marvel Graphic Novels",
+    "series": "Les Gardiens de la Galaxie",
+    "tome": "One-Shot",
+    "title": "Les Gardiens de la Galaxie : Mère Entropie",
+    "isbn": "9782809468311",
+    "writer": "Jim Starlin",
+    "artist": "Alan Davis",
+    "year": 2017,
+    "price": 18,
+    "usIssues": "Guardians of the Galaxy: Mother Entropy #1-5",
+    "cover": "https://images.epagine.fr/311/9782809468311_1_75.jpg",
+    "synopsis": "Jim Starlin et Alan Davis réunissent leurs talents pour une saga cosmique explosive.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "st-starwars-9782809464306",
+    "universe": "STAR WARS",
+    "publisher": "Panini Comics",
+    "format": "100% Star Wars",
+    "series": "Dark Maul",
+    "tome": "One-Shot",
+    "title": "Dark Maul : Soif de sang",
+    "isbn": "9782809464306",
+    "writer": "Cullen Bunn",
+    "artist": "Luke Ross",
+    "year": 2017,
+    "price": 14,
+    "usIssues": "Darth Maul (2017) #1-5",
+    "cover": "https://images.epagine.fr/306/9782809464306_1_75.jpg",
+    "synopsis": "Avant La Menace Fantôme, Dark Maul attend l'ordre d'abattre les Jedi.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "ma-100m-9782809460735",
+    "universe": "MARVEL",
+    "publisher": "Panini Comics",
+    "format": "100% Marvel",
+    "series": "Black Panther",
+    "tome": "Tome 1",
+    "title": "Black Panther Tome 1 : Une nation en marche",
+    "isbn": "9782809460735",
+    "writer": "Ta-Nehisi Coates",
+    "artist": "Brian Stelfreeze",
+    "year": 2017,
+    "price": 15,
+    "usIssues": "Black Panther (2016) #1-4",
+    "cover": "https://images.epagine.fr/735/9782809460735_1_75.jpg",
+    "synopsis": "Le run acclamé de Ta-Nehisi Coates sur T'Challa et le Wakanda.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "ma-100m-9782809471250",
+    "universe": "MARVEL",
+    "publisher": "Panini Comics",
+    "format": "100% Marvel",
+    "series": "Inhumans",
+    "tome": "One-Shot",
+    "title": "Inhumans : Rois d'hier et de demain",
+    "isbn": "9782809471250",
+    "writer": "Christopher Priest",
+    "artist": "Phil Noto",
+    "year": 2018,
+    "price": 16,
+    "usIssues": "Inhumans: Once and Future Kings #1-5",
+    "cover": "https://images.epagine.fr/250/9782809471250_1_75.jpg",
+    "synopsis": "La jeunesse de Flèche Noire et Maximus au sein de la famille royale des Inhumains.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "ma-delu-9782809473018",
+    "universe": "MARVEL",
+    "publisher": "Panini Comics",
+    "format": "Marvel Deluxe",
+    "series": "Les Éternels",
+    "tome": "One-Shot",
+    "title": "Les Éternels par Jack Kirby",
+    "isbn": "9782809473018",
+    "writer": "Jack Kirby",
+    "artist": "Jack Kirby",
+    "year": 2018,
+    "price": 35,
+    "usIssues": "The Eternals (1976) #1-19 + Annual #1",
+    "cover": "https://images.epagine.fr/018/9782809473018_1_75.jpg",
+    "synopsis": "Le chef d'oeuvre de Jack Kirby créant les Célestes et les Éternels.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "ma-delu-9782809465457",
+    "universe": "MARVEL",
+    "publisher": "Panini Comics",
+    "format": "Marvel Deluxe",
+    "series": "Loki : Agent d'Asgard",
+    "tome": "Tome 1",
+    "title": "Loki : Agent d'Asgard Tome 1 : Ayez confiance",
+    "isbn": "9782809465457",
+    "writer": "Al Ewing",
+    "artist": "Lee Garbett",
+    "year": 2017,
+    "price": 20,
+    "usIssues": "Loki: Agent of Asgard #1-5 + All-New Marvel NOW! Point One #1",
+    "cover": "https://images.epagine.fr/457/9782809465457_1_75.jpg",
+    "synopsis": "Loki accomplit des missions secrètes pour la Toute-Mère d'Asgard.",
+    "editionType": "STANDARD",
+    "alternateIsbns": []
+  },
+  {
+    "id": "var-urban-9791026823698",
+    "universe": "DC",
+    "publisher": "Urban Comics",
+    "format": "Energon Universe",
+    "series": "Void Rivals",
+    "tome": "Tome 3",
+    "title": "Void Rivals Tome 3 (Couverture Variante)",
+    "isbn": "9791026823698",
+    "writer": "Robert Kirkman",
+    "artist": "Lorenzo De Felici",
+    "year": 2025,
+    "price": 20,
+    "usIssues": "Void Rivals #13-18",
+    "cover": "https://images.epagine.fr/698/9791026823698_1_75.jpg",
+    "synopsis": "Édition spéciale avec couverture variante.",
+    "editionType": "VARIANT",
+    "alternateIsbns": []
   }
 ]

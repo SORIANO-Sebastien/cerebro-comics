@@ -89,7 +89,13 @@ function parseProductArticle(art, targetIsbn = '') {
   if (targetIsbn && !link.includes(targetIsbn)) return null;
 
   const isbnMatch = link.match(/-([0-9]{13})\.html$/);
-  const foundIsbn = isbnMatch ? isbnMatch[1] : (targetIsbn || '');
+  let foundIsbn = isbnMatch ? isbnMatch[1] : (targetIsbn || '');
+  if (foundIsbn && foundIsbn.length === 13) {
+    if (computeEan13Check(foundIsbn.slice(0, 12)) !== foundIsbn[12]) {
+      if (targetIsbn) return null;
+      foundIsbn = '';
+    }
+  }
 
   const imgMatch = art.match(/data-full-size-image-url\s*=\s*"([^"]+)"/i) || art.match(/<img[^>]*src="([^"]+)"/i);
   const altMatch = art.match(/<img[^>]*alt="([^"]*)"/i);

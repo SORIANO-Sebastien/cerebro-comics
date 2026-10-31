@@ -192,7 +192,7 @@ async function findHighResCover(isbn13) {
   const epagineOk = await new Promise(res => {
     https.get(epagineUrl, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 4000 }, r => {
       const len = parseInt(r.headers['content-length'] || '0', 10);
-      res(r.statusCode === 200 && len > 1500);
+      res(r.statusCode === 200 && len > 8000);
     }).on('error', () => res(false));
   });
   if (epagineOk) return epagineUrl;
@@ -204,7 +204,7 @@ async function findHighResCover(isbn13) {
     const amzOk = await new Promise(res => {
       https.get(amzUrl, { timeout: 4000 }, r => {
         const len = parseInt(r.headers['content-length'] || '0', 10);
-        res(r.statusCode === 200 && len > 1500);
+        res(r.statusCode === 200 && len > 8000);
       }).on('error', () => res(false));
     });
     if (amzOk) return amzUrl;
@@ -215,7 +215,7 @@ async function findHighResCover(isbn13) {
   const bdfOk = await new Promise(res => {
     https.get(bdfUrl, { headers: { 'User-Agent': 'Mozilla/5.0' }, timeout: 4000 }, r => {
       const len = parseInt(r.headers['content-length'] || '0', 10);
-      res(r.statusCode === 200 && len > 1500);
+      res(r.statusCode === 200 && len > 8000);
     }).on('error', () => res(false));
   });
   if (bdfOk) return bdfUrl;
@@ -225,12 +225,19 @@ async function findHighResCover(isbn13) {
   const cultOk = await new Promise(res => {
     https.get(cultUrl, { timeout: 4000 }, r => {
       const len = parseInt(r.headers['content-length'] || '0', 10);
-      res(r.statusCode === 200 && len > 1500);
+      res(r.statusCode === 200 && len > 8000);
     }).on('error', () => res(false));
   });
   if (cultOk) return cultUrl;
 
   return null;
+}
+
+// Ne jamais ecraser une couverture verifiee (variante / ePagine HD) par la vignette Excalibur
+function shouldReplaceCover(existing, newCover) {
+  if (!existing.cover) return true;
+  if (existing.editionType === 'VARIANT') return false;
+  return /excalibur-comics\.fr/.test(existing.cover);
 }
 
 function decodeHtmlEntities(str) {
@@ -343,10 +350,21 @@ function parseExcaliburPage(html, defaultUniverse, defaultFormat, defaultPublish
       rawTitle = altMatch ? altMatch[1] : '';
     }
 
-    // Extraction robuste de l'ISBN (dans le lien ou dans l'article)
+    // Extraction robuste et validation mathématique de l'ISBN
     const isbnMatch = link.match(/-([0-9]{13})\.html$/) || link.match(/([0-9]{13})/);
     const isbn = isbnMatch ? isbnMatch[1] : '';
     if (!isbn) continue;
+
+    // Validation stricte du check-digit EAN-13
+    let sum = 0;
+    for (let i = 0; i < 12; i++) {
+      sum += parseInt(isbn[i], 10) * (i % 2 === 0 ? 1 : 3);
+    }
+    const expectedCheck = (10 - (sum % 10)) % 10;
+    if (parseInt(isbn[12], 10) !== expectedCheck) {
+      console.warn(`⚠️ ISBN ignoré (somme de contrôle invalide): ${isbn} dans ${link}`);
+      continue;
+    }
 
     const imgMatch = item.match(/data-full-size-image-url\s*=\s*"([^"]+)"/i) || item.match(/src\s*=\s*"([^"]+)"/i);
     let cover = imgMatch ? imgMatch[1] : '';
@@ -427,8 +445,15 @@ async function scrapeBnfQuery(bnfCat) {
         if (rawId.includes('ISBN')) {
           const digits = rawId.replace(/[^0-9X]/gi, '');
           if (digits.length === 13) {
-            isbn = digits;
-            break;
+            let sum = 0;
+            for (let j = 0; j < 12; j++) {
+              sum += parseInt(digits[j], 10) * (j % 2 === 0 ? 1 : 3);
+            }
+            const expected = (10 - (sum % 10)) % 10;
+            if (parseInt(digits[12], 10) === expected) {
+              isbn = digits;
+              break;
+            }
           }
         }
       }
@@ -574,7 +599,7 @@ async function runSync() {
     for (const item of items) {
       const existing = catalogMap.get(item.isbn);
       if (existing) {
-        if (item.cover) existing.cover = item.cover;
+        if (item.cover && shouldReplaceCover(existing, item.cover)) existing.cover = item.cover;
         if (item.price && !existing.price) existing.price = item.price;
         if (!existing.format) existing.format = item.format;
       } else {
@@ -705,7 +730,7 @@ async function syncSingleCategory(cat) {
   for (const item of items) {
     const existing = catalogMap.get(item.isbn);
     if (existing) {
-      if (item.cover) existing.cover = item.cover;
+      if (item.cover && shouldReplaceCover(existing, item.cover)) existing.cover = item.cover;
       if (item.price && !existing.price) existing.price = item.price;
     } else {
       catalogMap.set(item.isbn, item);
@@ -785,7 +810,7 @@ async function syncSingleCustom(group) {
       newItems++;
     } else {
       const existing = catalogMap.get(item.isbn);
-      if (item.cover) existing.cover = item.cover;
+      if (item.cover && shouldReplaceCover(existing, item.cover)) existing.cover = item.cover;
       if (item.title) existing.title = item.title;
     }
   }
