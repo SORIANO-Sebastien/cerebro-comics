@@ -43293,7 +43293,7 @@
     "year": 2020,
     "price": 16,
     "usIssues": "",
-    "cover": "https://images-na.ssl-images-amazon.com/images/P/2809490511.01._SCLZZZZZZZ_.jpg",
+    "cover": "covers/le_gant_de_linfini_must_have.jpg",
     "synopsis": "",
     "editionType": "STANDARD"
   },
@@ -46173,7 +46173,7 @@
     "year": 2026,
     "price": 60,
     "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/25116-large_default/omnibus-captain-america-par-ed-brubaker-tome-3.jpg",
+    "cover": "covers/captain_america_brubaker_volume_3_standard_omnibus.jpg",
     "synopsis": "",
     "alternateIsbns": [
       "9791039131919"
@@ -46195,7 +46195,7 @@
     "year": 2026,
     "price": 60,
     "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/25116-large_default/omnibus-captain-america-par-ed-brubaker-tome-3.jpg",
+    "cover": "covers/captain_america_brubaker_volume_3_variant_omnibus.jpg",
     "synopsis": "Édition spéciale avec couverture variante (collector).",
     "alternateIsbns": [
       "9791039131926"
@@ -47980,7 +47980,7 @@
     "year": 2026,
     "price": 90,
     "usIssues": "",
-    "cover": "https://www.excalibur-comics.fr/25748-large_default/omnibus-le-gant-de-l-infini.jpg",
+    "cover": "covers/le_gant_de_linfini_omnibus_standard.jpg",
     "synopsis": "",
     "alternateIsbns": [
       "9791039134880"
@@ -48002,7 +48002,7 @@
     "year": 2026,
     "price": 90,
     "usIssues": "",
-    "cover": "https://www.comics-zone.com/1469061-large_default/le-gant-de-l-infini-edition-collector-omnibus-150ex-couverture-jim-starlin.jpg",
+    "cover": "covers/le_gant_de_linfini_omnibus_variant.jpg",
     "synopsis": "Édition spéciale avec couverture variante (collector).",
     "alternateIsbns": [
       "9791039134897"
