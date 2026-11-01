@@ -4396,6 +4396,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
     }
 
     function saveStateToStorage() {
+      markBooksChanged();
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify(appState.books));
       triggerDebouncedUserSync();
@@ -4572,7 +4573,28 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       return list;
     }
 
+    function indexCatalog(list) {
+      if (!Array.isArray(list)) return;
+      for (let i = 0; i < list.length; i++) {
+        const b = list[i];
+        if (!b || b._searchStr) continue;
+        const parts = [
+          b.title || '',
+          b.series || '',
+          b.writer || '',
+          b.isbn || ''
+        ];
+        if (Array.isArray(b.alternateIsbns)) {
+          parts.push(b.alternateIsbns.join(' '));
+        }
+        b._searchStr = parts.join(' ').toLowerCase();
+      }
+    }
+
     function getFilteredCatalog() {
+      if (OFFICIAL_CATALOG && OFFICIAL_CATALOG.length > 0 && !OFFICIAL_CATALOG[0]._searchStr) {
+        indexCatalog(OFFICIAL_CATALOG);
+      }
       let list = [...OFFICIAL_CATALOG];
       if (appState.currentUniverse !== 'ALL' && appState.currentUniverse !== 'WISHLIST' && appState.currentUniverse !== 'LOANED' && appState.currentUniverse !== 'COLLECTOR') {
         list = list.filter(b => b.universe === appState.currentUniverse);
@@ -4593,7 +4615,13 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
 
       const q = (appState.searchQuery || '').trim().toLowerCase();
       if (q) {
-        list = list.filter(b => (b.title||'').toLowerCase().includes(q) || (b.series||'').toLowerCase().includes(q) || (b.writer||'').toLowerCase().includes(q) || (b.isbn||'').includes(q) || (Array.isArray(b.alternateIsbns) && b.alternateIsbns.some(alt => String(alt).toLowerCase().includes(q))));
+        list = list.filter(b => b._searchStr ? b._searchStr.includes(q) : (
+          (b.title||'').toLowerCase().includes(q) || 
+          (b.series||'').toLowerCase().includes(q) || 
+          (b.writer||'').toLowerCase().includes(q) || 
+          (b.isbn||'').includes(q) || 
+          (Array.isArray(b.alternateIsbns) && b.alternateIsbns.some(alt => String(alt).toLowerCase().includes(q)))
+        ));
       }
 
       return list;
@@ -4833,10 +4861,23 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           </div>
       `;
 
+      if (ownedCacheDirty) {
+        rebuildOwnedCache();
+      }
+
+      function isStepOwned(st) {
+        const cleanIsbn = (st.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
+        if (cleanIsbn && (ownedIsbnsSet.has(cleanIsbn) || (cleanIsbn.length === 13 && ownedIsbn12Set.has(cleanIsbn.slice(0, 12))))) return true;
+        const cleanTitle = (st.title || '').trim().toLowerCase();
+        if (cleanTitle && ownedTitlesSet.has(cleanTitle)) return true;
+        return appState.books.some(b => (b.title||'').toLowerCase().includes(cleanTitle));
+      }
+
       for (const ev of READING_EVENTS) {
         const total = ev.steps.length;
-        const ownedCount = ev.steps.filter(st => appState.books.some(b => b.isbn === st.isbn || (b.title||'').toLowerCase().includes(st.title.toLowerCase()))).length;
-        const pct = Math.round((ownedCount / total) * 100);
+        const evaluatedSteps = ev.steps.map(st => ({ st, owned: isStepOwned(st) }));
+        const ownedCount = evaluatedSteps.filter(s => s.owned).length;
+        const pct = total > 0 ? Math.round((ownedCount / total) * 100) : 0;
 
         html += `
           <div class="event-card">
@@ -4853,8 +4894,9 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
             <div class="event-steps-grid">
         `;
 
-        for (const st of ev.steps) {
-          const isOwned = appState.books.some(b => b.isbn === st.isbn || (b.title||'').toLowerCase().includes(st.title.toLowerCase()));
+        for (const item of evaluatedSteps) {
+          const st = item.st;
+          const isOwned = item.owned;
           html += `
             <div class="event-step-item ${isOwned ? 'owned' : ''}">
               <div class="event-step-num">${isOwned ? '✓' : st.num}</div>
@@ -5019,26 +5061,71 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       showToast(`❤️ Tome ${tomeNum} ajouté à votre Wishlist !`);
     }
 
+    let ownedIdsSet = new Set();
+    let ownedIsbnsSet = new Set();
+    let ownedIsbn12Set = new Set();
+    let ownedTitlesSet = new Set();
+    let ownedCacheDirty = true;
+    let countsDirty = true;
+
+    function markBooksChanged() {
+      ownedCacheDirty = true;
+      countsDirty = true;
+    }
+
+    function rebuildOwnedCache() {
+      ownedIdsSet.clear();
+      ownedIsbnsSet.clear();
+      ownedIsbn12Set.clear();
+      ownedTitlesSet.clear();
+
+      if (appState && Array.isArray(appState.books)) {
+        for (let i = 0; i < appState.books.length; i++) {
+          const b = appState.books[i];
+          if (!b) continue;
+          if (b.id) ownedIdsSet.add(b.id);
+          if (b.catId) ownedIdsSet.add(b.catId);
+          if (b.isbn) {
+            const clean = b.isbn.replace(/[^0-9X]/gi, '').toUpperCase();
+            if (clean) {
+              ownedIsbnsSet.add(clean);
+              if (clean.length === 13) {
+                ownedIsbn12Set.add(clean.slice(0, 12));
+              }
+            }
+          }
+          if (b.title) {
+            ownedTitlesSet.add(b.title.trim().toLowerCase());
+          }
+        }
+      }
+      ownedCacheDirty = false;
+    }
+
     function isBookOwned(catBook) {
       if (!catBook || !appState || !Array.isArray(appState.books)) return false;
-      const catCleanIsbn = (catBook.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
-      const catAlts = Array.isArray(catBook.alternateIsbns)
-        ? catBook.alternateIsbns.map(a => String(a).replace(/[^0-9X]/gi, '').toUpperCase())
-        : [];
-      const catCleanTitle = (catBook.title || '').trim().toLowerCase();
+      if (ownedCacheDirty) {
+        rebuildOwnedCache();
+      }
+      if (catBook.id && ownedIdsSet.has(catBook.id)) return true;
 
-      return appState.books.some(b => {
-        if (!b) return false;
-        if (b.id === catBook.id || (b.catId && b.catId === catBook.id)) return true;
-        const bIsbn = (b.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
-        if (bIsbn) {
-          if (catCleanIsbn && bIsbn === catCleanIsbn) return true;
-          if (catAlts.includes(bIsbn)) return true;
-          if (catCleanIsbn && bIsbn.length === 13 && catCleanIsbn.length === 13 && bIsbn.slice(0, 12) === catCleanIsbn.slice(0, 12)) return true;
+      const catCleanIsbn = (catBook.isbn || '').replace(/[^0-9X]/gi, '').toUpperCase();
+      if (catCleanIsbn) {
+        if (ownedIsbnsSet.has(catCleanIsbn)) return true;
+        if (catCleanIsbn.length === 13 && ownedIsbn12Set.has(catCleanIsbn.slice(0, 12))) return true;
+      }
+
+      if (Array.isArray(catBook.alternateIsbns)) {
+        for (let i = 0; i < catBook.alternateIsbns.length; i++) {
+          const alt = String(catBook.alternateIsbns[i]).replace(/[^0-9X]/gi, '').toUpperCase();
+          if (alt && (ownedIsbnsSet.has(alt) || (alt.length === 13 && ownedIsbn12Set.has(alt.slice(0, 12))))) return true;
         }
-        if (b.title && catCleanTitle && b.title.trim().toLowerCase() === catCleanTitle) return true;
-        return false;
-      });
+      }
+
+      const catCleanTitle = (catBook.title || '').trim().toLowerCase();
+      if (catCleanTitle && ownedTitlesSet.has(catCleanTitle)) return true;
+
+      return false;
     }
 
     function toggleCatalogBookOwned(catId) {
@@ -5136,16 +5223,42 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       }
     }
 
-    function updateCounts() {
-      const all = appState.books;
-      const marvel = all.filter(b => b.universe === 'MARVEL');
-      const dc = all.filter(b => b.universe === 'DC');
-      const bd = all.filter(b => b.universe === 'BD');
-      const wishlist = all.filter(b => b.status === 'WISHLIST');
-      const loaned = all.filter(b => b.status === 'LOANED');
-      const collector = all.filter(b => b.isSigned || (b.editionType && b.editionType !== 'STANDARD'));
-      const read = all.filter(b => b.status === 'READ');
-      const series = new Set(all.map(b => b.series).filter(Boolean));
+    function updateCounts(force = false) {
+      if (!countsDirty && !force) return;
+      countsDirty = false;
+
+      const all = appState.books || [];
+      let marvelCount = 0;
+      let dcCount = 0;
+      let bdCount = 0;
+      let wishlistCount = 0;
+      let loanedCount = 0;
+      let collectorCount = 0;
+      let readCount = 0;
+      let totalVal = 0;
+      const seriesSet = new Set();
+
+      for (let i = 0; i < all.length; i++) {
+        const b = all[i];
+        if (!b) continue;
+        if (b.universe === 'MARVEL') marvelCount++;
+        else if (b.universe === 'DC') dcCount++;
+        else if (b.universe === 'BD') bdCount++;
+
+        if (b.status === 'WISHLIST') wishlistCount++;
+        else {
+          totalVal += estimateBookPrice(b);
+          if (b.status === 'LOANED') loanedCount++;
+          if (b.status === 'READ') readCount++;
+        }
+
+        if (b.isSigned || (b.editionType && b.editionType !== 'STANDARD')) {
+          collectorCount++;
+        }
+        if (b.series) {
+          seriesSet.add(b.series);
+        }
+      }
 
       document.getElementById('tabCountCollection').innerText = all.length;
       const colMobEl = document.getElementById('tabCountCollectionMobile');
@@ -5157,28 +5270,23 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
         if (catMobEl) catMobEl.innerText = OFFICIAL_CATALOG.length;
       }
       document.getElementById('countAll').innerText = all.length;
-      document.getElementById('countMarvel').innerText = marvel.length;
-      document.getElementById('countDC').innerText = dc.length;
-      document.getElementById('countBD').innerText = bd.length;
-      document.getElementById('countCollector').innerText = collector.length;
-      document.getElementById('countLoaned').innerText = loaned.length;
-      document.getElementById('countWishlist').innerText = wishlist.length;
+      document.getElementById('countMarvel').innerText = marvelCount;
+      document.getElementById('countDC').innerText = dcCount;
+      document.getElementById('countBD').innerText = bdCount;
+      document.getElementById('countCollector').innerText = collectorCount;
+      document.getElementById('countLoaned').innerText = loanedCount;
+      document.getElementById('countWishlist').innerText = wishlistCount;
 
       document.getElementById('statTotalBooks').innerText = all.length;
-      document.getElementById('statTotalSeries').innerText = `${series.size} séries`;
-      document.getElementById('statMarvelCount').innerText = marvel.length;
-      document.getElementById('statDcCount').innerText = dc.length;
-      document.getElementById('statLoanCount').innerText = loaned.length;
-
-      let totalVal = 0;
-      all.forEach(b => {
-        if (b.status !== 'WISHLIST') totalVal += estimateBookPrice(b);
-      });
+      document.getElementById('statTotalSeries').innerText = `${seriesSet.size} séries`;
+      document.getElementById('statMarvelCount').innerText = marvelCount;
+      document.getElementById('statDcCount').innerText = dcCount;
+      document.getElementById('statLoanCount').innerText = loanedCount;
       document.getElementById('statTotalValue').innerText = `${Math.round(totalVal)} €`;
 
-      const pct = all.length > 0 ? Math.round((read.length / all.length) * 100) : 0;
+      const pct = all.length > 0 ? Math.round((readCount / all.length) * 100) : 0;
       document.getElementById('statReadPercent').innerText = `${pct}%`;
-      document.getElementById('statReadCount').innerText = `${read.length} / ${all.length} lues`;
+      document.getElementById('statReadCount').innerText = `${readCount} / ${all.length} lues`;
     }
 
     function updatePillsActive() {
@@ -5203,14 +5311,20 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       renderApp();
     }
 
+    let searchDebounceTimer = null;
     function onSearchInput() {
       const val = document.getElementById('searchInput').value;
-      appState.searchQuery = val;
       document.getElementById('clearSearchBtn').style.display = val ? 'block' : 'none';
-      renderApp();
+
+      if (searchDebounceTimer) clearTimeout(searchDebounceTimer);
+      searchDebounceTimer = setTimeout(() => {
+        appState.searchQuery = val;
+        renderApp();
+      }, 150);
     }
 
     function clearSearch() {
+      if (searchDebounceTimer) clearTimeout(searchDebounceTimer);
       document.getElementById('searchInput').value = '';
       appState.searchQuery = '';
       document.getElementById('clearSearchBtn').style.display = 'none';
@@ -7230,12 +7344,18 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
       });
     }
 
-    // Réparation automatique proactive au focus et reprise de la page
-    window.addEventListener('focus', () => {
-      if (typeof auditAndRepairCollection === 'function') auditAndRepairCollection(true);
-    });
+    // Réparation automatique proactive au focus et reprise de la page (throttled 5 min)
+    let lastAuditTime = 0;
+    function triggerThrottledAudit() {
+      const now = Date.now();
+      if (now - lastAuditTime > 5 * 60 * 1000) {
+        lastAuditTime = now;
+        if (typeof auditAndRepairCollection === 'function') auditAndRepairCollection(true);
+      }
+    }
+    window.addEventListener('focus', triggerThrottledAudit);
     document.addEventListener('visibilitychange', () => {
-      if (!document.hidden && typeof auditAndRepairCollection === 'function') auditAndRepairCollection(true);
+      if (!document.hidden) triggerThrottledAudit();
     });
 
     let deferredPrompt = null;
@@ -7857,6 +7977,7 @@ Cliquez sur une suggestion ci-dessus ou posez votre question pour obtenir des re
           const data = await res.json();
           if (Array.isArray(data) && data.length > 0) {
             OFFICIAL_CATALOG = data;
+            indexCatalog(OFFICIAL_CATALOG);
             syncCollectionWithCatalog();
             renderApp();
           }
